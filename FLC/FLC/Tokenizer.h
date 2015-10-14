@@ -1,6 +1,5 @@
 #pragma once
-
-#include <iostream>
+#include "stdafx.h"
 #include "Token.h"
 
 namespace flc
@@ -13,7 +12,7 @@ namespace flc
             Tokenizer();
             ~Tokenizer();
 
-            vector<Token> tokenize(istream sourceFile);
+            vector<Token> tokenize(istream *sourceFile);
         };
     }
 }
