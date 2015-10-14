@@ -2,10 +2,15 @@
 //
 
 #include "stdafx.h"
+#include "CommandLineParser.h"
 
-
-int main()
+int main(int argn, char **argv)
 {
-    return 0;
-}
+    string *args = new string[argn];
+    for (int q = 0; q < argn; q++)
+    {
+        args[q] = string(argv[q]);
+    }
 
+    return flc::parseCommandLineArguments(argn, args);
+}
