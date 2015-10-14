@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CommandLineParser.h"
 #include "Compiler.h"
+#include "Errors.h"
 
 namespace flc
 {
@@ -20,7 +21,12 @@ namespace flc
         {
             //We only have one command line argument
             auto *comp = new Compiler();
-            if (!comp->tryAddSourceFile(args[1])) return 20;
+            if (!comp->tryAddSourceFile(args[1]))
+            {
+                reportError("Could not find source file: " + args[1], "", -1, -1);
+                getchar();
+                return -1;
+            }
             if (!comp->tryCompile()) return 21;
         }
 
@@ -32,6 +38,6 @@ namespace flc
     {
         cout << "Usage: flc <filename>" << endl;
 
-        std::getchar();
+        getchar();
     }
 }
