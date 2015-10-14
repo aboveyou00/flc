@@ -17,7 +17,7 @@ namespace flc
 
         vector<Token> Tokenizer::tokenize(istream *sourceFile)
         {
-            reportError("Tokenizer.tokenizer not implemented");
+            reportError("Tokenizer.tokenizer not implemented", "", -1, -1);
             throw 20;
         }
     }
