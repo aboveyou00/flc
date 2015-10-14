@@ -17,3 +17,5 @@
 #include <vector>
 
 using namespace std;
+
+#include "Errors.h"

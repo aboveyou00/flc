@@ -25,6 +25,9 @@
     <Filter Include="Header Files\flc\tokens">
       <UniqueIdentifier>{a9ec14f9-4b3e-48a3-a224-fa0b377ffd81}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Copy To Output">
+      <UniqueIdentifier>{3ebe8308-5901-47e4-b4e2-75734696821d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -74,5 +77,10 @@
     <ClCompile Include="Errors.cpp">
       <Filter>Source Files\flc</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.fl">
+      <Filter>Copy To Output</Filter>
+    </None>
   </ItemGroup>
 </Project>

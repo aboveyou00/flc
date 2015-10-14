@@ -3,9 +3,10 @@
 
 namespace flc
 {
-    //void reportError(string message, string file = "", int lineNumber = -1, int characterPos = -1)
+    int errorNumber = 0;
     void reportError(string message, string file, int lineNumber, int characterPos)
     {
+        errorNumber++;
         if (!file.empty())
         {
             cerr << file;
@@ -14,5 +15,16 @@ namespace flc
             cerr << ": ";
         }
         cerr << message << endl;
+    }
+
+    bool wereErrorsReported()
+    {
+        return errorNumber > 0;
+    }
+
+    void reportNotImplemented(string message)
+    {
+        if (!message.empty()) reportError("Not implemented!");
+        else reportError("Not implemented! " + message);
     }
 }

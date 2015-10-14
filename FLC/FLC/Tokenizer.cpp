@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "Tokenizer.h"
-#include "Errors.h"
 
 namespace flc
 {
@@ -17,7 +16,7 @@ namespace flc
 
         vector<Token> Tokenizer::tokenize(istream *sourceFile)
         {
-            reportError("Tokenizer.tokenizer not implemented", "", -1, -1);
+            reportNotImplemented("Tokenizer::tokenize");
             throw 20;
         }
     }

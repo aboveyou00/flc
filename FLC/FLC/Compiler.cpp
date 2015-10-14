@@ -22,11 +22,13 @@ namespace flc
         auto tokenizer = new tokens::Tokenizer();
         vector<tokens::Token> toks = tokenizer->tokenize(&stream);
 
-
+        reportNotImplemented();
+        throw 20;
     }
 
     bool Compiler::tryCompile()
     {
+        reportNotImplemented();
         throw 20;
     }
 }
