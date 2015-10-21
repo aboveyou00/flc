@@ -1,5 +1,6 @@
 #pragma once
-#include "stdafx.h"
+#include <string>
+#include "Comment.h"
 
 namespace flc
 {
@@ -17,11 +18,15 @@ namespace flc
             int getLength();
             int getEndPosition();
 
+            void prependComment(Comment *cmt);
+            const vector<const Comment*>* getComments();
+
             virtual string toString();
 
         private:
             string _path;
             int _start, _length;
+            vector<const Comment*>* _comments;
         };
 
         std::ostream& operator<<(std::ostream& o, Token& tok);

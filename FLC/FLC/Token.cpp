@@ -13,6 +13,7 @@ namespace flc
         }
         Token::~Token()
         {
+            if (_comments != nullptr) delete _comments;
         }
 
         string Token::getSourceFile()
@@ -30,6 +31,21 @@ namespace flc
         int Token::getEndPosition()
         {
             return _start + _length;
+        }
+
+        void Token::prependComment(Comment *cmt)
+        {
+            if (_comments == nullptr) _comments = new vector<const Comment*>();
+            _comments->push_back(cmt);
+        }
+        const vector<const Comment*>* Token::getComments()
+        {
+            return _comments;
+        }
+
+        string Token::toString()
+        {
+            return "no impl for Subclass.toString";
         }
 
         std::ostream& operator<<(std::ostream& o, Token& tok)
