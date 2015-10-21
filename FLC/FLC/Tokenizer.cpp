@@ -1,6 +1,9 @@
+#include <sstream>
 #include "stdafx.h"
 #include "Tokenizer.h"
 #include "CharacterLiteralToken.h"
+#include "FloatLiteralToken.h"
+#include "IntegerLiteralToken.h"
 #include "ErrorToken.h"
 
 namespace flc
@@ -18,76 +21,91 @@ namespace flc
 
         vector<Token> Tokenizer::tokenize(istream *sourceFile, string path)
         {
+			vector<Token> *result = new vector<Token>();
 			int pos = 0;
-			char strBuffer[256];
-			bool reading = true;
-			while (reading) {
-				(*sourceFile).get(strBuffer,256);
-				Token next = parseNextToken(strBuffer, pos, path);
+			endOfFile = false;
+			while (!endOfFile) {
+				Token next = parseNextToken(sourceFile, &pos, path);
+				(*result).push_back(next);
+				pos += next.getLength();
 			}
+			return *result;
         }
 		
 		bool Tokenizer::isWhiteSpace(char c) {
 			return (c == ' ' || c == '\t' || c == '\n' || c == '\r');
 		}
-		char escapeSequenceToChar(char* sequence) {
+		char Tokenizer::escapeSequenceToChar(string sequence) {
 			// Not implemented
 			return sequence[0];
 		}
 
-		Token Tokenizer::parseNextToken(char *buffer, int startPos, string path) {
-			int index = 0;
-			for (; index < 256; index++) {
-				if (!isWhiteSpace(buffer[index])) {
-					break;
-				}
+		Token Tokenizer::parseNextToken(istream *source, int *index, string path) {
+			while (isWhiteSpace((*source).peek())) {
+				index++;(*source).get();
 			}
-			int length;
-			if (buffer[index] == '\'') {
-				char c;
-				if (parseCharacterToken(buffer, &length, &c)) {
-					return CharacterLiteralToken(path, startPos, length, c);
-				}
-			}
-
-
 			
-			return ErrorToken(path, startPos, length, "Invalid character literal");
-		}
-		bool Tokenizer::parseCharacterToken(char *buffer, int *length, char *c) {
-			if (buffer[1] == '\\') {
-				int index = 1;
-				char escapeSequence[256]; escapeSequence[0] = buffer[1];	// get at least one character
-				while (buffer[index] != '\'') {
-					escapeSequence[index] = buffer[index + 2];
-					index++;
-				}
-				char c = escapeSequenceToChar(escapeSequence);
-				*length = index + 3;
-				return true;
+			char nextChar = (*source).peek();
+			if (nextChar == '\'') {
+				return parseCharacterToken(source, index, path);
+			}
+			else if (nextChar >= '0' && nextChar <= '9') {
+				return parseNumericToken(source, index, path);
+			}
+			else if (nextChar >= 'a' && nextChar <= 'z' || nextChar >= 'A' && nextChar <= 'Z' || nextChar == '_') {
+				return parseIdentifierToken(source, index, path);
 			}
 			else {
-				if (buffer[2] != '\'') {
-					flc::reportError("Invalid char literal");
-					*length = 2;
-					return false;
+				return parseSymbolToken(source, index, path);
+			}
+		}
+		Token Tokenizer::parseCharacterToken(istream *source, int *index, string path) {
+			(*source).get();
+			char nextChar = (*source).peek();
+			if (nextChar == '\\') {
+				int length = 3;
+				stringstream escapeSequence;
+				escapeSequence << nextChar;		// get at least one character
+				while ((nextChar = (*source).get()) != '\'') {
+					escapeSequence << nextChar;
+					length++;
+				}
+				char c = escapeSequenceToChar(escapeSequence.str());
+				return CharacterLiteralToken(path, *index, length, c);
+			}
+			else {
+				char c = (*source).get();
+				if ((*source).get() != '\'') {
+					return ErrorToken(path, *index, 3, "Invalid char literal");
 				}
 				else {
-					*length = 3;
-					*c = buffer[1];
-					return true;
+					return CharacterLiteralToken(path, *index, 3, c);
 				}
 			}
 		}
-		bool Tokenizer::parseFloatLiteralToken(char *buffer, int* length) {}
+		Token Tokenizer::parseNumericToken(istream *source, int *index, string path) {
+			stringstream numberString;
+			int length = 0;
+			bool foundDecimal = false;
+			char nextChar;
+			while ( (nextChar = (*source).get()) && (nextChar >= '0' && nextChar <= '9' || (nextChar == '.' && !foundDecimal)) ) {
+				if (nextChar == '.')
+					foundDecimal = true;
+				numberString << nextChar;
+				length++;
+			}
+			if (foundDecimal) {
+				return FloatLiteralToken(path, *index, length, stof(numberString.str()));
+			}
+			else {
+				return IntegerLiteralToken(path, *index, length, stoi(numberString.str()));
+			}
+		}
 
-		bool Tokenizer::parseIntegerLiteralToken(char *buffer, int* length) {}
+		Token Tokenizer::parseStringToken(istream *source, int *index, string path) {}
 
-		bool Tokenizer::parseStringLiteralToken(char *buffer, int* length) {}
+		Token Tokenizer::parseIdentifierToken(istream *source, int *index, string path) {}
 
-		bool Tokenizer::parseSymbolLiteralToken(char *buffer, int* length) {}
-
-		bool Tokenizer::parseIdentifierToken(char *buffer, int* length) {}
-
+		Token Tokenizer::parseSymbolToken(istream *source, int *index, string path) {}
     }
 }
