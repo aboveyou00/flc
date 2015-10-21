@@ -22,8 +22,10 @@ namespace flc
     }
     bool Compiler::tryAddSource(istream *source, string path)
     {
-        auto tokenizer = new tokens::Tokenizer();
-        vector<tokens::Token> toks = tokenizer->tokenize(source);
+        tokens::Tokenizer tokenizer;
+        vector<tokens::Token> toks = tokenizer.tokenize(source);
+
+
 
         reportNotImplemented();
         throw 20;
