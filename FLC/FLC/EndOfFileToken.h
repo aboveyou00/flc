@@ -9,6 +9,9 @@ namespace flc
         {
         public:
             EndOfFileToken(string sourceFile, int pos);
+            ~EndOfFileToken();
+
+            virtual string toString();
         };
     }
 }

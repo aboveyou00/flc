@@ -9,8 +9,10 @@ namespace flc
         {
         public:
             BooleanLiteralToken(string sourceFile, int startPos, bool value);
+            ~BooleanLiteralToken();
 
             bool getValue();
+            
 
         private:
             bool _val;

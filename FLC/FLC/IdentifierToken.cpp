@@ -21,6 +21,11 @@ namespace flc
             return _val;
         }
 
+        string IdentifierToken::toString()
+        {
+            return _val;
+        }
+
         Token* IdentifierToken::getToken(string sourceFile, int startPos, int length, string value)
         {
             if (value == "true") return new BooleanLiteralToken(sourceFile, startPos, true);

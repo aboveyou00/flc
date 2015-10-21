@@ -19,5 +19,9 @@ namespace flc
             return _sym;
         }
 
+        string SymbolToken::toString()
+        {
+            return _sym;
+        }
     }
 }

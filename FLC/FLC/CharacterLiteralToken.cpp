@@ -1,11 +1,12 @@
 #include "stdafx.h"
 #include "CharacterLiteralToken.h"
+#include <sstream>
 
 namespace flc
 {
     namespace tokens
     {
-        CharacterLiteralToken::CharacterLiteralToken(string sourceFile, int startPos, int length, char value)
+        CharacterLiteralToken::CharacterLiteralToken(string sourceFile, int startPos, int length, char16_t value)
             : Token(sourceFile, startPos, length)
         {
             _val = value;
@@ -14,9 +15,16 @@ namespace flc
         {
         }
 
-        char CharacterLiteralToken::getValue()
+        char16_t CharacterLiteralToken::getValue()
         {
             return _val;
+        }
+
+        string CharacterLiteralToken::toString()
+        {
+            stringstream stream;
+            stream << _val;
+            return stream.str();
         }
     }
 }

@@ -18,5 +18,10 @@ namespace flc
         {
             return _val;
         }
+
+        string StringLiteralToken::toString()
+        {
+            return _val;
+        }
     }
 }

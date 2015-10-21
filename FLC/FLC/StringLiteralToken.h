@@ -9,8 +9,11 @@ namespace flc
         {
         public:
             StringLiteralToken(string sourceFile, int startPos, int length, string value);
+            ~StringLiteralToken();
 
             string getValue();
+
+            virtual string toString();
 
         private:
             string _val;

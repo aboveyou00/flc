@@ -9,8 +9,11 @@ namespace flc
         {
         public:
             SymbolToken(string sourceFile, int startPos, int length, string symbol);
+            ~SymbolToken();
 
             string getSymbol();
+
+            virtual string toString();
 
         private:
             string _sym;

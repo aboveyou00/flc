@@ -84,6 +84,15 @@
     <ClInclude Include="ErrorToken.h">
       <Filter>Header Files\flc\tokens</Filter>
     </ClInclude>
+    <ClInclude Include="Comment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SingleLineComment.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiLineComment.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -138,6 +147,15 @@
       <Filter>Source Files\flc\tokens</Filter>
     </ClCompile>
     <ClCompile Include="ErrorToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="Comment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SingleLineComment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiLineComment.cpp">
       <Filter>Source Files\flc\tokens</Filter>
     </ClCompile>
   </ItemGroup>

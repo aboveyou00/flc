@@ -18,5 +18,10 @@ namespace flc
         {
             return _err;
         }
+
+        string ErrorToken::toString()
+        {
+            return "ERROR: " + _err;
+        }
     }
 }

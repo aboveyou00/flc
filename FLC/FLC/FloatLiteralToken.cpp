@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "FloatLiteralToken.h"
+#include <sstream>
 
 namespace flc
 {
@@ -17,6 +18,13 @@ namespace flc
         float FloatLiteralToken::getValue()
         {
             return _val;
+        }
+
+        string FloatLiteralToken::toString()
+        {
+            stringstream stream;
+            stream << _val;
+            return stream.str();
         }
     }
 }

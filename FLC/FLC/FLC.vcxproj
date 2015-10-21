@@ -145,6 +145,7 @@
     <ClInclude Include="BooleanLiteralToken.h" />
     <ClInclude Include="CharacterLiteralToken.h" />
     <ClInclude Include="CommandLineParser.h" />
+    <ClInclude Include="Comment.h" />
     <ClInclude Include="Compiler.h" />
     <ClInclude Include="EndOfFileToken.h" />
     <ClInclude Include="Errors.h" />
@@ -153,7 +154,9 @@
     <ClInclude Include="IdentifierToken.h" />
     <ClInclude Include="IntegerLiteralToken.h" />
     <ClInclude Include="KeywordToken.h" />
+    <ClInclude Include="MultiLineComment.h" />
     <ClInclude Include="NullLiteralToken.h" />
+    <ClInclude Include="SingleLineComment.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StringLiteralToken.h" />
     <ClInclude Include="SymbolToken.h" />
@@ -165,6 +168,7 @@
     <ClCompile Include="BooleanLiteralToken.cpp" />
     <ClCompile Include="CharacterLiteralToken.cpp" />
     <ClCompile Include="CommandLineParser.cpp" />
+    <ClCompile Include="Comment.cpp" />
     <ClCompile Include="Compiler.cpp" />
     <ClCompile Include="EndOfFileToken.cpp" />
     <ClCompile Include="Errors.cpp" />
@@ -174,7 +178,9 @@
     <ClCompile Include="IdentifierToken.cpp" />
     <ClCompile Include="IntegerLiteralToken.cpp" />
     <ClCompile Include="KeywordToken.cpp" />
+    <ClCompile Include="MultiLineComment.cpp" />
     <ClCompile Include="NullLiteralToken.cpp" />
+    <ClCompile Include="SingleLineComment.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="StringLiteralToken.cpp" />
     <ClCompile Include="SymbolToken.cpp" />

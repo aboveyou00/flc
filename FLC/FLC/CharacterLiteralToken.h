@@ -1,4 +1,5 @@
 #pragma once
+#include <cstdint>
 #include "Token.h"
 
 namespace flc
@@ -8,12 +9,15 @@ namespace flc
         class CharacterLiteralToken : public Token
         {
         public:
-            CharacterLiteralToken(string sourceFile, int startPos, int length, char value);
+            CharacterLiteralToken(string sourceFile, int startPos, int length, char16_t value);
+            ~CharacterLiteralToken();
 
-            char getValue();
+            char16_t getValue();
+
+            virtual string toString();
 
         private:
-            char _val;
+            char16_t _val;
         };
     }
 }

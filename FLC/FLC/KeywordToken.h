@@ -9,8 +9,11 @@ namespace flc
         {
         public:
             KeywordToken(string sourceFile, int startPos, string value);
+            ~KeywordToken();
 
             string getValue();
+
+            virtual string toString();
 
         private:
             string _val;

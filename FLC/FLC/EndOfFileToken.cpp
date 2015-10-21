@@ -12,5 +12,10 @@ namespace flc
         EndOfFileToken::~EndOfFileToken()
         {
         }
+
+        string EndOfFileToken::toString()
+        {
+            return "EOF";
+        }
     }
 }

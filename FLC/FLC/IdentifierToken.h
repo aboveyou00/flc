@@ -9,8 +9,11 @@ namespace flc
         {
         public:
             IdentifierToken(string sourceFile, int startPos, int length, string value);
+            ~IdentifierToken();
 
             string getValue();
+
+            virtual string toString();
 
             static Token* getToken(string sourceFile, int startPos, int length, string value);
 

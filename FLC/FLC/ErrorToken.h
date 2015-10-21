@@ -9,8 +9,11 @@ namespace flc
         {
         public:
             ErrorToken(string sourceFile, int startPos, int length, string error);
+            ~ErrorToken();
 
             string getError();
+
+            virtual string toString();
 
         private:
             string _err;
