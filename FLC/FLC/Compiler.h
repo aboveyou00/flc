@@ -9,6 +9,8 @@ namespace flc
         Compiler();
         ~Compiler();
 
+        bool tryAddSource(string source, string path = "Unknown Code Source");
+        bool tryAddSource(istream *source, string path = "Unknown Code Source");
         bool tryAddSourceFile(string path);
 
         bool tryCompile();
