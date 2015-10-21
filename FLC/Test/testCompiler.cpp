@@ -18,5 +18,13 @@ namespace Test
             Assert::IsTrue(compiler->tryCompile());
         }
 
+        TEST_METHOD(Test_compileFromString)
+        {
+            auto compiler = new flc::Compiler();
+
+            Assert::IsTrue(compiler->tryAddSource("60*60*24*365 \"Seconds in a year.\""));
+            Assert::IsTrue(compiler->tryCompile());
+        }
+
     };
 }

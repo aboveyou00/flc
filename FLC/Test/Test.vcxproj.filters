@@ -16,6 +16,9 @@
     <Filter Include="Source Files\flc">
       <UniqueIdentifier>{2e89c3b9-1290-4346-a03a-d27e5d7d3eef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\flc\tokens">
+      <UniqueIdentifier>{05a720c1-85c8-4af9-a4d6-451c5ba619a3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -34,6 +37,12 @@
     </ClCompile>
     <ClCompile Include="testCompiler.cpp">
       <Filter>Source Files\flc</Filter>
+    </ClCompile>
+    <ClCompile Include="testCommandLineParser.cpp">
+      <Filter>Source Files\flc</Filter>
+    </ClCompile>
+    <ClCompile Include="testTokenizer.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
