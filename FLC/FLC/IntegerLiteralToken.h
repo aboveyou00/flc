@@ -5,7 +5,7 @@ namespace flc
 {
     namespace tokens
     {
-        class IntegerLiteralToken : Token
+        class IntegerLiteralToken : public Token
         {
         public:
             IntegerLiteralToken(string sourceFile, int startPos, int length, int value);
@@ -13,7 +13,7 @@ namespace flc
             int getValue();
 
         private:
-            int val;
+            int _val;
         };
     }
 }

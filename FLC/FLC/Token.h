@@ -16,10 +16,14 @@ namespace flc
             int getStartPosition();
             int getLength();
             int getEndPosition();
-            
+
+            virtual string toString();
+
         private:
             string _path;
             int _start, _length;
         };
+
+        std::ostream& operator<<(std::ostream& o, Token& tok);
     }
 }

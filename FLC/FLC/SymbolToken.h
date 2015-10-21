@@ -5,7 +5,7 @@ namespace flc
 {
     namespace tokens
     {
-        class SymbolToken : Token
+        class SymbolToken : public Token
         {
         public:
             SymbolToken(string sourceFile, int startPos, int length, string symbol);
@@ -13,7 +13,7 @@ namespace flc
             string getSymbol();
 
         private:
-            float sym;
+            string _sym;
         };
     }
 }

@@ -5,7 +5,7 @@ namespace flc
 {
     namespace tokens
     {
-        class FloatLiteralToken : Token
+        class FloatLiteralToken : public Token
         {
         public:
             FloatLiteralToken(string sourceFile, int startPos, int length, float value);
@@ -13,7 +13,7 @@ namespace flc
             float getValue();
 
         private:
-            float val;
+            float _val;
         };
     }
 }

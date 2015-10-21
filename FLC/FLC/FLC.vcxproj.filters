@@ -66,6 +66,24 @@
     <ClInclude Include="CharacterLiteralToken.h">
       <Filter>Header Files\flc\tokens</Filter>
     </ClInclude>
+    <ClInclude Include="EndOfFileToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="IdentifierToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="KeywordToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="BooleanLiteralToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="NullLiteralToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="ErrorToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -88,6 +106,39 @@
     </ClCompile>
     <ClCompile Include="Errors.cpp">
       <Filter>Source Files\flc</Filter>
+    </ClCompile>
+    <ClCompile Include="IntegerLiteralToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="FloatLiteralToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="SymbolToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="StringLiteralToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterLiteralToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="EndOfFileToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="IdentifierToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="KeywordToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="NullLiteralToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="BooleanLiteralToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="ErrorToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

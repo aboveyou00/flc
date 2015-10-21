@@ -5,10 +5,10 @@ namespace flc
 {
     namespace tokens
     {
-        class StringLiteralToken : public Token
+        class KeywordToken : public Token
         {
         public:
-            StringLiteralToken(string sourceFile, int startPos, int length, string value);
+            KeywordToken(string sourceFile, int startPos, string value);
 
             string getValue();
 

@@ -142,12 +142,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BooleanLiteralToken.h" />
     <ClInclude Include="CharacterLiteralToken.h" />
     <ClInclude Include="CommandLineParser.h" />
     <ClInclude Include="Compiler.h" />
+    <ClInclude Include="EndOfFileToken.h" />
     <ClInclude Include="Errors.h" />
+    <ClInclude Include="ErrorToken.h" />
     <ClInclude Include="FloatLiteralToken.h" />
+    <ClInclude Include="IdentifierToken.h" />
     <ClInclude Include="IntegerLiteralToken.h" />
+    <ClInclude Include="KeywordToken.h" />
+    <ClInclude Include="NullLiteralToken.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StringLiteralToken.h" />
     <ClInclude Include="SymbolToken.h" />
@@ -156,11 +162,22 @@
     <ClInclude Include="Tokenizer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BooleanLiteralToken.cpp" />
+    <ClCompile Include="CharacterLiteralToken.cpp" />
     <ClCompile Include="CommandLineParser.cpp" />
     <ClCompile Include="Compiler.cpp" />
+    <ClCompile Include="EndOfFileToken.cpp" />
     <ClCompile Include="Errors.cpp" />
+    <ClCompile Include="ErrorToken.cpp" />
     <ClCompile Include="FLC.cpp" />
+    <ClCompile Include="FloatLiteralToken.cpp" />
+    <ClCompile Include="IdentifierToken.cpp" />
+    <ClCompile Include="IntegerLiteralToken.cpp" />
+    <ClCompile Include="KeywordToken.cpp" />
+    <ClCompile Include="NullLiteralToken.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="StringLiteralToken.cpp" />
+    <ClCompile Include="SymbolToken.cpp" />
     <ClCompile Include="Token.cpp" />
     <ClCompile Include="Tokenizer.cpp" />
   </ItemGroup>
