@@ -5,7 +5,7 @@ namespace flc
 {
     namespace tokens
     {
-        Token::Token()
+        Token::Token(string sourceFile, int startPos, int length)
         {
         }
         Token::~Token()

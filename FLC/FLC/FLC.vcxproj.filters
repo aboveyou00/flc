@@ -51,6 +51,21 @@
     <ClInclude Include="Errors.h">
       <Filter>Header Files\flc</Filter>
     </ClInclude>
+    <ClInclude Include="IntegerLiteralToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="FloatLiteralToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="StringLiteralToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterLiteralToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

@@ -142,10 +142,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CharacterLiteralToken.h" />
     <ClInclude Include="CommandLineParser.h" />
     <ClInclude Include="Compiler.h" />
     <ClInclude Include="Errors.h" />
+    <ClInclude Include="FloatLiteralToken.h" />
+    <ClInclude Include="IntegerLiteralToken.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StringLiteralToken.h" />
+    <ClInclude Include="SymbolToken.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="Tokenizer.h" />
