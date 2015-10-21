@@ -149,13 +149,13 @@
     <ClCompile Include="ErrorToken.cpp">
       <Filter>Source Files\flc\tokens</Filter>
     </ClCompile>
-    <ClCompile Include="Comment.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="MultiLineComment.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
     </ClCompile>
     <ClCompile Include="SingleLineComment.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\flc\tokens</Filter>
     </ClCompile>
-    <ClCompile Include="MultiLineComment.cpp">
+    <ClCompile Include="Comment.cpp">
       <Filter>Source Files\flc\tokens</Filter>
     </ClCompile>
   </ItemGroup>
