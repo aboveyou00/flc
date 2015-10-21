@@ -15,14 +15,16 @@ namespace flc
 			vector<Token> tokenize(istream * sourceFile, string path="");
 		
 		private:
-			Token parseNextToken(char *buffer, int startPos, string path);
-			bool parseCharacterToken(char *buffer, int *length, char *c);
-			bool parseFloatLiteralToken(char *buffer, int *length);
-			bool parseIntegerLiteralToken(char * buffer, int * length);
-			bool parseStringLiteralToken(char * buffer, int * length);
-			bool parseSymbolLiteralToken(char * buffer, int * length);
-			bool parseIdentifierToken(char * buffer, int * length);
+			bool endOfFile;
+			Token parseNextToken(istream *source, int *index, string path);
+			Token parseCharacterToken(istream *source, int *index, string path);
+			Token parseNumericToken(istream *source, int *index, string path);
+			Token parseStringToken(istream *source, int *index, string path);
+			Token parseSymbolToken(istream *source, int *index, string path);
+			Token parseIdentifierToken(istream *source, int *index, string path);
+			
 			bool isWhiteSpace(char c);
+			char escapeSequenceToChar(string sequence);
 
         };
     }
