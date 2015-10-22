@@ -25,14 +25,13 @@ namespace flc
 		{
 			vector<Token*> *result = new vector<Token*>();
 			int pos = 0;
-			while (!sourceFile->eof()) {
+            while (true)
+            {
 				Token *next = parseNextToken(sourceFile, &pos, path);
 				result->push_back(next);
 				pos += next->getLength();
-				if (sourceFile->eof())
-					result->push_back(new EndOfFileToken(path, pos));
+                if (sourceFile->eof()) return *result;
 			}
-			return *result;
 		}
 		
 		bool Tokenizer::isWhiteSpace(char c) {
@@ -125,7 +124,8 @@ namespace flc
 
 		Token* Tokenizer::parseNextToken(istream *source, int *index, string path) {
 			while (isWhiteSpace(source->peek())) {
-				index++;source->get();
+				index++;
+                source->ignore();
 			}
 			if (source->eof()) {
 				return new EndOfFileToken(path, *index);

@@ -27,7 +27,7 @@ namespace flc
 
         for (auto tok : toks)
         {
-            cout << &tok << endl;
+            cout << tok->toString() << endl;
         }
 
         reportNotImplemented();
