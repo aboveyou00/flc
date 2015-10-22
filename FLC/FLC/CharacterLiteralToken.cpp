@@ -23,7 +23,7 @@ namespace flc
         string CharacterLiteralToken::toString()
         {
             stringstream stream;
-            stream << _val;
+            stream << "'" << (char)_val << "'";
             return stream.str();
         }
     }

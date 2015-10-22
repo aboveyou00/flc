@@ -21,7 +21,7 @@ namespace flc
 
         string StringLiteralToken::toString()
         {
-            return _val;
+            return "\"" + _val + "\"";
         }
     }
 }
