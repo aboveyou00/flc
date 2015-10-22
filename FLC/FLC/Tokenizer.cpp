@@ -52,7 +52,6 @@ namespace flc
 
 		char Tokenizer::escapeSequenceToChar(istream *source, int *length) {
 			char result;
-			source->ignore();
 			char nextChar = source->get();
 			if (source->eof()) {
 				return EOF;
