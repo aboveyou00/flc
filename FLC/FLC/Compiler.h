@@ -1,8 +1,11 @@
 #pragma once
-#include "stdafx.h"
+#include <string>
+#include <istream>
 
 namespace flc
 {
+    using namespace std;
+
     class Compiler
     {
     public:

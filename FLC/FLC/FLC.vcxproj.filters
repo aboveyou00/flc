@@ -84,13 +84,13 @@
     <ClInclude Include="ErrorToken.h">
       <Filter>Header Files\flc\tokens</Filter>
     </ClInclude>
+    <ClInclude Include="MultiLineComment.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
     <ClInclude Include="Comment.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\flc\tokens</Filter>
     </ClInclude>
     <ClInclude Include="SingleLineComment.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MultiLineComment.h">
       <Filter>Header Files\flc\tokens</Filter>
     </ClInclude>
   </ItemGroup>

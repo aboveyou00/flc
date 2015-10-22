@@ -1,5 +1,6 @@
 #pragma once
-#include "stdafx.h"
+#include <string>
+#include <istream>
 #include "Token.h"
 
 namespace flc

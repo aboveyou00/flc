@@ -5,6 +5,8 @@ namespace flc
 {
     namespace tokens
     {
+        using namespace std;
+
         class Comment
         {
         public:

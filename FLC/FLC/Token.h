@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <vector>
+#include <ostream>
 #include "Comment.h"
 
 namespace flc
