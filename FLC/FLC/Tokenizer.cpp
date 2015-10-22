@@ -21,16 +21,16 @@ namespace flc
 		{
 		}
 
-		vector<Token> Tokenizer::tokenize(istream *sourceFile, string path)
+		vector<Token*> Tokenizer::tokenize(istream *sourceFile, string path)
 		{
-			vector<Token> *result = new vector<Token>();
+			vector<Token*> *result = new vector<Token*>();
 			int pos = 0;
 			while (!sourceFile->eof()) {
-				Token next = parseNextToken(sourceFile, &pos, path);
+				Token *next = parseNextToken(sourceFile, &pos, path);
 				result->push_back(next);
-				pos += next.getLength();
+				pos += next->getLength();
 				if (sourceFile->eof())
-					result->push_back(EndOfFileToken(path, pos));
+					result->push_back(new EndOfFileToken(path, pos));
 			}
 			return *result;
 		}
@@ -123,12 +123,12 @@ namespace flc
 			return result;
 		}
 
-		Token Tokenizer::parseNextToken(istream *source, int *index, string path) {
+		Token* Tokenizer::parseNextToken(istream *source, int *index, string path) {
 			while (isWhiteSpace(source->peek())) {
 				index++;source->get();
 			}
 			if (source->eof()) {
-				return EndOfFileToken(path, *index);
+				return new EndOfFileToken(path, *index);
 			}
 
 			char nextChar = source->peek();
@@ -148,10 +148,11 @@ namespace flc
 				return parseSymbolToken(source, index, path);
 			}
 		}
-		Token Tokenizer::parseCharacterToken(istream *source, int *index, string path) {
+
+		Token* Tokenizer::parseCharacterToken(istream *source, int *index, string path) {
 			source->ignore();
 			if (source->eof())
-				return ErrorToken(path, *index, 1, "EOF while parsing char literal");
+				return new ErrorToken(path, *index, 1, "EOF while parsing char literal");
 
 			char nextChar = source->get();
 			int length = 2; char c;
@@ -163,17 +164,17 @@ namespace flc
 			}
 
 			if (source->eof()) {
-				return ErrorToken(path, *index, length, "EOF while parsing char literal");
+				return new ErrorToken(path, *index, length, "EOF while parsing char literal");
 			}
 			else if (source->peek() != '\'') {
-				return ErrorToken(path, *index, length, "Invalid char literal");
+				return new ErrorToken(path, *index, length, "Invalid char literal");
 			}
 			else {
 				source->ignore();
-				return CharacterLiteralToken(path, *index, length+1, c);
+				return new CharacterLiteralToken(path, *index, length+1, c);
 			}
 		}
-		Token Tokenizer::parseNumericToken(istream *source, int *index, string path) {
+		Token* Tokenizer::parseNumericToken(istream *source, int *index, string path) {
 			stringstream numberString;
 			int length = 0;
 			bool foundDecimal = false;
@@ -185,14 +186,13 @@ namespace flc
 				length++;
 			}
 			if (foundDecimal) {
-				return FloatLiteralToken(path, *index, length, stof(numberString.str()));
+				return new FloatLiteralToken(path, *index, length, stof(numberString.str()));
 			}
 			else {
-				return IntegerLiteralToken(path, *index, length, stoi(numberString.str()));
+				return new IntegerLiteralToken(path, *index, length, stoi(numberString.str()));
 			}
 		}
-
-		Token Tokenizer::parseStringToken(istream *source, int *index, string path) {
+		Token* Tokenizer::parseStringToken(istream *source, int *index, string path) {
 			source->ignore();
 			stringstream result;
 			int length = 1;
@@ -213,14 +213,13 @@ namespace flc
 				result << c;
 			}
 			if (source->eof()) {
-				return ErrorToken(path, *index, length, "EOF while parsing string literal");
+				return new ErrorToken(path, *index, length, "EOF while parsing string literal");
 			}
 			else {
-				return StringLiteralToken(path, *index, length, result.str());
+				return new StringLiteralToken(path, *index, length, result.str());
 			}
 		}
-
-		Token Tokenizer::parseIdentifierToken(istream *source, int *index, string path) {
+		Token* Tokenizer::parseIdentifierToken(istream *source, int *index, string path) {
 			stringstream identString;
 			int length = 0;
 			char nextChar;
@@ -228,11 +227,10 @@ namespace flc
 				identString << nextChar;
 				length++;
 			}
-			return IdentifierToken(path, *index, length, identString.str());
+			return new IdentifierToken(path, *index, length, identString.str());
 		}
-
-		// Very basic symbols only until syntax is better defined
-		Token Tokenizer::parseSymbolToken(istream *source, int *index, string path) {
+		Token* Tokenizer::parseSymbolToken(istream *source, int *index, string path) {
+            // Very basic symbols only until syntax is better defined
 			char nextChar = source->get();
 			if (nextChar == '+' ||
 				nextChar == '-' ||
@@ -242,10 +240,10 @@ namespace flc
 				nextChar == '(' ||
 				nextChar == ')') {
 				
-				return SymbolToken(path, *index, 1, string(1,nextChar));
+				return new SymbolToken(path, *index, 1, string(1,nextChar));
 			}
 			else {
-				return ErrorToken(path, *index, 1, "Unknown symbol");
+				return new ErrorToken(path, *index, 1, "Unknown symbol");
 			}
 		}
     }

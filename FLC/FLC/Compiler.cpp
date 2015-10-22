@@ -23,9 +23,12 @@ namespace flc
     bool Compiler::tryAddSource(istream *source, string path)
     {
         tokens::Tokenizer tokenizer;
-        vector<tokens::Token> toks = tokenizer.tokenize(source);
+        vector<tokens::Token*> toks = tokenizer.tokenize(source);
 
-
+        for (auto tok : toks)
+        {
+            cout << &tok << endl;
+        }
 
         reportNotImplemented();
         throw 20;
@@ -35,12 +38,6 @@ namespace flc
         ifstream stream(path); //ifstream::in
         if (!stream.is_open()) return false;
         return Compiler::tryAddSource((istream*)&stream);
-
-        auto tokenizer = new tokens::Tokenizer();
-        vector<tokens::Token> toks = tokenizer->tokenize(&stream);
-
-        reportNotImplemented();
-        throw 20;
     }
 
     bool Compiler::tryCompile()
