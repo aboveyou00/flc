@@ -21,7 +21,7 @@ namespace flc
 		{
 		}
 
-		vector<Token*> Tokenizer::tokenize(istream *sourceFile, string path)
+		vector<Token*>* Tokenizer::tokenize(istream *sourceFile, string path)
 		{
 			vector<Token*> *result = new vector<Token*>();
 			int pos = 0;
@@ -30,7 +30,7 @@ namespace flc
 				Token *next = parseNextToken(sourceFile, &pos, path);
 				result->push_back(next);
 				pos += next->getLength();
-                if (sourceFile->eof()) return *result;
+                if (sourceFile->eof()) return result;
 			}
 		}
 		

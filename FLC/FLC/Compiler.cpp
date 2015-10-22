@@ -23,7 +23,7 @@ namespace flc
     bool Compiler::tryAddSource(istream *source, string path)
     {
         tokens::Tokenizer tokenizer;
-        vector<tokens::Token*> toks = tokenizer.tokenize(source);
+        vector<tokens::Token*> toks = *tokenizer.tokenize(source);
 
         for (auto tok : toks)
         {

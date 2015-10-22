@@ -13,7 +13,7 @@ namespace flc
             Tokenizer();
             ~Tokenizer();
 
-			vector<Token*> tokenize(istream *sourceFile, string path="");
+			vector<Token*>* tokenize(istream *sourceFile, string path="");
 		    
 		private:
 			Token* parseNextToken(istream *source, int *index, string path);
