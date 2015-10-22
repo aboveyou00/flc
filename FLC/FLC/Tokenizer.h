@@ -22,8 +22,13 @@ namespace flc
 			Token parseSymbolToken(istream *source, int *index, string path);
 			Token parseIdentifierToken(istream *source, int *index, string path);
 			
+			bool isOctal(char c);
+			bool isDecimal(char c);
+			bool isHexadecimal(char c);
+			bool isAlphanumeric(char c);
 			bool isWhiteSpace(char c);
-			char escapeSequenceToChar(string sequence);
+
+			char escapeSequenceToChar(istream *source, int *length);
 
         };
     }
