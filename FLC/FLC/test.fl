@@ -1,6 +1,9 @@
 
 
-"Hello, World!"
+"Hello,\r\n World!"
+
+'a'
+'\t'
 
 1 + 2 + 3
 
