@@ -12,6 +12,7 @@ namespace Test
 		
 		TEST_METHOD(Test_wereErrorsReported)
 		{
+            flc::clearReportedErrors();
             Assert::IsFalse(flc::wereErrorsReported());
             flc::reportError("Error message");
             Assert::IsTrue(flc::wereErrorsReported());
