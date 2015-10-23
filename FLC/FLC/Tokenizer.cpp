@@ -59,10 +59,10 @@ namespace flc
 
 			stringstream subNum;
 			switch (nextChar) {
-			case 'a':
-				result = '\x07';
-				(*length)++;
-				break;
+            case 'a':
+                result = '\x07';
+                (*length)++;
+                break;
 			case 'b':
 				result = '\x08';
 				(*length)++;
@@ -88,24 +88,30 @@ namespace flc
 				(*length)++;
 				break;
 			case '0': case '1': case '2': case '3': case '4': case '5': case '6': case '7':
-				subNum << nextChar;
-				for (int i = 0; i < 2; i++) {
-					if (!isOctal(source->peek())) {
-						break;
-					}
-					subNum << source->get();
-					(*length)++;
-				}
-				result = (char)stoi(subNum.str());
-				break;
+                subNum << nextChar;
+                for (int i = 0; i < 5; i++) {
+                    if (!isOctal(source->peek())) {
+                        break;
+                    }
+                    subNum << (char)source->get();
+                    (*length)++;
+                }
+                //TODO: return error token if invalid character value
+                result = (char)stoi(subNum.str(), nullptr, 8);
+                break;
 			case 'x':
-				for (int i = 0; i < 2; i++) {
+                int q;
+				for (q = 0; q < 4; q++) {
 					if (!isHexadecimal(source->peek())) {
 						break;
 					}
-					subNum << source->get();
+					subNum << (char)source->get();
 					(*length)++;
 				}
+                if (q == 0)
+                {
+                    //TODO: return error token
+                }
 				result = (char)stoi(subNum.str(), nullptr, 16);
 				break;
 			case 'u':
@@ -232,7 +238,7 @@ namespace flc
 				identString << nextChar;
 				length++;
 			}
-			return new IdentifierToken(path, *index, length, identString.str());
+			return IdentifierToken::getToken(path, *index, length, identString.str());
 		}
 		Token* Tokenizer::parseSymbolToken(istream *source, int *index, string path) {
             // Very basic symbols only until syntax is better defined
