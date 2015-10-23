@@ -3,7 +3,7 @@
 
 namespace flc
 {
-    int parseCommandLineArguments(int argn, string strings[]);
+    int parseCommandLineArguments(int argn, std::string strings[]);
 
     void showHelpMessage();
 }
