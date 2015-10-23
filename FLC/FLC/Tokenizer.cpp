@@ -158,6 +158,9 @@ namespace flc
 			if (nextChar == '\\') {
 				c = escapeSequenceToChar(source, &length);
 			}
+            else if (nextChar == '\r' || nextChar == '\n') {
+                return new ErrorToken(path, *index, length, "Line cannot end in character literal");
+            }
 			else {
 				c = nextChar;
 			}
@@ -205,6 +208,9 @@ namespace flc
 				else if (nextChar == '\\') {
 					c = escapeSequenceToChar(source, &length);
 				}
+                else if (nextChar == '\r' || nextChar == '\n') {
+                    return new ErrorToken(path, *index, length, "Line cannot end in string literal");
+                }
 				else {
 					c = nextChar;
 					length++;
