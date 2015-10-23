@@ -17,6 +17,10 @@ namespace flc
         cerr << message << endl;
     }
 
+    void clearReportedErrors()
+    {
+        errorNumber = 0;
+    }
     bool wereErrorsReported()
     {
         return errorNumber > 0;
