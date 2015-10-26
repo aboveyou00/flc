@@ -142,6 +142,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AdditiveExpressionSyntax.h" />
+    <ClInclude Include="AdditiveExpressionSyntaxFactory.h" />
     <ClInclude Include="BooleanLiteralToken.h" />
     <ClInclude Include="CharacterLiteralToken.h" />
     <ClInclude Include="CommandLineParser.h" />
@@ -150,21 +152,32 @@
     <ClInclude Include="EndOfFileToken.h" />
     <ClInclude Include="Errors.h" />
     <ClInclude Include="ErrorToken.h" />
+    <ClInclude Include="ExpressionSyntax.h" />
+    <ClInclude Include="ExpressionSyntaxFactory.h" />
     <ClInclude Include="FloatLiteralToken.h" />
     <ClInclude Include="IdentifierToken.h" />
     <ClInclude Include="IntegerLiteralToken.h" />
     <ClInclude Include="KeywordToken.h" />
     <ClInclude Include="MultiLineComment.h" />
+    <ClInclude Include="MultiplicativeExpressionSyntax.h" />
+    <ClInclude Include="MultiplicativeExpressionSyntaxFactory.h" />
     <ClInclude Include="NullLiteralToken.h" />
     <ClInclude Include="SingleLineComment.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StringLiteralToken.h" />
     <ClInclude Include="SymbolToken.h" />
+    <ClInclude Include="Syntax.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TermSyntax.h" />
+    <ClInclude Include="TermSyntaxFactory.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="Tokenizer.h" />
+    <ClInclude Include="UnaryExpressionSyntax.h" />
+    <ClInclude Include="UnaryExpressionSyntaxFactory.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AdditiveExpressionSyntax.cpp" />
+    <ClCompile Include="AdditiveExpressionSyntaxFactory.cpp" />
     <ClCompile Include="BooleanLiteralToken.cpp" />
     <ClCompile Include="CharacterLiteralToken.cpp" />
     <ClCompile Include="CommandLineParser.cpp" />
@@ -173,19 +186,28 @@
     <ClCompile Include="EndOfFileToken.cpp" />
     <ClCompile Include="Errors.cpp" />
     <ClCompile Include="ErrorToken.cpp" />
+    <ClCompile Include="ExpressionSyntax.cpp" />
     <ClCompile Include="FLC.cpp" />
     <ClCompile Include="FloatLiteralToken.cpp" />
     <ClCompile Include="IdentifierToken.cpp" />
     <ClCompile Include="IntegerLiteralToken.cpp" />
     <ClCompile Include="KeywordToken.cpp" />
     <ClCompile Include="MultiLineComment.cpp" />
+    <ClCompile Include="MultiplicativeExpressionSyntax.cpp" />
+    <ClCompile Include="MultiplicativeExpressionSyntaxFactory.cpp" />
     <ClCompile Include="NullLiteralToken.cpp" />
     <ClCompile Include="SingleLineComment.cpp" />
+    <ClCompile Include="ExpressionSyntaxFactory.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="StringLiteralToken.cpp" />
     <ClCompile Include="SymbolToken.cpp" />
+    <ClCompile Include="Syntax.cpp" />
+    <ClCompile Include="TermSyntax.cpp" />
+    <ClCompile Include="TermSyntaxFactory.cpp" />
     <ClCompile Include="Token.cpp" />
     <ClCompile Include="Tokenizer.cpp" />
+    <ClCompile Include="UnaryExpressionSyntax.cpp" />
+    <ClCompile Include="UnaryExpressionSyntaxFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="test.fl" />

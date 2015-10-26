@@ -28,6 +28,18 @@
     <Filter Include="Copy To Output">
       <UniqueIdentifier>{3ebe8308-5901-47e4-b4e2-75734696821d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\flc\syntax">
+      <UniqueIdentifier>{df11b0f9-b8a8-458f-9510-0a78a4a57c78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\syntax">
+      <UniqueIdentifier>{5188ef81-35fd-413e-b195-9f02a5ef5156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\factory">
+      <UniqueIdentifier>{ed952475-9249-4873-b648-6a8f6f59098a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\syntax\factory">
+      <UniqueIdentifier>{aa5e4e23-dfdd-4436-ae87-4a4064191bb7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -93,6 +105,39 @@
     <ClInclude Include="SingleLineComment.h">
       <Filter>Header Files\flc\tokens</Filter>
     </ClInclude>
+    <ClInclude Include="Syntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiplicativeExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="AdditiveExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="UnaryExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="TermSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\syntax\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="AdditiveExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\syntax\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiplicativeExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\syntax\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="UnaryExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\syntax\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="TermSyntaxFactory.h">
+      <Filter>Header Files\flc\syntax\factory</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -157,6 +202,39 @@
     </ClCompile>
     <ClCompile Include="Comment.cpp">
       <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="Syntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="ExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="AdditiveExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiplicativeExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="UnaryExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="TermSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="ExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="AdditiveExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiplicativeExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="UnaryExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="TermSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

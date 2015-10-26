@@ -28,7 +28,7 @@ namespace flc
 
     void reportNotImplemented(string message)
     {
-        if (!message.empty()) reportError("Not implemented!");
+        if (message.empty()) reportError("Not implemented!");
         else reportError("Not implemented! " + message);
     }
 }

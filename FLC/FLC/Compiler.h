@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <istream>
+#include <vector>
+#include "Token.h"
 
 namespace flc
 {
@@ -17,5 +19,9 @@ namespace flc
         bool tryAddSourceFile(string path);
 
         bool tryCompile();
+
+    private:
+        vector<vector<tokens::Token*>*> sourceFiles;
+        bool assertValidTokens();
     };
 }

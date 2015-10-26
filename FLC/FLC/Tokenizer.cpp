@@ -34,25 +34,25 @@ namespace flc
 			}
 		}
 		
-		bool Tokenizer::isWhiteSpace(char c) {
+		bool Tokenizer::isWhiteSpace(char16_t c) {
 			return (c == ' ' || c == '\t' || c == '\n' || c == '\r');
 		}
-		bool Tokenizer::isOctal(char c) {
+		bool Tokenizer::isOctal(char16_t c) {
 			return (c >= '0' && c <= '7');
 		}
-		bool Tokenizer::isDecimal(char c) {
+		bool Tokenizer::isDecimal(char16_t c) {
 			return (c >= '0' && c <= '9');
 		}
-		bool Tokenizer::isHexadecimal(char c) {
+		bool Tokenizer::isHexadecimal(char16_t c) {
 			return (c >= '0' && c <= '9' || c >= 'A' && c <= 'F' || c >= 'a' && c <= 'f');
 		}
-		bool Tokenizer::isAlphanumeric(char c) {
+		bool Tokenizer::isAlphanumeric(char16_t c) {
 			return (c >= '0' && c <= '9' || c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z' || c == '_');
 		}
 
-		char Tokenizer::escapeSequenceToChar(istream *source, int *length) {
-			char result;
-			char nextChar = source->get();
+        char16_t Tokenizer::escapeSequenceToChar(istream *source, int *length) {
+            char16_t result;
+            char16_t nextChar = source->get();
 			if (source->eof()) {
 				return EOF;
 			}
@@ -97,7 +97,7 @@ namespace flc
                     (*length)++;
                 }
                 //TODO: return error token if invalid character value
-                result = (char)stoi(subNum.str(), nullptr, 8);
+                result = (char16_t)stoi(subNum.str(), nullptr, 8);
                 break;
 			case 'x':
                 int q;
@@ -105,14 +105,14 @@ namespace flc
 					if (!isHexadecimal(source->peek())) {
 						break;
 					}
-					subNum << (char)source->get();
+					subNum << (char16_t)source->get();
 					(*length)++;
 				}
                 if (q == 0)
                 {
                     //TODO: return error token
                 }
-				result = (char)stoi(subNum.str(), nullptr, 16);
+				result = (char16_t)stoi(subNum.str(), nullptr, 16);
 				break;
 			case 'u':
 			case 'U':
@@ -136,7 +136,7 @@ namespace flc
 				return new EndOfFileToken(path, *index);
 			}
 
-			char nextChar = source->peek();
+            char16_t nextChar = source->peek();
 			if (nextChar == '\'') {
 				return parseCharacterToken(source, index, path);
 			}
@@ -159,8 +159,9 @@ namespace flc
 			if (source->eof())
 				return new ErrorToken(path, *index, 1, "EOF while parsing char literal");
 
-			char nextChar = source->get();
-			int length = 2; char c;
+            char16_t nextChar = source->get();
+			int length = 2;
+            char16_t c;
 			if (nextChar == '\\') {
 				c = escapeSequenceToChar(source, &length);
 			}
@@ -186,11 +187,11 @@ namespace flc
 			stringstream numberString;
 			int length = 0;
 			bool foundDecimal = false;
-			char nextChar;
+            char16_t nextChar;
 			while ( !source->eof() && (nextChar = source->get()) && (isDecimal(nextChar) || (nextChar == '.' && !foundDecimal)) ) {
 				if (nextChar == '.')
 					foundDecimal = true;
-				numberString << nextChar;
+				numberString << (char)nextChar;
 				length++;
 			}
 			if (foundDecimal) {
@@ -204,7 +205,7 @@ namespace flc
 			source->ignore();
 			stringstream result;
 			int length = 1;
-			char nextChar, c;
+            char16_t nextChar, c;
 			while (!source->eof()) { 
 				nextChar = source->get();
 				if (nextChar == '"') {
@@ -221,7 +222,7 @@ namespace flc
 					c = nextChar;
 					length++;
 				}
-				result << c;
+				result << (char)c;
 			}
 			if (source->eof()) {
 				return new ErrorToken(path, *index, length, "EOF while parsing string literal");
@@ -233,16 +234,16 @@ namespace flc
 		Token* Tokenizer::parseIdentifierToken(istream *source, int *index, string path) {
 			stringstream identString;
 			int length = 0;
-			char nextChar;
+            char16_t nextChar;
 			while (!source->eof() && (nextChar = source->get()) && isAlphanumeric(nextChar)) {
-				identString << nextChar;
+				identString << (char)nextChar;
 				length++;
 			}
 			return IdentifierToken::getToken(path, *index, length, identString.str());
 		}
 		Token* Tokenizer::parseSymbolToken(istream *source, int *index, string path) {
             // Very basic symbols only until syntax is better defined
-			char nextChar = source->get();
+            char16_t nextChar = source->get();
 			if (nextChar == '+' ||
 				nextChar == '-' ||
 				nextChar == '*' ||
