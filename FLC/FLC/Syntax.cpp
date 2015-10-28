@@ -12,6 +12,12 @@ namespace flc
         {
         }
 
+        string Syntax::toString()
+        {
+            reportNotImplemented("Syntax::toString not implemented for a subclass.");
+            return "ERROR";
+        }
+
 
     }
 }

@@ -21,6 +21,15 @@ namespace flc
             return _val;
         }
 
+        bool IdentifierToken::isIdentifier()
+        {
+            return true;
+        }
+        bool IdentifierToken::isIdentifier(string val)
+        {
+            return _val == val;
+        }
+
         string IdentifierToken::toString()
         {
             return _val;

@@ -19,6 +19,15 @@ namespace flc
             return _val;
         }
 
+        bool StringLiteralToken::isStringLiteral()
+        {
+            return true;
+        }
+        bool StringLiteralToken::isStringLiteral(string val)
+        {
+            return _val == val;
+        }
+
         string StringLiteralToken::toString()
         {
             return "\"" + _val + "\"";

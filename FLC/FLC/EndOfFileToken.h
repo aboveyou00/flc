@@ -11,6 +11,8 @@ namespace flc
             EndOfFileToken(string sourceFile, int pos);
             ~EndOfFileToken();
 
+            virtual bool isEndOfFile();
+
             virtual string toString();
         };
     }

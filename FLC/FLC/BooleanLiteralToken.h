@@ -12,7 +12,9 @@ namespace flc
             ~BooleanLiteralToken();
 
             bool getValue();
-            
+
+            virtual bool isBooleanLiteral();
+            virtual bool isBooleanLiteral(bool val);
 
         private:
             bool _val;

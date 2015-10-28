@@ -10,7 +10,7 @@ namespace flc
             Syntax();
             ~Syntax();
 
-
+            virtual string toString();
         };
     }
 }

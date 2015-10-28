@@ -13,6 +13,9 @@ namespace flc
 
             string getSymbol();
 
+            bool isSymbol();
+            bool isSymbol(string sym);
+
             virtual string toString();
 
         private:

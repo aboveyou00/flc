@@ -20,6 +20,15 @@ namespace flc
             return _val;
         }
 
+        bool FloatLiteralToken::isFloatLiteral()
+        {
+            return true;
+        }
+        bool FloatLiteralToken::isFloatLiteral(float val)
+        {
+            return _val == val;
+        }
+
         string FloatLiteralToken::toString()
         {
             stringstream stream;

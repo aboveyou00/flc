@@ -13,6 +13,9 @@ namespace flc
 
             string getValue();
 
+            bool isIdentifier();
+            bool isIdentifier(string val);
+
             virtual string toString();
 
             static Token* getToken(string sourceFile, int startPos, int length, string value);

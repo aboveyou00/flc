@@ -19,6 +19,15 @@ namespace flc
             return _sym;
         }
 
+        bool SymbolToken::isSymbol()
+        {
+            return true;
+        }
+        bool SymbolToken::isSymbol(string sym)
+        {
+            return _sym == sym;
+        }
+
         string SymbolToken::toString()
         {
             return _sym;

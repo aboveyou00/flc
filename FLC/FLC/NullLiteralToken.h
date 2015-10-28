@@ -10,6 +10,8 @@ namespace flc
         public:
             NullLiteralToken(string sourceFile, int startPos);
             ~NullLiteralToken();
+
+            virtual bool isNullLiteral();
         };
     }
 }

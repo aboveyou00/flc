@@ -13,6 +13,9 @@ namespace flc
 
             string getValue();
 
+            bool isKeyword();
+            bool isKeyword(string sym);
+
             virtual string toString();
 
         private:

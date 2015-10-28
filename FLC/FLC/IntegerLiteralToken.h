@@ -9,15 +9,18 @@ namespace flc
         class IntegerLiteralToken : public Token
         {
         public:
-            IntegerLiteralToken(string sourceFile, int startPos, int length, int32_t value);
+            IntegerLiteralToken(string sourceFile, int startPos, int length, uint32_t value);
             ~IntegerLiteralToken();
 
-            int32_t getValue();
+            uint32_t getValue();
+
+            virtual bool isIntegerLiteral();
+            virtual bool isIntegerLiteral(uint32_t val);
 
             virtual string toString();
 
         private:
-            int32_t _val;
+            uint32_t _val;
         };
     }
 }

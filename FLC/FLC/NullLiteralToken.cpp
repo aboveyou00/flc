@@ -12,5 +12,10 @@ namespace flc
         NullLiteralToken::~NullLiteralToken()
         {
         }
+
+        bool NullLiteralToken::isNullLiteral()
+        {
+            return true;
+        }
     }
 }

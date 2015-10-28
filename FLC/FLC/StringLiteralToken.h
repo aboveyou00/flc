@@ -13,6 +13,9 @@ namespace flc
 
             string getValue();
 
+            virtual bool isStringLiteral();
+            virtual bool isStringLiteral(string val);
+
             virtual string toString();
 
         private:

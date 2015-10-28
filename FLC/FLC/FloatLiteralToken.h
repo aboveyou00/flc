@@ -13,6 +13,9 @@ namespace flc
 
             float getValue();
 
+            virtual bool isFloatLiteral();
+            virtual bool isFloatLiteral(float val);
+
             virtual string toString();
 
         private:

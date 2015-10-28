@@ -20,6 +20,15 @@ namespace flc
             return _val;
         }
 
+        bool CharacterLiteralToken::isCharacterLiteral()
+        {
+            return true;
+        }
+        bool CharacterLiteralToken::isCharacterLiteral(char16_t val)
+        {
+            return _val == val;
+        }
+
         string CharacterLiteralToken::toString()
         {
             stringstream stream;

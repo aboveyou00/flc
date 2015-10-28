@@ -6,7 +6,7 @@ namespace flc
 {
     namespace tokens
     {
-        IntegerLiteralToken::IntegerLiteralToken(string sourceFile, int startPos, int length, int32_t value)
+        IntegerLiteralToken::IntegerLiteralToken(string sourceFile, int startPos, int length, uint32_t value)
             : Token(sourceFile, startPos, length)
         {
             _val = value;
@@ -15,9 +15,18 @@ namespace flc
         {
         }
 
-        int32_t IntegerLiteralToken::getValue()
+        uint32_t IntegerLiteralToken::getValue()
         {
             return _val;
+        }
+
+        bool IntegerLiteralToken::isIntegerLiteral()
+        {
+            return true;
+        }
+        bool IntegerLiteralToken::isIntegerLiteral(uint32_t val)
+        {
+            return _val == val;
         }
 
         string IntegerLiteralToken::toString()

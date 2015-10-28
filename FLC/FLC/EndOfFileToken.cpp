@@ -13,6 +13,11 @@ namespace flc
         {
         }
 
+        bool EndOfFileToken::isEndOfFile()
+        {
+            return true;
+        }
+
         string EndOfFileToken::toString()
         {
             return "EOF";

@@ -19,6 +19,15 @@ namespace flc
             return _val;
         }
 
+        bool KeywordToken::isKeyword()
+        {
+            return true;
+        }
+        bool KeywordToken::isKeyword(string val)
+        {
+            return _val == val;
+        }
+
         string KeywordToken::toString()
         {
             return _val;

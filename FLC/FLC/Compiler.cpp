@@ -61,7 +61,27 @@ namespace flc
             return false;
         }
 
-        syntax::factory::ExpressionSyntaxFactory factory;
+        syntax::factory::ExpressionSyntaxFactory exprFactory;
+
+        auto toks = sourceFiles.at(0);
+        int pos = 0;
+        auto program = new vector<syntax::ExpressionSyntax*>();
+        while (pos < (int)toks->size() && toks->at(pos)->toString() != "EOF")
+        {
+            syntax::ExpressionSyntax *expr;
+            if (!exprFactory.tryParseSyntax(toks, pos, expr))
+            {
+                //TODO: provide context
+                reportError("Could not parse expression.");
+                return false;
+            }
+            program->push_back(expr);
+        }
+
+        for (auto expr : *program)
+        {
+            cout << expr->toString() << endl;
+        }
 
 
 

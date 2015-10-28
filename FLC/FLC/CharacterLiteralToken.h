@@ -14,6 +14,9 @@ namespace flc
 
             char16_t getValue();
 
+            virtual bool isCharacterLiteral();
+            virtual bool isCharacterLiteral(char16_t val);
+
             virtual string toString();
 
         private:

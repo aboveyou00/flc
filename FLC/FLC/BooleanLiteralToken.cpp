@@ -18,5 +18,14 @@ namespace flc
         {
             return _val;
         }
+
+        bool BooleanLiteralToken::isBooleanLiteral()
+        {
+            return true;
+        }
+        bool BooleanLiteralToken::isBooleanLiteral(bool val)
+        {
+            return _val == val;
+        }
     }
 }
