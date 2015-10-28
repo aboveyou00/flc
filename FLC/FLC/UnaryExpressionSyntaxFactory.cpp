@@ -26,6 +26,7 @@ namespace flc
                     int p = pos + 1;
                     if (!tryParseSyntax(toks, p, result)) return false;
                     result = new UnaryExpressionSyntax(toks->at(pos)->toString(), result);
+                    pos = p;
                     return true;
                 }
                 TermSyntaxFactory termFactory;

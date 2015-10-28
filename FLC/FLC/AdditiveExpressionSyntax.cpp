@@ -41,9 +41,9 @@ namespace flc
             switch (_op)
             {
             case AdditiveOperator::Add:
-                return _left->toString() + "*" + _right->toString();
+                return _left->toString() + "+" + _right->toString();
             case AdditiveOperator::Subtract:
-                return _left->toString() + "/" + _right->toString();
+                return _left->toString() + "-" + _right->toString();
             case AdditiveOperator::ErrorState:
             default:
                 return _left->toString() + "%%ERROR%% " + _right->toString();

@@ -44,7 +44,7 @@ namespace flc
     {
         ifstream stream(path); //ifstream::in
         if (!stream.is_open()) return false;
-        return Compiler::tryAddSource((istream*)&stream);
+        return Compiler::tryAddSource((istream*)&stream, path);
     }
 
     bool Compiler::tryCompile()

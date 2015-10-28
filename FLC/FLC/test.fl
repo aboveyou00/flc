@@ -9,11 +9,11 @@
 
 2 * 3 - 1
 
-an_identifier
+true
 
-another_identifier
+!false
 
-true false null
+null
 
 1.23
 

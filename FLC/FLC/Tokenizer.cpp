@@ -250,7 +250,8 @@ namespace flc
 				nextChar == '/' ||
 				nextChar == '%' ||
 				nextChar == '(' ||
-				nextChar == ')') {
+                nextChar == ')' ||
+                nextChar == '!') {
 				
 				return new SymbolToken(path, *index, 1, string(1,nextChar));
 			}
