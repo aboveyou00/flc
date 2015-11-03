@@ -8,7 +8,7 @@ namespace flc
         class SymbolToken : public Token
         {
         public:
-            SymbolToken(string sourceFile, int startPos, int length, string symbol);
+            SymbolToken(string sourceFile, int startPos, string symbol);
             ~SymbolToken();
 
             string getSymbol();

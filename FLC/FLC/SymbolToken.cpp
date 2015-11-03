@@ -5,8 +5,8 @@ namespace flc
 {
     namespace tokens
     {
-        SymbolToken::SymbolToken(string sourceFile, int startPos, int length, string symbol)
-            : Token(sourceFile, startPos, length)
+        SymbolToken::SymbolToken(string sourceFile, int startPos, string symbol)
+            : Token(sourceFile, startPos, symbol.size())
         {
             _sym = symbol;
         }

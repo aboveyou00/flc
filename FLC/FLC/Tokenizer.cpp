@@ -27,7 +27,7 @@ namespace flc
 			int pos = 0;
             while (true)
             {
-				Token *next = parseNextToken(sourceFile, &pos, path);
+				Token *next = parseNextToken(sourceFile, pos, path);
 				result->push_back(next);
 				pos += next->getLength();
                 if (sourceFile->eof()) return result;
@@ -127,13 +127,13 @@ namespace flc
 			return result;
 		}
 
-		Token* Tokenizer::parseNextToken(istream *source, int *index, string path) {
+		Token* Tokenizer::parseNextToken(istream *source, int& index, string path) {
 			while (isWhiteSpace(source->peek())) {
 				index++;
                 source->ignore();
 			}
 			if (source->eof()) {
-				return new EndOfFileToken(path, *index);
+				return new EndOfFileToken(path, index);
 			}
 
             char16_t nextChar = source->peek();
@@ -154,7 +154,7 @@ namespace flc
 			}
 		}
 
-		Token* Tokenizer::parseCharacterToken(istream *source, int *index, string path) {
+		Token* Tokenizer::parseCharacterToken(istream *source, int& index, string path) {
 			source->ignore();
 			if (source->eof())
 				return new ErrorToken(path, *index, 1, "EOF while parsing char literal");
@@ -183,7 +183,7 @@ namespace flc
 				return new CharacterLiteralToken(path, *index, length+1, c);
 			}
 		}
-		Token* Tokenizer::parseNumericToken(istream *source, int *index, string path) {
+		Token* Tokenizer::parseNumericToken(istream *source, int& index, string path) {
 			stringstream numberString;
 			int length = 0;
 			bool foundDecimal = false;
@@ -201,7 +201,7 @@ namespace flc
 				return new IntegerLiteralToken(path, *index, length, stoi(numberString.str()));
 			}
 		}
-		Token* Tokenizer::parseStringToken(istream *source, int *index, string path) {
+		Token* Tokenizer::parseStringToken(istream *source, int& index, string path) {
 			source->ignore();
 			stringstream result;
 			int length = 1;
@@ -231,7 +231,7 @@ namespace flc
 				return new StringLiteralToken(path, *index, length, result.str());
 			}
 		}
-		Token* Tokenizer::parseIdentifierToken(istream *source, int *index, string path) {
+		Token* Tokenizer::parseIdentifierToken(istream *source, int& index, string path) {
 			stringstream identString;
 			int length = 0;
             char16_t nextChar;
@@ -241,23 +241,65 @@ namespace flc
 			}
 			return IdentifierToken::getToken(path, *index, length, identString.str());
 		}
-		Token* Tokenizer::parseSymbolToken(istream *source, int *index, string path) {
+		Token* Tokenizer::parseSymbolToken(istream *source, int& index, string path) {
             // Very basic symbols only until syntax is better defined
             char16_t nextChar = source->get();
-			if (nextChar == '+' ||
-				nextChar == '-' ||
-				nextChar == '*' ||
-				nextChar == '/' ||
-				nextChar == '%' ||
-				nextChar == '(' ||
-                nextChar == ')' ||
-                nextChar == '!') {
-				
-				return new SymbolToken(path, *index, 1, string(1,nextChar));
-			}
-			else {
-				return new ErrorToken(path, *index, 1, "Unknown symbol");
-			}
+            stringstream stream;
+
+            if (nextChar == ',' || nextChar == '{' || nextChar == '}' || nextChar == ')' || nextChar == '~' || nextChar == '[' || nextChar == ']')
+            {
+                // ,  {  }  )  ~  [  ]
+                stream << (char)nextChar;
+            }
+            else if (nextChar == ':')
+            {
+                // :  ::  :::
+                stream << (char)nextChar;
+                if (source->peek() == ':') { stream << (char)source->get(); }
+                if (source->peek() == ':') { stream << (char)source->get(); }
+            }
+            else if (nextChar == '(')
+            {
+                // (  (?
+                stream << (char)nextChar;
+                if (source->peek() == '?') { stream << (char)source->get(); }
+            }
+            else if (nextChar == '|' || nextChar == '&' || nextChar == '+' || nextChar == '-')
+            {
+                // |  ||  |=  &  &&  &=  +  ++  +=  -  --  -=
+                stream << (char)nextChar;
+                if (source->peek() == nextChar) { stream << (char)source->get(); }
+                else if (source->peek() == '=') { stream << (char)source->get(); }
+            }
+            else if (nextChar == '.' || nextChar == '?')
+            {
+                // ?  ??  .  ..
+                stream << (char)nextChar;
+                if (source->peek() == nextChar) { stream << (char)source->get(); }
+            }
+            else if (nextChar == '<')
+            {
+                // <  <<  <=  <<=
+                stream << (char)nextChar;
+                if (source->peek() == nextChar) { stream << (char)source->get(); }
+                if (source->peek() == '=') { stream << (char)source->get(); }
+            }
+            else if (nextChar == '*' || nextChar == '/' || nextChar == '%' || nextChar == '^' || nextChar == '>' || nextChar == '!')
+            {
+                // *  *=  /  /=  %  %=  ^  ^=  >  >=  !  !=
+                stream << (char)nextChar;
+                if (source->peek() == '=') { stream << (char)source->get(); }
+            }
+            else if (nextChar == '=')
+            {
+                // =  ==  =>
+                stream << (char)nextChar;
+                if (source->peek() == nextChar) { stream << (char)source->get(); }
+                else if (source->peek() == '>') { stream << (char)source->get(); }
+            }
+            else return new ErrorToken(path, index, 1, "Unknown symbol");
+
+            return new SymbolToken(path, index, stream.str());
 		}
     }
 }
