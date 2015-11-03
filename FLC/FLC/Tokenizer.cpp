@@ -157,7 +157,7 @@ namespace flc
 		Token* Tokenizer::parseCharacterToken(istream *source, int& index, string path) {
 			source->ignore();
 			if (source->eof())
-				return new ErrorToken(path, *index, 1, "EOF while parsing char literal");
+				return new ErrorToken(path, index, 1, "EOF while parsing char literal");
 
             char16_t nextChar = source->get();
 			int length = 2;
@@ -166,21 +166,21 @@ namespace flc
 				c = escapeSequenceToChar(source, &length);
 			}
             else if (nextChar == '\r' || nextChar == '\n') {
-                return new ErrorToken(path, *index, length, "Line cannot end in character literal");
+                return new ErrorToken(path, index, length, "Line cannot end in character literal");
             }
 			else {
 				c = nextChar;
 			}
 
 			if (source->eof()) {
-				return new ErrorToken(path, *index, length, "EOF while parsing char literal");
+				return new ErrorToken(path, index, length, "EOF while parsing char literal");
 			}
 			else if (source->peek() != '\'') {
-				return new ErrorToken(path, *index, length, "Invalid char literal");
+				return new ErrorToken(path, index, length, "Invalid char literal");
 			}
 			else {
 				source->ignore();
-				return new CharacterLiteralToken(path, *index, length+1, c);
+				return new CharacterLiteralToken(path, index, length+1, c);
 			}
 		}
 		Token* Tokenizer::parseNumericToken(istream *source, int& index, string path) {
@@ -195,10 +195,10 @@ namespace flc
 				length++;
 			}
 			if (foundDecimal) {
-				return new FloatLiteralToken(path, *index, length, stof(numberString.str()));
+				return new FloatLiteralToken(path, index, length, stof(numberString.str()));
 			}
 			else {
-				return new IntegerLiteralToken(path, *index, length, stoi(numberString.str()));
+				return new IntegerLiteralToken(path, index, length, stoi(numberString.str()));
 			}
 		}
 		Token* Tokenizer::parseStringToken(istream *source, int& index, string path) {
@@ -216,7 +216,7 @@ namespace flc
 					c = escapeSequenceToChar(source, &length);
 				}
                 else if (nextChar == '\r' || nextChar == '\n') {
-                    return new ErrorToken(path, *index, length, "Line cannot end in string literal");
+                    return new ErrorToken(path, index, length, "Line cannot end in string literal");
                 }
 				else {
 					c = nextChar;
@@ -225,10 +225,10 @@ namespace flc
 				result << (char)c;
 			}
 			if (source->eof()) {
-				return new ErrorToken(path, *index, length, "EOF while parsing string literal");
+				return new ErrorToken(path, index, length, "EOF while parsing string literal");
 			}
 			else {
-				return new StringLiteralToken(path, *index, length, result.str());
+				return new StringLiteralToken(path, index, length, result.str());
 			}
 		}
 		Token* Tokenizer::parseIdentifierToken(istream *source, int& index, string path) {
@@ -239,7 +239,7 @@ namespace flc
 				identString << (char)nextChar;
 				length++;
 			}
-			return IdentifierToken::getToken(path, *index, length, identString.str());
+			return IdentifierToken::getToken(path, index, length, identString.str());
 		}
 		Token* Tokenizer::parseSymbolToken(istream *source, int& index, string path) {
             // Very basic symbols only until syntax is better defined
