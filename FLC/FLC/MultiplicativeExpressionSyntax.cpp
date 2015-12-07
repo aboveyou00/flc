@@ -41,11 +41,11 @@ namespace flc
             switch (_op)
             {
             case MultiplicativeOperator::Multiply:
-                return _left->toString() + "*" + _right->toString();
+                return _left->toString() + " * " + _right->toString();
             case MultiplicativeOperator::Divide:
-                return _left->toString() + "/" + _right->toString();
+                return _left->toString() + " / " + _right->toString();
             case MultiplicativeOperator::Remainder:
-                return _left->toString() + "%" + _right->toString();
+                return _left->toString() + " % " + _right->toString();
             case MultiplicativeOperator::ErrorState:
             default:
                 return _left->toString() + "%%ERROR%% " + _right->toString();

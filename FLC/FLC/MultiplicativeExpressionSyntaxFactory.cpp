@@ -20,7 +20,8 @@ namespace flc
             {
                 UnaryExpressionSyntaxFactory unaryFactory;
                 if (!unaryFactory.tryParseSyntax(toks, pos, result)) return false;
-                if (toks->at(pos)->isSymbol("*") || toks->at(pos)->isSymbol("/") || toks->at(pos)->isSymbol("%"))
+                if (toks->at(pos)->isSymbol("*") || toks->at(pos)->isSymbol("/") ||
+                    toks->at(pos)->isSymbol("%"))
                 {
                     int p2 = pos + 1;
                     ExpressionSyntax *multiplicative = nullptr;

@@ -2,7 +2,7 @@
 #include "Token.h"
 #include "ExpressionSyntax.h"
 #include "ExpressionSyntaxFactory.h"
-#include "AdditiveExpressionSyntaxFactory.h"
+#include "TernaryExpressionSyntaxFactory.h"
 
 namespace flc
 {
@@ -19,8 +19,8 @@ namespace flc
 
             bool ExpressionSyntaxFactory::tryParseSyntax(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result)
             {
-                AdditiveExpressionSyntaxFactory additiveFactory;
-                if (!additiveFactory.tryParseSyntax(toks, pos, result)) return false;
+                TernaryExpressionSyntaxFactory ternaryFactory;
+                if (!ternaryFactory.tryParseSyntax(toks, pos, result)) return false;
                 return true;
             }
         }

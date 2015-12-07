@@ -10,7 +10,10 @@ namespace flc
             ErrorState = -1,
             Plus = 0,
             Minus = 1,
-            Not = 2
+            Not = 2,
+            Complement = 3,
+            PreIncrement = 4,
+            PreDecrement = 5
         };
 
         class UnaryExpressionSyntax : public ExpressionSyntax
