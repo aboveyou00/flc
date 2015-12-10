@@ -235,8 +235,9 @@ namespace flc
 			stringstream identString;
 			int length = 0;
             char16_t nextChar;
-			while (!source->eof() && (nextChar = source->get()) && isAlphanumeric(nextChar)) {
+			while (!source->eof() && (nextChar = source->peek()) && isAlphanumeric(nextChar)) {
 				identString << (char)nextChar;
+                source->get();
 				length++;
 			}
 			return IdentifierToken::getToken(path, index, length, identString.str());
