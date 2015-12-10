@@ -27,7 +27,7 @@ namespace flc
                     ExpressionSyntaxFactory expressionFactory;
                     ExpressionSyntax *iftrue = nullptr, *iffalse = nullptr;
                     if (!expressionFactory.tryParseSyntax(toks, p2, iftrue) ||
-                        !toks->at(p2)->isSymbol(":") ||
+                        !toks->at(p2++)->isSymbol(":") ||
                         !expressionFactory.tryParseSyntax(toks, p2, iffalse))
                     {
                         //TODO: provide more context
