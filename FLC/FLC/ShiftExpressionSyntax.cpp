@@ -8,8 +8,8 @@ namespace flc
         ShiftExpressionSyntax::ShiftExpressionSyntax(ExpressionSyntax* left, string op, ExpressionSyntax* right)
             : _left(left), _right(right)
         {
-            if (op == "<") _op = ShiftOperator::Left;
-            else if (op == ">") _op = ShiftOperator::Right;
+            if (op == "<<") _op = ShiftOperator::Left;
+            else if (op == ">>") _op = ShiftOperator::Right;
             else
             {
                 reportError("Invalid ShiftOperator Operator in ShiftExpressionSyntax::ctor: " + op);
