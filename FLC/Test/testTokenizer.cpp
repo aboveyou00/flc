@@ -54,23 +54,35 @@ namespace Test
             using namespace flc::tokens;
 
             Tokenizer tokenizer;
-            istringstream stream(" one two three _blah true false null __abc012 ");
+            istringstream stream(" one two three _blah true false null __abc012 default int do while ");
 
             auto toks = tokenizer.tokenize(&stream);
-            Assert::IsTrue(toks->size() == 9);
+            Assert::IsTrue(toks->size() == 13);
             Assert::AreEqual(toks->at(0)->toString(), (std::string)"one");
                 Assert::IsNull(dynamic_cast<KeywordToken*>(toks->at(0)));
             Assert::AreEqual(toks->at(1)->toString(), (std::string)"two");
             Assert::AreEqual(toks->at(2)->toString(), (std::string)"three");
             Assert::AreEqual(toks->at(3)->toString(), (std::string)"_blah");
+
             Assert::AreEqual(toks->at(4)->toString(), (std::string)"true");
                 Assert::IsNotNull(dynamic_cast<BooleanLiteralToken*>(toks->at(4)));
             Assert::AreEqual(toks->at(5)->toString(), (std::string)"false");
                 Assert::IsNotNull(dynamic_cast<BooleanLiteralToken*>(toks->at(5)));
             Assert::AreEqual(toks->at(6)->toString(), (std::string)"null");
                 Assert::IsNotNull(dynamic_cast<NullLiteralToken*>(toks->at(6)));
+
             Assert::AreEqual(toks->at(7)->toString(), (std::string)"__abc012");
-            Assert::AreEqual(toks->at(8)->toString(), (std::string)"EOF");
+
+            Assert::AreEqual(toks->at(8)->toString(), (std::string)"default");
+                Assert::IsNotNull(dynamic_cast<KeywordToken*>(toks->at(8)));
+            Assert::AreEqual(toks->at(9)->toString(), (std::string)"int");
+                Assert::IsNotNull(dynamic_cast<KeywordToken*>(toks->at(9)));
+            Assert::AreEqual(toks->at(10)->toString(), (std::string)"do");
+                Assert::IsNotNull(dynamic_cast<KeywordToken*>(toks->at(10)));
+            Assert::AreEqual(toks->at(11)->toString(), (std::string)"while");
+                Assert::IsNotNull(dynamic_cast<KeywordToken*>(toks->at(11)));
+            
+            Assert::AreEqual(toks->at(12)->toString(), (std::string)"EOF");
         }
         TEST_METHOD(Test_tokenize_characters)
         {
