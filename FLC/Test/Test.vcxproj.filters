@@ -19,6 +19,12 @@
     <Filter Include="Source Files\flc\tokens">
       <UniqueIdentifier>{05a720c1-85c8-4af9-a4d6-451c5ba619a3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\flc\syntax">
+      <UniqueIdentifier>{273418c7-9614-48fd-907d-511ff28af688}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\factory">
+      <UniqueIdentifier>{da24f6f8-f90d-4b3c-8d3f-72942a13670c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -43,6 +49,9 @@
     </ClCompile>
     <ClCompile Include="testTokenizer.cpp">
       <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="testTernaryExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

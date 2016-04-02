@@ -30,7 +30,8 @@ namespace flc
 				Token *next = parseNextToken(sourceFile, pos, path);
 				result->push_back(next);
 				pos += next->getLength();
-                if (sourceFile->eof()) return result;
+                //if (sourceFile->eof()) return result;
+                if (next->isEndOfFile()) return result;
 			}
 		}
 		

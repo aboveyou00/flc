@@ -168,6 +168,7 @@
     <ClCompile Include="testCommandLineParser.cpp" />
     <ClCompile Include="testCompiler.cpp" />
     <ClCompile Include="testErrors.cpp" />
+    <ClCompile Include="testTernaryExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testTokenizer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

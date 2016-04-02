@@ -102,7 +102,45 @@ namespace Test
             Assert::AreEqual(toks->at(6)->toString(), (std::string)"EOF");
         }
 
+        TEST_METHOD(Test_tokenize_eof)
+        {
+            using namespace flc::tokens;
+
+            Tokenizer tokenizer;
+            istringstream stream("true");
+
+            auto toks = tokenizer.tokenize(&stream);
+            Assert::IsTrue(toks->size() == 2);
+            Assert::AreEqual(toks->at(0)->toString(), (std::string)"true");
+            Assert::AreEqual(toks->at(1)->toString(), (std::string)"EOF");
+
+            /*UseTokens(toks);
+            ExpectToken("true");
+            ExpectNoMore();*/
+        }
+
         //TODO: test tokenizer error messages
 
+
+
+    /*private:
+        std::vector<flc::tokens::Token*>* toks;
+        int idx = 0;
+        void UseTokens(std::vector<flc::tokens::Token*>* toks)
+        {
+            TestCompiler::toks = toks;
+            TestCompiler::idx = 0;
+        }
+        flc::tokens::Token* ExpectToken(std::string expected)
+        {
+            auto tok = TestCompiler::toks->at(TestCompiler::idx++);
+            Assert::AreEqual(tok->toString(), expected);
+            return tok;
+        }
+        void ExpectNoMore()
+        {
+            TestCompiler::ExpectToken("EOF");
+            Assert::IsTrue(TestCompiler::idx == TestCompiler::toks->size());
+        }*/
     };
 }

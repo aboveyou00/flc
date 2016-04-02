@@ -18,7 +18,7 @@ namespace flc
     bool Compiler::tryAddSource(string source, string path)
     {
         istringstream stream(source);
-        return tryAddSource(&stream);
+        return tryAddSource(&stream, path);
     }
     bool Compiler::tryAddSource(istream *source, string path)
     {
@@ -30,7 +30,7 @@ namespace flc
         for (auto tok : *toks)
         {
             auto err = dynamic_cast<tokens::ErrorToken*>(tok);
-            if (err != NULL)
+            if (err != nullptr)
             {
                 hasError = true;
                 //TODO: get line number and character position
@@ -95,7 +95,7 @@ namespace flc
             for (auto tok : *toks)
             {
                 auto err = dynamic_cast<tokens::ErrorToken*>(tok);
-                if (err != NULL)
+                if (err != nullptr)
                 {
                     reportError("Cannot compile when tokenizer fails to tokenize correctly. There are syntax errors in your code.");
                     return false;

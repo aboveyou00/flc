@@ -1,4 +1,5 @@
 #pragma once
+#include "stdafx.h"
 
 namespace flc
 {
@@ -10,7 +11,7 @@ namespace flc
             Syntax();
             ~Syntax();
 
-            virtual string toString();
+            virtual string toString() = 0;
         };
     }
 }
