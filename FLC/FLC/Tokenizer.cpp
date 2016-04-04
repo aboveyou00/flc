@@ -89,7 +89,7 @@ namespace flc
 				(*length)++;
 				break;
 			case '0': case '1': case '2': case '3': case '4': case '5': case '6': case '7':
-                subNum << nextChar;
+                subNum << (char)nextChar;
                 for (int i = 0; i < 5; i++) {
                     if (!isOctal(source->peek())) {
                         break;
@@ -106,7 +106,7 @@ namespace flc
 					if (!isHexadecimal(source->peek())) {
 						break;
 					}
-					subNum << (char16_t)source->get();
+					subNum << (char)source->get();
 					(*length)++;
 				}
                 if (q == 0)
