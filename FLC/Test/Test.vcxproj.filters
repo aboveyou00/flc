@@ -25,6 +25,15 @@
     <Filter Include="Source Files\flc\syntax\factory">
       <UniqueIdentifier>{da24f6f8-f90d-4b3c-8d3f-72942a13670c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\flc">
+      <UniqueIdentifier>{f869378c-44c8-4bd5-8c17-de756d8afe70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\syntax">
+      <UniqueIdentifier>{eee6f3c3-06e8-4701-b115-67e087c84656}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\syntax\factory">
+      <UniqueIdentifier>{45df8462-eaef-4e9e-a1ac-bca5a50af045}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -32,6 +41,9 @@
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testFactory.h">
+      <Filter>Header Files\flc\syntax\factory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +63,42 @@
       <Filter>Source Files\flc\tokens</Filter>
     </ClCompile>
     <ClCompile Include="testTernaryExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="testConditionalOrExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="testConditionalAndExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="testInclusiveOrExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="testExclusiveOrExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="testAndExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="testEqualityExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="testRelationalExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="testShiftExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="testAdditiveExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="testMultiplicativeExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="testUnaryExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="testTermSyntaxFactory.cpp">
       <Filter>Source Files\flc\syntax\factory</Filter>
     </ClCompile>
   </ItemGroup>

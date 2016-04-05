@@ -10,10 +10,10 @@ namespace flc
         {
             _type = TermType::NullLiteral;
         }
-        TermSyntax::TermSyntax(string str)
+        TermSyntax::TermSyntax(string str, bool isIdentifier)
         {
             strval = str;
-            _type = TermType::StringLiteral;
+            _type = (isIdentifier ? TermType::Identifier : TermType::StringLiteral);
         }
         TermSyntax::TermSyntax(char16_t val)
         {
@@ -52,24 +52,30 @@ namespace flc
             switch (_type)
             {
             case TermType::BooleanLiteral:
-                return boolval ? "true" : "false";
+                stream << (boolval ? "true" : "false");
+                break;
             case TermType::CharacterLiteral:
                 stream << "'" << (char)chrval << "'";
-                return stream.str();
+                break;
             case TermType::FloatLiteral:
                 stream << floatval;
-                return stream.str();
+                break;
             case TermType::IntegerLiteral:
                 stream << intval;
-                return stream.str();
+                break;
             case TermType::NullLiteral:
-                return "null";
+                stream << "null";
+                break;
             case TermType::StringLiteral:
-                return "\"" + strval + "\"";
+                stream << "\"" << strval << "\"";
+                break;
+            case TermType::Identifier:
+                stream << strval;
+                break;
             default:
                 reportNotImplemented("TermSyntax::toString, unknown TermType");
-                return false;
             }
+            return stream.str();
         }
     }
 }

@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="testFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -165,11 +166,23 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="testAdditiveExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testAndExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testCommandLineParser.cpp" />
     <ClCompile Include="testCompiler.cpp" />
+    <ClCompile Include="testConditionalAndExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testConditionalOrExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testEqualityExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testErrors.cpp" />
+    <ClCompile Include="testExclusiveOrExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testInclusiveOrExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testMultiplicativeExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testRelationalExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testShiftExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testTermSyntaxFactory.cpp" />
     <ClCompile Include="testTernaryExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testTokenizer.cpp" />
+    <ClCompile Include="testUnaryExpressionSyntaxFactory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

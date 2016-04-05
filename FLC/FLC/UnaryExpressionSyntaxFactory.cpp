@@ -20,7 +20,6 @@ namespace flc
 
             bool UnaryExpressionSyntaxFactory::tryParseSyntax(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result)
             {
-                int p = pos;
                 if (toks->at(pos)->isSymbol("+") || toks->at(pos)->isSymbol("-") ||
                     toks->at(pos)->isSymbol("!") || toks->at(pos)->isSymbol("~") ||
                     toks->at(pos)->isSymbol("++") || toks->at(pos)->isSymbol("--"))

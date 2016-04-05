@@ -12,14 +12,15 @@ namespace flc
             StringLiteral = 2,
             CharacterLiteral = 3,
             IntegerLiteral = 4,
-            FloatLiteral = 5
+            FloatLiteral = 5,
+            Identifier = 6
         };
 
         class TermSyntax : public ExpressionSyntax
         {
         public:
             TermSyntax();
-            TermSyntax(string str);
+            TermSyntax(string str, bool identifier = false);
             TermSyntax(char16_t val);
             TermSyntax(uint32_t val);
             TermSyntax(bool val);

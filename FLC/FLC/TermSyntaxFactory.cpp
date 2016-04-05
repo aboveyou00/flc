@@ -4,6 +4,7 @@
 #include "ExpressionSyntaxFactory.h"
 
 #include "IntegerLiteralToken.h"
+#include "IdentifierToken.h"
 #include "CharacterLiteralToken.h"
 #include "BooleanLiteralToken.h"
 #include "FloatLiteralToken.h"
@@ -35,6 +36,10 @@ namespace flc
                     pos = p + 1;
                     return true;
                 }
+                else if (tok->isIdentifier())
+                {
+                    result = new TermSyntax(((tokens::IdentifierToken*)tok)->getValue(), true);
+                }
                 else if (tok->isIntegerLiteral())
                 {
                     result = new TermSyntax(((tokens::IntegerLiteralToken*)tok)->getValue());
@@ -53,7 +58,7 @@ namespace flc
                 }
                 else if (tok->isStringLiteral())
                 {
-                    result = new TermSyntax(((tokens::StringLiteralToken*)tok)->getValue());
+                    result = new TermSyntax(((tokens::StringLiteralToken*)tok)->getValue(), false);
                 }
                 else if (tok->isNullLiteral())
                 {
