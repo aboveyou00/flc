@@ -3,6 +3,8 @@
 #include "TermSyntaxFactory.h"
 #include "ExpressionSyntaxFactory.h"
 
+#include "CompoundExpressionSyntaxFactory.h"
+
 #include "IntegerLiteralToken.h"
 #include "IdentifierToken.h"
 #include "CharacterLiteralToken.h"
@@ -27,7 +29,12 @@ namespace flc
             bool TermSyntaxFactory::tryParseSyntax(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result)
             {
                 auto tok = toks->at(pos);
-                if (tok->isSymbol("("))
+                if (tok->isSymbol("{"))
+                {
+                    CompoundExpressionSyntaxFactory compoundFactory;
+                    return compoundFactory.tryParseSyntax(toks, pos, result);
+                }
+                else if (tok->isSymbol("("))
                 {
                     int p = pos + 1;
                     ExpressionSyntaxFactory exprFactory;

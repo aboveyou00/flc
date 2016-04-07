@@ -10,6 +10,11 @@ namespace Test
     TEST_CLASS(TestTermSyntaxFactory)
     {
     public:
+        TEST_METHOD(Test_parseTerm_compoundExpression)
+        {
+            testFactory<TermSyntaxFactory>("{\r\n    true\r\n    false\r\n    1 + 2\r\n}");
+        }
+
         TEST_METHOD(Test_parseTerm_parenthesizedExpression)
         {
             testFactory<TermSyntaxFactory>("(true)", "true");

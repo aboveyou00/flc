@@ -192,6 +192,12 @@
     <ClInclude Include="ShiftExpressionSyntax.h">
       <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
+    <ClInclude Include="CompoundExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\syntax\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="CompoundExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -342,6 +348,12 @@
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
     <ClCompile Include="ShiftExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="CompoundExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="CompoundExpressionSyntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
   </ItemGroup>

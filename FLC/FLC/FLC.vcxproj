@@ -151,6 +151,8 @@
     <ClInclude Include="CommandLineParser.h" />
     <ClInclude Include="Comment.h" />
     <ClInclude Include="Compiler.h" />
+    <ClInclude Include="CompoundExpressionSyntax.h" />
+    <ClInclude Include="CompoundExpressionSyntaxFactory.h" />
     <ClInclude Include="ConditionalAndExpressionSyntax.h" />
     <ClInclude Include="ConditionalAndExpressionSyntaxFactory.h" />
     <ClInclude Include="ConditionalOrExpressionSyntax.h" />
@@ -203,6 +205,8 @@
     <ClCompile Include="CommandLineParser.cpp" />
     <ClCompile Include="Comment.cpp" />
     <ClCompile Include="Compiler.cpp" />
+    <ClCompile Include="CompoundExpressionSyntax.cpp" />
+    <ClCompile Include="CompoundExpressionSyntaxFactory.cpp" />
     <ClCompile Include="ConditionalAndExpressionSyntax.cpp" />
     <ClCompile Include="ConditionalAndExpressionSyntaxFactory.cpp" />
     <ClCompile Include="ConditionalOrExpressionSyntax.cpp" />
