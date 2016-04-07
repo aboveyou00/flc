@@ -4,7 +4,13 @@
 #include "ExpressionSyntaxFactory.h"
 #include "CompoundExpressionSyntaxFactory.h"
 
-#include "TermSyntax.h"
+#include "StringLiteralSyntax.h"
+#include "CharacterLiteralSyntax.h"
+#include "IntegerLiteralSyntax.h"
+#include "FloatLiteralSyntax.h"
+#include "BooleanLiteralSyntax.h"
+#include "NullLiteralSyntax.h"
+#include "SimpleNameSyntax.h"
 #include "MemberAccessExpressionSyntax.h"
 
 #include "IntegerLiteralToken.h"
@@ -54,31 +60,31 @@ namespace flc
                 }
                 else if (tok->isIdentifier())
                 {
-                    result = new TermSyntax(((tokens::IdentifierToken*)tok)->getValue(), true);
+                    result = new SimpleNameSyntax(((tokens::IdentifierToken*)tok)->getValue(), false);
                 }
                 else if (tok->isIntegerLiteral())
                 {
-                    result = new TermSyntax(((tokens::IntegerLiteralToken*)tok)->getValue());
+                    result = new IntegerLiteralSyntax(((tokens::IntegerLiteralToken*)tok)->getValue());
                 }
                 else if (tok->isFloatLiteral())
                 {
-                    result = new TermSyntax(((tokens::FloatLiteralToken*)tok)->getValue());
+                    result = new FloatLiteralSyntax(((tokens::FloatLiteralToken*)tok)->getValue());
                 }
                 else if (tok->isBooleanLiteral())
                 {
-                    result = new TermSyntax(((tokens::BooleanLiteralToken*)tok)->getValue());
+                    result = new BooleanLiteralSyntax(((tokens::BooleanLiteralToken*)tok)->getValue());
                 }
                 else if (tok->isCharacterLiteral())
                 {
-                    result = new TermSyntax(((tokens::CharacterLiteralToken*)tok)->getValue());
+                    result = new CharacterLiteralSyntax(((tokens::CharacterLiteralToken*)tok)->getValue());
                 }
                 else if (tok->isStringLiteral())
                 {
-                    result = new TermSyntax(((tokens::StringLiteralToken*)tok)->getValue(), false);
+                    result = new StringLiteralSyntax(((tokens::StringLiteralToken*)tok)->getValue());
                 }
                 else if (tok->isNullLiteral())
                 {
-                    result = new TermSyntax();
+                    result = new NullLiteralSyntax();
                 }
                 else return false;
                 pos++;

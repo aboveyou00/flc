@@ -120,9 +120,6 @@
     <ClInclude Include="UnaryExpressionSyntax.h">
       <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
-    <ClInclude Include="TermSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
     <ClInclude Include="ExpressionSyntaxFactory.h">
       <Filter>Header Files\flc\syntax\factory</Filter>
     </ClInclude>
@@ -196,6 +193,27 @@
       <Filter>Header Files\flc\syntax\factory</Filter>
     </ClInclude>
     <ClInclude Include="CompoundExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="NullLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="StringLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="BooleanLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="IntegerLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="FloatLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleNameSyntax.h">
       <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
   </ItemGroup>
@@ -278,9 +296,6 @@
     <ClCompile Include="UnaryExpressionSyntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
-    <ClCompile Include="TermSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
     <ClCompile Include="ExpressionSyntaxFactory.cpp">
       <Filter>Source Files\flc\syntax\factory</Filter>
     </ClCompile>
@@ -360,6 +375,27 @@
       <Filter>Header Files\flc\syntax</Filter>
     </ClCompile>
     <ClCompile Include="MemberAccessExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="StringLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="IntegerLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="FloatLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="BooleanLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="NullLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleNameSyntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
   </ItemGroup>
