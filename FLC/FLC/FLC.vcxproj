@@ -226,6 +226,8 @@
     <ClCompile Include="InclusiveOrExpressionSyntaxFactory.cpp" />
     <ClCompile Include="IntegerLiteralToken.cpp" />
     <ClCompile Include="KeywordToken.cpp" />
+    <ClCompile Include="MemberAccessExpressionSyntax.cpp" />
+    <ClCompile Include="MemberAccessExpressionSyntax.h" />
     <ClCompile Include="MultiLineComment.cpp" />
     <ClCompile Include="MultiplicativeExpressionSyntax.cpp" />
     <ClCompile Include="MultiplicativeExpressionSyntaxFactory.cpp" />

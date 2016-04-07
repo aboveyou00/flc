@@ -1,9 +1,11 @@
 #include "stdafx.h"
-#include "TermSyntax.h"
 #include "TermSyntaxFactory.h"
-#include "ExpressionSyntaxFactory.h"
 
+#include "ExpressionSyntaxFactory.h"
 #include "CompoundExpressionSyntaxFactory.h"
+
+#include "TermSyntax.h"
+#include "MemberAccessExpressionSyntax.h"
 
 #include "IntegerLiteralToken.h"
 #include "IdentifierToken.h"
@@ -27,6 +29,13 @@ namespace flc
             }
 
             bool TermSyntaxFactory::tryParseSyntax(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result)
+            {
+                if (!tryParseFirstSyntax(toks, pos, result)) return false;
+                while (tryParseNextSyntax(result, toks, pos, result)) { }
+                return true;
+            }
+
+            bool TermSyntaxFactory::tryParseFirstSyntax(vector<flc::tokens::Token*>* toks, int & pos, ExpressionSyntax*& result)
             {
                 auto tok = toks->at(pos);
                 if (tok->isSymbol("{"))
@@ -74,6 +83,36 @@ namespace flc
                 else return false;
                 pos++;
                 return true;
+            }
+
+            bool TermSyntaxFactory::tryParseNextSyntax(ExpressionSyntax* term, vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result)
+            {
+                auto tok = toks->at(pos);
+                if (tok->isSymbol("."))
+                {
+                    tok = toks->at(pos + 1);
+                    if (!tok->isIdentifier()) return false;
+                    pos += 2;
+                    result = new MemberAccessExpressionSyntax(term, ((tokens::IdentifierToken*)tok)->getValue());
+                    return true;
+                }
+                //else if (tok->isSymbol("++"))
+                //{
+
+                //}
+                //else if (tok->isSymbol("--"))
+                //{
+
+                //}
+                //else if (tok->isSymbol("::"))
+                //{
+                //    //TODO: Check if term is a qualified name; otherwise this is invalid
+                //}
+                //else if (tok->isSymbol("["))
+                //{
+
+                //}
+                return false;
             }
         }
     }

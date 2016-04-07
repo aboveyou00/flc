@@ -15,6 +15,11 @@ namespace Test
             testFactory<TermSyntaxFactory>("{\r\n    true\r\n    false\r\n    1 + 2\r\n}");
         }
 
+        TEST_METHOD(Test_parseTerm_memberAccess)
+        {
+            testFactory<TermSyntaxFactory>("one.two.three");
+        }
+
         TEST_METHOD(Test_parseTerm_parenthesizedExpression)
         {
             testFactory<TermSyntaxFactory>("(true)", "true");

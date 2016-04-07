@@ -356,6 +356,12 @@
     <ClCompile Include="CompoundExpressionSyntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
+    <ClCompile Include="MemberAccessExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="MemberAccessExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="test.fl">
