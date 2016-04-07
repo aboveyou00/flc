@@ -5,22 +5,22 @@ namespace flc
 {
     namespace syntax
     {
-        class SimpleNameSyntax : public ExpressionSyntax
+        class ComplexNameSyntax : public ExpressionSyntax
         {
         public:
-            SimpleNameSyntax(string ident, bool fullyQualified = false);
-            ~SimpleNameSyntax();
+            ComplexNameSyntax(ExpressionSyntax* baseexpr, string ident);
+            ~ComplexNameSyntax();
 
             string getName();
-            bool isFullyQualified();
+            ExpressionSyntax* getBaseExpression();
 
             virtual bool isQualifiedName();
 
             virtual string toString();
 
         private:
+            ExpressionSyntax* lhs;
             string name;
-            bool qualified;
         };
     }
 }

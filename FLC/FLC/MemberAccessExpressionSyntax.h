@@ -11,6 +11,8 @@ namespace flc
             MemberAccessExpressionSyntax(ExpressionSyntax* term, string identifier);
             ~MemberAccessExpressionSyntax();
 
+            virtual bool isQualifiedName();
+
             virtual string toString();
 
         private:

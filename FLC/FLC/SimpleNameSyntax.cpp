@@ -24,6 +24,11 @@ namespace flc
             return qualified;
         }
 
+        bool SimpleNameSyntax::isQualifiedName()
+        {
+            return true;
+        }
+
         string SimpleNameSyntax::toString()
         {
             stringstream stream;

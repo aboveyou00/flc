@@ -15,6 +15,11 @@ namespace flc
         {
         }
 
+        bool MemberAccessExpressionSyntax::isQualifiedName()
+        {
+            return lhs->isQualifiedName();
+        }
+
         string MemberAccessExpressionSyntax::toString()
         {
             stringstream stream;

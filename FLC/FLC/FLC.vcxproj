@@ -153,6 +153,7 @@
     <ClInclude Include="CommandLineParser.h" />
     <ClInclude Include="Comment.h" />
     <ClInclude Include="Compiler.h" />
+    <ClInclude Include="ComplexNameSyntax.h" />
     <ClInclude Include="CompoundExpressionSyntax.h" />
     <ClInclude Include="CompoundExpressionSyntaxFactory.h" />
     <ClInclude Include="ConditionalAndExpressionSyntax.h" />
@@ -176,6 +177,7 @@
     <ClInclude Include="IntegerLiteralSyntax.h" />
     <ClInclude Include="IntegerLiteralToken.h" />
     <ClInclude Include="KeywordToken.h" />
+    <ClInclude Include="MemberAccessExpressionSyntax.h" />
     <ClInclude Include="MultiLineComment.h" />
     <ClInclude Include="MultiplicativeExpressionSyntax.h" />
     <ClInclude Include="MultiplicativeExpressionSyntaxFactory.h" />
@@ -213,6 +215,7 @@
     <ClCompile Include="CommandLineParser.cpp" />
     <ClCompile Include="Comment.cpp" />
     <ClCompile Include="Compiler.cpp" />
+    <ClCompile Include="ComplexNameSyntax.cpp" />
     <ClCompile Include="CompoundExpressionSyntax.cpp" />
     <ClCompile Include="CompoundExpressionSyntaxFactory.cpp" />
     <ClCompile Include="ConditionalAndExpressionSyntax.cpp" />
@@ -237,7 +240,6 @@
     <ClCompile Include="IntegerLiteralToken.cpp" />
     <ClCompile Include="KeywordToken.cpp" />
     <ClCompile Include="MemberAccessExpressionSyntax.cpp" />
-    <ClCompile Include="MemberAccessExpressionSyntax.h" />
     <ClCompile Include="MultiLineComment.cpp" />
     <ClCompile Include="MultiplicativeExpressionSyntax.cpp" />
     <ClCompile Include="MultiplicativeExpressionSyntaxFactory.cpp" />

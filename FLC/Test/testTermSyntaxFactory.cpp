@@ -15,19 +15,29 @@ namespace Test
             testFactory<TermSyntaxFactory>("{\r\n    true\r\n    false\r\n    1 + 2\r\n}");
         }
 
-        TEST_METHOD(Test_parseTerm_memberAccess)
+        TEST_METHOD(Test_parseTerm_simpleName)
+        {
+            testFactory<TermSyntaxFactory>("one");
+        }
+
+        TEST_METHOD(Test_parseTerm_complexName)
         {
             testFactory<TermSyntaxFactory>("one.two.three");
+        }
+
+        TEST_METHOD(Test_parseTerm_qualifiedName)
+        {
+            testFactory<TermSyntaxFactory>("MyNamespace::MyClass");
+        }
+
+        TEST_METHOD(Test_parseTerm_fullyQualifiedMemberAccess)
+        {
+            testFactory<TermSyntaxFactory>(":::MyNamespace::MyClass.fieldName");
         }
 
         TEST_METHOD(Test_parseTerm_parenthesizedExpression)
         {
             testFactory<TermSyntaxFactory>("(true)", "true");
-        }
-
-        TEST_METHOD(Test_parseTerm_identifier)
-        {
-            testFactory<TermSyntaxFactory>("test");
         }
 
         TEST_METHOD(Test_parseTerm_int)

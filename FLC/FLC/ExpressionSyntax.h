@@ -11,7 +11,8 @@ namespace flc
             ExpressionSyntax();
             ~ExpressionSyntax();
 
-
+            virtual bool isQualifiedName();
+            virtual bool isLeftHandSide();
         };
     }
 }

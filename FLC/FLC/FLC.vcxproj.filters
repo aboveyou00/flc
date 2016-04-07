@@ -216,6 +216,12 @@
     <ClInclude Include="SimpleNameSyntax.h">
       <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
+    <ClInclude Include="ComplexNameSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="MemberAccessExpressionSyntax.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -371,12 +377,6 @@
     <ClCompile Include="CompoundExpressionSyntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
-    <ClCompile Include="MemberAccessExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="MemberAccessExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
     <ClCompile Include="StringLiteralSyntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
@@ -397,6 +397,12 @@
     </ClCompile>
     <ClCompile Include="SimpleNameSyntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="ComplexNameSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="MemberAccessExpressionSyntax.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

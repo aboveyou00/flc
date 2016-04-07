@@ -11,6 +11,7 @@
 #include "BooleanLiteralSyntax.h"
 #include "NullLiteralSyntax.h"
 #include "SimpleNameSyntax.h"
+#include "ComplexNameSyntax.h"
 #include "MemberAccessExpressionSyntax.h"
 
 #include "IntegerLiteralToken.h"
@@ -57,6 +58,11 @@ namespace flc
                     if (!toks->at(p)->isSymbol(")")) return false;
                     pos = p + 1;
                     return true;
+                }
+                else if (tok->isSymbol(":::") && toks->at(pos + 1)->isIdentifier())
+                {
+                    tok = toks->at(++pos);
+                    result = new SimpleNameSyntax(((tokens::IdentifierToken*)tok)->getValue(), true);
                 }
                 else if (tok->isIdentifier())
                 {
@@ -110,10 +116,13 @@ namespace flc
                 //{
 
                 //}
-                //else if (tok->isSymbol("::"))
-                //{
-                //    //TODO: Check if term is a qualified name; otherwise this is invalid
-                //}
+                else if (tok->isSymbol("::") && toks->at(pos + 1)->isIdentifier() && term->isQualifiedName())
+                {
+                    tok = toks->at(pos + 1);
+                    result = new ComplexNameSyntax(term, ((tokens::IdentifierToken*)tok)->getValue());
+                    pos += 2;
+                    return true;
+                }
                 //else if (tok->isSymbol("["))
                 //{
 

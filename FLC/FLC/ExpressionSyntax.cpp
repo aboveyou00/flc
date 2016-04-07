@@ -12,6 +12,13 @@ namespace flc
         {
         }
 
-
+        bool ExpressionSyntax::isQualifiedName()
+        {
+            return false;
+        }
+        bool ExpressionSyntax::isLeftHandSide()
+        {
+            return false;
+        }
     }
 }
