@@ -20,13 +20,11 @@ namespace flc
             return lhs->isQualifiedName();
         }
 
-        string MemberAccessExpressionSyntax::toString()
+        void MemberAccessExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
-            stringstream stream;
-            stream << lhs->toString();
-            stream << ".";
-            stream << ident;
-            return stream.str();
+            lhs->stringify(stream, tabulation);
+            *stream << ".";
+            *stream << ident;
         }
     }
 }

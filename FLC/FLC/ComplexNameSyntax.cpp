@@ -29,13 +29,11 @@ namespace flc
             return true;
         }
 
-        string ComplexNameSyntax::toString()
+        void ComplexNameSyntax::stringify(stringstream* stream, int tabulation)
         {
-            stringstream stream;
-            stream << lhs->toString();
-            stream << "::";
-            stream << name;
-            return stream.str();
+            lhs->stringify(stream, tabulation);
+            *stream << "::";
+            *stream << name;
         }
     }
 }

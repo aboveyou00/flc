@@ -29,12 +29,11 @@ namespace flc
             return true;
         }
 
-        string SimpleNameSyntax::toString()
+        void SimpleNameSyntax::stringify(stringstream* stream, int tabulation)
         {
-            stringstream stream;
-            if (qualified) stream << ":::";
-            stream << name;
-            return stream.str();
+            tabulate(stream, tabulation);
+            if (qualified) *stream << ":::";
+            *stream << name;
         }
     }
 }

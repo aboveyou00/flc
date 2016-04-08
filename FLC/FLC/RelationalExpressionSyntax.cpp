@@ -38,22 +38,29 @@ namespace flc
 
 
 
-        string RelationalExpressionSyntax::toString()
+        void RelationalExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
+            _left->stringify(stream, tabulation);
             switch (_op)
             {
             case RelationalOperator::LessThan:
-                return _left->toString() + " < " + _right->toString();
+                *stream << " < ";
+                break;
             case RelationalOperator::GreaterThan:
-                return _left->toString() + " > " + _right->toString();
+                *stream << " > ";
+                break;
             case RelationalOperator::LessThanOrEqualTo:
-                return _left->toString() + " <= " + _right->toString();
+                *stream << " <= ";
+                break;
             case RelationalOperator::GreaterThanOrEqualTo:
-                return _left->toString() + " >= " + _right->toString();
+                *stream << " >= ";
+                break;
             case RelationalOperator::ErrorState:
             default:
-                return _left->toString() + "%%ERROR%% " + _right->toString();
+                *stream << " %%ERROR%% ";
+                break;
             }
+            _right->stringify(stream, 0);
         }
     }
 }

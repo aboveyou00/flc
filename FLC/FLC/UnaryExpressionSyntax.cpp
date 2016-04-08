@@ -31,26 +31,35 @@ namespace flc
 
 
 
-        string UnaryExpressionSyntax::toString()
+        void UnaryExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
+            tabulate(stream, tabulation);
             switch (_op)
             {
             case UnaryOperator::Plus:
-                return "+" + _expr->toString();
+                *stream << "+";
+                break;
             case UnaryOperator::Minus:
-                return "-" + _expr->toString();
+                *stream << "-";
+                break;
             case UnaryOperator::Not:
-                return "!" + _expr->toString();
+                *stream << "!";
+                break;
             case UnaryOperator::Complement:
-                return "~" + _expr->toString();
+                *stream << "~";
+                break;
             case UnaryOperator::PreIncrement:
-                return "++" + _expr->toString();
+                *stream << "++";
+                break;
             case UnaryOperator::PreDecrement:
-                return "--" + _expr->toString();
+                *stream << "--";
+                break;
             case UnaryOperator::ErrorState:
             default:
-                return "%%ERROR%% " + _expr->toString();
+                *stream << "%%ERROR%% ";
+                break;
             }
+            _expr->stringify(stream, 0);
         }
     }
 }

@@ -36,20 +36,26 @@ namespace flc
 
 
 
-        string MultiplicativeExpressionSyntax::toString()
+        void MultiplicativeExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
+            _left->stringify(stream, tabulation);
             switch (_op)
             {
             case MultiplicativeOperator::Multiply:
-                return _left->toString() + " * " + _right->toString();
+                *stream << " * ";
+                break;
             case MultiplicativeOperator::Divide:
-                return _left->toString() + " / " + _right->toString();
+                *stream << " / ";
+                break;
             case MultiplicativeOperator::Remainder:
-                return _left->toString() + " % " + _right->toString();
+                *stream << " % ";
+                break;
             case MultiplicativeOperator::ErrorState:
             default:
-                return _left->toString() + "%%ERROR%% " + _right->toString();
+                *stream << " %%ERROR%% ";
+                break;
             }
+            _right->stringify(stream, 0);
         }
     }
 }

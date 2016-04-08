@@ -19,11 +19,12 @@ namespace flc
             return val;
         }
 
-        string CharacterLiteralSyntax::toString()
+        void CharacterLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
-            stringstream stream;
-            stream << "'" << (char)val << "'";
-            return stream.str();
+            tabulate(stream, tabulation);
+            *stream << "'";
+            *stream << (char)val;
+            *stream << "'";
         }
     }
 }

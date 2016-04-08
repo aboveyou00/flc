@@ -18,12 +18,11 @@ namespace flc
         {
             return val;
         }
-
-        string FloatLiteralSyntax::toString()
+        
+        void FloatLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
-            stringstream stream;
-            stream << val;
-            return stream.str();
+            tabulate(stream, tabulation);
+            *stream << val;
         }
     }
 }

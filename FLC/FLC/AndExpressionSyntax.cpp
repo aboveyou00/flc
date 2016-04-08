@@ -24,9 +24,11 @@ namespace flc
 
 
 
-        string AndExpressionSyntax::toString()
+        void AndExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
-            return _left->toString() + " & " + _right->toString();
+            _left->stringify(stream, tabulation);
+            *stream << " & ";
+            _right->stringify(stream, 0);
         }
     }
 }

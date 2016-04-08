@@ -15,7 +15,7 @@ namespace flc
             ExpressionSyntax* getTrueExpression();
             ExpressionSyntax* getFalseExpression();
 
-            virtual string toString();
+            virtual void stringify(stringstream* stream, int tabulation = 0);
 
         private:
             ExpressionSyntax *_cond, *_iftrue, *_iffalse;

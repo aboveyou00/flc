@@ -12,7 +12,7 @@ namespace flc
             CompoundExpressionSyntax(vector<ExpressionSyntax*>* expressions);
             ~CompoundExpressionSyntax();
 
-            virtual string toString();
+            virtual void stringify(stringstream* stream, int tabulation = 0);
 
         private:
             vector<ExpressionSyntax*> exprs;

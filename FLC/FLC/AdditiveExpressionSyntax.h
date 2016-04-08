@@ -22,7 +22,7 @@ namespace flc
             ExpressionSyntax* getRightOperand();
             AdditiveOperator getOperator();
 
-            virtual string toString();
+            virtual void stringify(stringstream* stream, int tabulation = 0);
 
         private:
             ExpressionSyntax *_left, *_right;

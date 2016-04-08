@@ -28,9 +28,13 @@ namespace flc
 
 
 
-        string TernaryExpressionSyntax::toString()
+        void TernaryExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
-            return _cond->toString() + " ? " + _iftrue->toString() + " : " + _iffalse->toString();
+            _cond->stringify(stream, tabulation);
+            *stream << " ? ";
+            _iftrue->stringify(stream, 0);
+            *stream << " : ";
+            _iffalse->stringify(stream, 0);
         }
     }
 }

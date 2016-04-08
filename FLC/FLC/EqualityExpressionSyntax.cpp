@@ -36,18 +36,23 @@ namespace flc
 
 
 
-        string EqualityExpressionSyntax::toString()
+        void EqualityExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
+            _left->stringify(stream, tabulation);
             switch (_op)
             {
             case EqualityOperator::Equals:
-                return _left->toString() + " == " + _right->toString();
+                *stream << " == ";
+                break;
             case EqualityOperator::NotEquals:
-                return _left->toString() + " != " + _right->toString();
+                *stream << " != ";
+                break;
             case EqualityOperator::ErrorState:
             default:
-                return _left->toString() + "%%ERROR%% " + _right->toString();
+                *stream << " %%ERROR%% ";
+                break;
             }
+            _right->stringify(stream, 0);
         }
     }
 }

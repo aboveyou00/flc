@@ -18,17 +18,17 @@ namespace flc
         {
         }
 
-        string CompoundExpressionSyntax::toString()
+        void CompoundExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
-            stringstream stream;
-            stream << "{\r\n";
+            tabulate(stream, tabulation);
+            *stream << "{\r\n";
             for (auto expr : exprs)
             {
-                //TODO: tabulate the entire expression, not just the first line
-                stream << "    " << expr->toString() << "\r\n";
+                expr->stringify(stream, tabulation + 1);
+                *stream << "\r\n";
             }
-            stream << "}";
-            return stream.str();
+            tabulate(stream, tabulation);
+            *stream << "}";
         }
     }
 }

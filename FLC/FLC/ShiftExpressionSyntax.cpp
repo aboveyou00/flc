@@ -36,18 +36,23 @@ namespace flc
 
 
 
-        string ShiftExpressionSyntax::toString()
+        void ShiftExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
+            _left->stringify(stream, tabulation);
             switch (_op)
             {
             case ShiftOperator::Left:
-                return _left->toString() + " << " + _right->toString();
+                *stream << " << ";
+                break;
             case ShiftOperator::Right:
-                return _left->toString() + " >> " + _right->toString();
+                *stream << " >> ";
+                break;
             case ShiftOperator::ErrorState:
             default:
-                return _left->toString() + "%%ERROR%% " + _right->toString();
+                *stream << " %%ERROR%% ";
+                break;
             }
+            _right->stringify(stream, 0);
         }
     }
 }

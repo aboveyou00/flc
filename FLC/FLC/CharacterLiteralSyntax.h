@@ -13,7 +13,7 @@ namespace flc
 
             char16_t getValue();
 
-            virtual string toString();
+            virtual void stringify(stringstream* stream, int tabulation = 0);
 
         private:
             char16_t val;

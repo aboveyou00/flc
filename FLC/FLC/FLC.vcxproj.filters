@@ -220,7 +220,7 @@
       <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
     <ClInclude Include="MemberAccessExpressionSyntax.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -402,7 +402,7 @@
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
     <ClCompile Include="MemberAccessExpressionSyntax.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

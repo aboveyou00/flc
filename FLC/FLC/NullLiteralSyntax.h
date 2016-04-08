@@ -11,6 +11,7 @@ namespace flc
             NullLiteralSyntax();
             ~NullLiteralSyntax();
 
+            virtual void stringify(stringstream* stream, int tabulation = 0);
             virtual string toString();
         };
     }

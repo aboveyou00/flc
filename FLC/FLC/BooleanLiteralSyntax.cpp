@@ -19,9 +19,16 @@ namespace flc
             return val;
         }
 
+
+
+        void BooleanLiteralSyntax::stringify(stringstream* stream, int tabulation)
+        {
+            tabulate(stream, tabulation);
+            *stream << (val ? "true" : "false");
+        }
         string BooleanLiteralSyntax::toString()
         {
-            return val ? "true" : "false";
+            return (val ? "true" : "false");
         }
     }
 }

@@ -19,11 +19,10 @@ namespace flc
             return val;
         }
 
-        string IntegerLiteralSyntax::toString()
+        void IntegerLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
-            stringstream stream;
-            stream << val;
-            return stream.str();
+            tabulate(stream, tabulation);
+            *stream << val;
         }
     }
 }

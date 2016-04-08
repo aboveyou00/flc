@@ -13,6 +13,11 @@ namespace flc
         {
         }
 
+        void NullLiteralSyntax::stringify(stringstream* stream, int tabulation)
+        {
+            tabulate(stream, tabulation);
+            *stream << "null";
+        }
         string NullLiteralSyntax::toString()
         {
             return "null";

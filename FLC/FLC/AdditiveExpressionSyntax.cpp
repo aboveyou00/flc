@@ -36,18 +36,23 @@ namespace flc
 
 
 
-        string AdditiveExpressionSyntax::toString()
+        void AdditiveExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
+            _left->stringify(stream, tabulation);
             switch (_op)
             {
             case AdditiveOperator::Add:
-                return _left->toString() + " + " + _right->toString();
+                *stream << " + ";
+                break;
             case AdditiveOperator::Subtract:
-                return _left->toString() + " - " + _right->toString();
+                *stream << " - ";
+                break;
             case AdditiveOperator::ErrorState:
             default:
-                return _left->toString() + "%%ERROR%% " + _right->toString();
+                *stream << " %%ERROR%% ";
+                break;
             }
+            _right->stringify(stream, 0);
         }
     }
 }
