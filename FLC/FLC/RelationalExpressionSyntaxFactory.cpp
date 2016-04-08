@@ -25,14 +25,12 @@ namespace flc
                 {
                     int p2 = pos + 1;
                     ExpressionSyntax *relational = nullptr;
-                    if (!tryParseSyntax(toks, p2, relational))
+                    if (tryParseSyntax(toks, p2, relational))
                     {
-                        //TODO: provide more context
-                        reportError("Unexpected unary operator: " + result->toString() + toks->at(pos)->toString());
-                        return false;
+                        result = new RelationalExpressionSyntax(result, toks->at(pos)->toString(), relational);
+                        pos = p2;
+                        return true;
                     }
-                    result = new RelationalExpressionSyntax(result, toks->at(pos)->toString(), relational);
-                    pos = p2;
                 }
                 return true;
             }

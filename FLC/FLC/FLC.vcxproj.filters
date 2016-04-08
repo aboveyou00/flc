@@ -222,6 +222,9 @@
     <ClInclude Include="MemberAccessExpressionSyntax.h">
       <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
+    <ClInclude Include="AssignmentExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -402,6 +405,9 @@
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
     <ClCompile Include="MemberAccessExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="AssignmentExpressionSyntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
   </ItemGroup>

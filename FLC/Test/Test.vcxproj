@@ -175,6 +175,7 @@
     <ClCompile Include="testEqualityExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testErrors.cpp" />
     <ClCompile Include="testExclusiveOrExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testInclusiveOrExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testMultiplicativeExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testRelationalExpressionSyntaxFactory.cpp" />

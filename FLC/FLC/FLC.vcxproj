@@ -146,6 +146,7 @@
     <ClInclude Include="AdditiveExpressionSyntaxFactory.h" />
     <ClInclude Include="AndExpressionSyntax.h" />
     <ClInclude Include="AndExpressionSyntaxFactory.h" />
+    <ClInclude Include="AssignmentExpressionSyntax.h" />
     <ClInclude Include="BooleanLiteralSyntax.h" />
     <ClInclude Include="BooleanLiteralToken.h" />
     <ClInclude Include="CharacterLiteralSyntax.h" />
@@ -208,6 +209,7 @@
     <ClCompile Include="AdditiveExpressionSyntaxFactory.cpp" />
     <ClCompile Include="AndExpressionSyntax.cpp" />
     <ClCompile Include="AndExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="AssignmentExpressionSyntax.cpp" />
     <ClCompile Include="BooleanLiteralSyntax.cpp" />
     <ClCompile Include="BooleanLiteralToken.cpp" />
     <ClCompile Include="CharacterLiteralSyntax.cpp" />
