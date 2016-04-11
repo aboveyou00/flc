@@ -104,5 +104,8 @@
     <ClCompile Include="testExpressionSyntaxFactory.cpp">
       <Filter>Source Files\flc\syntax\factory</Filter>
     </ClCompile>
+    <ClCompile Include="testIfExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

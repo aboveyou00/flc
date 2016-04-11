@@ -173,6 +173,8 @@
     <ClInclude Include="FloatLiteralSyntax.h" />
     <ClInclude Include="FloatLiteralToken.h" />
     <ClInclude Include="IdentifierToken.h" />
+    <ClInclude Include="IfExpressionSyntax.h" />
+    <ClInclude Include="IfExpressionSyntaxFactory.h" />
     <ClInclude Include="InclusiveOrExpressionSyntax.h" />
     <ClInclude Include="InclusiveOrExpressionSyntaxFactory.h" />
     <ClInclude Include="IntegerLiteralSyntax.h" />
@@ -236,6 +238,8 @@
     <ClCompile Include="FloatLiteralSyntax.cpp" />
     <ClCompile Include="FloatLiteralToken.cpp" />
     <ClCompile Include="IdentifierToken.cpp" />
+    <ClCompile Include="IfExpressionSyntax.cpp" />
+    <ClCompile Include="IfExpressionSyntaxFactory.cpp" />
     <ClCompile Include="InclusiveOrExpressionSyntax.cpp" />
     <ClCompile Include="InclusiveOrExpressionSyntaxFactory.cpp" />
     <ClCompile Include="IntegerLiteralSyntax.cpp" />

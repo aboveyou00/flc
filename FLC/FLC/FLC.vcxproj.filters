@@ -40,6 +40,18 @@
     <Filter Include="Header Files\flc\syntax\factory">
       <UniqueIdentifier>{aa5e4e23-dfdd-4436-ae87-4a4064191bb7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\flc\types">
+      <UniqueIdentifier>{d5f31722-014f-4538-ae54-64fd978ae7d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\asm">
+      <UniqueIdentifier>{22735dfb-b1fc-4725-8a02-f5582d1f07fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\asm">
+      <UniqueIdentifier>{986222ea-7527-47b3-bb0a-63fc2e12249d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\types">
+      <UniqueIdentifier>{4190cd14-fe0f-4880-8426-c5e151eca973}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -225,6 +237,12 @@
     <ClInclude Include="AssignmentExpressionSyntax.h">
       <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
+    <ClInclude Include="IfExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\syntax\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="IfExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -408,6 +426,12 @@
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
     <ClCompile Include="AssignmentExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="IfExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="IfExpressionSyntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
   </ItemGroup>
