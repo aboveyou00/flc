@@ -8,11 +8,11 @@ namespace flc
     {
         namespace factory
         {
-            class IfExpressionSyntaxFactory
+            class WhileExpressionSyntaxFactory
             {
             public:
-                IfExpressionSyntaxFactory();
-                ~IfExpressionSyntaxFactory();
+                WhileExpressionSyntaxFactory();
+                ~WhileExpressionSyntaxFactory();
 
                 virtual bool tryParseSyntax(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result);
             };

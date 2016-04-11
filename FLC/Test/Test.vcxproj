@@ -185,6 +185,7 @@
     <ClCompile Include="testTernaryExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testTokenizer.cpp" />
     <ClCompile Include="testUnaryExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testWhileExpressionFactory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

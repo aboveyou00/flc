@@ -243,6 +243,12 @@
     <ClInclude Include="IfExpressionSyntax.h">
       <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
+    <ClInclude Include="WhileExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\syntax\factory</Filter>
+    </ClInclude>
+    <ClInclude Include="WhileExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -432,6 +438,12 @@
       <Filter>Source Files\flc\syntax\factory</Filter>
     </ClCompile>
     <ClCompile Include="IfExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="WhileExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="WhileExpressionSyntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
   </ItemGroup>

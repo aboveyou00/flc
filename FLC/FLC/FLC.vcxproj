@@ -205,6 +205,8 @@
     <ClInclude Include="Tokenizer.h" />
     <ClInclude Include="UnaryExpressionSyntax.h" />
     <ClInclude Include="UnaryExpressionSyntaxFactory.h" />
+    <ClInclude Include="WhileExpressionSyntax.h" />
+    <ClInclude Include="WhileExpressionSyntaxFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdditiveExpressionSyntax.cpp" />
@@ -270,6 +272,8 @@
     <ClCompile Include="Tokenizer.cpp" />
     <ClCompile Include="UnaryExpressionSyntax.cpp" />
     <ClCompile Include="UnaryExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="WhileExpressionSyntax.cpp" />
+    <ClCompile Include="WhileExpressionSyntaxFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="test.fl" />
