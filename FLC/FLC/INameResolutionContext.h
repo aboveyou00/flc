@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "NameType.h"
 
 namespace flc
 {
@@ -14,7 +15,7 @@ namespace flc
             {
             }
 
-            virtual INameInfo* resolveName(std::string name) = 0;
+            virtual INameInfo* resolveName(std::string name, NameType type = NameType::Any) = 0;
         };
     }
 }

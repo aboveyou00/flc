@@ -58,6 +58,12 @@
     <Filter Include="Header Files\flc\op">
       <UniqueIdentifier>{40dfec4e-db5d-478f-bff9-dcc32ea299e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\flc\types\predefined">
+      <UniqueIdentifier>{789d4d0b-5761-48b6-ab7a-9ad2f8d367bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\types\predefined">
+      <UniqueIdentifier>{54158b65-443e-4da1-8e19-b1d140f4cb31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -267,6 +273,54 @@
     <ClInclude Include="INameInfo.h">
       <Filter>Header Files\flc\types</Filter>
     </ClInclude>
+    <ClInclude Include="NameType.h">
+      <Filter>Header Files\flc\types</Filter>
+    </ClInclude>
+    <ClInclude Include="Int32.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="Int64.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="UInt32.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="UInt64.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="Double.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="Float.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="Boolean.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="Void.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="Int16.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="Int8.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="UInt8.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="UInt16.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="Char.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -466,6 +520,54 @@
     </ClCompile>
     <ClCompile Include="RuntimeType.cpp">
       <Filter>Source Files\flc\types</Filter>
+    </ClCompile>
+    <ClCompile Include="INameInfo.cpp">
+      <Filter>Source Files\flc\types</Filter>
+    </ClCompile>
+    <ClCompile Include="Int32.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="Int64.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="Float.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="Double.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="UInt32.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="UInt64.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="Char.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="Void.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="Int16.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="Int8.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="UInt8.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="UInt16.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="Boolean.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -147,8 +147,10 @@
     <ClInclude Include="AndExpressionSyntax.h" />
     <ClInclude Include="AndExpressionSyntaxFactory.h" />
     <ClInclude Include="AssignmentExpressionSyntax.h" />
+    <ClInclude Include="Boolean.h" />
     <ClInclude Include="BooleanLiteralSyntax.h" />
     <ClInclude Include="BooleanLiteralToken.h" />
+    <ClInclude Include="Char.h" />
     <ClInclude Include="CharacterLiteralSyntax.h" />
     <ClInclude Include="CharacterLiteralToken.h" />
     <ClInclude Include="CommandLineParser.h" />
@@ -161,6 +163,7 @@
     <ClInclude Include="ConditionalAndExpressionSyntaxFactory.h" />
     <ClInclude Include="ConditionalOrExpressionSyntax.h" />
     <ClInclude Include="ConditionalOrExpressionSyntaxFactory.h" />
+    <ClInclude Include="Double.h" />
     <ClInclude Include="EndOfFileToken.h" />
     <ClInclude Include="EqualityExpressionSyntax.h" />
     <ClInclude Include="EqualityExpressionSyntaxFactory.h" />
@@ -170,6 +173,7 @@
     <ClInclude Include="ExclusiveOrExpressionSyntaxFactory.h" />
     <ClInclude Include="ExpressionSyntax.h" />
     <ClInclude Include="ExpressionSyntaxFactory.h" />
+    <ClInclude Include="Float.h" />
     <ClInclude Include="FloatLiteralSyntax.h" />
     <ClInclude Include="FloatLiteralToken.h" />
     <ClInclude Include="IdentifierToken.h" />
@@ -178,6 +182,10 @@
     <ClInclude Include="INameInfo.h" />
     <ClInclude Include="InclusiveOrExpressionSyntax.h" />
     <ClInclude Include="InclusiveOrExpressionSyntaxFactory.h" />
+    <ClInclude Include="Int16.h" />
+    <ClInclude Include="Int32.h" />
+    <ClInclude Include="Int64.h" />
+    <ClInclude Include="Int8.h" />
     <ClInclude Include="IntegerLiteralSyntax.h" />
     <ClInclude Include="IntegerLiteralToken.h" />
     <ClInclude Include="KeywordToken.h" />
@@ -186,8 +194,10 @@
     <ClInclude Include="MultiplicativeExpressionSyntax.h" />
     <ClInclude Include="MultiplicativeExpressionSyntaxFactory.h" />
     <ClInclude Include="INameResolutionContext.h" />
+    <ClInclude Include="NameType.h" />
     <ClInclude Include="NullLiteralSyntax.h" />
     <ClInclude Include="NullLiteralToken.h" />
+    <ClInclude Include="Object.h" />
     <ClInclude Include="RelationalExpressionSyntax.h" />
     <ClInclude Include="RelationalExpressionSyntaxFactory.h" />
     <ClInclude Include="resource.h" />
@@ -197,6 +207,7 @@
     <ClInclude Include="SimpleNameSyntax.h" />
     <ClInclude Include="SingleLineComment.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="String.h" />
     <ClInclude Include="StringLiteralSyntax.h" />
     <ClInclude Include="StringLiteralToken.h" />
     <ClInclude Include="SymbolToken.h" />
@@ -207,8 +218,13 @@
     <ClInclude Include="TernaryExpressionSyntaxFactory.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="Tokenizer.h" />
+    <ClInclude Include="UInt16.h" />
+    <ClInclude Include="UInt32.h" />
+    <ClInclude Include="UInt64.h" />
+    <ClInclude Include="UInt8.h" />
     <ClInclude Include="UnaryExpressionSyntax.h" />
     <ClInclude Include="UnaryExpressionSyntaxFactory.h" />
+    <ClInclude Include="Void.h" />
     <ClInclude Include="WhileExpressionSyntax.h" />
     <ClInclude Include="WhileExpressionSyntaxFactory.h" />
   </ItemGroup>
@@ -218,8 +234,10 @@
     <ClCompile Include="AndExpressionSyntax.cpp" />
     <ClCompile Include="AndExpressionSyntaxFactory.cpp" />
     <ClCompile Include="AssignmentExpressionSyntax.cpp" />
+    <ClCompile Include="Boolean.cpp" />
     <ClCompile Include="BooleanLiteralSyntax.cpp" />
     <ClCompile Include="BooleanLiteralToken.cpp" />
+    <ClCompile Include="Char.cpp" />
     <ClCompile Include="CharacterLiteralSyntax.cpp" />
     <ClCompile Include="CharacterLiteralToken.cpp" />
     <ClCompile Include="CommandLineParser.cpp" />
@@ -232,6 +250,7 @@
     <ClCompile Include="ConditionalAndExpressionSyntaxFactory.cpp" />
     <ClCompile Include="ConditionalOrExpressionSyntax.cpp" />
     <ClCompile Include="ConditionalOrExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="Double.cpp" />
     <ClCompile Include="EndOfFileToken.cpp" />
     <ClCompile Include="EqualityExpressionSyntax.cpp" />
     <ClCompile Include="EqualityExpressionSyntaxFactory.cpp" />
@@ -241,13 +260,19 @@
     <ClCompile Include="ExclusiveOrExpressionSyntaxFactory.cpp" />
     <ClCompile Include="ExpressionSyntax.cpp" />
     <ClCompile Include="FLC.cpp" />
+    <ClCompile Include="Float.cpp" />
     <ClCompile Include="FloatLiteralSyntax.cpp" />
     <ClCompile Include="FloatLiteralToken.cpp" />
     <ClCompile Include="IdentifierToken.cpp" />
     <ClCompile Include="IfExpressionSyntax.cpp" />
     <ClCompile Include="IfExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="INameInfo.cpp" />
     <ClCompile Include="InclusiveOrExpressionSyntax.cpp" />
     <ClCompile Include="InclusiveOrExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="Int16.cpp" />
+    <ClCompile Include="Int32.cpp" />
+    <ClCompile Include="Int64.cpp" />
+    <ClCompile Include="Int8.cpp" />
     <ClCompile Include="IntegerLiteralSyntax.cpp" />
     <ClCompile Include="IntegerLiteralToken.cpp" />
     <ClCompile Include="KeywordToken.cpp" />
@@ -257,6 +282,7 @@
     <ClCompile Include="MultiplicativeExpressionSyntaxFactory.cpp" />
     <ClCompile Include="NullLiteralSyntax.cpp" />
     <ClCompile Include="NullLiteralToken.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="RelationalExpressionSyntax.cpp" />
     <ClCompile Include="RelationalExpressionSyntaxFactory.cpp" />
     <ClCompile Include="RuntimeType.cpp" />
@@ -266,6 +292,7 @@
     <ClCompile Include="SingleLineComment.cpp" />
     <ClCompile Include="ExpressionSyntaxFactory.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="String.cpp" />
     <ClCompile Include="StringLiteralSyntax.cpp" />
     <ClCompile Include="StringLiteralToken.cpp" />
     <ClCompile Include="SymbolToken.cpp" />
@@ -275,8 +302,13 @@
     <ClCompile Include="TernaryExpressionSyntaxFactory.cpp" />
     <ClCompile Include="Token.cpp" />
     <ClCompile Include="Tokenizer.cpp" />
+    <ClCompile Include="UInt16.cpp" />
+    <ClCompile Include="UInt32.cpp" />
+    <ClCompile Include="UInt64.cpp" />
+    <ClCompile Include="UInt8.cpp" />
     <ClCompile Include="UnaryExpressionSyntax.cpp" />
     <ClCompile Include="UnaryExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="Void.cpp" />
     <ClCompile Include="WhileExpressionSyntax.cpp" />
     <ClCompile Include="WhileExpressionSyntaxFactory.cpp" />
   </ItemGroup>

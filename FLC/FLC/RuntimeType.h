@@ -14,7 +14,7 @@ namespace flc
             RuntimeType(std::string name);
             ~RuntimeType();
 
-            INameInfo* resolveName(std::string name);
+            INameInfo* resolveName(std::string name, NameType nameType);
 
             std::string getName();
             std::string getQualifiedName();
