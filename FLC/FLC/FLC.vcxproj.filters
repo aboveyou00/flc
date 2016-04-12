@@ -52,6 +52,12 @@
     <Filter Include="Source Files\flc\types">
       <UniqueIdentifier>{4190cd14-fe0f-4880-8426-c5e151eca973}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\flc\op">
+      <UniqueIdentifier>{eb2e14df-93f6-4fd9-ac5f-f624e13b6ea1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\op">
+      <UniqueIdentifier>{40dfec4e-db5d-478f-bff9-dcc32ea299e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -249,6 +255,18 @@
     <ClInclude Include="WhileExpressionSyntax.h">
       <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
+    <ClInclude Include="RuntimeType.h">
+      <Filter>Header Files\flc\types</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="INameResolutionContext.h">
+      <Filter>Header Files\flc\types</Filter>
+    </ClInclude>
+    <ClInclude Include="INameInfo.h">
+      <Filter>Header Files\flc\types</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -445,6 +463,9 @@
     </ClCompile>
     <ClCompile Include="WhileExpressionSyntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="RuntimeType.cpp">
+      <Filter>Source Files\flc\types</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

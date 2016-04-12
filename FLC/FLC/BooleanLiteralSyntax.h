@@ -13,8 +13,10 @@ namespace flc
 
             bool getValue();
 
-            virtual void stringify(stringstream* stream, int tabulation = 0);
-            virtual string toString();
+            types::RuntimeType* getExpressionType() override;
+
+            void stringify(stringstream* stream, int tabulation = 0) override;
+            string toString() override;
 
         private:
             bool val;

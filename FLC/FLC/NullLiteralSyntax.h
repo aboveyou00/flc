@@ -11,8 +11,10 @@ namespace flc
             NullLiteralSyntax();
             ~NullLiteralSyntax();
 
-            virtual void stringify(stringstream* stream, int tabulation = 0);
-            virtual string toString();
+            types::RuntimeType* getExpressionType() override;
+
+            void stringify(stringstream* stream, int tabulation = 0) override;
+            string toString() override;
         };
     }
 }

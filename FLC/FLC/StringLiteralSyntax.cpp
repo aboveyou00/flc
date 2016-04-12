@@ -19,6 +19,13 @@ namespace flc
             return str;
         }
 
+        types::RuntimeType* StringLiteralSyntax::getExpressionType()
+        {
+            return types::RuntimeType::string;
+        }
+
+
+
         void StringLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
             tabulate(stream, tabulation);

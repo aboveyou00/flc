@@ -34,6 +34,12 @@ namespace flc
             return _op;
         }
 
+        types::RuntimeType* ShiftExpressionSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
 
 
         void ShiftExpressionSyntax::stringify(stringstream* stream, int tabulation)

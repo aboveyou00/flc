@@ -18,6 +18,13 @@ namespace flc
         {
             return val;
         }
+
+        types::RuntimeType* FloatLiteralSyntax::getExpressionType()
+        {
+            return types::RuntimeType::float32;
+        }
+
+
         
         void FloatLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {

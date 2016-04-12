@@ -29,6 +29,12 @@ namespace flc
             return _op;
         }
 
+        types::RuntimeType* UnaryExpressionSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
 
 
         void UnaryExpressionSyntax::stringify(stringstream* stream, int tabulation)

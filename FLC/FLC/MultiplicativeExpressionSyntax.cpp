@@ -34,6 +34,12 @@ namespace flc
             return _op;
         }
 
+        types::RuntimeType* MultiplicativeExpressionSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
 
 
         void MultiplicativeExpressionSyntax::stringify(stringstream* stream, int tabulation)

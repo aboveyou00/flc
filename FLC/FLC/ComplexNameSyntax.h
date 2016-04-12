@@ -14,9 +14,11 @@ namespace flc
             string getName();
             ExpressionSyntax* getBaseExpression();
 
-            virtual bool isQualifiedName();
+            bool isQualifiedName() override;
 
-            virtual void stringify(stringstream* stream, int tabulation = 0);
+            types::RuntimeType* getExpressionType() override;
+
+            void stringify(stringstream* stream, int tabulation = 0) override;
 
         private:
             ExpressionSyntax* lhs;

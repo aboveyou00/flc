@@ -18,6 +18,15 @@ namespace flc
         {
         }
 
+        types::RuntimeType* CompoundExpressionSyntax::getExpressionType()
+        {
+            if (exprs.size() == 0) return types::RuntimeType::void0;
+
+            //return exprs[exprs.size() - 1]->getExpressionType();
+            //TODO: Implement
+            return nullptr;
+        }
+
         void CompoundExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
             tabulate(stream, tabulation);

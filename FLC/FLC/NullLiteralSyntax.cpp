@@ -13,6 +13,12 @@ namespace flc
         {
         }
 
+        types::RuntimeType* NullLiteralSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
         void NullLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
             tabulate(stream, tabulation);

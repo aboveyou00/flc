@@ -22,6 +22,12 @@ namespace flc
             return _right;
         }
 
+        types::RuntimeType* InclusiveOrExpressionSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
 
 
         void InclusiveOrExpressionSyntax::stringify(stringstream* stream, int tabulation)

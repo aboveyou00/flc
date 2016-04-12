@@ -18,8 +18,10 @@ namespace flc
 
             bool WhileExpressionSyntaxFactory::tryParseSyntax(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result)
             {
-                int p = pos;
-                if (!toks->at(p++)->isKeyword("while")) return false;
+                bool isWhile = toks->at(pos)->isKeyword("while");
+                if (!isWhile && !toks->at(pos)->isKeyword("until")) return false;
+
+                int p = pos + 1;
                 if (!toks->at(p++)->isSymbol("(")) return false;
 
                 ExpressionSyntaxFactory exprFactory;
@@ -27,11 +29,12 @@ namespace flc
                 if (!exprFactory.tryParseSyntax(toks, p, cond)) return false;
 
                 if (!toks->at(p++)->isSymbol(")")) return false;
+
                 ExpressionSyntax* whileExpr;
                 if (!exprFactory.tryParseSyntax(toks, p, whileExpr)) return false;
 
                 pos = p;
-                result = new WhileExpressionSyntax(cond, whileExpr);
+                result = new WhileExpressionSyntax(cond, whileExpr, isWhile);
                 return true;
             }
         }

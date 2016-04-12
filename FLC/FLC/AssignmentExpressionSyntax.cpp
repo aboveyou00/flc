@@ -43,6 +43,12 @@ namespace flc
             return _op;
         }
 
+        types::RuntimeType* AssignmentExpressionSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
 
 
         void AssignmentExpressionSyntax::stringify(stringstream* stream, int tabulation)

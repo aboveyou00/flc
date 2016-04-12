@@ -34,6 +34,12 @@ namespace flc
             return _op;
         }
 
+        types::RuntimeType* AdditiveExpressionSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
 
 
         void AdditiveExpressionSyntax::stringify(stringstream* stream, int tabulation)

@@ -10,9 +10,14 @@ namespace Test
     TEST_CLASS(TestWhileExpressionSyntaxFactory)
     {
     public:
-        TEST_METHOD(Test_parseWhileExpression)
+        TEST_METHOD(Test_parseWhileExpression_while)
         {
             testFactory<WhileExpressionSyntaxFactory>("while (true) false");
+        }
+
+        TEST_METHOD(Test_parseWhileExpression_until)
+        {
+            testFactory<WhileExpressionSyntaxFactory>("until (false) true");
         }
     };
 }

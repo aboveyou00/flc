@@ -20,6 +20,14 @@ namespace flc
             return lhs->isQualifiedName();
         }
 
+        types::RuntimeType* MemberAccessExpressionSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
+
+
         void MemberAccessExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
             lhs->stringify(stream, tabulation);

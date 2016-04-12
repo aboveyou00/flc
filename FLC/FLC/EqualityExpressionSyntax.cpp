@@ -34,6 +34,12 @@ namespace flc
             return _op;
         }
 
+        types::RuntimeType* EqualityExpressionSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
 
 
         void EqualityExpressionSyntax::stringify(stringstream* stream, int tabulation)

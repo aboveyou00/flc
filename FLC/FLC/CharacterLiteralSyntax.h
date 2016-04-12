@@ -13,7 +13,9 @@ namespace flc
 
             char16_t getValue();
 
-            virtual void stringify(stringstream* stream, int tabulation = 0);
+            types::RuntimeType* getExpressionType() override;
+
+            void stringify(stringstream* stream, int tabulation = 0) override;
 
         private:
             char16_t val;

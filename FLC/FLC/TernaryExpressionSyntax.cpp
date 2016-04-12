@@ -26,6 +26,12 @@ namespace flc
             return _iffalse;
         }
 
+        types::RuntimeType* TernaryExpressionSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
 
 
         void TernaryExpressionSyntax::stringify(stringstream* stream, int tabulation)

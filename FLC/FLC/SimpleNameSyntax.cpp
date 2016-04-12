@@ -29,6 +29,14 @@ namespace flc
             return true;
         }
 
+        types::RuntimeType* SimpleNameSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
+
+
         void SimpleNameSyntax::stringify(stringstream* stream, int tabulation)
         {
             tabulate(stream, tabulation);

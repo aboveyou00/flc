@@ -20,5 +20,10 @@ namespace flc
         {
             return false;
         }
+
+        void ExpressionSyntax::suggestExpressionType(types::RuntimeType* type)
+        {
+            suggestedType = type;
+        }
     }
 }

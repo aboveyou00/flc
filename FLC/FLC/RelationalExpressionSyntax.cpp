@@ -36,6 +36,12 @@ namespace flc
             return _op;
         }
 
+        types::RuntimeType* RelationalExpressionSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
 
 
         void RelationalExpressionSyntax::stringify(stringstream* stream, int tabulation)

@@ -22,6 +22,12 @@ namespace flc
             return _right;
         }
 
+        types::RuntimeType* ConditionalOrExpressionSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
 
 
         void ConditionalOrExpressionSyntax::stringify(stringstream* stream, int tabulation)

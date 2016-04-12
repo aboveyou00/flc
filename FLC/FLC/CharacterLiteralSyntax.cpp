@@ -19,6 +19,13 @@ namespace flc
             return val;
         }
 
+        types::RuntimeType* CharacterLiteralSyntax::getExpressionType()
+        {
+            return types::RuntimeType::char16;
+        }
+
+
+
         void CharacterLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
             tabulate(stream, tabulation);

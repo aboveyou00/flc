@@ -13,7 +13,9 @@ namespace flc
 
             int getValue();
 
-            virtual void stringify(stringstream* stream, int tabulation = 0);
+            types::RuntimeType* getExpressionType() override;
+
+            void stringify(stringstream* stream, int tabulation = 0) override;
 
         private:
             int val;

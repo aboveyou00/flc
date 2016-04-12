@@ -19,6 +19,11 @@ namespace flc
             return val;
         }
 
+        types::RuntimeType* BooleanLiteralSyntax::getExpressionType()
+        {
+            return types::RuntimeType::bool8;
+        }
+
 
 
         void BooleanLiteralSyntax::stringify(stringstream* stream, int tabulation)

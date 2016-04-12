@@ -29,6 +29,14 @@ namespace flc
             return true;
         }
 
+        types::RuntimeType* ComplexNameSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
+
+
         void ComplexNameSyntax::stringify(stringstream* stream, int tabulation)
         {
             lhs->stringify(stream, tabulation);

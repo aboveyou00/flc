@@ -30,6 +30,12 @@ namespace flc
             return _elseExpr;
         }
 
+        types::RuntimeType* IfExpressionSyntax::getExpressionType()
+        {
+            //TODO: Implement
+            return nullptr;
+        }
+
 
 
         void IfExpressionSyntax::stringify(stringstream* stream, int tabulation)
