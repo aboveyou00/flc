@@ -1,147 +1,174 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 #include "../FLC/Tokenizer.h"
-#include "../FLC/KeywordToken.h"
-#include "../FLC/BooleanLiteralToken.h"
-#include "../FLC/NullLiteralToken.h"
 #include <sstream>
 
+#include "../FLC/SymbolToken.h"
+#include "../FLC/IdentifierToken.h"
+#include "../FLC/KeywordToken.h"
+#include "../FLC/BooleanLiteralToken.h"
+#include "../FLC/IntegerLiteralToken.h"
+#include "../FLC/FloatLiteralToken.h"
+#include "../FLC/CharacterLiteralToken.h"
+#include "../FLC/StringLiteralToken.h"
+#include "../FLC/NullLiteralToken.h"
+
+#include "../FLC/ErrorToken.h"
+#include "../FLC/EndOfFileToken.h"
+
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+using namespace flc::tokens;
 
 namespace Test
 {
-    TEST_CLASS(TestCompiler)
+    TEST_CLASS(Compiler)
     {
     public:
 
+        TEST_METHOD(Test_tokenize_empty)
+        {
+            UseString("     ");
+
+            ExpectNoMore();
+        }
+
+        TEST_METHOD(Test_tokenize_comment)
+        {
+            UseString("  //A comment!   ");
+
+            ExpectNoMore();
+        }
+
         TEST_METHOD(Test_tokenize_arithmetic)
         {
-            using namespace flc::tokens;
+            UseString("  1 +      2 \r\n+  10 8 */-   ");
 
-            Tokenizer tokenizer;
-            istringstream stream("  1 +      0b10 \r\n+  0xA 0o10 */- ");
+            ExpectToken<IntegerLiteralToken>("1");
+            ExpectToken<SymbolToken>("+");
+            ExpectToken<IntegerLiteralToken>("2");
+            ExpectToken<SymbolToken>("+");
+            ExpectToken<IntegerLiteralToken>("10");
+            ExpectToken<IntegerLiteralToken>("8");
+            ExpectToken<SymbolToken>("*");
+            ExpectToken<SymbolToken>("/");
+            ExpectToken<SymbolToken>("-");
 
-            auto toks = tokenizer.tokenize(&stream);
-            Assert::IsTrue(toks->size() == 10);
-            Assert::AreEqual(toks->at(0)->toString(), (std::string)"1");
-            Assert::AreEqual(toks->at(1)->toString(), (std::string)"+");
-            Assert::AreEqual(toks->at(2)->toString(), (std::string)"2");
-            Assert::AreEqual(toks->at(3)->toString(), (std::string)"+");
-            Assert::AreEqual(toks->at(4)->toString(), (std::string)"10");
-            Assert::AreEqual(toks->at(5)->toString(), (std::string)"8");
-            Assert::AreEqual(toks->at(6)->toString(), (std::string)"*");
-            Assert::AreEqual(toks->at(7)->toString(), (std::string)"/");
-            Assert::AreEqual(toks->at(8)->toString(), (std::string)"-");
-            Assert::AreEqual(toks->at(9)->toString(), (std::string)"EOF");
+            ExpectNoMore();
         }
+
+        TEST_METHOD(Test_tokenize_integerLiterals)
+        {
+            UseString("  1 0b10 0xA 0o10  ");
+
+            ExpectToken<IntegerLiteralToken>("1");
+            ExpectToken<IntegerLiteralToken>("2");
+            ExpectToken<IntegerLiteralToken>("10");
+            ExpectToken<IntegerLiteralToken>("8");
+
+            ExpectNoMore();
+        }
+
+        TEST_METHOD(Test_tokenize_floatingPointLiterals)
+        {
+            UseString("  1.0 2f .3  ");
+
+            ExpectToken<FloatLiteralToken>("1f");
+            ExpectToken<FloatLiteralToken>("2f");
+            ExpectToken<FloatLiteralToken>("0.3f");
+
+            ExpectNoMore();
+        }
+
         TEST_METHOD(Test_tokenize_strings)
         {
-            using namespace flc::tokens;
+            UseString(" \"Hello, World!\" \"Hello,\\r\\nWorld!\" (\"blah blah blah blah blah\") ");
 
-            Tokenizer tokenizer;
-            istringstream stream(" \"Hello, World!\" \"Hello,\\r\\nWorld!\" (\"blah blah blah blah blah\") ");
+            ExpectToken<StringLiteralToken>("\"Hello, World!\"");
+            ExpectToken<StringLiteralToken>("\"Hello,\r\nWorld!\"");
+            ExpectToken<SymbolToken>("(");
+            ExpectToken<StringLiteralToken>("\"blah blah blah blah blah\"");
+            ExpectToken<SymbolToken>(")");
 
-            auto toks = tokenizer.tokenize(&stream);
-            Assert::IsTrue(toks->size() == 6);
-            Assert::AreEqual(toks->at(0)->toString(), (std::string)"\"Hello, World!\"");
-            Assert::AreEqual(toks->at(1)->toString(), (std::string)"\"Hello,\r\nWorld!\"");
-            Assert::AreEqual(toks->at(2)->toString(), (std::string)"(");
-            Assert::AreEqual(toks->at(3)->toString(), (std::string)"\"blah blah blah blah blah\"");
-            Assert::AreEqual(toks->at(4)->toString(), (std::string)")");
-            Assert::AreEqual(toks->at(5)->toString(), (std::string)"EOF");
+            ExpectNoMore();
         }
         TEST_METHOD(Test_tokenize_identifiers)
         {
-            using namespace flc::tokens;
+            UseString(" one two three _blah true false null __abc012 default int do while ");
 
-            Tokenizer tokenizer;
-            istringstream stream(" one two three _blah true false null __abc012 default int do while ");
+            ExpectToken<IdentifierToken>("one");
+            ExpectToken<IdentifierToken>("two");
+            ExpectToken<IdentifierToken>("three");
+            ExpectToken<IdentifierToken>("_blah");
 
-            auto toks = tokenizer.tokenize(&stream);
-            Assert::IsTrue(toks->size() == 13);
-            Assert::AreEqual(toks->at(0)->toString(), (std::string)"one");
-                Assert::IsNull(dynamic_cast<KeywordToken*>(toks->at(0)));
-            Assert::AreEqual(toks->at(1)->toString(), (std::string)"two");
-            Assert::AreEqual(toks->at(2)->toString(), (std::string)"three");
-            Assert::AreEqual(toks->at(3)->toString(), (std::string)"_blah");
+            ExpectToken<BooleanLiteralToken>("true");
+            ExpectToken<BooleanLiteralToken>("false");
+            ExpectToken<NullLiteralToken>("null");
 
-            Assert::AreEqual(toks->at(4)->toString(), (std::string)"true");
-                Assert::IsNotNull(dynamic_cast<BooleanLiteralToken*>(toks->at(4)));
-            Assert::AreEqual(toks->at(5)->toString(), (std::string)"false");
-                Assert::IsNotNull(dynamic_cast<BooleanLiteralToken*>(toks->at(5)));
-            Assert::AreEqual(toks->at(6)->toString(), (std::string)"null");
-                Assert::IsNotNull(dynamic_cast<NullLiteralToken*>(toks->at(6)));
+            ExpectToken<IdentifierToken>("__abc012");
 
-            Assert::AreEqual(toks->at(7)->toString(), (std::string)"__abc012");
+            ExpectToken<KeywordToken>("default");
+            ExpectToken<KeywordToken>("int");
+            ExpectToken<KeywordToken>("do");
+            ExpectToken<KeywordToken>("while");
 
-            Assert::AreEqual(toks->at(8)->toString(), (std::string)"default");
-                Assert::IsNotNull(dynamic_cast<KeywordToken*>(toks->at(8)));
-            Assert::AreEqual(toks->at(9)->toString(), (std::string)"int");
-                Assert::IsNotNull(dynamic_cast<KeywordToken*>(toks->at(9)));
-            Assert::AreEqual(toks->at(10)->toString(), (std::string)"do");
-                Assert::IsNotNull(dynamic_cast<KeywordToken*>(toks->at(10)));
-            Assert::AreEqual(toks->at(11)->toString(), (std::string)"while");
-                Assert::IsNotNull(dynamic_cast<KeywordToken*>(toks->at(11)));
-            
-            Assert::AreEqual(toks->at(12)->toString(), (std::string)"EOF");
+            ExpectNoMore();
         }
         TEST_METHOD(Test_tokenize_characters)
         {
-            using namespace flc::tokens;
+            UseString(" '1' '2' '3' '\\t' '\\127' '\\x3F' ");
 
-            Tokenizer tokenizer;
-            istringstream stream(" '1' '2' '3' '\\t' '\\127' '\\x3F' ");
+            ExpectToken<CharacterLiteralToken>("'1'");
+            ExpectToken<CharacterLiteralToken>("'2'");
+            ExpectToken<CharacterLiteralToken>("'3'");
+            ExpectToken<CharacterLiteralToken>("'\t'");
+            ExpectToken<CharacterLiteralToken>("'\127'");
+            ExpectToken<CharacterLiteralToken>("'\x3f'");
 
-            auto toks = tokenizer.tokenize(&stream);
-            Assert::IsTrue(toks->size() == 7);
-            Assert::AreEqual(toks->at(0)->toString(), (std::string)"'1'");
-            Assert::AreEqual(toks->at(1)->toString(), (std::string)"'2'");
-            Assert::AreEqual(toks->at(2)->toString(), (std::string)"'3'");
-            Assert::AreEqual(toks->at(3)->toString(), (std::string)"'\t'");
-            Assert::AreEqual(toks->at(4)->toString(), (std::string)"'\127'");
-            Assert::AreEqual(toks->at(5)->toString(), (std::string)"'\x3F'");
-            Assert::AreEqual(toks->at(6)->toString(), (std::string)"EOF");
+            ExpectNoMore();
         }
 
         TEST_METHOD(Test_tokenize_eof)
         {
-            using namespace flc::tokens;
+            UseString("true");
 
-            Tokenizer tokenizer;
-            istringstream stream("true");
-
-            auto toks = tokenizer.tokenize(&stream);
-            Assert::IsTrue(toks->size() == 2);
-            Assert::AreEqual(toks->at(0)->toString(), (std::string)"true");
-            Assert::AreEqual(toks->at(1)->toString(), (std::string)"EOF");
-
-            /*UseTokens(toks);
-            ExpectToken("true");
-            ExpectNoMore();*/
+            ExpectToken<BooleanLiteralToken>("true");
+            
+            ExpectNoMore();
         }
 
         //TODO: test tokenizer error messages
 
 
 
-    /*private:
+    private:
         std::vector<flc::tokens::Token*>* toks;
         int idx = 0;
-        void UseTokens(std::vector<flc::tokens::Token*>* toks)
+        void UseString(std::string str)
         {
-            TestCompiler::toks = toks;
-            TestCompiler::idx = 0;
+            Tokenizer tokenizer;
+            istringstream stream(str);
+            toks = tokenizer.tokenize(&stream);
+            idx = 0;
         }
-        flc::tokens::Token* ExpectToken(std::string expected)
+        template <typename T>
+        T* ExpectToken(std::string expected)
         {
-            auto tok = TestCompiler::toks->at(TestCompiler::idx++);
-            Assert::AreEqual(tok->toString(), expected);
-            return tok;
+            auto tok = this->toks->at(this->idx++);
+            if (expected.compare("") != 0) Assert::AreEqual(tok->toString(), expected);
+            T* ttok = dynamic_cast<T*>(tok);
+            Assert::IsNotNull(ttok);
+            return ttok;
+        }
+        template <typename T>
+        T* ExpectToken()
+        {
+            return ExpectToken<T>("");
         }
         void ExpectNoMore()
         {
-            TestCompiler::ExpectToken("EOF");
-            Assert::IsTrue(TestCompiler::idx == TestCompiler::toks->size());
-        }*/
+            this->ExpectToken<flc::tokens::EndOfFileToken>();
+            Assert::IsTrue(this->idx == (int)this->toks->size());
+            delete toks;
+        }
     };
 }

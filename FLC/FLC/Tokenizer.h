@@ -17,6 +17,7 @@ namespace flc
 		    
 		private:
 			Token* parseNextToken(istream *source, int& index, string path);
+
 			Token* parseCharacterToken(istream *source, int& index, string path);
 			Token* parseNumericToken(istream *source, int& index, string path);
 			Token* parseStringToken(istream *source, int& index, string path);
@@ -30,6 +31,12 @@ namespace flc
 			bool isWhiteSpace(char16_t c);
 
             char16_t escapeSequenceToChar(istream *source, int *length);
+
+            bool parseComment(istream *source);
+            
+            bool parseBinaryIntegerLiteral(istream *source, stringstream *numberString);
+            bool parseOctalIntegerLiteral(istream *source, stringstream *numberString);
+            bool parseHexIntegerLiteral(istream *source, stringstream *numberString);
         };
     }
 }

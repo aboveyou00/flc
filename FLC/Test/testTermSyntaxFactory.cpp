@@ -22,7 +22,7 @@ namespace Test
 
         TEST_METHOD(Test_parseTerm_compoundExpression_many)
         {
-            testFactory<TermSyntaxFactory>("{'1' 2.0 3}", "{\r\n    '1'\r\n    2.0\r\n    3\r\n}");
+            testFactory<TermSyntaxFactory>("{'1' 2.1 3}", "{\r\n    '1'\r\n    2.1f\r\n    3\r\n}");
         }
 
         TEST_METHOD(Test_parseTerm_compoundExpression_formatted)
@@ -62,7 +62,7 @@ namespace Test
 
         TEST_METHOD(Test_parseTerm_float)
         {
-            testFactory<TermSyntaxFactory>("42.1");
+            testFactory<TermSyntaxFactory>("42.1", "42.1f");
         }
 
         TEST_METHOD(Test_parseTerm_bool)

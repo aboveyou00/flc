@@ -141,7 +141,7 @@ namespace flc
 
         Token* Tokenizer::parseNextToken(istream *source, int& index, string path)
         {
-            while (isWhiteSpace((char16_t)source->peek()))
+            while (isWhiteSpace((char16_t)source->peek()) || parseComment(source))
             {
                 index++;
                 source->ignore();
@@ -213,25 +213,76 @@ namespace flc
         Token* Tokenizer::parseNumericToken(istream *source, int& index, string path)
         {
             stringstream numberString;
-            int length = 0;
-            bool foundDecimal = false;
+            int length = 0, base = 10;
+            bool foundDecimal = false, forceInt = false;
             char16_t nextChar;
-            while (!source->eof())
+            nextChar = (char16_t)source->peek();
+            if (nextChar == '0')
             {
-                nextChar = (char16_t)source->get();
+                numberString << (char)nextChar;
+                source->get();
+                nextChar = (char16_t)source->peek();
+                if (nextChar == 'b' || nextChar == 'B')
+                {
+                    source->get();
+                    if (!parseBinaryIntegerLiteral(source, &numberString))
+                    {
+                        //TODO: Error token
+                        source->seekg(-2, ios_base::cur);
+                        return nullptr;
+                    }
+                    forceInt = true;
+                    base = 2;
+                }
+                else if (nextChar == 'o' || nextChar == 'O')
+                {
+                    source->get();
+                    if (!parseOctalIntegerLiteral(source, &numberString))
+                    {
+                        //TODO: Error token
+                        source->seekg(-2, ios_base::cur);
+                        return nullptr;
+                    }
+                    forceInt = true;
+                    base = 8;
+                }
+                else if (nextChar == 'x' || nextChar == 'X')
+                {
+                    source->get();
+                    if (!parseHexIntegerLiteral(source, &numberString))
+                    {
+                        //TODO: Error token
+                        source->seekg(-2, ios_base::cur);
+                        return nullptr;
+                    }
+                    forceInt = true;
+                    base = 16;
+                }
+                else if (isDecimal(nextChar))
+                {
+                    //TODO: Error token
+                    source->seekg(-1, ios_base::cur);
+                    return nullptr;
+                }
+            }
+            else while (!source->eof())
+            {
+                nextChar = (char16_t)source->peek();
                 if (!nextChar) break;
-                if (nextChar == '.' && !foundDecimal) foundDecimal = true;
-                else if (!isDecimal(nextChar)) break;
+                else if ((nextChar != '.' || foundDecimal) && !isDecimal(nextChar)) break;
+                else if (nextChar == '.' && !foundDecimal) foundDecimal = true;
+                source->get(); //Consume character, since we are using it
                 numberString << (char)nextChar;
                 length++;
             }
+            //TODO: collect suffix for size, such as f, l, u, ul, etc...
             if (foundDecimal)
             {
                 return new FloatLiteralToken(path, index, length, stof(numberString.str()));
             }
             else
             {
-                return new IntegerLiteralToken(path, index, length, stoi(numberString.str()));
+                return new IntegerLiteralToken(path, index, length, stoi(numberString.str(), nullptr, base));
             }
         }
         Token* Tokenizer::parseStringToken(istream *source, int& index, string path)
@@ -347,6 +398,89 @@ namespace flc
             else return new ErrorToken(path, index, 1, "Unknown symbol");
 
             return new SymbolToken(path, index, stream.str());
+        }
+
+        bool Tokenizer::parseComment(istream *source)
+        {
+            auto nextChar = source->peek();
+            if (nextChar != '/') return false;
+            source->get();
+
+            nextChar = source->peek();
+            if (nextChar == '/')
+            {
+                source->get();
+                while (true)
+                {
+                    nextChar = source->get();
+                    if (nextChar == -1) break;
+                    else if (nextChar == '\r')
+                    {
+                        if (source->peek() == '\n') source->get();
+                        break;
+                    }
+                    else if (nextChar == '\n') break;
+                }
+            }
+            else if (nextChar == '*')
+            {
+                source->get();
+                while (true)
+                {
+                    nextChar = source->get();
+                    if (nextChar == -1) break; //TODO: error ?
+                    else if (nextChar == '*' && source->peek() == '/')
+                    {
+                        source->get();
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                source->seekg(-1, ios_base::cur);
+                return false;
+            }
+            return true;
+        }
+        bool Tokenizer::parseBinaryIntegerLiteral(istream *source, stringstream *numberString)
+        {
+            auto nextChar = source->peek();
+            if (nextChar != '0' && nextChar != '1') return false;
+            while (true)
+            {
+                nextChar = source->peek();
+                if (nextChar != '0' && nextChar != '1') break;
+                source->get(); //Consume character
+                *numberString << (char)nextChar;
+            }
+            return true;
+        }
+        bool Tokenizer::parseOctalIntegerLiteral(istream *source, stringstream *numberString)
+        {
+            auto nextChar = source->peek();
+            if (!isOctal((char16_t)nextChar)) return false;
+            while (true)
+            {
+                nextChar = source->peek();
+                if (!isOctal((char16_t)nextChar)) break;
+                source->get(); //Consume character
+                *numberString << (char)nextChar;
+            }
+            return true;
+        }
+        bool Tokenizer::parseHexIntegerLiteral(istream *source, stringstream *numberString)
+        {
+            auto nextChar = source->peek();
+            if (!isHexadecimal((char16_t)nextChar)) return false;
+            while (true)
+            {
+                nextChar = source->peek();
+                if (!isHexadecimal((char16_t)nextChar)) break;
+                source->get(); //Consume character
+                *numberString << (char)nextChar;
+            }
+            return true;
         }
     }
 }

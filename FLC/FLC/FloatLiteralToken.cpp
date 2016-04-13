@@ -32,7 +32,7 @@ namespace flc
         string FloatLiteralToken::toString()
         {
             stringstream stream;
-            stream << _val;
+            stream << _val << "f";
             return stream.str();
         }
     }

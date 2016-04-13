@@ -29,7 +29,7 @@ namespace flc
         void FloatLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
             tabulate(stream, tabulation);
-            *stream << val;
+            *stream << val << "f";
         }
     }
 }
