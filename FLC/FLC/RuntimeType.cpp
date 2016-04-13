@@ -13,9 +13,14 @@ namespace flc
         {
         }
 
+        INameInfo* RuntimeType::resolveName(std::string name, NameType nameType)
+        {
+            return nullptr;
+        }
+
         std::string RuntimeType::getName()
         {
-            auto idx = qualifiedName.find_last_of("::");
+            auto idx = qualifiedName.find_last_of("::") - 1;
             if (idx == -1) return qualifiedName;
             return qualifiedName.substr(idx + 2);
         }
@@ -24,9 +29,16 @@ namespace flc
             return qualifiedName;
         }
 
-        INameInfo* RuntimeType::resolveName(std::string name, NameType nameType)
+        bool RuntimeType::isSameAs(RuntimeType* other)
         {
-            return nullptr;
+            return RuntimeType::areSameType(this, other);
+        }
+        bool RuntimeType::areSameType(RuntimeType* one, RuntimeType* two)
+        {
+            if (one == nullptr || two == nullptr) return false;
+            if (one == two) return true;
+            if (one->getQualifiedName().compare(two->getQualifiedName()) == 0) return true;
+            return false;
         }
     }
 }

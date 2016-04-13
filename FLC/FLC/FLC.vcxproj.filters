@@ -43,12 +43,6 @@
     <Filter Include="Header Files\flc\types">
       <UniqueIdentifier>{d5f31722-014f-4538-ae54-64fd978ae7d4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\flc\asm">
-      <UniqueIdentifier>{22735dfb-b1fc-4725-8a02-f5582d1f07fb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\flc\asm">
-      <UniqueIdentifier>{986222ea-7527-47b3-bb0a-63fc2e12249d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\flc\types">
       <UniqueIdentifier>{4190cd14-fe0f-4880-8426-c5e151eca973}</UniqueIdentifier>
     </Filter>
@@ -63,6 +57,12 @@
     </Filter>
     <Filter Include="Header Files\flc\types\predefined">
       <UniqueIdentifier>{54158b65-443e-4da1-8e19-b1d140f4cb31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit">
+      <UniqueIdentifier>{986222ea-7527-47b3-bb0a-63fc2e12249d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\emit">
+      <UniqueIdentifier>{22735dfb-b1fc-4725-8a02-f5582d1f07fb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -321,6 +321,15 @@
     <ClInclude Include="Object.h">
       <Filter>Header Files\flc\types\predefined</Filter>
     </ClInclude>
+    <ClInclude Include="MethodGroup.h">
+      <Filter>Header Files\flc\types</Filter>
+    </ClInclude>
+    <ClInclude Include="MethodOverload.h">
+      <Filter>Header Files\flc\types</Filter>
+    </ClInclude>
+    <ClInclude Include="ParameterInfo.h">
+      <Filter>Header Files\flc\types</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -568,6 +577,15 @@
     </ClCompile>
     <ClCompile Include="Boolean.cpp">
       <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="MethodGroup.cpp">
+      <Filter>Source Files\flc\types</Filter>
+    </ClCompile>
+    <ClCompile Include="MethodOverload.cpp">
+      <Filter>Source Files\flc\types</Filter>
+    </ClCompile>
+    <ClCompile Include="ParameterInfo.cpp">
+      <Filter>Source Files\flc\types</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

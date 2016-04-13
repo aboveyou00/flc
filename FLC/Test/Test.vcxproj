@@ -180,6 +180,7 @@
     <ClCompile Include="testInclusiveOrExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testMultiplicativeExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testRelationalExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testRuntimeType.cpp" />
     <ClCompile Include="testShiftExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testTermSyntaxFactory.cpp" />
     <ClCompile Include="testTernaryExpressionSyntaxFactory.cpp" />

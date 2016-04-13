@@ -7,7 +7,12 @@ namespace flc
     {
         namespace predefined
         {
-
+            class CharRuntimeType : public RuntimeType
+            {
+            public:
+                CharRuntimeType();
+                ~CharRuntimeType();
+            };
         }
     }
 }

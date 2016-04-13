@@ -7,7 +7,12 @@ namespace flc
     {
         namespace predefined
         {
-
+            class UInt32RuntimeType : public RuntimeType
+            {
+            public:
+                UInt32RuntimeType();
+                ~UInt32RuntimeType();
+            };
         }
     }
 }

@@ -7,7 +7,12 @@ namespace flc
     {
         namespace predefined
         {
-
+            class VoidRuntimeType : public RuntimeType
+            {
+            public:
+                VoidRuntimeType();
+                ~VoidRuntimeType();
+            };
         }
     }
 }

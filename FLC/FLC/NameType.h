@@ -7,9 +7,9 @@ namespace flc
     {
         enum class NameType : int
         {
-            Any = ~0,
-            Member = 0b1,
-            Type = 0b10
+            Any    = ~0,
+            Type   = 0b1,
+            Member = 0b10
         };
 
         using T = std::underlying_type_t<NameType>;

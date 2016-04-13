@@ -5,10 +5,18 @@ namespace flc
 {
     namespace types
     {
-        RuntimeType* const RuntimeType::bool8 = new RuntimeType("System::Boolean");
+        RuntimeType* const RuntimeType::bool8 = new predefined::BooleanRuntimeType();
 
         namespace predefined
         {
+            BooleanRuntimeType::BooleanRuntimeType()
+                : RuntimeType("System::Boolean")
+            {
+            }
+            BooleanRuntimeType::~BooleanRuntimeType()
+            {
+            }
+
 
         }
     }

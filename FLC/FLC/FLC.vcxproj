@@ -190,6 +190,8 @@
     <ClInclude Include="IntegerLiteralToken.h" />
     <ClInclude Include="KeywordToken.h" />
     <ClInclude Include="MemberAccessExpressionSyntax.h" />
+    <ClInclude Include="MethodGroup.h" />
+    <ClInclude Include="MethodOverload.h" />
     <ClInclude Include="MultiLineComment.h" />
     <ClInclude Include="MultiplicativeExpressionSyntax.h" />
     <ClInclude Include="MultiplicativeExpressionSyntaxFactory.h" />
@@ -198,6 +200,7 @@
     <ClInclude Include="NullLiteralSyntax.h" />
     <ClInclude Include="NullLiteralToken.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="ParameterInfo.h" />
     <ClInclude Include="RelationalExpressionSyntax.h" />
     <ClInclude Include="RelationalExpressionSyntaxFactory.h" />
     <ClInclude Include="resource.h" />
@@ -277,12 +280,15 @@
     <ClCompile Include="IntegerLiteralToken.cpp" />
     <ClCompile Include="KeywordToken.cpp" />
     <ClCompile Include="MemberAccessExpressionSyntax.cpp" />
+    <ClCompile Include="MethodGroup.cpp" />
+    <ClCompile Include="MethodOverload.cpp" />
     <ClCompile Include="MultiLineComment.cpp" />
     <ClCompile Include="MultiplicativeExpressionSyntax.cpp" />
     <ClCompile Include="MultiplicativeExpressionSyntaxFactory.cpp" />
     <ClCompile Include="NullLiteralSyntax.cpp" />
     <ClCompile Include="NullLiteralToken.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="ParameterInfo.cpp" />
     <ClCompile Include="RelationalExpressionSyntax.cpp" />
     <ClCompile Include="RelationalExpressionSyntaxFactory.cpp" />
     <ClCompile Include="RuntimeType.cpp" />

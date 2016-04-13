@@ -7,7 +7,12 @@ namespace flc
     {
         namespace predefined
         {
-
+            class DoubleRuntimeType : public RuntimeType
+            {
+            public:
+                DoubleRuntimeType();
+                ~DoubleRuntimeType();
+            };
         }
     }
 }

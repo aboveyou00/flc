@@ -19,6 +19,9 @@ namespace flc
             std::string getName();
             std::string getQualifiedName();
 
+            bool isSameAs(RuntimeType* other);
+            static bool areSameType(RuntimeType* one, RuntimeType* two);
+
         private:
             std::string qualifiedName;
 

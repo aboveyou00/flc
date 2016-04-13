@@ -7,7 +7,12 @@ namespace flc
     {
         namespace predefined
         {
-
+            class StringRuntimeType : public RuntimeType
+            {
+            public:
+                StringRuntimeType();
+                ~StringRuntimeType();
+            };
         }
     }
 }

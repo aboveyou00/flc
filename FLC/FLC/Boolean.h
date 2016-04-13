@@ -7,7 +7,12 @@ namespace flc
     {
         namespace predefined
         {
-
+            class BooleanRuntimeType : public RuntimeType
+            {
+            public:
+                BooleanRuntimeType();
+                ~BooleanRuntimeType();
+            };
         }
     }
 }

@@ -34,6 +34,15 @@
     <Filter Include="Header Files\flc\syntax\factory">
       <UniqueIdentifier>{45df8462-eaef-4e9e-a1ac-bca5a50af045}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\flc\types">
+      <UniqueIdentifier>{8a0a9c1f-be32-42eb-848a-b635b8d501c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\op">
+      <UniqueIdentifier>{6acfad98-3131-4c41-b708-fa729c2bd3ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit">
+      <UniqueIdentifier>{1308d285-e878-4fe7-b0c2-7120780880fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -109,6 +118,9 @@
     </ClCompile>
     <ClCompile Include="testWhileExpressionFactory.cpp">
       <Filter>Source Files\flc\syntax\factory</Filter>
+    </ClCompile>
+    <ClCompile Include="testRuntimeType.cpp">
+      <Filter>Source Files\flc\types</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

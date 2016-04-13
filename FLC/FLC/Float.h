@@ -7,7 +7,12 @@ namespace flc
     {
         namespace predefined
         {
-
+            class FloatRuntimeType : public RuntimeType
+            {
+            public:
+                FloatRuntimeType();
+                ~FloatRuntimeType();
+            };
         }
     }
 }

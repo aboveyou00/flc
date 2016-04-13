@@ -5,10 +5,18 @@ namespace flc
 {
     namespace types
     {
-        RuntimeType* const RuntimeType::int32 = new RuntimeType("System::Int32");
+        RuntimeType* const RuntimeType::int32 = new predefined::Int32RuntimeType();
 
         namespace predefined
         {
+            Int32RuntimeType::Int32RuntimeType()
+                : RuntimeType("System::Int32")
+            {
+            }
+            Int32RuntimeType::~Int32RuntimeType()
+            {
+            }
+
 
         }
     }

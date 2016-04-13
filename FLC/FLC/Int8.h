@@ -7,7 +7,12 @@ namespace flc
     {
         namespace predefined
         {
-
+            class Int8RuntimeType : public RuntimeType
+            {
+            public:
+                Int8RuntimeType();
+                ~Int8RuntimeType();
+            };
         }
     }
 }

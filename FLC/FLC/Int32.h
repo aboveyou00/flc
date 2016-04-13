@@ -7,14 +7,12 @@ namespace flc
     {
         namespace predefined
         {
-
+            class Int32RuntimeType : public RuntimeType
+            {
+            public:
+                Int32RuntimeType();
+                ~Int32RuntimeType();
+            };
         }
     }
 }
-
-/*
-
-int operator +(int x, int y);
-int operator -(int x, int y);
-
-*/

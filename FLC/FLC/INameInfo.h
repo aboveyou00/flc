@@ -11,14 +11,14 @@ namespace flc
         class INameInfo
         {
         public:
-            virtual ~INameInfo() = 0;
+            virtual ~INameInfo()
+            {
+            }
 
             virtual std::string getName() = 0;
             virtual NameType getNameType() = 0;
 
             bool matchesSelector(std::string name, NameType nameType);
-
-            virtual RuntimeType* getRuntimeType() = 0;
         };
     }
 }
