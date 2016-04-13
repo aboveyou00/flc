@@ -6,27 +6,35 @@ namespace flc
     namespace types
     {
         RuntimeType::RuntimeType(std::string name)
+            : _qualifiedName(name)
         {
-            qualifiedName = name;
+            _members = new vector<IMemberInfo*>();
         }
         RuntimeType::~RuntimeType()
         {
+            delete _members;
+            _members = nullptr;
         }
 
-        INameInfo* RuntimeType::resolveName(std::string name, NameType nameType)
+        IMemberInfo* RuntimeType::resolveName(std::string name, NameType nameType)
         {
+            for (size_t q = 0; q < _members->size(); q++)
+            {
+                auto member = _members->at(q);
+                if (member->matchesSelector(name, nameType)) return member;
+            }
             return nullptr;
         }
 
         std::string RuntimeType::getName()
         {
-            auto idx = qualifiedName.find_last_of("::") - 1;
-            if (idx == -1) return qualifiedName;
-            return qualifiedName.substr(idx + 2);
+            auto idx = _qualifiedName.find_last_of("::");
+            if (idx == -1) return _qualifiedName;
+            return _qualifiedName.substr(idx + 1);
         }
         std::string RuntimeType::getQualifiedName()
         {
-            return qualifiedName;
+            return _qualifiedName;
         }
 
         bool RuntimeType::isSameAs(RuntimeType* other)

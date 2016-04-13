@@ -330,6 +330,9 @@
     <ClInclude Include="ParameterInfo.h">
       <Filter>Header Files\flc\types</Filter>
     </ClInclude>
+    <ClInclude Include="IMemberInfo.h">
+      <Filter>Header Files\flc\types</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

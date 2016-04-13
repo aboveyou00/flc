@@ -15,7 +15,7 @@ namespace flc
             {
             }
 
-            virtual INameInfo* resolveName(std::string name, NameType type = NameType::Any) = 0;
+            virtual INameInfo* resolveName(std::string name, NameType nameType = NameType::Any) = 0;
         };
     }
 }

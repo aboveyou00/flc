@@ -26,7 +26,7 @@ flc::syntax::ExpressionSyntax* testFactory(const string& original, const string&
     int pos = 0;
     flc::syntax::ExpressionSyntax* result;
     Assert::IsTrue(factory.tryParseSyntax(toks, pos, result));
-    Assert::IsTrue(pos == toks->size() - 1);
+    Assert::IsTrue(pos == (int)toks->size() - 1);
 
     string resultStr = result->toString();
     Assert::IsTrue(resultStr.compare(expected) == 0);

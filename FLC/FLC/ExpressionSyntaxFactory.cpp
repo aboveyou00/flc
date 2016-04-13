@@ -37,7 +37,6 @@ namespace flc
             bool ExpressionSyntaxFactory::tryParseNextSyntax(ExpressionSyntax* term, vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result)
             {
                 int p = pos;
-                auto tok = toks->at(p);
                 string assignSym;
                 if (term->isQualifiedName() && extractAssignmentSymbol(toks, p, assignSym))
                 {
