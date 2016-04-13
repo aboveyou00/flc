@@ -19,19 +19,20 @@ namespace Test
             using namespace flc::tokens;
 
             Tokenizer tokenizer;
-            istringstream stream("  1 +      2 \r\n+  3 */- ");
+            istringstream stream("  1 +      0b10 \r\n+  0xA 0o10 */- ");
 
             auto toks = tokenizer.tokenize(&stream);
-            Assert::IsTrue(toks->size() == 9);
+            Assert::IsTrue(toks->size() == 10);
             Assert::AreEqual(toks->at(0)->toString(), (std::string)"1");
             Assert::AreEqual(toks->at(1)->toString(), (std::string)"+");
             Assert::AreEqual(toks->at(2)->toString(), (std::string)"2");
             Assert::AreEqual(toks->at(3)->toString(), (std::string)"+");
-            Assert::AreEqual(toks->at(4)->toString(), (std::string)"3");
-            Assert::AreEqual(toks->at(5)->toString(), (std::string)"*");
-            Assert::AreEqual(toks->at(6)->toString(), (std::string)"/");
-            Assert::AreEqual(toks->at(7)->toString(), (std::string)"-");
-            Assert::AreEqual(toks->at(8)->toString(), (std::string)"EOF");
+            Assert::AreEqual(toks->at(4)->toString(), (std::string)"10");
+            Assert::AreEqual(toks->at(5)->toString(), (std::string)"8");
+            Assert::AreEqual(toks->at(6)->toString(), (std::string)"*");
+            Assert::AreEqual(toks->at(7)->toString(), (std::string)"/");
+            Assert::AreEqual(toks->at(8)->toString(), (std::string)"-");
+            Assert::AreEqual(toks->at(9)->toString(), (std::string)"EOF");
         }
         TEST_METHOD(Test_tokenize_strings)
         {
