@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "MultiplicativeExpressionSyntax.h"
+#include "BinaryOperator.h"
 
 namespace flc
 {
@@ -36,8 +37,28 @@ namespace flc
 
         types::RuntimeType* MultiplicativeExpressionSyntax::getExpressionType()
         {
-            //TODO: Implement
-            return nullptr;
+            if (_overload == nullptr)
+            {
+                op::BinaryOperator *bin_op;
+                switch (_op)
+                {
+                case MultiplicativeOperator::Multiply:
+                    bin_op = op::Operator::addition;
+                    break;
+                case MultiplicativeOperator::Divide:
+                    bin_op = op::Operator::subtraction;
+                    break;
+                case MultiplicativeOperator::Remainder:
+                    bin_op = op::Operator::subtraction;
+                    break;
+                case MultiplicativeOperator::ErrorState:
+                default:
+                    return nullptr;
+                }
+                _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
+            }
+            if (_overload == nullptr) return nullptr;
+            return _overload->getReturnType();
         }
 
 

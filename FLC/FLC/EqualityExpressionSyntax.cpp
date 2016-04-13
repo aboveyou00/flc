@@ -15,6 +15,7 @@ namespace flc
                 reportError("Invalid EqualityOperator Operator in EqualityExpressionSyntax::ctor: " + op);
                 _op = EqualityOperator::ErrorState;
             }
+            _overload = nullptr;
         }
         EqualityExpressionSyntax::~EqualityExpressionSyntax()
         {

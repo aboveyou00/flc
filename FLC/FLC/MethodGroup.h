@@ -21,6 +21,7 @@ namespace flc
             int getOverloadCount();
             MethodOverload* getOverload(int idx);
 
+            MethodOverload* findOverload(RuntimeType** parameters, int parameterCount);
             MethodOverload* findOverload(RuntimeType* returnType, RuntimeType** parameters, int parameterCount);
             MethodOverload* findOverload(RuntimeType* returnType, ParameterInfo** parameters, int parameterCount);
 

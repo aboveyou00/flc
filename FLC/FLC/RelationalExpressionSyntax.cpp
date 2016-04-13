@@ -17,6 +17,7 @@ namespace flc
                 reportError("Invalid RelationalOperator Operator in RelationalExpressionSyntax::ctor: " + op);
                 _op = RelationalOperator::ErrorState;
             }
+            _overload = nullptr;
         }
         RelationalExpressionSyntax::~RelationalExpressionSyntax()
         {

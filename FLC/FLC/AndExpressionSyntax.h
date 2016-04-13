@@ -1,5 +1,6 @@
 #pragma once
 #include "ExpressionSyntax.h"
+#include "MethodOverload.h"
 
 namespace flc
 {
@@ -20,6 +21,8 @@ namespace flc
 
         private:
             ExpressionSyntax *_left, *_right;
+
+            types::MethodOverload *_overload;
         };
     }
 }

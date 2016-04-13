@@ -8,6 +8,7 @@ namespace flc
         AndExpressionSyntax::AndExpressionSyntax(ExpressionSyntax* left, ExpressionSyntax* right)
             : _left(left), _right(right)
         {
+            _overload = nullptr;
         }
         AndExpressionSyntax::~AndExpressionSyntax()
         {

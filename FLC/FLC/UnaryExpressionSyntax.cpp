@@ -19,6 +19,7 @@ namespace flc
                 reportError("Invalid Unary Operator in UnaryExpressionSyntax::ctor: " + op);
                 _op = UnaryOperator::ErrorState;
             }
+            _overload = nullptr;
         }
         UnaryExpressionSyntax::~UnaryExpressionSyntax()
         {

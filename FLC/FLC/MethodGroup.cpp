@@ -47,12 +47,17 @@ namespace flc
             return _overloads->at(idx);
         }
 
+        MethodOverload* MethodGroup::findOverload(RuntimeType** parameters, int parameterCount)
+        {
+            return findOverload(nullptr, parameters, parameterCount);
+        }
         MethodOverload* MethodGroup::findOverload(RuntimeType* returnType, RuntimeType** parameters, int parameterCount)
         {
             for (int q = 0; q < getOverloadCount(); q++)
             {
                 auto overload = getOverload(q);
-                if (overload->getReturnType()->isSameAs(returnType) && overload->isMatchForParameters(parameters, parameterCount)) return overload;
+                if (returnType != nullptr && !overload->getReturnType()->isSameAs(returnType)) continue;
+                if (overload->isMatchForParameters(parameters, parameterCount)) return overload;
             }
             return nullptr;
         }

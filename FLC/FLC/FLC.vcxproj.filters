@@ -64,6 +64,9 @@
     <Filter Include="Header Files\flc\emit">
       <UniqueIdentifier>{22735dfb-b1fc-4725-8a02-f5582d1f07fb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\flc\op\predefined">
+      <UniqueIdentifier>{df573dff-e6ad-4e9e-a877-bb9870d8e208}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -333,6 +336,15 @@
     <ClInclude Include="IMemberInfo.h">
       <Filter>Header Files\flc\types</Filter>
     </ClInclude>
+    <ClInclude Include="BinaryOperator.h">
+      <Filter>Header Files\flc\op</Filter>
+    </ClInclude>
+    <ClInclude Include="Operator.h">
+      <Filter>Header Files\flc\op</Filter>
+    </ClInclude>
+    <ClInclude Include="UnaryOperator.h">
+      <Filter>Header Files\flc\op</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -589,6 +601,87 @@
     </ClCompile>
     <ClCompile Include="ParameterInfo.cpp">
       <Filter>Source Files\flc\types</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryOperator.cpp">
+      <Filter>Source Files\flc\op</Filter>
+    </ClCompile>
+    <ClCompile Include="Operator.cpp">
+      <Filter>Source Files\flc\op</Filter>
+    </ClCompile>
+    <ClCompile Include="UnaryOperator.cpp">
+      <Filter>Source Files\flc\op</Filter>
+    </ClCompile>
+    <ClCompile Include="AdditionOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="SubtractionOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="DivisionOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="ModulusOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiplicationOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="IncrementOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="DecrementOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="NegationOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="UnaryPlusOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="LogicalNotOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="OnesComplementOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="ImplicitCastOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplicitCastOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="LeftShiftOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="RightShiftOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="GreaterThanOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="LessThanOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="GreaterThanOrEqualOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="LessThanOrEqualOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="EqualityOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="InequalityOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="BitwiseAndOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="BitwiseOrOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="ExclusiveOrOperator.cpp">
+      <Filter>Source Files\flc\op\predefined</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "AdditiveExpressionSyntax.h"
+#include "BinaryOperator.h"
 
 namespace flc
 {
@@ -15,6 +16,7 @@ namespace flc
                 reportError("Invalid Additive Operator in AdditiveExpressionSyntax::ctor: " + op);
                 _op = AdditiveOperator::ErrorState;
             }
+            _overload = nullptr;
         }
         AdditiveExpressionSyntax::~AdditiveExpressionSyntax()
         {
@@ -36,8 +38,25 @@ namespace flc
 
         types::RuntimeType* AdditiveExpressionSyntax::getExpressionType()
         {
-            //TODO: Implement
-            return nullptr;
+            if (_overload == nullptr)
+            {
+                op::BinaryOperator *bin_op;
+                switch (_op)
+                {
+                case AdditiveOperator::Add:
+                    bin_op = op::Operator::addition;
+                    break;
+                case AdditiveOperator::Subtract:
+                    bin_op = op::Operator::subtraction;
+                    break;
+                case AdditiveOperator::ErrorState:
+                default:
+                    return nullptr;
+                }
+                _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
+            }
+            if (_overload == nullptr) return nullptr;
+            return _overload->getReturnType();
         }
 
 
