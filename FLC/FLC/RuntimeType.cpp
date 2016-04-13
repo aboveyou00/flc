@@ -37,6 +37,15 @@ namespace flc
             return _qualifiedName;
         }
 
+        bool RuntimeType::isReferenceType()
+        {
+            return !isValueType();
+        }
+        bool RuntimeType::isValueType()
+        {
+            return false;
+        }
+
         bool RuntimeType::isSameAs(RuntimeType* other)
         {
             return RuntimeType::areSameType(this, other);

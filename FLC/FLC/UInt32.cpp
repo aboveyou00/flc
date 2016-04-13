@@ -10,7 +10,7 @@ namespace flc
         namespace predefined
         {
             UInt32RuntimeType::UInt32RuntimeType()
-                : RuntimeType("System::UInt32")
+                : RuntimeValueType("System::UInt32")
             {
             }
             UInt32RuntimeType::~UInt32RuntimeType()

@@ -10,7 +10,7 @@ namespace flc
         namespace predefined
         {
             FloatRuntimeType::FloatRuntimeType()
-                : RuntimeType("System::Float")
+                : RuntimeValueType("System::Float")
             {
             }
             FloatRuntimeType::~FloatRuntimeType()

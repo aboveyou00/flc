@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="testExpressionType.h" />
     <ClInclude Include="testFactory.h" />
   </ItemGroup>
   <ItemGroup>
@@ -168,20 +169,28 @@
     </ClCompile>
     <ClCompile Include="testAdditiveExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testAndExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testBooleanLiteralSyntax.cpp" />
+    <ClCompile Include="testCharacterLiteralSyntax.cpp" />
     <ClCompile Include="testCommandLineParser.cpp" />
     <ClCompile Include="testCompiler.cpp" />
+    <ClCompile Include="testCompoundExpressionSyntax.cpp" />
     <ClCompile Include="testConditionalAndExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testConditionalOrExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testEqualityExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testErrors.cpp" />
     <ClCompile Include="testExclusiveOrExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testExpressionType.cpp" />
+    <ClCompile Include="testFloatLiteralSyntax.cpp" />
     <ClCompile Include="testIfExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testInclusiveOrExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testIntegerLiteralSyntax.cpp" />
     <ClCompile Include="testMultiplicativeExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testNullLiteralSyntax.cpp" />
     <ClCompile Include="testRelationalExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testRuntimeType.cpp" />
     <ClCompile Include="testShiftExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testStringLiteralSyntax.cpp" />
     <ClCompile Include="testTermSyntaxFactory.cpp" />
     <ClCompile Include="testTernaryExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testTokenizer.cpp" />

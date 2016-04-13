@@ -199,6 +199,7 @@
     <ClInclude Include="MultiplicativeExpressionSyntaxFactory.h" />
     <ClInclude Include="INameResolutionContext.h" />
     <ClInclude Include="NameType.h" />
+    <ClInclude Include="NullLiteral.h" />
     <ClInclude Include="NullLiteralSyntax.h" />
     <ClInclude Include="NullLiteralToken.h" />
     <ClInclude Include="Object.h" />
@@ -208,6 +209,7 @@
     <ClInclude Include="RelationalExpressionSyntaxFactory.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="RuntimeType.h" />
+    <ClInclude Include="RuntimeValueType.h" />
     <ClInclude Include="ShiftExpressionSyntax.h" />
     <ClInclude Include="ShiftExpressionSyntaxFactory.h" />
     <ClInclude Include="SimpleNameSyntax.h" />
@@ -309,6 +311,7 @@
     <ClCompile Include="MultiplicativeExpressionSyntaxFactory.cpp" />
     <ClCompile Include="MultiplicationOperator.cpp" />
     <ClCompile Include="NegationOperator.cpp" />
+    <ClCompile Include="NullLiteral.cpp" />
     <ClCompile Include="NullLiteralSyntax.cpp" />
     <ClCompile Include="NullLiteralToken.cpp" />
     <ClCompile Include="Object.cpp" />
@@ -319,6 +322,7 @@
     <ClCompile Include="RelationalExpressionSyntaxFactory.cpp" />
     <ClCompile Include="RightShiftOperator.cpp" />
     <ClCompile Include="RuntimeType.cpp" />
+    <ClCompile Include="RuntimeValueType.cpp" />
     <ClCompile Include="ShiftExpressionSyntax.cpp" />
     <ClCompile Include="ShiftExpressionSyntaxFactory.cpp" />
     <ClCompile Include="SimpleNameSyntax.cpp" />

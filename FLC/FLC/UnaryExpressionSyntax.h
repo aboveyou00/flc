@@ -30,10 +30,10 @@ namespace flc
             void stringify(stringstream* stream, int tabulation = 0) override;
 
         private:
-            ExpressionSyntax* _expr;
+            ExpressionSyntax *_expr = nullptr;
             UnaryOperator _op;
 
-            types::MethodOverload *_overload;
+            types::MethodOverload *_overload = nullptr;
         };
     }
 }

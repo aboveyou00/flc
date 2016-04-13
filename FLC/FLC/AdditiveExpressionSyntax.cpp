@@ -16,7 +16,6 @@ namespace flc
                 reportError("Invalid Additive Operator in AdditiveExpressionSyntax::ctor: " + op);
                 _op = AdditiveOperator::ErrorState;
             }
-            _overload = nullptr;
         }
         AdditiveExpressionSyntax::~AdditiveExpressionSyntax()
         {

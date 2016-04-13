@@ -15,7 +15,6 @@ namespace flc
                 reportError("Invalid ShiftOperator Operator in ShiftExpressionSyntax::ctor: " + op);
                 _op = ShiftOperator::ErrorState;
             }
-            _overload = nullptr;
         }
         ShiftExpressionSyntax::~ShiftExpressionSyntax()
         {

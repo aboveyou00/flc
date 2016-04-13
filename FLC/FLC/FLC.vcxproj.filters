@@ -345,6 +345,12 @@
     <ClInclude Include="UnaryOperator.h">
       <Filter>Header Files\flc\op</Filter>
     </ClInclude>
+    <ClInclude Include="NullLiteral.h">
+      <Filter>Header Files\flc\types\predefined</Filter>
+    </ClInclude>
+    <ClInclude Include="RuntimeValueType.h">
+      <Filter>Header Files\flc\types</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -682,6 +688,12 @@
     </ClCompile>
     <ClCompile Include="ExclusiveOrOperator.cpp">
       <Filter>Source Files\flc\op\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="NullLiteral.cpp">
+      <Filter>Source Files\flc\types\predefined</Filter>
+    </ClCompile>
+    <ClCompile Include="RuntimeValueType.cpp">
+      <Filter>Source Files\flc\types</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

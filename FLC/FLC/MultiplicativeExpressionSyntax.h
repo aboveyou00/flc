@@ -29,10 +29,11 @@ namespace flc
             void stringify(stringstream* stream, int tabulation = 0) override;
 
         private:
-            ExpressionSyntax *_left, *_right;
+            ExpressionSyntax *_left = nullptr,
+                             *_right = nullptr;
             MultiplicativeOperator _op;
 
-            types::MethodOverload *_overload;
+            types::MethodOverload *_overload = nullptr;
         };
     }
 }

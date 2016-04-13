@@ -10,7 +10,7 @@ namespace flc
         namespace predefined
         {
             DoubleRuntimeType::DoubleRuntimeType()
-                : RuntimeType("System::Double")
+                : RuntimeValueType("System::Double")
             {
             }
             DoubleRuntimeType::~DoubleRuntimeType()

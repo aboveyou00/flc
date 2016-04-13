@@ -10,7 +10,22 @@ namespace Test
     TEST_CLASS(TestTermSyntaxFactory)
     {
     public:
-        TEST_METHOD(Test_parseTerm_compoundExpression)
+        TEST_METHOD(Test_parseTerm_compoundExpression_empty)
+        {
+            testFactory<TermSyntaxFactory>("{}", "{\r\n}");
+        }
+
+        TEST_METHOD(Test_parseTerm_compoundExpression_one)
+        {
+            testFactory<TermSyntaxFactory>("{1}", "{\r\n    1\r\n}");
+        }
+
+        TEST_METHOD(Test_parseTerm_compoundExpression_many)
+        {
+            testFactory<TermSyntaxFactory>("{'1' 2.0 3}", "{\r\n    '1'\r\n    2.0\r\n    3\r\n}");
+        }
+
+        TEST_METHOD(Test_parseTerm_compoundExpression_formatted)
         {
             testFactory<TermSyntaxFactory>("{\r\n    true\r\n    false\r\n    1 + 2\r\n}");
         }

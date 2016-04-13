@@ -19,7 +19,7 @@ namespace flc
             virtual types::RuntimeType* getExpressionType() = 0;
 
         protected:
-            types::RuntimeType* suggestedType;
+            types::RuntimeType* suggestedType = nullptr;
         };
     }
 }

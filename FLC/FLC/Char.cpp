@@ -10,7 +10,7 @@ namespace flc
         namespace predefined
         {
             CharRuntimeType::CharRuntimeType()
-                : RuntimeType("System::Char")
+                : RuntimeValueType("System::Char")
             {
             }
             CharRuntimeType::~CharRuntimeType()

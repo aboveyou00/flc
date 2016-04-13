@@ -10,7 +10,7 @@ namespace flc
         namespace predefined
         {
             Int32RuntimeType::Int32RuntimeType()
-                : RuntimeType("System::Int32")
+                : RuntimeValueType("System::Int32")
             {
             }
             Int32RuntimeType::~Int32RuntimeType()

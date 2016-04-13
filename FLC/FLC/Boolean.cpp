@@ -10,7 +10,7 @@ namespace flc
         namespace predefined
         {
             BooleanRuntimeType::BooleanRuntimeType()
-                : RuntimeType("System::Boolean")
+                : RuntimeValueType("System::Boolean")
             {
             }
             BooleanRuntimeType::~BooleanRuntimeType()

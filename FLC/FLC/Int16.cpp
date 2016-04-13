@@ -10,7 +10,7 @@ namespace flc
         namespace predefined
         {
             Int16RuntimeType::Int16RuntimeType()
-                : RuntimeType("System::Int16")
+                : RuntimeValueType("System::Int16")
             {
             }
             Int16RuntimeType::~Int16RuntimeType()

@@ -18,7 +18,7 @@ namespace flc
             void stringify(stringstream* stream, int tabulation = 0) override;
 
         private:
-            ExpressionSyntax* lhs;
+            ExpressionSyntax* lhs = nullptr;
             string ident;
         };
     }

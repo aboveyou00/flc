@@ -10,7 +10,7 @@ namespace flc
         namespace predefined
         {
             UInt8RuntimeType::UInt8RuntimeType()
-                : RuntimeType("System::UInt8")
+                : RuntimeValueType("System::UInt8")
             {
             }
             UInt8RuntimeType::~UInt8RuntimeType()

@@ -1,17 +1,10 @@
 #pragma once
 #include "CppUnitTest.h"
 #include <string>
-#include <vector>
 #include <sstream>
-#include "../FLC/Token.h"
 #include "../FLC/Tokenizer.h"
 #include "../FLC/ExpressionSyntax.h"
 
-template <typename TFactory>
-flc::syntax::ExpressionSyntax* testFactory(const string& original)
-{
-    return testFactory<TFactory>(original, original);
-}
 template <typename TFactory>
 flc::syntax::ExpressionSyntax* testFactory(const string& original, const string& expected)
 {
@@ -32,4 +25,9 @@ flc::syntax::ExpressionSyntax* testFactory(const string& original, const string&
     Assert::IsTrue(resultStr.compare(expected) == 0);
 
     return result;
+}
+template <typename TFactory>
+flc::syntax::ExpressionSyntax* testFactory(const string& original)
+{
+    return testFactory<TFactory>(original, original);
 }

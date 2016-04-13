@@ -8,7 +8,6 @@ namespace flc
         InclusiveOrExpressionSyntax::InclusiveOrExpressionSyntax(ExpressionSyntax* left, ExpressionSyntax* right)
             : _left(left), _right(right)
         {
-            _overload = nullptr;
         }
         InclusiveOrExpressionSyntax::~InclusiveOrExpressionSyntax()
         {

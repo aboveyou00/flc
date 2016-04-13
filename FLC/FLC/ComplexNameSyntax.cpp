@@ -6,10 +6,9 @@ namespace flc
 {
     namespace syntax
     {
-        ComplexNameSyntax::ComplexNameSyntax(ExpressionSyntax* baseexpr, string ident)
+        ComplexNameSyntax::ComplexNameSyntax(ExpressionSyntax* baseExpr, string ident)
+            : _lhs(baseExpr), _name(ident)
         {
-            lhs = baseexpr;
-            name = ident;
         }
         ComplexNameSyntax::~ComplexNameSyntax()
         {
@@ -17,11 +16,11 @@ namespace flc
 
         string ComplexNameSyntax::getName()
         {
-            return name;
+            return _name;
         }
         ExpressionSyntax* ComplexNameSyntax::getBaseExpression()
         {
-            return lhs;
+            return _lhs;
         }
 
         bool ComplexNameSyntax::isQualifiedName()
@@ -39,9 +38,9 @@ namespace flc
 
         void ComplexNameSyntax::stringify(stringstream* stream, int tabulation)
         {
-            lhs->stringify(stream, tabulation);
+            _lhs->stringify(stream, tabulation);
             *stream << "::";
-            *stream << name;
+            *stream << _name;
         }
     }
 }

@@ -19,6 +19,9 @@ namespace flc
             std::string getName();
             std::string getQualifiedName();
 
+            virtual bool isReferenceType();
+            virtual bool isValueType();
+
             bool isSameAs(RuntimeType* other);
             static bool areSameType(RuntimeType* one, RuntimeType* two);
 
@@ -33,7 +36,7 @@ namespace flc
             static RuntimeType *const int8, *const int16, *const int32, *const int64;
             static RuntimeType *const uint8, *const uint16, *const uint32, *const uint64;
             static RuntimeType *const float32, *const float64;
-            static RuntimeType *const object, *const string, *const char16;
+            static RuntimeType *const object, *const string, *const char16, *const nullLiteral;
         };
     }
 }

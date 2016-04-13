@@ -20,7 +20,9 @@ namespace flc
             void stringify(stringstream* stream, int tabulation = 0) override;
 
         private:
-            ExpressionSyntax *_cond, *_iftrue, *_iffalse;
+            ExpressionSyntax *_cond = nullptr,
+                             *_iftrue = nullptr,
+                             *_iffalse = nullptr;
         };
     }
 }

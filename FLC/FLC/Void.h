@@ -12,6 +12,9 @@ namespace flc
             public:
                 VoidRuntimeType();
                 ~VoidRuntimeType();
+
+                bool isReferenceType() override;
+                bool isValueType() override;
             };
         }
     }

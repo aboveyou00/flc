@@ -17,7 +17,14 @@ namespace flc
             {
             }
 
-
+            bool VoidRuntimeType::isReferenceType()
+            {
+                return false;
+            }
+            bool VoidRuntimeType::isValueType()
+            {
+                return false;
+            }
         }
     }
 }

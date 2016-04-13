@@ -54,6 +54,9 @@
     <ClInclude Include="testFactory.h">
       <Filter>Header Files\flc\syntax\factory</Filter>
     </ClInclude>
+    <ClInclude Include="testExpressionType.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -121,6 +124,30 @@
     </ClCompile>
     <ClCompile Include="testRuntimeType.cpp">
       <Filter>Source Files\flc\types</Filter>
+    </ClCompile>
+    <ClCompile Include="testIntegerLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="testCharacterLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="testExpressionType.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="testBooleanLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="testFloatLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="testStringLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="testNullLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="testCompoundExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

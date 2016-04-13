@@ -1,5 +1,5 @@
 #pragma once
-#include "RuntimeType.h"
+#include "RuntimeValueType.h"
 
 namespace flc
 {
@@ -7,7 +7,7 @@ namespace flc
     {
         namespace predefined
         {
-            class Int8RuntimeType : public RuntimeType
+            class Int8RuntimeType : public RuntimeValueType
             {
             public:
                 Int8RuntimeType();

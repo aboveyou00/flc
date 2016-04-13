@@ -20,7 +20,9 @@ namespace flc
 
         types::RuntimeType* CompoundExpressionSyntax::getExpressionType()
         {
-            if (exprs.size() == 0) return types::RuntimeType::void0;
+            auto numExprs = exprs.size();
+            if (numExprs == 0) return types::RuntimeType::void0;
+            if (numExprs == 1) return exprs[0]->getExpressionType();
 
             //return exprs[exprs.size() - 1]->getExpressionType();
             //TODO: Implement

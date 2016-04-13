@@ -10,7 +10,7 @@ namespace flc
         namespace predefined
         {
             Int64RuntimeType::Int64RuntimeType()
-                : RuntimeType("System::Int64")
+                : RuntimeValueType("System::Int64")
             {
             }
             Int64RuntimeType::~Int64RuntimeType()
