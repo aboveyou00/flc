@@ -67,8 +67,18 @@ namespace flc
             for (int q = 0; q < getOverloadCount(); q++)
             {
                 auto overload = getOverload(q);
-                if (overload->getParameterCount() != parameterCount) return false;
-                if (overload->getReturnType()->isSameAs(returnType) && overload->getParameterInfo(q)->isSameAs(parameters[q])) return overload;
+                if (!overload->getReturnType()->isSameAs(returnType)) continue;
+                if (overload->getParameterCount() != parameterCount) continue;
+                bool allSameParams = true;
+                for (int w = 0; w < parameterCount; w++)
+                {
+                    if (!overload->getParameterInfo(w)->isSameAs(parameters[w]))
+                    {
+                        allSameParams = false;
+                        break;
+                    }
+                }
+                if (allSameParams) return overload;
             }
             return nullptr;
         }
