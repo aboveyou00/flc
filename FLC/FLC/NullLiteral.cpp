@@ -5,7 +5,16 @@ namespace flc
 {
     namespace types
     {
-        RuntimeType* const RuntimeType::nullLiteral = new predefined::NullLiteralRuntimeType();
+        RuntimeType *RuntimeType::nullLiteral()
+        {
+            static predefined::NullLiteralRuntimeType *type = nullptr;
+            if (type == nullptr)
+            {
+                type = new predefined::NullLiteralRuntimeType;
+            }
+
+            return type;
+        }
 
         namespace predefined
         {

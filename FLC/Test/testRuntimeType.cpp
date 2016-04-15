@@ -13,8 +13,8 @@ namespace Test
         TEST_METHOD(Test_RuntimeType_getName)
         {
             auto int32 = flc::types::RuntimeType::int32;
-            Assert::IsTrue(int32->getQualifiedName().compare("System::Int32") == 0);
-            Assert::IsTrue(int32->getName().compare("Int32") == 0);
+            Assert::IsTrue(int32()->getQualifiedName().compare("System::Int32") == 0);
+            Assert::IsTrue(int32()->getName().compare("Int32") == 0);
         }
 
     };

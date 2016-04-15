@@ -11,7 +11,7 @@ namespace Test
     public:
         TEST_METHOD(Test_stringLiteral_exprType)
         {
-            testExpressionType("\"Hello, World!\"", RuntimeType::string);
+            testExpressionType("\"Hello, World!\"", RuntimeType::string());
         }
     };
 }

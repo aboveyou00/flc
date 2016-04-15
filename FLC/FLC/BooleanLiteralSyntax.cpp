@@ -21,7 +21,7 @@ namespace flc
 
         types::RuntimeType* BooleanLiteralSyntax::getExpressionType()
         {
-            return types::RuntimeType::bool8;
+            return types::RuntimeType::bool8();
         }
 
 

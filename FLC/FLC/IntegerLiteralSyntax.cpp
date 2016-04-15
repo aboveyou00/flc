@@ -21,7 +21,7 @@ namespace flc
 
         types::RuntimeType* IntegerLiteralSyntax::getExpressionType()
         {
-            return types::RuntimeType::int32;
+            return types::RuntimeType::int32();
         }
 
 

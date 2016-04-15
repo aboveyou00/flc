@@ -21,7 +21,7 @@ namespace flc
 
         types::RuntimeType* CharacterLiteralSyntax::getExpressionType()
         {
-            return types::RuntimeType::char16;
+            return types::RuntimeType::char16();
         }
 
 

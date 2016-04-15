@@ -16,7 +16,7 @@ namespace flc
         types::RuntimeType* NullLiteralSyntax::getExpressionType()
         {
             if (suggestedType != nullptr && suggestedType->isReferenceType()) return suggestedType;
-            return types::RuntimeType::nullLiteral;
+            return types::RuntimeType::nullLiteral();
         }
 
         void NullLiteralSyntax::stringify(stringstream* stream, int tabulation)

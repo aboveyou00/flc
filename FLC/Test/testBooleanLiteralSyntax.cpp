@@ -11,7 +11,7 @@ namespace Test
     public:
         TEST_METHOD(Test_booleanLiteral_exprType)
         {
-            testExpressionType("true", RuntimeType::bool8);
+            testExpressionType("true", RuntimeType::bool8());
         }
     };
 }

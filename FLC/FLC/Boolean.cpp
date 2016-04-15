@@ -5,7 +5,16 @@ namespace flc
 {
     namespace types
     {
-        RuntimeType* const RuntimeType::bool8 = new predefined::BooleanRuntimeType();
+        RuntimeType *RuntimeType::bool8()
+        {
+            static predefined::BooleanRuntimeType *type = nullptr;
+            if (type == nullptr)
+            {
+                type = new predefined::BooleanRuntimeType();
+            }
+
+            return type;
+        }
 
         namespace predefined
         {

@@ -5,7 +5,16 @@ namespace flc
 {
     namespace types
     {
-        RuntimeType* const RuntimeType::string = new predefined::StringRuntimeType();
+        RuntimeType *RuntimeType::string()
+        {
+            static predefined::StringRuntimeType *type = nullptr;
+            if (type == nullptr)
+            {
+                type = new predefined::StringRuntimeType;
+            }
+
+            return type;
+        }
 
         namespace predefined
         {

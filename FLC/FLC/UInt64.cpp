@@ -5,7 +5,16 @@ namespace flc
 {
     namespace types
     {
-        RuntimeType* const RuntimeType::uint64 = new predefined::UInt64RuntimeType();
+        RuntimeType *RuntimeType::uint64()
+        {
+            static predefined::UInt64RuntimeType *type = nullptr;
+            if (type == nullptr)
+            {
+                type = new predefined::UInt64RuntimeType;
+            }
+
+            return type;
+        }
 
         namespace predefined
         {

@@ -11,17 +11,17 @@ namespace Test
     public:
         TEST_METHOD(Test_compoundExpressionSyntax_exprType_empty)
         {
-            testExpressionType("{}", RuntimeType::void0);
+            testExpressionType("{}", RuntimeType::void0());
         }
 
         TEST_METHOD(Test_compoundExpressionSyntax_exprType_oneExpr)
         {
-            testExpressionType("{1}", RuntimeType::int32);
+            testExpressionType("{1}", RuntimeType::int32());
         }
 
         TEST_METHOD(Test_compoundExpressionSyntax_exprType_manyExprs)
         {
-            testExpressionType("{'1' 2.0 3}", RuntimeType::int32);
+            testExpressionType("{'1' 2.0 3}", RuntimeType::int32());
         }
     };
 }

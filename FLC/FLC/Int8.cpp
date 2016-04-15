@@ -5,7 +5,16 @@ namespace flc
 {
     namespace types
     {
-        RuntimeType* const RuntimeType::int8 = new predefined::Int8RuntimeType();
+        RuntimeType *RuntimeType::int8()
+        {
+            static predefined::Int8RuntimeType *type = nullptr;
+            if (type == nullptr)
+            {
+                type = new predefined::Int8RuntimeType();
+            }
+
+            return type;
+        }
 
         namespace predefined
         {

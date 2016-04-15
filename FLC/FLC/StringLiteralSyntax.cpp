@@ -21,7 +21,7 @@ namespace flc
 
         types::RuntimeType* StringLiteralSyntax::getExpressionType()
         {
-            return types::RuntimeType::string;
+            return types::RuntimeType::string();
         }
 
 

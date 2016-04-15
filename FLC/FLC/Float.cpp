@@ -5,7 +5,16 @@ namespace flc
 {
     namespace types
     {
-        RuntimeType* const RuntimeType::float32 = new predefined::FloatRuntimeType();
+        RuntimeType *RuntimeType::float32()
+        {
+            static predefined::FloatRuntimeType *type = nullptr;
+            if (type == nullptr)
+            {
+                type = new predefined::FloatRuntimeType();
+            }
+
+            return type;
+        }
 
         namespace predefined
         {

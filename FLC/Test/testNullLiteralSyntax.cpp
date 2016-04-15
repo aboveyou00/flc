@@ -11,17 +11,17 @@ namespace Test
     public:
         TEST_METHOD(Test_nullLiteral_exprType)
         {
-            testExpressionType("null", RuntimeType::nullLiteral);
+            testExpressionType("null", RuntimeType::nullLiteral());
         }
 
         TEST_METHOD(Test_nullLiteral_expectedExprType)
         {
-            testExpressionType("null", RuntimeType::string, RuntimeType::string);
+            testExpressionType("null", RuntimeType::string(), RuntimeType::string());
         }
 
         TEST_METHOD(Test_nullLiteral_expectedValueExprType)
         {
-            testExpressionType("null", RuntimeType::nullLiteral, RuntimeType::int32);
+            testExpressionType("null", RuntimeType::nullLiteral(), RuntimeType::int32());
         }
     };
 }

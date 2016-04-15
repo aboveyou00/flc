@@ -11,68 +11,68 @@ namespace Test
     public:
         TEST_METHOD(Test_unaryExpression_exprType_logicalNot)
         {
-            testExpressionType("!true", RuntimeType::bool8);
+            testExpressionType("!true", RuntimeType::bool8());
         }
 
         TEST_METHOD(Test_unaryExpression_exprType_int32Negation)
         {
-            testExpressionType("-3", RuntimeType::int32);
+            testExpressionType("-3", RuntimeType::int32());
         }
         TEST_METHOD(Test_unaryExpression_exprType_int64Negation)
         {
-            testExpressionType("-3l", RuntimeType::int64);
+            testExpressionType("-3l", RuntimeType::int64());
         }
 
         TEST_METHOD(Test_unaryExpression_exprType_floatNegation)
         {
-            testExpressionType("-3f", RuntimeType::float32);
+            testExpressionType("-3f", RuntimeType::float32());
         }
         TEST_METHOD(Test_unaryExpression_exprType_doubleNegation)
         {
-            testExpressionType("-3d", RuntimeType::float64);
+            testExpressionType("-3d", RuntimeType::float64());
         }
 
         TEST_METHOD(Test_unaryExpression_exprType_int32Plus)
         {
-            testExpressionType("+3", RuntimeType::int32);
+            testExpressionType("+3", RuntimeType::int32());
         }
         TEST_METHOD(Test_unaryExpression_exprType_uint32Plus)
         {
-            testExpressionType("+3u", RuntimeType::uint32);
+            testExpressionType("+3u", RuntimeType::uint32());
         }
         TEST_METHOD(Test_unaryExpression_exprType_int64Plus)
         {
-            testExpressionType("+3l", RuntimeType::int64);
+            testExpressionType("+3l", RuntimeType::int64());
         }
         TEST_METHOD(Test_unaryExpression_exprType_uint64Plus)
         {
-            testExpressionType("+3ul", RuntimeType::uint64);
+            testExpressionType("+3ul", RuntimeType::uint64());
         }
 
         TEST_METHOD(Test_unaryExpression_exprType_floatPlus)
         {
-            testExpressionType("+3f", RuntimeType::float32);
+            testExpressionType("+3f", RuntimeType::float32());
         }
         TEST_METHOD(Test_unaryExpression_exprType_doublePlus)
         {
-            testExpressionType("+3d", RuntimeType::float64);
+            testExpressionType("+3d", RuntimeType::float64());
         }
 
         TEST_METHOD(Test_unaryExpression_exprType_int32Complement)
         {
-            testExpressionType("~3", RuntimeType::int32);
+            testExpressionType("~3", RuntimeType::int32());
         }
         TEST_METHOD(Test_unaryExpression_exprType_uint32Complement)
         {
-            testExpressionType("~3u", RuntimeType::uint32);
+            testExpressionType("~3u", RuntimeType::uint32());
         }
         TEST_METHOD(Test_unaryExpression_exprType_int64Complement)
         {
-            testExpressionType("~3l", RuntimeType::int64);
+            testExpressionType("~3l", RuntimeType::int64());
         }
         TEST_METHOD(Test_unaryExpression_exprType_uint64Complement)
         {
-            testExpressionType("~3ul", RuntimeType::uint64);
+            testExpressionType("~3ul", RuntimeType::uint64());
         }
 
         //TODO: test Increment

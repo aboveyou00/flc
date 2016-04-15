@@ -21,7 +21,7 @@ namespace flc
 
         types::RuntimeType* FloatLiteralSyntax::getExpressionType()
         {
-            return types::RuntimeType::float32;
+            return types::RuntimeType::float32();
         }
 
 

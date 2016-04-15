@@ -5,7 +5,16 @@ namespace flc
 {
     namespace types
     {
-        RuntimeType* const RuntimeType::int16 = new predefined::Int16RuntimeType();
+        RuntimeType *RuntimeType::int16()
+        {
+            static predefined::Int16RuntimeType *type = nullptr;
+            if (type == nullptr)
+            {
+                type = new predefined::Int16RuntimeType();
+            }
+
+            return type;
+        }
 
         namespace predefined
         {

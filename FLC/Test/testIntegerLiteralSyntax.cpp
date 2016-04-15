@@ -11,7 +11,7 @@ namespace Test
     public:
         TEST_METHOD(Test_integerLiteral_exprType)
         {
-            testExpressionType("42", RuntimeType::int32);
+            testExpressionType("42", RuntimeType::int32());
         }
     };
 }

@@ -11,7 +11,7 @@ namespace Test
     public:
         TEST_METHOD(Test_characterLiteral_exprType)
         {
-            testExpressionType("'a'", RuntimeType::char16);
+            testExpressionType("'a'", RuntimeType::char16());
         }
     };
 }

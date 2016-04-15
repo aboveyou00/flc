@@ -11,7 +11,7 @@ namespace Test
     public:
         TEST_METHOD(Test_floatLiteral_exprType)
         {
-            testExpressionType("1.2", RuntimeType::float32);
+            testExpressionType("1.2", RuntimeType::float32());
         }
     };
 }
