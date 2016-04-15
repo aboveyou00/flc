@@ -45,10 +45,10 @@ namespace flc
                 switch (_op)
                 {
                 case RelationalOperator::LessThan:
-                    bin_op = op::Operator::addition();
+                    bin_op = op::Operator::lessThan();
                     break;
                 case RelationalOperator::LessThanOrEqualTo:
-                    bin_op = op::Operator::subtraction();
+                    bin_op = op::Operator::lessThanOrEqual();
                     break;
                 case RelationalOperator::GreaterThan:
                     bin_op = op::Operator::greaterThan();
