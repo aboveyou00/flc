@@ -357,6 +357,30 @@
     <ClInclude Include="OperatorOverloadMacros.h">
       <Filter>Header Files\flc\op\predefined</Filter>
     </ClInclude>
+    <ClInclude Include="LongLiteralToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="ULongLiteralToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="UIntegerLiteralToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleLiteralToken.h">
+      <Filter>Header Files\flc\tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="UIntegerLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="LongLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="ULongLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -700,6 +724,30 @@
     </ClCompile>
     <ClCompile Include="RuntimeValueType.cpp">
       <Filter>Source Files\flc\types</Filter>
+    </ClCompile>
+    <ClCompile Include="UIntegerLiteralToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="ULongLiteralToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="LongLiteralToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleLiteralToken.cpp">
+      <Filter>Source Files\flc\tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="UIntegerLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="LongLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="ULongLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

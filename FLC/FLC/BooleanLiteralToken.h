@@ -13,8 +13,8 @@ namespace flc
 
             bool getValue();
 
-            virtual bool isBooleanLiteral();
-            virtual bool isBooleanLiteral(bool val);
+            bool isBooleanLiteral() override;
+            bool isBooleanLiteral(bool val) override;
 
         private:
             bool _val;

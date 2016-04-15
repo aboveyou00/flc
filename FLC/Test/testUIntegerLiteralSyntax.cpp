@@ -6,12 +6,12 @@ using namespace flc::types;
 
 namespace Test
 {
-    TEST_CLASS(TestFloatLiteralSyntax)
+    TEST_CLASS(TestUIntegerLiteralSyntax)
     {
     public:
-        TEST_METHOD(Test_floatLiteral_exprType)
+        TEST_METHOD(Test_uintLiteral_exprType)
         {
-            testExpressionType("1.2f", RuntimeType::float32());
+            testExpressionType("25u", RuntimeType::uint32());
         }
     };
 }

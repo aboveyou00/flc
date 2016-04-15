@@ -12,7 +12,7 @@ namespace flc
             MultiLineComment(int pos, int length, string content);
             ~MultiLineComment();
 
-            virtual string toString();
+            string toString() override;
         };
     }
 }

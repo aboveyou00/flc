@@ -5,11 +5,11 @@ namespace flc
 {
     namespace syntax
     {
-        class IntegerLiteralSyntax : public ExpressionSyntax
+        class UIntegerLiteralSyntax : public ExpressionSyntax
         {
         public:
-            IntegerLiteralSyntax(uint32_t value);
-            ~IntegerLiteralSyntax();
+            UIntegerLiteralSyntax(uint32_t value);
+            ~UIntegerLiteralSyntax();
 
             uint32_t getValue();
 

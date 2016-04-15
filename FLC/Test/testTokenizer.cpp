@@ -8,7 +8,11 @@
 #include "../FLC/KeywordToken.h"
 #include "../FLC/BooleanLiteralToken.h"
 #include "../FLC/IntegerLiteralToken.h"
+#include "../FLC/UIntegerLiteralToken.h"
+#include "../FLC/LongLiteralToken.h"
+#include "../FLC/ULongLiteralToken.h"
 #include "../FLC/FloatLiteralToken.h"
+#include "../FLC/DoubleLiteralToken.h"
 #include "../FLC/CharacterLiteralToken.h"
 #include "../FLC/StringLiteralToken.h"
 #include "../FLC/NullLiteralToken.h"
@@ -21,7 +25,7 @@ using namespace flc::tokens;
 
 namespace Test
 {
-    TEST_CLASS(Compiler)
+    TEST_CLASS(TestTokenizer)
     {
     public:
 
@@ -70,11 +74,14 @@ namespace Test
 
         TEST_METHOD(Test_tokenize_floatingPointLiterals)
         {
-            UseString("  1.0 2f .3  ");
+            UseString("  1.23  1.0 2f .3 4d 5  ");
 
-            ExpectToken<FloatLiteralToken>("1f");
+            ExpectToken<DoubleLiteralToken>("1.23d");
+            ExpectToken<DoubleLiteralToken>("1d");
             ExpectToken<FloatLiteralToken>("2f");
-            ExpectToken<FloatLiteralToken>("0.3f");
+            ExpectToken<DoubleLiteralToken>("0.3d");
+            ExpectToken<DoubleLiteralToken>("4d");
+            ExpectToken<IntegerLiteralToken>("5");
 
             ExpectNoMore();
         }
@@ -133,6 +140,18 @@ namespace Test
 
             ExpectToken<BooleanLiteralToken>("true");
             
+            ExpectNoMore();
+        }
+        
+        TEST_METHOD(Test_tokenize_qualifiedMemberAccess)
+        {
+            UseString(":::MyClass.fieldName");
+
+            ExpectToken<SymbolToken>(":::");
+            ExpectToken<IdentifierToken>("MyClass");
+            ExpectToken<SymbolToken>(".");
+            ExpectToken<IdentifierToken>("fieldName");
+
             ExpectNoMore();
         }
 

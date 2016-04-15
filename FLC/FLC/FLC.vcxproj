@@ -165,6 +165,8 @@
     <ClInclude Include="ConditionalOrExpressionSyntax.h" />
     <ClInclude Include="ConditionalOrExpressionSyntaxFactory.h" />
     <ClInclude Include="Double.h" />
+    <ClInclude Include="DoubleLiteralSyntax.h" />
+    <ClInclude Include="DoubleLiteralToken.h" />
     <ClInclude Include="EndOfFileToken.h" />
     <ClInclude Include="EqualityExpressionSyntax.h" />
     <ClInclude Include="EqualityExpressionSyntaxFactory.h" />
@@ -191,6 +193,8 @@
     <ClInclude Include="IntegerLiteralSyntax.h" />
     <ClInclude Include="IntegerLiteralToken.h" />
     <ClInclude Include="KeywordToken.h" />
+    <ClInclude Include="LongLiteralSyntax.h" />
+    <ClInclude Include="LongLiteralToken.h" />
     <ClInclude Include="MemberAccessExpressionSyntax.h" />
     <ClInclude Include="MethodGroup.h" />
     <ClInclude Include="MethodOverload.h" />
@@ -231,6 +235,10 @@
     <ClInclude Include="UInt32.h" />
     <ClInclude Include="UInt64.h" />
     <ClInclude Include="UInt8.h" />
+    <ClInclude Include="UIntegerLiteralSyntax.h" />
+    <ClInclude Include="UIntegerLiteralToken.h" />
+    <ClInclude Include="ULongLiteralSyntax.h" />
+    <ClInclude Include="ULongLiteralToken.h" />
     <ClInclude Include="UnaryExpressionSyntax.h" />
     <ClInclude Include="UnaryExpressionSyntaxFactory.h" />
     <ClInclude Include="UnaryOperator.h" />
@@ -266,6 +274,8 @@
     <ClCompile Include="ConditionalOrExpressionSyntaxFactory.cpp" />
     <ClCompile Include="DecrementOperator.cpp" />
     <ClCompile Include="Double.cpp" />
+    <ClCompile Include="DoubleLiteralSyntax.cpp" />
+    <ClCompile Include="DoubleLiteralToken.cpp" />
     <ClCompile Include="EndOfFileToken.cpp" />
     <ClCompile Include="EqualityExpressionSyntax.cpp" />
     <ClCompile Include="EqualityExpressionSyntaxFactory.cpp" />
@@ -303,6 +313,8 @@
     <ClCompile Include="LessThanOperator.cpp" />
     <ClCompile Include="LessThanOrEqualOperator.cpp" />
     <ClCompile Include="LogicalNotOperator.cpp" />
+    <ClCompile Include="LongLiteralSyntax.cpp" />
+    <ClCompile Include="LongLiteralToken.cpp" />
     <ClCompile Include="MemberAccessExpressionSyntax.cpp" />
     <ClCompile Include="MethodGroup.cpp" />
     <ClCompile Include="MethodOverload.cpp" />
@@ -346,6 +358,10 @@
     <ClCompile Include="UInt32.cpp" />
     <ClCompile Include="UInt64.cpp" />
     <ClCompile Include="UInt8.cpp" />
+    <ClCompile Include="UIntegerLiteralSyntax.cpp" />
+    <ClCompile Include="UIntegerLiteralToken.cpp" />
+    <ClCompile Include="ULongLiteralSyntax.cpp" />
+    <ClCompile Include="ULongLiteralToken.cpp" />
     <ClCompile Include="UnaryExpressionSyntax.cpp" />
     <ClCompile Include="UnaryExpressionSyntaxFactory.cpp" />
     <ClCompile Include="UnaryOperator.cpp" />

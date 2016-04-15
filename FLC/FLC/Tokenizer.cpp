@@ -3,7 +3,11 @@
 #include "Tokenizer.h"
 #include "CharacterLiteralToken.h"
 #include "FloatLiteralToken.h"
+#include "DoubleLiteralToken.h"
 #include "IntegerLiteralToken.h"
+#include "UIntegerLiteralToken.h"
+#include "LongLiteralToken.h"
+#include "ULongLiteralToken.h"
 #include "IdentifierToken.h"
 #include "StringLiteralToken.h"
 #include "SymbolToken.h"
@@ -152,26 +156,18 @@ namespace flc
             }
 
             auto nextChar = (char16_t)source->peek();
-            if (nextChar == '\'')
+            if (nextChar == '\'') return parseCharacterToken(source, index, path);
+            else if (nextChar == '"') return parseStringToken(source, index, path);
+            else if (isDecimal(nextChar)) return parseNumericToken(source, index, path);
+            else if (nextChar == '.')
             {
-                return parseCharacterToken(source, index, path);
+                source->get();
+                nextChar = (char16_t)source->peek();
+                source->seekg(-1, ios_base::cur);
+                if (isDecimal(nextChar)) return parseNumericToken(source, index, path);
             }
-            else if (nextChar == '"')
-            {
-                return parseStringToken(source, index, path);
-            }
-            else if (isDecimal(nextChar))
-            {
-                return parseNumericToken(source, index, path);
-            }
-            else if (isAlphanumeric(nextChar) && !isDecimal(nextChar))
-            {
-                return parseIdentifierToken(source, index, path);
-            }
-            else
-            {
-                return parseSymbolToken(source, index, path);
-            }
+            else if (isAlphanumeric(nextChar) && !isDecimal(nextChar)) return parseIdentifierToken(source, index, path);
+            return parseSymbolToken(source, index, path);
         }
 
         Token* Tokenizer::parseCharacterToken(istream *source, int& index, string path)
@@ -214,7 +210,7 @@ namespace flc
         {
             stringstream numberString;
             int length = 0, base = 10;
-            bool foundDecimal = false, forceInt = false;
+            bool isFloatingPoint = false, forceInt = false, isSigned = true, isLong = false;
             char16_t nextChar;
             nextChar = (char16_t)source->peek();
             if (nextChar == '0')
@@ -269,20 +265,49 @@ namespace flc
             {
                 nextChar = (char16_t)source->peek();
                 if (!nextChar) break;
-                else if ((nextChar != '.' || foundDecimal) && !isDecimal(nextChar)) break;
-                else if (nextChar == '.' && !foundDecimal) foundDecimal = true;
+                else if ((nextChar != '.' || isFloatingPoint) && !isDecimal(nextChar)) break;
+                else if (nextChar == '.' && !isFloatingPoint) isFloatingPoint = true;
                 source->get(); //Consume character, since we are using it
                 numberString << (char)nextChar;
                 length++;
             }
-            //TODO: collect suffix for size, such as f, l, u, ul, etc...
-            if (foundDecimal)
+            nextChar = (char16_t)source->peek();
+            if (!forceInt && (nextChar == 'f' || nextChar == 'F' || nextChar == 'd' || nextChar == 'D'))
             {
+                isLong = (nextChar == 'f' || nextChar == 'F');
+                isFloatingPoint = true;
+                source->get();
+                nextChar = (char16_t)source->peek();
+            }
+            else if (!isFloatingPoint)
+            {
+                if (nextChar == 'u' || nextChar == 'U')
+                {
+                    forceInt = true;
+                    isSigned = false;
+                    source->get();
+                    nextChar = (char16_t)source->peek();
+                }
+                if (nextChar == 'l' || nextChar == 'L')
+                {
+                    forceInt = true;
+                    isLong = true;
+                    source->get();
+                    nextChar = (char16_t)source->peek();
+                }
+            }
+            if (isFloatingPoint)
+            {
+                isLong = !isLong;
+                if (isLong) return new DoubleLiteralToken(path, index, length, stod(numberString.str()));
                 return new FloatLiteralToken(path, index, length, stof(numberString.str()));
             }
             else
             {
-                return new IntegerLiteralToken(path, index, length, stoi(numberString.str(), nullptr, base));
+                if (isSigned && !isLong) return new IntegerLiteralToken(path, index, length, (int32_t)stoi(numberString.str(), nullptr, base));
+                else if (isSigned && isLong) return new LongLiteralToken(path, index, length, (int64_t)stoll(numberString.str(), nullptr, base));
+                else if (!isSigned && !isLong) return new UIntegerLiteralToken(path, index, length, (uint32_t)std::stoull(numberString.str(), nullptr, base));
+                else return new ULongLiteralToken(path, index, length, (uint64_t)stoull(numberString.str(), nullptr, base));
             }
         }
         Token* Tokenizer::parseStringToken(istream *source, int& index, string path)

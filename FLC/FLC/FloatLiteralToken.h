@@ -13,10 +13,10 @@ namespace flc
 
             float getValue();
 
-            virtual bool isFloatLiteral();
-            virtual bool isFloatLiteral(float val);
+            bool isFloatLiteral() override;
+            bool isFloatLiteral(float val) override;
 
-            virtual string toString();
+            string toString() override;
 
         private:
             float _val;

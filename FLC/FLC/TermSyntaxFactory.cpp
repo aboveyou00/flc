@@ -7,7 +7,11 @@
 #include "StringLiteralSyntax.h"
 #include "CharacterLiteralSyntax.h"
 #include "IntegerLiteralSyntax.h"
+#include "UIntegerLiteralSyntax.h"
+#include "LongLiteralSyntax.h"
+#include "ULongLiteralSyntax.h"
 #include "FloatLiteralSyntax.h"
+#include "DoubleLiteralSyntax.h"
 #include "BooleanLiteralSyntax.h"
 #include "NullLiteralSyntax.h"
 #include "SimpleNameSyntax.h"
@@ -15,10 +19,14 @@
 #include "MemberAccessExpressionSyntax.h"
 
 #include "IntegerLiteralToken.h"
+#include "UIntegerLiteralToken.h"
+#include "LongLiteralToken.h"
+#include "ULongLiteralToken.h"
 #include "IdentifierToken.h"
 #include "CharacterLiteralToken.h"
 #include "BooleanLiteralToken.h"
 #include "FloatLiteralToken.h"
+#include "DoubleLiteralToken.h"
 #include "KeywordToken.h"
 #include "StringLiteralToken.h"
 
@@ -72,9 +80,25 @@ namespace flc
                 {
                     result = new IntegerLiteralSyntax(((tokens::IntegerLiteralToken*)tok)->getValue());
                 }
+                else if (tok->isUIntegerLiteral())
+                {
+                    result = new UIntegerLiteralSyntax(((tokens::UIntegerLiteralToken*)tok)->getValue());
+                }
+                else if (tok->isLongLiteral())
+                {
+                    result = new LongLiteralSyntax(((tokens::LongLiteralToken*)tok)->getValue());
+                }
+                else if (tok->isULongLiteral())
+                {
+                    result = new ULongLiteralSyntax(((tokens::ULongLiteralToken*)tok)->getValue());
+                }
                 else if (tok->isFloatLiteral())
                 {
                     result = new FloatLiteralSyntax(((tokens::FloatLiteralToken*)tok)->getValue());
+                }
+                else if (tok->isDoubleLiteral())
+                {
+                    result = new DoubleLiteralSyntax(((tokens::DoubleLiteralToken*)tok)->getValue());
                 }
                 else if (tok->isBooleanLiteral())
                 {

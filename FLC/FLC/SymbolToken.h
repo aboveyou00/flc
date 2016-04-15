@@ -13,10 +13,10 @@ namespace flc
 
             string getSymbol();
 
-            bool isSymbol();
-            bool isSymbol(string sym);
+            bool isSymbol() override;
+            bool isSymbol(string sym) override;
 
-            virtual string toString();
+            string toString() override;
 
         private:
             string _sym;

@@ -6,7 +6,7 @@ namespace flc
 {
     namespace syntax
     {
-        IntegerLiteralSyntax::IntegerLiteralSyntax(int value)
+        IntegerLiteralSyntax::IntegerLiteralSyntax(uint32_t value)
         {
             val = value;
         }
@@ -14,7 +14,7 @@ namespace flc
         {
         }
 
-        int IntegerLiteralSyntax::getValue()
+        uint32_t IntegerLiteralSyntax::getValue()
         {
             return val;
         }

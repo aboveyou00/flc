@@ -14,7 +14,7 @@ namespace flc
             SingleLineComment(int pos, int length, string content);
             ~SingleLineComment();
 
-            virtual string toString();
+            string toString() override;
         };
     }
 }

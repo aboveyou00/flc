@@ -13,10 +13,10 @@ namespace flc
 
             string getValue();
 
-            virtual bool isStringLiteral();
-            virtual bool isStringLiteral(string val);
+            bool isStringLiteral() override;
+            bool isStringLiteral(string val) override;
 
-            virtual string toString();
+            string toString() override;
 
         private:
             string _val;

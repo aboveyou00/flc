@@ -13,7 +13,7 @@ namespace flc
 
             string getError();
 
-            virtual string toString();
+            string toString() override;
 
         private:
             string _err;

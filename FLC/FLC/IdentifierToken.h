@@ -13,10 +13,10 @@ namespace flc
 
             string getValue();
 
-            bool isIdentifier();
-            bool isIdentifier(string val);
+            bool isIdentifier() override;
+            bool isIdentifier(string val) override;
 
-            virtual string toString();
+            string toString() override;
 
             static Token* getToken(string sourceFile, int startPos, int length, string value);
 

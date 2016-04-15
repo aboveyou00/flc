@@ -62,7 +62,12 @@ namespace Test
 
         TEST_METHOD(Test_parseTerm_float)
         {
-            testFactory<TermSyntaxFactory>("42.1", "42.1f");
+            testFactory<TermSyntaxFactory>("42.1f", "42.1f");
+        }
+
+        TEST_METHOD(Test_parseTerm_double)
+        {
+            testFactory<TermSyntaxFactory>("42.1", "42.1d");
         }
 
         TEST_METHOD(Test_parseTerm_bool)

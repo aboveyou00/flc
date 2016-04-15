@@ -14,10 +14,10 @@ namespace flc
 
             uint32_t getValue();
 
-            virtual bool isIntegerLiteral();
-            virtual bool isIntegerLiteral(uint32_t val);
+            bool isIntegerLiteral() override;
+            bool isIntegerLiteral(uint32_t val) override;
 
-            virtual string toString();
+            string toString() override;
 
         private:
             uint32_t _val;

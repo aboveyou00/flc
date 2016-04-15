@@ -30,8 +30,16 @@ namespace flc
             virtual bool isStringLiteral(string) { return false; }
             virtual bool isIntegerLiteral() { return false; }
             virtual bool isIntegerLiteral(uint32_t) { return false; }
+            virtual bool isUIntegerLiteral() { return false; }
+            virtual bool isUIntegerLiteral(uint32_t) { return false; }
+            virtual bool isLongLiteral() { return false; }
+            virtual bool isLongLiteral(uint64_t) { return false; }
+            virtual bool isULongLiteral() { return false; }
+            virtual bool isULongLiteral(uint64_t) { return false; }
             virtual bool isFloatLiteral() { return false; }
             virtual bool isFloatLiteral(float) { return false; }
+            virtual bool isDoubleLiteral() { return false; }
+            virtual bool isDoubleLiteral(double) { return false; }
             virtual bool isBooleanLiteral() { return false; }
             virtual bool isBooleanLiteral(bool) { return false; }
             virtual bool isCharacterLiteral() { return false; }

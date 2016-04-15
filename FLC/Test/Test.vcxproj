@@ -182,6 +182,7 @@
     <ClCompile Include="testConditionalAndExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testConditionalOrExpressionSyntax.cpp" />
     <ClCompile Include="testConditionalOrExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="testDoubleLiteralSyntax.cpp" />
     <ClCompile Include="testEqualityExpressionSyntax.cpp" />
     <ClCompile Include="testEqualityExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testErrors.cpp" />
@@ -195,6 +196,7 @@
     <ClCompile Include="testInclusiveOrExpressionSyntax.cpp" />
     <ClCompile Include="testInclusiveOrExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testIntegerLiteralSyntax.cpp" />
+    <ClCompile Include="testLongLiteralSyntax.cpp" />
     <ClCompile Include="testMemberAccessExpressionSyntax.cpp" />
     <ClCompile Include="testMultiplicativeExpressionSyntax.cpp" />
     <ClCompile Include="testMultiplicativeExpressionSyntaxFactory.cpp" />
@@ -210,6 +212,8 @@
     <ClCompile Include="testTernaryExpressionSyntax.cpp" />
     <ClCompile Include="testTernaryExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testTokenizer.cpp" />
+    <ClCompile Include="testUIntegerLiteralSyntax.cpp" />
+    <ClCompile Include="testULongLiteralSyntax.cpp" />
     <ClCompile Include="testUnaryExpressionSyntax.cpp" />
     <ClCompile Include="testUnaryExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testWhileExpressionFactory.cpp" />

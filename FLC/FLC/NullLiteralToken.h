@@ -11,7 +11,7 @@ namespace flc
             NullLiteralToken(string sourceFile, int startPos);
             ~NullLiteralToken();
 
-            virtual bool isNullLiteral();
+            bool isNullLiteral() override;
         };
     }
 }

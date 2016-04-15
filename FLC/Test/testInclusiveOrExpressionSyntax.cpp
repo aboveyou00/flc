@@ -19,7 +19,7 @@ namespace Test
         }
         TEST_METHOD(Test_inclOrExpression_exprType_int64)
         {
-            testExpressionType("1l | 3u", RuntimeType::int64());
+            testExpressionType("1l | 3l", RuntimeType::int64());
         }
         TEST_METHOD(Test_inclOrExpression_exprType_uint64)
         {

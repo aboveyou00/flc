@@ -13,10 +13,10 @@ namespace flc
 
             string getValue();
 
-            bool isKeyword();
-            bool isKeyword(string sym);
+            bool isKeyword() override;
+            bool isKeyword(string sym) override;
 
-            virtual string toString();
+            string toString() override;
 
         private:
             string _val;

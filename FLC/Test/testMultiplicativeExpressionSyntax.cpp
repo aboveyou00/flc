@@ -15,7 +15,7 @@ namespace Test
         }
         TEST_METHOD(Test_multiplicative_exprType_multiplyUInt32)
         {
-            testExpressionType("1u * 2u", RuntimeType::int32());
+            testExpressionType("1u * 2u", RuntimeType::uint32());
         }
         TEST_METHOD(Test_multiplicative_exprType_multiplyInt64)
         {
@@ -23,7 +23,7 @@ namespace Test
         }
         TEST_METHOD(Test_multiplicative_exprType_multiplyUInt64)
         {
-            testExpressionType("1ul * 2ul", RuntimeType::int64());
+            testExpressionType("1ul * 2ul", RuntimeType::uint64());
         }
 
         TEST_METHOD(Test_multiplicative_exprType_multiplyFloat)
@@ -41,7 +41,7 @@ namespace Test
         }
         TEST_METHOD(Test_multiplicative_exprType_divideUInt32)
         {
-            testExpressionType("1u / 2u", RuntimeType::int32());
+            testExpressionType("1u / 2u", RuntimeType::uint32());
         }
         TEST_METHOD(Test_multiplicative_exprType_divideInt64)
         {
@@ -49,7 +49,7 @@ namespace Test
         }
         TEST_METHOD(Test_multiplicative_exprType_divideUInt64)
         {
-            testExpressionType("1ul / 2ul", RuntimeType::int64());
+            testExpressionType("1ul / 2ul", RuntimeType::uint64());
         }
 
         TEST_METHOD(Test_multiplicative_exprType_divideFloat)
@@ -67,7 +67,7 @@ namespace Test
         }
         TEST_METHOD(Test_multiplicative_exprType_modulusUInt32)
         {
-            testExpressionType("1u % 2u", RuntimeType::int32());
+            testExpressionType("1u % 2u", RuntimeType::uint32());
         }
         TEST_METHOD(Test_multiplicative_exprType_modulusInt64)
         {
@@ -75,7 +75,7 @@ namespace Test
         }
         TEST_METHOD(Test_multiplicative_exprType_modulusUInt64)
         {
-            testExpressionType("1ul % 2ul", RuntimeType::int64());
+            testExpressionType("1ul % 2ul", RuntimeType::uint64());
         }
 
         TEST_METHOD(Test_multiplicative_exprType_modulusFloat)

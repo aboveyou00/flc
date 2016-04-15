@@ -5,20 +5,20 @@ namespace flc
 {
     namespace syntax
     {
-        class IntegerLiteralSyntax : public ExpressionSyntax
+        class DoubleLiteralSyntax : public ExpressionSyntax
         {
         public:
-            IntegerLiteralSyntax(uint32_t value);
-            ~IntegerLiteralSyntax();
+            DoubleLiteralSyntax(double value);
+            ~DoubleLiteralSyntax();
 
-            uint32_t getValue();
+            double getValue();
 
             types::RuntimeType* getExpressionType() override;
 
             void stringify(stringstream* stream, int tabulation = 0) override;
 
         private:
-            uint32_t val;
+            double val;
         };
     }
 }

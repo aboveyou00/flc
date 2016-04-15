@@ -203,5 +203,17 @@
     <ClCompile Include="testWhileExpressionSyntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
+    <ClCompile Include="testDoubleLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="testUIntegerLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="testLongLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="testULongLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
