@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "RelationalExpressionSyntax.h"
+#include "BinaryOperator.h"
 
 namespace flc
 {
@@ -38,8 +39,31 @@ namespace flc
 
         types::RuntimeType* RelationalExpressionSyntax::getExpressionType()
         {
-            //TODO: Implement
-            return nullptr;
+            if (_overload == nullptr)
+            {
+                op::BinaryOperator *bin_op;
+                switch (_op)
+                {
+                case RelationalOperator::LessThan:
+                    bin_op = op::Operator::addition();
+                    break;
+                case RelationalOperator::LessThanOrEqualTo:
+                    bin_op = op::Operator::subtraction();
+                    break;
+                case RelationalOperator::GreaterThan:
+                    bin_op = op::Operator::greaterThan();
+                    break;
+                case RelationalOperator::GreaterThanOrEqualTo:
+                    bin_op = op::Operator::greaterThanOrEqual();
+                    break;
+                case RelationalOperator::ErrorState:
+                default:
+                    return nullptr;
+                }
+                _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
+            }
+            if (_overload == nullptr) return nullptr;
+            return _overload->getReturnType();
         }
 
 

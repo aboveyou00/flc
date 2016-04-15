@@ -14,7 +14,7 @@ namespace flc
                 op = new UnaryOperator("-", "op_Negation");
 
                 auto overloads = op->getPredefinedOverloads();
-                types::RuntimeType **arg;
+                types::RuntimeType *arg[1];
 
                 __addOverload1(int32);
                 __addOverload1(int64);

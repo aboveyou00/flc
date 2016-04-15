@@ -12,7 +12,7 @@ namespace flc
             {
                 op = new UnaryOperator("", "op_Implicit");
 
-                auto overloads = op->getPredefinedOverloads();
+                //auto overloads = op->getPredefinedOverloads();
             }
 
             return op;

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "ShiftExpressionSyntax.h"
+#include "BinaryOperator.h"
 
 namespace flc
 {
@@ -36,8 +37,25 @@ namespace flc
 
         types::RuntimeType* ShiftExpressionSyntax::getExpressionType()
         {
-            //TODO: Implement
-            return nullptr;
+            if (_overload == nullptr)
+            {
+                op::BinaryOperator *bin_op;
+                switch (_op)
+                {
+                case ShiftOperator::Left:
+                    bin_op = op::Operator::leftShift();
+                    break;
+                case ShiftOperator::Right:
+                    bin_op = op::Operator::rightShift();
+                    break;
+                case ShiftOperator::ErrorState:
+                default:
+                    return nullptr;
+                }
+                _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
+            }
+            if (_overload == nullptr) return nullptr;
+            return _overload->getReturnType();
         }
 
 

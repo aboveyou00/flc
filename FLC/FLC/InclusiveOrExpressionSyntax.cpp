@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "InclusiveOrExpressionSyntax.h"
+#include "BinaryOperator.h"
 
 namespace flc
 {
@@ -24,8 +25,13 @@ namespace flc
 
         types::RuntimeType* InclusiveOrExpressionSyntax::getExpressionType()
         {
-            //TODO: Implement
-            return nullptr;
+            if (_overload == nullptr)
+            {
+                op::BinaryOperator *bin_op = op::Operator::bitwiseOr();
+                _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
+            }
+            if (_overload == nullptr) return nullptr;
+            return _overload->getReturnType();
         }
 
 

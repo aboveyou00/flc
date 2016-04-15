@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "EqualityExpressionSyntax.h"
+#include "BinaryOperator.h"
 
 namespace flc
 {
@@ -36,8 +37,25 @@ namespace flc
 
         types::RuntimeType* EqualityExpressionSyntax::getExpressionType()
         {
-            //TODO: Implement
-            return nullptr;
+            if (_overload == nullptr)
+            {
+                op::BinaryOperator *bin_op;
+                switch (_op)
+                {
+                case EqualityOperator::Equals:
+                    bin_op = op::Operator::equality();
+                    break;
+                case EqualityOperator::NotEquals:
+                    bin_op = op::Operator::inequality();
+                    break;
+                case EqualityOperator::ErrorState:
+                default:
+                    return nullptr;
+                }
+                _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
+            }
+            if (_overload == nullptr) return nullptr;
+            return _overload->getReturnType();
         }
 
 
