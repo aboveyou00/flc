@@ -26,7 +26,8 @@ namespace flc
                 __addOverload2(float64);
 
                 __addOverload2(string);
-                __addOverload2_alt(string, object);
+                __addOverload2_alt(string, string, object);
+                __addOverload2_alt(string, object, string);
             }
 
             return op;

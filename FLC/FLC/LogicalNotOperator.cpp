@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "UnaryOperator.h"
+#include "OperatorOverloadMacros.h"
 
 namespace flc
 {
@@ -13,6 +14,9 @@ namespace flc
                 op = new UnaryOperator("!", "op_LogicalNot");
 
                 auto overloads = op->getPredefinedOverloads();
+                types::RuntimeType **arg;
+
+                __addOverload1(int32);
             }
 
             return op;
