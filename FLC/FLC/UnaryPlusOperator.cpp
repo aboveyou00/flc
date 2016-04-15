@@ -5,6 +5,17 @@ namespace flc
 {
     namespace op
     {
-        UnaryOperator* const Operator::unaryPlus = new UnaryOperator("+", "op_UnaryPlus");
+        UnaryOperator *Operator::unaryPlus()
+        {
+            static UnaryOperator *op = nullptr;
+            if (op == nullptr)
+            {
+                op = new UnaryOperator("+", "op_UnaryPlus");
+
+                auto overloads = op->getPredefinedOverloads();
+            }
+
+            return op;
+        }
     }
 }

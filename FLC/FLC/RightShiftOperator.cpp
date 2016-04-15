@@ -5,6 +5,18 @@ namespace flc
 {
     namespace op
     {
-        BinaryOperator* const Operator::rightShift = new BinaryOperator(">>", "op_RightShift");
+        BinaryOperator *Operator::rightShift()
+        {
+            static BinaryOperator *op = nullptr;
+            if (op == nullptr)
+            {
+                op = new BinaryOperator(">>", "op_RightShift");
+
+                auto overloads = op->getPredefinedOverloads();
+                types::RuntimeType* args[2];
+            }
+
+            return op;
+        }
     }
 }

@@ -5,6 +5,17 @@ namespace flc
 {
     namespace op
     {
-        UnaryOperator* const Operator::negation = new UnaryOperator("-", "op_Negation");
+        UnaryOperator *Operator::negation()
+        {
+            static UnaryOperator *op = nullptr;
+            if (op == nullptr)
+            {
+                op = new UnaryOperator("-", "op_Negation");
+
+                auto overloads = op->getPredefinedOverloads();
+            }
+
+            return op;
+        }
     }
 }

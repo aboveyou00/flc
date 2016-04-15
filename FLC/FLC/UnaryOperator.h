@@ -13,6 +13,9 @@ namespace flc
             ~UnaryOperator();
 
             types::MethodOverload* findOverload(types::RuntimeType* operand);
+
+        private:
+            void(*initializeFn)(UnaryOperator*);
         };
     }
 }

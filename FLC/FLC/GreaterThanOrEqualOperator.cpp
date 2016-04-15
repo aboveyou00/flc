@@ -5,6 +5,18 @@ namespace flc
 {
     namespace op
     {
-        BinaryOperator* const Operator::greaterThanOrEqual = new BinaryOperator(">=", "op_GreaterThanOrEqual");
+        BinaryOperator *Operator::greaterThanOrEqual()
+        {
+            static BinaryOperator *op = nullptr;
+            if (op == nullptr)
+            {
+                op = new BinaryOperator(">=", "op_GreaterThanOrEqual");
+
+                auto overloads = op->getPredefinedOverloads();
+                types::RuntimeType* args[2];
+            }
+
+            return op;
+        }
     }
 }

@@ -32,9 +32,9 @@ namespace Test
             ExpectNoMore();
         }
 
-        TEST_METHOD(Test_tokenize_comment)
+        TEST_METHOD(Test_tokenize_comments)
         {
-            UseString("  //A comment!   ");
+            UseString("  //A comment!  \r\n  /*   A \r\n multi-line \r\n comment! */   ");
 
             ExpectNoMore();
         }

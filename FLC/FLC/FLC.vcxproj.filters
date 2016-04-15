@@ -67,6 +67,9 @@
     <Filter Include="Source Files\flc\op\predefined">
       <UniqueIdentifier>{df573dff-e6ad-4e9e-a877-bb9870d8e208}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\flc\op\predefined">
+      <UniqueIdentifier>{68899ab2-d2a4-4694-8e8b-45764b87d034}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -350,6 +353,9 @@
     </ClInclude>
     <ClInclude Include="RuntimeValueType.h">
       <Filter>Header Files\flc\types</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorOverloadMacros.h">
+      <Filter>Header Files\flc\op\predefined</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

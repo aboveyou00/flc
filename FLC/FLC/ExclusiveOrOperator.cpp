@@ -5,6 +5,18 @@ namespace flc
 {
     namespace op
     {
-        BinaryOperator* const Operator::exclusiveOr = new BinaryOperator("^", "op_ExclusiveOr");
+        BinaryOperator *Operator::exclusiveOr()
+        {
+            static BinaryOperator *op = nullptr;
+            if (op == nullptr)
+            {
+                op = new BinaryOperator("^", "op_ExclusiveOr");
+
+                auto overloads = op->getPredefinedOverloads();
+                types::RuntimeType* args[2];
+            }
+
+            return op;
+        }
     }
 }

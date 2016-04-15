@@ -13,6 +13,9 @@ namespace flc
             ~BinaryOperator();
 
             types::MethodOverload* findOverload(types::RuntimeType* left, types::RuntimeType* right);
+
+        private:
+            void(*initializeFn)(BinaryOperator*);
         };
     }
 }

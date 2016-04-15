@@ -204,6 +204,7 @@
     <ClInclude Include="NullLiteralToken.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Operator.h" />
+    <ClInclude Include="OperatorOverloadMacros.h" />
     <ClInclude Include="ParameterInfo.h" />
     <ClInclude Include="RelationalExpressionSyntax.h" />
     <ClInclude Include="RelationalExpressionSyntaxFactory.h" />

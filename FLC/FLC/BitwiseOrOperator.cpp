@@ -5,6 +5,18 @@ namespace flc
 {
     namespace op
     {
-        BinaryOperator* const Operator::bitwiseOr = new BinaryOperator("|", "op_BitwiseOr");
+        BinaryOperator *Operator::bitwiseOr()
+        {
+            static BinaryOperator *op = nullptr;
+            if (op == nullptr)
+            {
+                op = new BinaryOperator("|", "op_BitwiseOr");
+
+                auto overloads = op->getPredefinedOverloads();
+                types::RuntimeType* args[2];
+            }
+
+            return op;
+        }
     }
 }

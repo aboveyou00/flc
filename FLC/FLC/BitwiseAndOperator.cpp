@@ -5,6 +5,18 @@ namespace flc
 {
     namespace op
     {
-        BinaryOperator* const Operator::bitwiseAnd = new BinaryOperator("&", "op_BitwiseAnd");
+        BinaryOperator *Operator::bitwiseAnd()
+        {
+            static BinaryOperator *op = nullptr;
+            if (op == nullptr)
+            {
+                op = new BinaryOperator("&", "op_BitwiseAnd");
+
+                auto overloads = op->getPredefinedOverloads();
+                types::RuntimeType* args[2];
+            }
+
+            return op;
+        }
     }
 }

@@ -1,5 +1,6 @@
 #include "stdafx.h"
-#include "Operator.h"
+#include "UnaryOperator.h"
+#include "BinaryOperator.h"
 
 namespace flc
 {
@@ -8,6 +9,7 @@ namespace flc
         Operator::Operator(std::string opSymbol, std::string opMethodName)
             : _sym(opSymbol), _methodName(opMethodName)
         {
+            _predefined = new types::MethodGroup(opMethodName);
         }
         Operator::~Operator()
         {

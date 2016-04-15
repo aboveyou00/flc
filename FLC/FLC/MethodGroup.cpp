@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "MethodGroup.h"
+#include <cstdarg>
 
 namespace flc
 {
@@ -70,6 +71,25 @@ namespace flc
                 if (overload->getReturnType()->isSameAs(returnType) && overload->getParameterInfo(q)->isSameAs(parameters[q])) return overload;
             }
             return nullptr;
+        }
+
+        MethodOverload* MethodGroup::addOverload(RuntimeType* returnType, RuntimeType** parameters, int parameterCount)
+        {
+            ParameterInfo** params = new ParameterInfo*[parameterCount];
+            for (int q = 0; q < parameterCount; q++)
+            {
+                params[q] = new ParameterInfo(parameters[q]);
+            }
+            return addOverload(returnType, params, parameterCount);
+        }
+        MethodOverload* MethodGroup::addOverload(RuntimeType* returnType, ParameterInfo** parameters, int parameterCount)
+        {
+            auto oldOverload = findOverload(returnType, parameters, parameterCount);
+            if (oldOverload != nullptr) throw std::string("You tried to add a duplicate method overload to a method group!");
+
+            auto new_overload = new MethodOverload(returnType, parameters, parameterCount);
+            _overloads->push_back(new_overload);
+            return new_overload;
         }
     }
 }

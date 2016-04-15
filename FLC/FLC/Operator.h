@@ -22,19 +22,43 @@ namespace flc
 
         private:
             std::string _sym, _methodName;
-            types::MethodGroup* _predefined;
+            types::MethodGroup* _predefined = nullptr;
 
+            //STATIC:
         public:
-            static UnaryOperator *const increment, *const decrement, *const negation, *const unaryPlus, *const logicalNot, *const onesComplement;
-            static UnaryOperator *const implicitCast, *const explicitCast;
-            static BinaryOperator *const multiplication, *const division, *const modulus;
-            static BinaryOperator *const addition, *const subtraction;
-            static BinaryOperator *const leftShift, *const rightShift;
-            static BinaryOperator *const greaterThan, *const lessThan, *const greaterThanOrEqual, *const lessThanOrEqual;
-            static BinaryOperator *const equality, *const inequality;
-            static BinaryOperator *const bitwiseAnd;
-            static BinaryOperator *const exclusiveOr;
-            static BinaryOperator *const bitwiseOr;
+            static UnaryOperator *increment();
+            static UnaryOperator *decrement();
+            static UnaryOperator *negation();
+            static UnaryOperator *unaryPlus();
+            static UnaryOperator *logicalNot();
+            static UnaryOperator *onesComplement();
+
+            static UnaryOperator *implicitCast();
+            static UnaryOperator *explicitCast();
+
+            static BinaryOperator *multiplication();
+            static BinaryOperator *division();
+            static BinaryOperator *modulus();
+
+            static BinaryOperator *addition();
+            static BinaryOperator *subtraction();
+
+            static BinaryOperator *leftShift();
+            static BinaryOperator *rightShift();
+
+            static BinaryOperator *greaterThan();
+            static BinaryOperator *lessThan();
+            static BinaryOperator *greaterThanOrEqual();
+            static BinaryOperator *lessThanOrEqual();
+
+            static BinaryOperator *equality();
+            static BinaryOperator *inequality();
+
+            static BinaryOperator *bitwiseAnd();
+
+            static BinaryOperator *exclusiveOr();
+
+            static BinaryOperator *bitwiseOr();
         };
     }
 }

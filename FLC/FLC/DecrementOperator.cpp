@@ -5,6 +5,17 @@ namespace flc
 {
     namespace op
     {
-        UnaryOperator* const Operator::decrement = new UnaryOperator("--", "op_Decrement");
+        UnaryOperator *Operator::decrement()
+        {
+            static UnaryOperator *op = nullptr;
+            if (op == nullptr)
+            {
+                op = new UnaryOperator("--", "op_Decrement");
+
+                auto overloads = op->getPredefinedOverloads();
+            }
+
+            return op;
+        }
     }
 }

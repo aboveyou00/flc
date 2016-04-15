@@ -43,13 +43,13 @@ namespace flc
                 switch (_op)
                 {
                 case MultiplicativeOperator::Multiply:
-                    bin_op = op::Operator::addition;
+                    bin_op = op::Operator::addition();
                     break;
                 case MultiplicativeOperator::Divide:
-                    bin_op = op::Operator::subtraction;
+                    bin_op = op::Operator::subtraction();
                     break;
                 case MultiplicativeOperator::Remainder:
-                    bin_op = op::Operator::subtraction;
+                    bin_op = op::Operator::subtraction();
                     break;
                 case MultiplicativeOperator::ErrorState:
                 default:

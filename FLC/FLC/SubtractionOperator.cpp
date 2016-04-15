@@ -1,10 +1,31 @@
 #include "stdafx.h"
 #include "BinaryOperator.h"
+#include "OperatorOverloadMacros.h"
 
 namespace flc
 {
     namespace op
     {
-        BinaryOperator* const Operator::subtraction = new BinaryOperator("-", "op_Subtraction");
+        BinaryOperator *Operator::subtraction()
+        {
+            static BinaryOperator *op = nullptr;
+            if (op == nullptr)
+            {
+                op = new BinaryOperator("-", "op_Subtraction");
+
+                auto overloads = op->getPredefinedOverloads();
+                types::RuntimeType* args[2];
+
+                __addOverload2(int32);
+                __addOverload2(int64);
+                __addOverload2(uint32);
+                __addOverload2(uint64);
+
+                __addOverload2(float32);
+                __addOverload2(float64);
+            }
+
+            return op;
+        }
     }
 }

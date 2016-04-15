@@ -43,10 +43,10 @@ namespace flc
                 switch (_op)
                 {
                 case AdditiveOperator::Add:
-                    bin_op = op::Operator::addition;
+                    bin_op = op::Operator::addition();
                     break;
                 case AdditiveOperator::Subtract:
-                    bin_op = op::Operator::subtraction;
+                    bin_op = op::Operator::subtraction();
                     break;
                 case AdditiveOperator::ErrorState:
                 default:
