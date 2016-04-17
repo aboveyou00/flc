@@ -29,6 +29,10 @@ namespace flc
             return true;
         }
 
+        void SimpleNameSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        {
+            //TODO: Implement
+        }
         types::RuntimeType* SimpleNameSyntax::getExpressionType()
         {
             //TODO: Implement

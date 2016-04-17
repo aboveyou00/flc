@@ -25,6 +25,7 @@ namespace flc
             ExpressionSyntax* getRightOperand();
             RelationalOperator getOperator();
 
+            void resolveTypes(types::NameResolutionContextStack *ctx) override;
             types::RuntimeType* getExpressionType() override;
 
             void stringify(stringstream* stream, int tabulation = 0) override;

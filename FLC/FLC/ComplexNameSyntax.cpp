@@ -28,6 +28,10 @@ namespace flc
             return true;
         }
 
+        void ComplexNameSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        {
+            //TODO: Implement
+        }
         types::RuntimeType* ComplexNameSyntax::getExpressionType()
         {
             //TODO: Implement

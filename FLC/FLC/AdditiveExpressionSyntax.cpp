@@ -35,25 +35,33 @@ namespace flc
             return _op;
         }
 
+        void AdditiveExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        {
+            _left->resolveTypes(ctx);
+            _right->resolveTypes(ctx);
+
+            op::BinaryOperator *bin_op;
+            switch (_op)
+            {
+            case AdditiveOperator::Add:
+                bin_op = op::Operator::addition();
+                break;
+            case AdditiveOperator::Subtract:
+                bin_op = op::Operator::subtraction();
+                break;
+            case AdditiveOperator::ErrorState:
+            default:
+                return;
+            }
+            _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
+
+            _left->suggestExpressionType(_overload->getParameterInfo(0)->getType());
+            _right->suggestExpressionType(_overload->getParameterInfo(1)->getType());
+            _left->resolveTypes(ctx);
+            _right->resolveTypes(ctx);
+        }
         types::RuntimeType* AdditiveExpressionSyntax::getExpressionType()
         {
-            if (_overload == nullptr)
-            {
-                op::BinaryOperator *bin_op;
-                switch (_op)
-                {
-                case AdditiveOperator::Add:
-                    bin_op = op::Operator::addition();
-                    break;
-                case AdditiveOperator::Subtract:
-                    bin_op = op::Operator::subtraction();
-                    break;
-                case AdditiveOperator::ErrorState:
-                default:
-                    return nullptr;
-                }
-                _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
-            }
             if (_overload == nullptr) return nullptr;
             return _overload->getReturnType();
         }

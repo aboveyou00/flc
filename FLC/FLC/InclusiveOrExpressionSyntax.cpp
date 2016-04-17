@@ -23,13 +23,24 @@ namespace flc
             return _right;
         }
 
+        void InclusiveOrExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        {
+            _left->resolveTypes(ctx);
+            _right->resolveTypes(ctx);
+
+            op::BinaryOperator *bin_op = op::Operator::bitwiseOr();
+            _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
+
+            if (_overload != nullptr)
+            {
+                _left->suggestExpressionType(_overload->getParameterInfo(0)->getType());
+                _right->suggestExpressionType(_overload->getParameterInfo(1)->getType());
+                _left->resolveTypes(ctx);
+                _right->resolveTypes(ctx);
+            }
+        }
         types::RuntimeType* InclusiveOrExpressionSyntax::getExpressionType()
         {
-            if (_overload == nullptr)
-            {
-                op::BinaryOperator *bin_op = op::Operator::bitwiseOr();
-                _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
-            }
             if (_overload == nullptr) return nullptr;
             return _overload->getReturnType();
         }

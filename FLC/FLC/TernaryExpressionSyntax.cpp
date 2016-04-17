@@ -26,6 +26,16 @@ namespace flc
             return _iffalse;
         }
 
+        void TernaryExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        {
+            _cond->suggestExpressionType(types::RuntimeType::bool8());
+            _cond->resolveTypes(ctx);
+
+            _iftrue->resolveTypes(ctx);
+            _iffalse->resolveTypes(ctx);
+
+            //TODO: Implement
+        }
         types::RuntimeType* TernaryExpressionSyntax::getExpressionType()
         {
             //TODO: Implement

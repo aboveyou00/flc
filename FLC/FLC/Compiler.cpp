@@ -78,9 +78,35 @@ namespace flc
             program->push_back(expr);
         }
 
+        types::NameResolutionContextStack ctx;
         for (auto expr : *program)
         {
-            cout << expr->toString() << endl;
+            expr->registerNames(&ctx);
+        }
+        for (auto expr : *program)
+        {
+            expr->resolveNames(&ctx);
+        }
+
+        for (auto expr : *program)
+        {
+            expr->resolveTypes(&ctx);
+        }
+
+        /*
+          - Register names
+          - Resolve names
+          - Choose method overloads
+          - Emit type-level errors
+        */
+
+        for (auto expr : *program)
+        {
+            auto exprType = expr->getExpressionType();
+            cout << expr->toString() << " // ";
+            if (exprType != nullptr) cout << exprType->getQualifiedName();
+            else cout << "???";
+            cout << endl;
         }
 
 

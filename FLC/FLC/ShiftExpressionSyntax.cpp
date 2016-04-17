@@ -35,25 +35,36 @@ namespace flc
             return _op;
         }
 
+        void ShiftExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        {
+            _left->resolveTypes(ctx);
+            _right->resolveTypes(ctx);
+
+            op::BinaryOperator *bin_op;
+            switch (_op)
+            {
+            case ShiftOperator::Left:
+                bin_op = op::Operator::leftShift();
+                break;
+            case ShiftOperator::Right:
+                bin_op = op::Operator::rightShift();
+                break;
+            case ShiftOperator::ErrorState:
+            default:
+                return;
+            }
+            _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
+
+            if (_overload != nullptr)
+            {
+                _left->suggestExpressionType(_overload->getParameterInfo(0)->getType());
+                _right->suggestExpressionType(_overload->getParameterInfo(1)->getType());
+                _left->resolveTypes(ctx);
+                _right->resolveTypes(ctx);
+            }
+        }
         types::RuntimeType* ShiftExpressionSyntax::getExpressionType()
         {
-            if (_overload == nullptr)
-            {
-                op::BinaryOperator *bin_op;
-                switch (_op)
-                {
-                case ShiftOperator::Left:
-                    bin_op = op::Operator::leftShift();
-                    break;
-                case ShiftOperator::Right:
-                    bin_op = op::Operator::rightShift();
-                    break;
-                case ShiftOperator::ErrorState:
-                default:
-                    return nullptr;
-                }
-                _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
-            }
             if (_overload == nullptr) return nullptr;
             return _overload->getReturnType();
         }

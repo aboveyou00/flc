@@ -30,37 +30,45 @@ namespace flc
             return _op;
         }
 
+        void UnaryExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        {
+            _expr->resolveTypes(ctx);
+
+            op::UnaryOperator *un_op;
+            switch (_op)
+            {
+            case UnaryOperator::Plus:
+                un_op = op::Operator::unaryPlus();
+                break;
+            case UnaryOperator::Minus:
+                un_op = op::Operator::negation();
+                break;
+            case UnaryOperator::Not:
+                un_op = op::Operator::logicalNot();
+                break;
+            case UnaryOperator::Complement:
+                un_op = op::Operator::onesComplement();
+                break;
+            case UnaryOperator::PreIncrement:
+                un_op = op::Operator::increment();
+                break;
+            case UnaryOperator::PreDecrement:
+                un_op = op::Operator::decrement();
+                break;
+            case UnaryOperator::ErrorState:
+            default:
+                return;
+            }
+            _overload = un_op->findOverload(_expr->getExpressionType());
+
+            if (_overload != nullptr)
+            {
+                _expr->suggestExpressionType(_overload->getParameterInfo(0)->getType());
+                _expr->resolveTypes(ctx);
+            }
+        }
         types::RuntimeType* UnaryExpressionSyntax::getExpressionType()
         {
-            if (_overload == nullptr)
-            {
-                op::UnaryOperator *un_op;
-                switch (_op)
-                {
-                case UnaryOperator::Plus:
-                    un_op = op::Operator::unaryPlus();
-                    break;
-                case UnaryOperator::Minus:
-                    un_op = op::Operator::negation();
-                    break;
-                case UnaryOperator::Not:
-                    un_op = op::Operator::logicalNot();
-                    break;
-                case UnaryOperator::Complement:
-                    un_op = op::Operator::onesComplement();
-                    break;
-                case UnaryOperator::PreIncrement:
-                    un_op = op::Operator::increment();
-                    break;
-                case UnaryOperator::PreDecrement:
-                    un_op = op::Operator::decrement();
-                    break;
-                case UnaryOperator::ErrorState:
-                default:
-                    return nullptr;
-                }
-                _overload = un_op->findOverload(_expr->getExpressionType());
-            }
             if (_overload == nullptr) return nullptr;
             return _overload->getReturnType();
         }

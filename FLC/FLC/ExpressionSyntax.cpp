@@ -21,6 +21,16 @@ namespace flc
             return false;
         }
 
+        void ExpressionSyntax::registerNames(types::NameResolutionContextStack *ctx)
+        {
+        }
+        void ExpressionSyntax::resolveNames(types::NameResolutionContextStack *ctx)
+        {
+        }
+        void ExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        {
+        }
+
         void ExpressionSyntax::suggestExpressionType(types::RuntimeType* type)
         {
             suggestedType = type;

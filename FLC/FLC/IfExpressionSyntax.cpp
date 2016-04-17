@@ -30,6 +30,10 @@ namespace flc
             return _elseExpr;
         }
 
+        void IfExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        {
+            //TODO: Implement
+        }
         types::RuntimeType* IfExpressionSyntax::getExpressionType()
         {
             //TODO: Implement

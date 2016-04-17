@@ -43,10 +43,15 @@ namespace flc
             return _op;
         }
 
+        void AssignmentExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        {
+            _left->resolveTypes(ctx);
+            _right->suggestExpressionType(_left->getExpressionType());
+            _right->resolveTypes(ctx);
+        }
         types::RuntimeType* AssignmentExpressionSyntax::getExpressionType()
         {
-            //TODO: Implement
-            return nullptr;
+            return _left->getExpressionType();
         }
 
 

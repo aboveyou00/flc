@@ -26,6 +26,8 @@ void testExpressionType(const string& expression, flc::types::RuntimeType* expec
     Assert::IsTrue(pos == (int)toks->size() - 1); //Sanity check
 
     if (suggestedType != nullptr) result->suggestExpressionType(suggestedType);
+    flc::types::NameResolutionContextStack ctx;
+    result->resolveTypes(&ctx);
     auto resultType = result->getExpressionType();
 
     if (expectedType == nullptr) Assert::IsNull(resultType);

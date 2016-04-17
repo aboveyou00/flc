@@ -13,6 +13,10 @@ namespace flc
         {
         }
 
+        void NullLiteralSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        {
+            //TODO: Implement
+        }
         types::RuntimeType* NullLiteralSyntax::getExpressionType()
         {
             if (suggestedType != nullptr && suggestedType->isReferenceType()) return suggestedType;

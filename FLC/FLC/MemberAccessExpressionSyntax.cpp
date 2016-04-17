@@ -20,6 +20,10 @@ namespace flc
             return lhs->isQualifiedName();
         }
 
+        void MemberAccessExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        {
+            //TODO: Implement
+        }
         types::RuntimeType* MemberAccessExpressionSyntax::getExpressionType()
         {
             //TODO: Implement

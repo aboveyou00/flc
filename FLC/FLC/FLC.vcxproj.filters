@@ -381,6 +381,9 @@
     <ClInclude Include="ULongLiteralSyntax.h">
       <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
+    <ClInclude Include="NameResolutionContextStack.h">
+      <Filter>Header Files\flc\types</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -748,6 +751,9 @@
     </ClCompile>
     <ClCompile Include="DoubleLiteralSyntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="NameResolutionContextStack.cpp">
+      <Filter>Source Files\flc\types</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

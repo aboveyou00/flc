@@ -18,6 +18,10 @@ namespace flc
         {
         }
 
+        void CompoundExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        {
+            //TODO: Implement
+        }
         types::RuntimeType* CompoundExpressionSyntax::getExpressionType()
         {
             auto numExprs = exprs.size();
