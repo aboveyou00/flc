@@ -21,13 +21,13 @@ namespace flc
             return false;
         }
 
-        void ExpressionSyntax::registerNames(types::NameResolutionContextStack *ctx)
+        void ExpressionSyntax::registerNames(types::NameResolutionContextStack *)
         {
         }
-        void ExpressionSyntax::resolveNames(types::NameResolutionContextStack *ctx)
+        void ExpressionSyntax::resolveNames(types::NameResolutionContextStack *)
         {
         }
-        void ExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        void ExpressionSyntax::resolveTypes(types::NameResolutionContextStack *)
         {
         }
 

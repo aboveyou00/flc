@@ -27,7 +27,7 @@ namespace flc
             return _right;
         }
 
-        void ConditionalOrExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        void ConditionalOrExpressionSyntax::resolveTypes(types::NameResolutionContextStack *)
         {
             //TODO: Implement
         }

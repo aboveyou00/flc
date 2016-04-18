@@ -12,7 +12,7 @@ namespace Test
 
         TEST_METHOD(Test_compileTestFile)
         {
-            auto compiler = flc::Compiler();
+            flc::Compiler compiler;
 
             Assert::IsTrue(compiler.tryAddSourceFile("test.fl"));
             Assert::IsTrue(compiler.tryCompile());
@@ -20,9 +20,9 @@ namespace Test
 
         TEST_METHOD(Test_compileFromString)
         {
-            auto compiler = flc::Compiler();
+            flc::Compiler compiler;
 
-            Assert::IsTrue(compiler.tryAddSource("60*60*24*365 \"Seconds in a year.\""));
+            Assert::IsTrue(compiler.tryAddSource("60*60*24*365 + \" seconds in a year.\""));
             Assert::IsTrue(compiler.tryCompile());
         }
 

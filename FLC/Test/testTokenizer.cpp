@@ -172,8 +172,9 @@ namespace Test
         template <typename T>
         T* ExpectToken(std::string expected)
         {
+            Assert::IsTrue(this->idx < (int)this->toks->size());
             auto tok = this->toks->at(this->idx++);
-            if (expected.compare("") != 0) Assert::AreEqual(tok->toString(), expected);
+            if (!expected.empty()) Assert::AreEqual(tok->toString(), expected);
             T* ttok = dynamic_cast<T*>(tok);
             Assert::IsNotNull(ttok);
             return ttok;
@@ -187,7 +188,11 @@ namespace Test
         {
             this->ExpectToken<flc::tokens::EndOfFileToken>();
             Assert::IsTrue(this->idx == (int)this->toks->size());
-            delete toks;
+
+            //for (auto it = toks->begin(); it != toks->end(); it++)
+            //    delete *it;
+            //toks->clear();
+            //delete toks;
         }
     };
 }

@@ -12,7 +12,7 @@ namespace flc
         {
         }
 
-        INameInfo *NameResolutionContextStack::resolveName(std::string name, NameType nameType)
+        INameInfo *NameResolutionContextStack::resolveName(std::string name, NameType)
         {
             return nullptr;
         }

@@ -29,7 +29,7 @@ namespace flc
             return true;
         }
 
-        void SimpleNameSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        void SimpleNameSyntax::resolveTypes(types::NameResolutionContextStack *)
         {
             //TODO: Implement
         }

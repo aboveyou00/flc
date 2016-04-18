@@ -386,9 +386,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="FLC.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CommandLineParser.cpp">
       <Filter>Source Files\flc</Filter>
     </ClCompile>
@@ -751,6 +748,12 @@
     </ClCompile>
     <ClCompile Include="NameResolutionContextStack.cpp">
       <Filter>Source Files\flc\types</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Program.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

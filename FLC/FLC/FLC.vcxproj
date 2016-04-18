@@ -83,8 +83,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <WarningLevel>Level4</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -288,7 +287,7 @@
     <ClCompile Include="ExclusiveOrOperator.cpp" />
     <ClCompile Include="ExplicitCastOperator.cpp" />
     <ClCompile Include="ExpressionSyntax.cpp" />
-    <ClCompile Include="FLC.cpp" />
+    <ClCompile Include="Program.cpp" />
     <ClCompile Include="Float.cpp" />
     <ClCompile Include="FloatLiteralSyntax.cpp" />
     <ClCompile Include="FloatLiteralToken.cpp" />
@@ -344,6 +343,7 @@
     <ClCompile Include="SingleLineComment.cpp" />
     <ClCompile Include="ExpressionSyntaxFactory.cpp" />
     <ClCompile Include="DivisionOperator.cpp" />
+    <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="String.cpp" />
     <ClCompile Include="StringLiteralSyntax.cpp" />
     <ClCompile Include="StringLiteralToken.cpp" />

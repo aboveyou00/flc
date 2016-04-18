@@ -24,7 +24,7 @@ namespace flc
             exprs.clear();
         }
 
-        void CompoundExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        void CompoundExpressionSyntax::resolveTypes(types::NameResolutionContextStack *)
         {
             //TODO: Implement
         }

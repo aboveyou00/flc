@@ -22,7 +22,7 @@ namespace flc
             return _lhs->isQualifiedName();
         }
 
-        void MemberAccessExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        void MemberAccessExpressionSyntax::resolveTypes(types::NameResolutionContextStack *)
         {
             //TODO: Implement
         }

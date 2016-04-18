@@ -36,7 +36,7 @@ namespace flc
             return !_isWhile;
         }
 
-        void WhileExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        void WhileExpressionSyntax::resolveTypes(types::NameResolutionContextStack *)
         {
             //TODO: Implement
         }

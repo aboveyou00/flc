@@ -13,7 +13,7 @@ namespace flc
         {
         }
 
-        void NullLiteralSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        void NullLiteralSyntax::resolveTypes(types::NameResolutionContextStack *)
         {
             //TODO: Implement
         }

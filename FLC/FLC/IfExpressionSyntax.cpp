@@ -38,7 +38,7 @@ namespace flc
             return _elseExpr;
         }
 
-        void IfExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
+        void IfExpressionSyntax::resolveTypes(types::NameResolutionContextStack *)
         {
             //TODO: Implement
         }

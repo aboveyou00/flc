@@ -14,13 +14,12 @@ void testExpressionType(const string& expression, flc::types::RuntimeType* expec
 {
     using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-    auto tokenizer = flc::tokens::Tokenizer();
+    flc::tokens::Tokenizer tokenizer;
     istringstream stream(expression);
     auto toks = tokenizer.tokenize(&stream, "test_str");
 
-    auto factory = flc::syntax::factory::ExpressionSyntaxFactory();
-
     int pos = 0;
+    flc::syntax::factory::ExpressionSyntaxFactory factory;
     flc::syntax::ExpressionSyntax* result;
     Assert::IsTrue(factory.tryParseSyntax(toks, pos, result));
     Assert::IsTrue(pos == (int)toks->size() - 1); //Sanity check
@@ -32,4 +31,9 @@ void testExpressionType(const string& expression, flc::types::RuntimeType* expec
 
     if (expectedType == nullptr) Assert::IsNull(resultType);
     else Assert::IsTrue(expectedType->isSameAs(resultType));
+
+    //for (size_t q = 0; q < toks->size(); q++)
+    //    delete toks->at(q);
+    //toks->clear();
+    //delete toks;
 }
