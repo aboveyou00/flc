@@ -2,6 +2,7 @@
 #include <vector>
 #include "RuntimeType.h"
 #include "ParameterInfo.h"
+#include "MethodBody.h"
 
 namespace flc
 {
@@ -22,6 +23,8 @@ namespace flc
             ParameterInfo* getParameterInfo(int idx);
 
             bool isMatchForParameters(RuntimeType** paramTypes, int paramCount);
+
+            virtual void emitCall(emit::MethodBody *method) = 0;
 
         private:
             RuntimeType* _returnType;

@@ -468,6 +468,9 @@
     <ClInclude Include="UnaryOperatorExpressionSyntax.h">
       <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
+    <ClInclude Include="SpecialMethodOverload.h">
+      <Filter>Header Files\flc\types</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommandLineParser.cpp">
@@ -916,6 +919,9 @@
     </ClCompile>
     <ClCompile Include="UnaryOperatorExpressionSyntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecialMethodOverload.cpp">
+      <Filter>Source Files\flc\types</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

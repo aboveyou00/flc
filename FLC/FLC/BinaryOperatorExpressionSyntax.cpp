@@ -56,7 +56,7 @@ namespace flc
             //TODO: implicitly convert _left->getExpressionType() to _overload->getParameterInfo(0)->getType()
             _right->emit(ctx, method);
             //TODO: implicitly convert _right->getExpressionType() to _overload->getParameterInfo(1)->getType()
-            //TODO: emit operator instructions
+            if (_overload != nullptr) _overload->emitCall(method);
         }
 
         void BinaryOperatorExpressionSyntax::stringify(stringstream* stream, int tabulation)

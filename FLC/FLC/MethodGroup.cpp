@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "MethodGroup.h"
+#include "SpecialMethodOverload.h"
 #include <cstdarg>
 
 namespace flc
@@ -80,7 +81,7 @@ namespace flc
             return nullptr;
         }
 
-        MethodOverload* MethodGroup::addOverload(RuntimeType* returnType, RuntimeType** parameters, int parameterCount)
+        SpecialMethodOverload* MethodGroup::addOverload(RuntimeType* returnType, RuntimeType** parameters, int parameterCount)
         {
             //TODO: GC?
             ParameterInfo** params = new ParameterInfo*[parameterCount];
@@ -90,12 +91,12 @@ namespace flc
             }
             return addOverload(returnType, params, parameterCount);
         }
-        MethodOverload* MethodGroup::addOverload(RuntimeType* returnType, ParameterInfo** parameters, int parameterCount)
+        SpecialMethodOverload* MethodGroup::addOverload(RuntimeType* returnType, ParameterInfo** parameters, int parameterCount)
         {
             auto oldOverload = findOverload(returnType, parameters, parameterCount);
             if (oldOverload != nullptr) throw std::string("You tried to add a duplicate method overload to a method group!");
 
-            auto new_overload = new MethodOverload(returnType, parameters, parameterCount);
+            auto new_overload = new SpecialMethodOverload(returnType, parameters, parameterCount);
             _overloads.push_back(new_overload);
             return new_overload;
         }

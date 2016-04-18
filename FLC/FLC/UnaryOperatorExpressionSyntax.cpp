@@ -44,7 +44,7 @@ namespace flc
         {
             _expr->emit(ctx, method);
             //TODO: implicitly convert _expr->getExpressionType() to _overload->getParameterInfo(0)->getType()
-            //TODO: emit operator instructions
+            if (_overload != nullptr) _overload->emitCall(method);
         }
 
         void UnaryOperatorExpressionSyntax::stringify(stringstream* stream, int tabulation)

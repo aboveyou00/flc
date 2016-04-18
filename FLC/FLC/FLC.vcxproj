@@ -243,6 +243,7 @@
     <ClInclude Include="ShrInstr.h" />
     <ClInclude Include="SimpleNameSyntax.h" />
     <ClInclude Include="SingleLineComment.h" />
+    <ClInclude Include="SpecialMethodOverload.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="StringLiteralSyntax.h" />
@@ -394,6 +395,7 @@
     <ClCompile Include="SingleLineComment.cpp" />
     <ClCompile Include="ExpressionSyntaxFactory.cpp" />
     <ClCompile Include="DivisionOperator.cpp" />
+    <ClCompile Include="SpecialMethodOverload.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="String.cpp" />
     <ClCompile Include="StringLiteralSyntax.cpp" />

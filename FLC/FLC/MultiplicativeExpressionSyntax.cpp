@@ -27,13 +27,13 @@ namespace flc
             switch (_op)
             {
             case MultiplicativeOperator::Multiply:
-                return op::Operator::addition();
+                return op::Operator::multiplication();
 
             case MultiplicativeOperator::Divide:
-                return op::Operator::subtraction();
+                return op::Operator::division();
 
             case MultiplicativeOperator::Remainder:
-                return op::Operator::subtraction();
+                return op::Operator::modulus();
 
             case MultiplicativeOperator::ErrorState:
             default:
