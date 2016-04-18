@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "UnaryOperator.h"
 #include "OperatorOverloadMacros.h"
+#include "NotInstr.h"
 
 namespace flc
 {
@@ -16,10 +17,22 @@ namespace flc
                 auto overloads = op->getPredefinedOverloads();
                 types::RuntimeType *arg[1];
 
-                __addOverload1(int32);
-                __addOverload1(int64);
-                __addOverload1(uint32);
-                __addOverload1(uint64);
+                __addOverload1(int32)->setEmitCallImplementation([](emit::MethodBody *method)
+                {
+                    method->emit(new emit::NotInstr());
+                });
+                __addOverload1(int64)->setEmitCallImplementation([](emit::MethodBody *method)
+                {
+                    method->emit(new emit::NotInstr());
+                });
+                __addOverload1(uint32)->setEmitCallImplementation([](emit::MethodBody *method)
+                {
+                    method->emit(new emit::NotInstr());
+                });
+                __addOverload1(uint64)->setEmitCallImplementation([](emit::MethodBody *method)
+                {
+                    method->emit(new emit::NotInstr());
+                });
             }
 
             return op;

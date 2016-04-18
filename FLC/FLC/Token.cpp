@@ -34,7 +34,7 @@ namespace flc
             return _start + _length;
         }
 
-        void Token::prependComment(Comment *cmt)
+        void Token::prependComment(Comment *)
         {
             //if (_comments == nullptr) _comments = new vector<const Comment*>();
             //_comments->push_back(cmt);

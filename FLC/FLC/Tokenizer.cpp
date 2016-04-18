@@ -442,7 +442,7 @@ namespace flc
                     if (nextChar == -1) break;
                     else if (nextChar == '\r')
                     {
-                        if (source->peek() == '\n') source->get();
+                        if (source->peek() == '\n') source->ignore();
                         break;
                     }
                     else if (nextChar == '\n') break;
@@ -457,7 +457,7 @@ namespace flc
                     if (nextChar == -1) break; //TODO: error ?
                     else if (nextChar == '*' && source->peek() == '/')
                     {
-                        source->get();
+                        source->ignore();
                         break;
                     }
                 }
