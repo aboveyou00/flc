@@ -384,6 +384,81 @@
     <ClInclude Include="NameResolutionContextStack.h">
       <Filter>Header Files\flc\types</Filter>
     </ClInclude>
+    <ClInclude Include="Instr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="AddInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="UnimplementedInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="AndInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="BreakInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="DivInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="DupInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="LdcInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="CltInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="CgtInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="CeqInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="CkfiniteInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="MulInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="NegInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="NopInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="AllInstrs.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="NotInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="OrInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="PopInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="RemInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="ShlInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="ShrInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="SubInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="XorInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="MethodBody.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommandLineParser.cpp">
@@ -754,6 +829,75 @@
     </ClCompile>
     <ClCompile Include="Program.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MethodBody.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="AddInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="AndInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="BreakInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="CkfiniteInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="CeqInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="CgtInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="CltInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="DivInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="DupInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="Instr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="LdcInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="MulInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="NegInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="NopInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="NotInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="OrInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="PopInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="XorInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="ShlInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="SubInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="RemInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="ShrInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

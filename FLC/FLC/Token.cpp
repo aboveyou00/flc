@@ -13,8 +13,8 @@ namespace flc
         }
         Token::~Token()
         {
-            if (_comments != nullptr) delete _comments;
-            _comments = nullptr;
+            //if (_comments != nullptr) delete _comments;
+            //_comments = nullptr;
         }
 
         string Token::getSourceFile()
@@ -36,8 +36,8 @@ namespace flc
 
         void Token::prependComment(Comment *cmt)
         {
-            if (_comments == nullptr) _comments = new vector<const Comment*>();
-            _comments->push_back(cmt);
+            //if (_comments == nullptr) _comments = new vector<const Comment*>();
+            //_comments->push_back(cmt);
         }
         const vector<const Comment*>* Token::getComments()
         {
