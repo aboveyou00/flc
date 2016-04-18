@@ -48,7 +48,10 @@ namespace flc
             return nullptr;
         }
 
-
+        void IfExpressionSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        {
+            //TODO: Implement
+        }
 
         void IfExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {

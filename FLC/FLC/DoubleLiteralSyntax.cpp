@@ -24,7 +24,10 @@ namespace flc
             return types::RuntimeType::float64();
         }
 
-
+        void DoubleLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        {
+            //TODO: emit double literal
+        }
 
         void DoubleLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {

@@ -40,7 +40,10 @@ namespace flc
             return nullptr;
         }
 
-
+        void ComplexNameSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        {
+            //TODO: Implement
+        }
 
         void ComplexNameSyntax::stringify(stringstream* stream, int tabulation)
         {

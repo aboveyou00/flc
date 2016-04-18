@@ -59,7 +59,12 @@ namespace flc
             return _left->getExpressionType();
         }
 
-
+        void AssignmentExpressionSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        {
+            //TODO: emit _right
+            //TODO: implicitly cast _right->getExpressionType() to _left->getExpressionType();
+            //TODO: emit store (possibly with dup first)
+        }
 
         void AssignmentExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {

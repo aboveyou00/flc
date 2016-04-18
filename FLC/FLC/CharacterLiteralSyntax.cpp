@@ -24,7 +24,10 @@ namespace flc
             return types::RuntimeType::char16();
         }
 
-
+        void CharacterLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        {
+            //TODO: emit character literal
+        }
 
         void CharacterLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {

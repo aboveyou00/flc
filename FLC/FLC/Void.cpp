@@ -26,6 +26,10 @@ namespace flc
             {
             }
 
+            bool VoidRuntimeType::isVoid()
+            {
+                return true;
+            }
             bool VoidRuntimeType::isReferenceType()
             {
                 return false;

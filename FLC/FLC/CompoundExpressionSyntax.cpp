@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CompoundExpressionSyntax.h"
 #include <sstream>
+#include "PopInstr.h"
 
 namespace flc
 {
@@ -33,10 +34,22 @@ namespace flc
             auto numExprs = exprs.size();
             if (numExprs == 0) return types::RuntimeType::void0();
             if (numExprs == 1) return exprs[0]->getExpressionType();
+            return exprs[exprs.size() - 1]->getExpressionType();
+            //TODO: Implement early returns
+        }
 
-            //return exprs[exprs.size() - 1]->getExpressionType();
-            //TODO: Implement
-            return nullptr;
+        void CompoundExpressionSyntax::emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method)
+        {
+            for (size_t q = 0; q < exprs.size(); q++)
+            {
+                auto expr = exprs[q];
+                expr->emit(ctx, method);
+                if (q != exprs.size() - 1)
+                {
+                    auto exprType = expr->getExpressionType();
+                    if (!exprType->isVoid()) method->emit(new emit::PopInstr());
+                }
+            }
         }
 
         void CompoundExpressionSyntax::stringify(stringstream* stream, int tabulation)

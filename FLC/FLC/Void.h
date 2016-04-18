@@ -13,6 +13,7 @@ namespace flc
                 VoidRuntimeType();
                 ~VoidRuntimeType();
 
+                bool isVoid() override;
                 bool isReferenceType() override;
                 bool isValueType() override;
             };

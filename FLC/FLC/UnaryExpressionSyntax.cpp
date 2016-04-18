@@ -75,7 +75,12 @@ namespace flc
             return _overload->getReturnType();
         }
 
-
+        void UnaryExpressionSyntax::emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method)
+        {
+            _expr->emit(ctx, method);
+            //TODO: implicitly convert _expr->getExpressionType() to _overload->getParameterInfo(0)->getType()
+            //TODO: emit operator instructions
+        }
 
         void UnaryExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {

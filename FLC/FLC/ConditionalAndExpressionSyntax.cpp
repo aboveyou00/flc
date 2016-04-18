@@ -37,7 +37,10 @@ namespace flc
             return nullptr;
         }
 
-
+        void ConditionalAndExpressionSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        {
+            //TODO: Implement
+        }
 
         void ConditionalAndExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {

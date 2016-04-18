@@ -24,8 +24,11 @@ namespace flc
             return types::RuntimeType::float32();
         }
 
+        void FloatLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        {
+            //TODO: emit float literal
+        }
 
-        
         void FloatLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
             tabulate(stream, tabulation);

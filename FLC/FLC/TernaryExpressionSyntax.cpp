@@ -50,7 +50,13 @@ namespace flc
             return nullptr;
         }
 
+        void TernaryExpressionSyntax::emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method)
+        {
+            _cond->emit(ctx, method);
+            //TODO: implicitly convert _left->getExpressionType() to bool
 
+            //TODO: Implement
+        }
 
         void TernaryExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {

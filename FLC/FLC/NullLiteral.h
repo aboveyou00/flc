@@ -12,6 +12,8 @@ namespace flc
             public:
                 NullLiteralRuntimeType();
                 ~NullLiteralRuntimeType();
+
+                bool isNull() override;
             };
         }
     }

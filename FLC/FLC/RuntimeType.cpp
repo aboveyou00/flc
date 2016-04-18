@@ -34,6 +34,14 @@ namespace flc
             return _qualifiedName;
         }
 
+        bool RuntimeType::isVoid()
+        {
+            return false;
+        }
+        bool RuntimeType::isNull()
+        {
+            return false;
+        }
         bool RuntimeType::isReferenceType()
         {
             return !isValueType();

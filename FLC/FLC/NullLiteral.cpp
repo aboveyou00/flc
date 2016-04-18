@@ -26,7 +26,10 @@ namespace flc
             {
             }
 
-
+            bool NullLiteralRuntimeType::isNull()
+            {
+                return true;
+            }
         }
     }
 }

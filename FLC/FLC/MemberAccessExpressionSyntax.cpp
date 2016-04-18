@@ -32,7 +32,10 @@ namespace flc
             return nullptr;
         }
 
-
+        void MemberAccessExpressionSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        {
+            //TODO: Implement
+        }
 
         void MemberAccessExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {

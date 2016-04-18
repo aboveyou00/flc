@@ -71,8 +71,15 @@ namespace flc
             return _overload->getReturnType();
         }
 
-
-
+        void AdditiveExpressionSyntax::emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method)
+        {
+            _left->emit(ctx, method);
+            //TODO: implicitly convert _left->getExpressionType() to _overload->getParameterInfo(0)->getType()
+            _right->emit(ctx, method);
+            //TODO: implicitly convert _right->getExpressionType() to _overload->getParameterInfo(1)->getType()
+            //TODO: emit operator instructions
+        }
+        
         void AdditiveExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
             _left->stringify(stream, tabulation);

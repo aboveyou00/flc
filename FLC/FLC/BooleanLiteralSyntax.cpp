@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "BooleanLiteralSyntax.h"
 #include <sstream>
+#include "LdcInstr.h"
 
 namespace flc
 {
@@ -24,7 +25,10 @@ namespace flc
             return types::RuntimeType::bool8();
         }
 
-
+        void BooleanLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *method)
+        {
+            method->emit(new emit::LdcInstr(val ? 1 : 0));
+        }
 
         void BooleanLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {

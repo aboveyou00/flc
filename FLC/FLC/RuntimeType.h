@@ -19,6 +19,8 @@ namespace flc
             std::string getName();
             std::string getQualifiedName();
 
+            virtual bool isVoid();
+            virtual bool isNull();
             virtual bool isReferenceType();
             virtual bool isValueType();
 

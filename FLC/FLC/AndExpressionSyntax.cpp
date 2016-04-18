@@ -50,7 +50,14 @@ namespace flc
             return _overload->getReturnType();
         }
 
-
+        void AndExpressionSyntax::emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method)
+        {
+            _left->emit(ctx, method);
+            //TODO: implicitly convert _left->getExpressionType() to _overload->getParameterInfo(0)->getType()
+            _right->emit(ctx, method);
+            //TODO: implicitly convert _right->getExpressionType() to _overload->getParameterInfo(1)->getType()
+            //TODO: emit operator instructions
+        }
 
         void AndExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {

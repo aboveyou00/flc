@@ -24,7 +24,10 @@ namespace flc
             return types::RuntimeType::uint32();
         }
 
-
+        void UIntegerLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        {
+            //TODO: emit uint literal
+        }
 
         void UIntegerLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {

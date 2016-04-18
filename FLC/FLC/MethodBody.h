@@ -1,4 +1,5 @@
 #pragma once
+#include "Instr.h"
 
 namespace flc
 {
@@ -10,7 +11,12 @@ namespace flc
             MethodBody();
             ~MethodBody();
 
+            void emit(Instr *instr);
 
+            std::string toString();
+
+        private:
+            std::vector<Instr*> instructions;
         };
     }
 }

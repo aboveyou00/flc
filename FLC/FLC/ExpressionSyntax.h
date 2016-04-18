@@ -2,6 +2,7 @@
 #include "Syntax.h"
 #include "RuntimeType.h"
 #include "NameResolutionContextStack.h"
+#include "MethodBody.h"
 
 namespace flc
 {
@@ -19,6 +20,7 @@ namespace flc
             virtual void registerNames(types::NameResolutionContextStack *ctx);
             virtual void resolveNames(types::NameResolutionContextStack *ctx);
             virtual void resolveTypes(types::NameResolutionContextStack *ctx);
+            virtual void emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method) = 0;
 
             virtual void suggestExpressionType(types::RuntimeType* type);
             virtual types::RuntimeType* getExpressionType() = 0;

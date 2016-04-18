@@ -23,6 +23,11 @@ namespace flc
             return types::RuntimeType::nullLiteral();
         }
 
+        void NullLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        {
+            //TODO: Implement
+        }
+
         void NullLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
             tabulate(stream, tabulation);

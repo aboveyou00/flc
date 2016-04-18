@@ -24,7 +24,10 @@ namespace flc
             return types::RuntimeType::int64();
         }
 
-
+        void LongLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        {
+            //TODO: emit long literal
+        }
 
         void LongLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {

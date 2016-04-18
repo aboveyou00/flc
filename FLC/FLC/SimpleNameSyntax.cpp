@@ -39,7 +39,10 @@ namespace flc
             return nullptr;
         }
 
-
+        void SimpleNameSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        {
+            //TODO: Implement
+        }
 
         void SimpleNameSyntax::stringify(stringstream* stream, int tabulation)
         {

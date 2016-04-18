@@ -46,7 +46,10 @@ namespace flc
             return nullptr;
         }
 
-
+        void WhileExpressionSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        {
+            //TODO: Implement
+        }
 
         void WhileExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
