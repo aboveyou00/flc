@@ -1,5 +1,5 @@
 #pragma once
-#include "ExpressionSyntax.h"
+#include "BinaryOperatorExpressionSyntax.h"
 #include "MethodOverload.h"
 
 namespace flc
@@ -13,29 +13,19 @@ namespace flc
             NotEquals = 1
         };
 
-        class EqualityExpressionSyntax : public ExpressionSyntax
+        class EqualityExpressionSyntax : public BinaryOperatorExpressionSyntax
         {
         public:
             EqualityExpressionSyntax(ExpressionSyntax* left, string op, ExpressionSyntax* right);
             ~EqualityExpressionSyntax();
 
-            ExpressionSyntax* getLeftOperand();
-            ExpressionSyntax* getRightOperand();
+            op::BinaryOperator *getBinaryOperator() override;
+            std::string getOperatorSymbol() override;
+
             EqualityOperator getOperator();
 
-            void resolveTypes(types::NameResolutionContextStack *ctx) override;
-            types::RuntimeType* getExpressionType() override;
-
-            void emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method) override;
-
-            void stringify(stringstream* stream, int tabulation = 0) override;
-
         private:
-            ExpressionSyntax *_left = nullptr,
-                             *_right = nullptr;
             EqualityOperator _op;
-
-            types::MethodOverload *_overload = nullptr;
         };
     }
 }

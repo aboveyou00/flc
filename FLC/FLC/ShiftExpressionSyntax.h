@@ -1,5 +1,5 @@
 #pragma once
-#include "ExpressionSyntax.h"
+#include "BinaryOperatorExpressionSyntax.h"
 #include "MethodOverload.h"
 
 namespace flc
@@ -13,29 +13,19 @@ namespace flc
             Right = 1
         };
 
-        class ShiftExpressionSyntax : public ExpressionSyntax
+        class ShiftExpressionSyntax : public BinaryOperatorExpressionSyntax
         {
         public:
             ShiftExpressionSyntax(ExpressionSyntax* left, string op, ExpressionSyntax* right);
             ~ShiftExpressionSyntax();
 
-            ExpressionSyntax* getLeftOperand();
-            ExpressionSyntax* getRightOperand();
+            op::BinaryOperator *getBinaryOperator() override;
+            std::string getOperatorSymbol() override;
+
             ShiftOperator getOperator();
 
-            void resolveTypes(types::NameResolutionContextStack *ctx) override;
-            types::RuntimeType* getExpressionType() override;
-
-            void emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method) override;
-
-            void stringify(stringstream* stream, int tabulation = 0) override;
-
         private:
-            ExpressionSyntax *_left = nullptr,
-                             *_right = nullptr;
             ShiftOperator _op;
-
-            types::MethodOverload *_overload = nullptr;
         };
     }
 }

@@ -150,6 +150,7 @@
     <ClInclude Include="AndInstr.h" />
     <ClInclude Include="AssignmentExpressionSyntax.h" />
     <ClInclude Include="BinaryOperator.h" />
+    <ClInclude Include="BinaryOperatorExpressionSyntax.h" />
     <ClInclude Include="Boolean.h" />
     <ClInclude Include="BooleanLiteralSyntax.h" />
     <ClInclude Include="BooleanLiteralToken.h" />
@@ -266,6 +267,7 @@
     <ClInclude Include="UnaryExpressionSyntax.h" />
     <ClInclude Include="UnaryExpressionSyntaxFactory.h" />
     <ClInclude Include="UnaryOperator.h" />
+    <ClInclude Include="UnaryOperatorExpressionSyntax.h" />
     <ClInclude Include="UnimplementedInstr.h" />
     <ClInclude Include="Void.h" />
     <ClInclude Include="WhileExpressionSyntax.h" />
@@ -282,6 +284,7 @@
     <ClCompile Include="AndInstr.cpp" />
     <ClCompile Include="AssignmentExpressionSyntax.cpp" />
     <ClCompile Include="BinaryOperator.cpp" />
+    <ClCompile Include="BinaryOperatorExpressionSyntax.cpp" />
     <ClCompile Include="BitwiseAndOperator.cpp" />
     <ClCompile Include="BitwiseOrOperator.cpp" />
     <ClCompile Include="Boolean.cpp" />
@@ -415,6 +418,7 @@
     <ClCompile Include="UnaryExpressionSyntax.cpp" />
     <ClCompile Include="UnaryExpressionSyntaxFactory.cpp" />
     <ClCompile Include="UnaryOperator.cpp" />
+    <ClCompile Include="UnaryOperatorExpressionSyntax.cpp" />
     <ClCompile Include="UnaryPlusOperator.cpp" />
     <ClCompile Include="Void.cpp" />
     <ClCompile Include="WhileExpressionSyntax.cpp" />

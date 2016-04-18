@@ -1,5 +1,5 @@
 #pragma once
-#include "ExpressionSyntax.h"
+#include "UnaryOperatorExpressionSyntax.h"
 #include "MethodOverload.h"
 
 namespace flc
@@ -17,26 +17,19 @@ namespace flc
             PreDecrement = 5
         };
 
-        class UnaryExpressionSyntax : public ExpressionSyntax
+        class UnaryExpressionSyntax : public UnaryOperatorExpressionSyntax
         {
         public:
             UnaryExpressionSyntax(string op, ExpressionSyntax* expr);
             ~UnaryExpressionSyntax();
 
+            op::UnaryOperator *getUnaryOperator() override;
+            std::string getOperatorSymbol() override;
+
             UnaryOperator getOperator();
 
-            void resolveTypes(types::NameResolutionContextStack *ctx) override;
-            types::RuntimeType* getExpressionType() override;
-
-            void emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method) override;
-
-            void stringify(stringstream* stream, int tabulation = 0) override;
-
         private:
-            ExpressionSyntax *_expr = nullptr;
             UnaryOperator _op;
-
-            types::MethodOverload *_overload = nullptr;
         };
     }
 }

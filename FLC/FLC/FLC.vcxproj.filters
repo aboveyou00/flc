@@ -462,6 +462,12 @@
     <ClInclude Include="LdnullInstr.h">
       <Filter>Header Files\flc\emit</Filter>
     </ClInclude>
+    <ClInclude Include="BinaryOperatorExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="UnaryOperatorExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommandLineParser.cpp">
@@ -904,6 +910,12 @@
     </ClCompile>
     <ClCompile Include="LdnullInstr.cpp">
       <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryOperatorExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
+    </ClCompile>
+    <ClCompile Include="UnaryOperatorExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

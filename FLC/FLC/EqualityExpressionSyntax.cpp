@@ -7,7 +7,7 @@ namespace flc
     namespace syntax
     {
         EqualityExpressionSyntax::EqualityExpressionSyntax(ExpressionSyntax* left, string op, ExpressionSyntax* right)
-            : _left(left), _right(right)
+            : BinaryOperatorExpressionSyntax(left, right)
         {
             if (op == "==") _op = EqualityOperator::Equals;
             else if (op == "!=") _op = EqualityOperator::NotEquals;
@@ -19,87 +19,42 @@ namespace flc
         }
         EqualityExpressionSyntax::~EqualityExpressionSyntax()
         {
-            if (_left != nullptr) delete _left;
-            _left = nullptr;
-
-            if (_right != nullptr) delete _right;
-            _right = nullptr;
         }
 
-        ExpressionSyntax* EqualityExpressionSyntax::getLeftOperand()
+        op::BinaryOperator *EqualityExpressionSyntax::getBinaryOperator()
         {
-            return _left;
+            switch (_op)
+            {
+            case EqualityOperator::Equals:
+                return op::Operator::equality();
+
+            case EqualityOperator::NotEquals:
+                return op::Operator::inequality();
+
+            case EqualityOperator::ErrorState:
+            default:
+                return nullptr;
+            }
         }
-        ExpressionSyntax* EqualityExpressionSyntax::getRightOperand()
+        std::string EqualityExpressionSyntax::getOperatorSymbol()
         {
-            return _right;
+            switch (_op)
+            {
+            case EqualityOperator::Equals:
+                return "==";
+
+            case EqualityOperator::NotEquals:
+                return "!=";
+
+            case EqualityOperator::ErrorState:
+            default:
+                return "%%ERROR%%";
+            }
         }
 
         EqualityOperator EqualityExpressionSyntax::getOperator()
         {
             return _op;
-        }
-
-        void EqualityExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
-        {
-            _left->resolveTypes(ctx);
-            _right->resolveTypes(ctx);
-
-            op::BinaryOperator *bin_op;
-            switch (_op)
-            {
-            case EqualityOperator::Equals:
-                bin_op = op::Operator::equality();
-                break;
-            case EqualityOperator::NotEquals:
-                bin_op = op::Operator::inequality();
-                break;
-            case EqualityOperator::ErrorState:
-            default:
-                return;
-            }
-            _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
-
-            if (_overload != nullptr)
-            {
-                _left->suggestExpressionType(_overload->getParameterInfo(0)->getType());
-                _right->suggestExpressionType(_overload->getParameterInfo(1)->getType());
-                _left->resolveTypes(ctx);
-                _right->resolveTypes(ctx);
-            }
-        }
-        types::RuntimeType* EqualityExpressionSyntax::getExpressionType()
-        {
-            if (_overload == nullptr) return nullptr;
-            return _overload->getReturnType();
-        }
-
-        void EqualityExpressionSyntax::emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method)
-        {
-            _left->emit(ctx, method);
-            //TODO: implicitly convert _left->getExpressionType() to _overload->getParameterInfo(0)->getType()
-            _right->emit(ctx, method);
-            //TODO: implicitly convert _right->getExpressionType() to _overload->getParameterInfo(1)->getType()
-            //TODO: emit operator instructions
-        }
-
-        void EqualityExpressionSyntax::stringify(stringstream* stream, int tabulation)
-        {
-            _left->stringify(stream, tabulation);
-            switch (_op)
-            {
-            case EqualityOperator::Equals:
-                *stream << " == ";
-                break;
-            case EqualityOperator::NotEquals:
-                *stream << " != ";
-                break;
-            case EqualityOperator::ErrorState:
-            default:
-                *stream << " %%ERROR%% ";
-                break;
-            }
-            _right->stringify(stream, 0);
         }
     }
 }

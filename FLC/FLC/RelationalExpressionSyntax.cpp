@@ -7,7 +7,7 @@ namespace flc
     namespace syntax
     {
         RelationalExpressionSyntax::RelationalExpressionSyntax(ExpressionSyntax* left, string op, ExpressionSyntax* right)
-            : _left(left), _right(right)
+            : BinaryOperatorExpressionSyntax(left, right)
         {
             if (op == "<") _op = RelationalOperator::LessThan;
             else if (op == ">") _op = RelationalOperator::GreaterThan;
@@ -21,99 +21,54 @@ namespace flc
         }
         RelationalExpressionSyntax::~RelationalExpressionSyntax()
         {
-            if (_left != nullptr) delete _left;
-            _left = nullptr;
-
-            if (_right != nullptr) delete _right;
-            _right = nullptr;
         }
 
-        ExpressionSyntax* RelationalExpressionSyntax::getLeftOperand()
+        op::BinaryOperator *RelationalExpressionSyntax::getBinaryOperator()
         {
-            return _left;
+            switch (_op)
+            {
+            case RelationalOperator::LessThan:
+                return op::Operator::lessThan();
+
+            case RelationalOperator::LessThanOrEqualTo:
+                return op::Operator::lessThanOrEqual();
+
+            case RelationalOperator::GreaterThan:
+                return op::Operator::greaterThan();
+
+            case RelationalOperator::GreaterThanOrEqualTo:
+                return op::Operator::greaterThanOrEqual();
+
+            case RelationalOperator::ErrorState:
+            default:
+                return nullptr;
+            }
         }
-        ExpressionSyntax* RelationalExpressionSyntax::getRightOperand()
+        std::string RelationalExpressionSyntax::getOperatorSymbol()
         {
-            return _right;
+            switch (_op)
+            {
+            case RelationalOperator::LessThan:
+                return "<";
+
+            case RelationalOperator::GreaterThan:
+                return ">";
+
+            case RelationalOperator::LessThanOrEqualTo:
+                return "<=";
+
+            case RelationalOperator::GreaterThanOrEqualTo:
+                return ">=";
+
+            case RelationalOperator::ErrorState:
+            default:
+                return "%%ERROR%%";
+            }
         }
 
         RelationalOperator RelationalExpressionSyntax::getOperator()
         {
             return _op;
-        }
-
-        void RelationalExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
-        {
-            _left->resolveTypes(ctx);
-            _right->resolveTypes(ctx);
-
-            op::BinaryOperator *bin_op;
-            switch (_op)
-            {
-            case RelationalOperator::LessThan:
-                bin_op = op::Operator::lessThan();
-                break;
-            case RelationalOperator::LessThanOrEqualTo:
-                bin_op = op::Operator::lessThanOrEqual();
-                break;
-            case RelationalOperator::GreaterThan:
-                bin_op = op::Operator::greaterThan();
-                break;
-            case RelationalOperator::GreaterThanOrEqualTo:
-                bin_op = op::Operator::greaterThanOrEqual();
-                break;
-            case RelationalOperator::ErrorState:
-            default:
-                return;
-            }
-            _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
-
-            if (_overload != nullptr)
-            {
-                _left->suggestExpressionType(_overload->getParameterInfo(0)->getType());
-                _right->suggestExpressionType(_overload->getParameterInfo(1)->getType());
-                _left->resolveTypes(ctx);
-                _right->resolveTypes(ctx);
-            }
-        }
-        types::RuntimeType* RelationalExpressionSyntax::getExpressionType()
-        {
-            if (_overload == nullptr) return nullptr;
-            return _overload->getReturnType();
-        }
-
-        void RelationalExpressionSyntax::emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method)
-        {
-            _left->emit(ctx, method);
-            //TODO: implicitly convert _left->getExpressionType() to _overload->getParameterInfo(0)->getType()
-            _right->emit(ctx, method);
-            //TODO: implicitly convert _right->getExpressionType() to _overload->getParameterInfo(1)->getType()
-            //TODO: emit operator instructions
-        }
-
-        void RelationalExpressionSyntax::stringify(stringstream* stream, int tabulation)
-        {
-            _left->stringify(stream, tabulation);
-            switch (_op)
-            {
-            case RelationalOperator::LessThan:
-                *stream << " < ";
-                break;
-            case RelationalOperator::GreaterThan:
-                *stream << " > ";
-                break;
-            case RelationalOperator::LessThanOrEqualTo:
-                *stream << " <= ";
-                break;
-            case RelationalOperator::GreaterThanOrEqualTo:
-                *stream << " >= ";
-                break;
-            case RelationalOperator::ErrorState:
-            default:
-                *stream << " %%ERROR%% ";
-                break;
-            }
-            _right->stringify(stream, 0);
         }
     }
 }
