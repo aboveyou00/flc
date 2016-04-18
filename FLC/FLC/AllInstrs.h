@@ -10,6 +10,7 @@
 #include "DivInstr.h"
 #include "DupInstr.h"
 #include "LdcInstr.h"
+#include "LdnullInstr.h"
 #include "MulInstr.h"
 #include "NegInstr.h"
 #include "NopInstr.h"

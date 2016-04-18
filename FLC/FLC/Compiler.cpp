@@ -10,6 +10,8 @@
 
 #include "ExpressionSyntaxFactory.h"
 
+#include "PopInstr.h"
+
 namespace flc
 {
     Compiler::Compiler()
@@ -122,6 +124,14 @@ namespace flc
             if (exprType != nullptr) cout << exprType->getQualifiedName();
             else cout << "???";
             cout << endl;
+
+            emit::MethodBody method;
+            expr->emit(&ctx, &method);
+            method.emit(new emit::PopInstr());
+            cout << method.toString();
+            method.deleteInstructions();
+
+            cout << endl << endl;
         }
 
         for (auto expr : program)

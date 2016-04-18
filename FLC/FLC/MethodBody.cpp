@@ -16,6 +16,15 @@ namespace flc
         {
             instructions.push_back(instr);
         }
+        void MethodBody::deleteInstructions()
+        {
+            for (size_t q = 0; q < instructions.size(); q++)
+            {
+                auto instr = instructions[q];
+                delete instr;
+            }
+            instructions.clear();
+        }
 
         string MethodBody::toString()
         {

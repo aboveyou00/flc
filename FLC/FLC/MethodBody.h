@@ -12,6 +12,7 @@ namespace flc
             ~MethodBody();
 
             void emit(Instr *instr);
+            void deleteInstructions();
 
             std::string toString();
 

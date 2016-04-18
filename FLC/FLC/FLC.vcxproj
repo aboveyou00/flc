@@ -204,6 +204,7 @@
     <ClInclude Include="IntegerLiteralToken.h" />
     <ClInclude Include="KeywordToken.h" />
     <ClInclude Include="LdcInstr.h" />
+    <ClInclude Include="LdnullInstr.h" />
     <ClInclude Include="LongLiteralSyntax.h" />
     <ClInclude Include="LongLiteralToken.h" />
     <ClInclude Include="MemberAccessExpressionSyntax.h" />
@@ -323,6 +324,7 @@
     <ClCompile Include="ExpressionSyntax.cpp" />
     <ClCompile Include="Instr.cpp" />
     <ClCompile Include="LdcInstr.cpp" />
+    <ClCompile Include="LdnullInstr.cpp" />
     <ClCompile Include="MethodBody.cpp" />
     <ClCompile Include="MulInstr.cpp" />
     <ClCompile Include="NegInstr.cpp" />

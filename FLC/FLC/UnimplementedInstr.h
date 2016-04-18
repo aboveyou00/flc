@@ -140,7 +140,6 @@
 
 
 
-//14       ldnull
 //73 <T>   newobj <ctor>
 //74 <T>   castclass <type>
 //75 <T>   isinst <type>

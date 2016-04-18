@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "NullLiteralSyntax.h"
 #include <sstream>
+#include "LdnullInstr.h"
 
 namespace flc
 {
@@ -23,9 +24,9 @@ namespace flc
             return types::RuntimeType::nullLiteral();
         }
 
-        void NullLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        void NullLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *method)
         {
-            //TODO: Implement
+            method->emit(new emit::LdnullInstr());
         }
 
         void NullLiteralSyntax::stringify(stringstream* stream, int tabulation)

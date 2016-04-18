@@ -459,6 +459,9 @@
     <ClInclude Include="MethodBody.h">
       <Filter>Header Files\flc\emit</Filter>
     </ClInclude>
+    <ClInclude Include="LdnullInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommandLineParser.cpp">
@@ -897,6 +900,9 @@
       <Filter>Source Files\flc\emit</Filter>
     </ClCompile>
     <ClCompile Include="ShrInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="LdnullInstr.cpp">
       <Filter>Source Files\flc\emit</Filter>
     </ClCompile>
   </ItemGroup>
