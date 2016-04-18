@@ -17,16 +17,13 @@ namespace flc
         MethodGroup::MethodGroup(std::string name, MethodOverload** overloads, int overloadCount)
             : _name(name)
         {
-            _overloads = new vector<MethodOverload*>();
             for (int q = 0; q < overloadCount; q++)
             {
-                _overloads->push_back(overloads[q]);
+                _overloads.push_back(overloads[q]);
             }
         }
         MethodGroup::~MethodGroup()
         {
-            delete _overloads;
-            _overloads = nullptr;
         }
 
         std::string MethodGroup::getName()
@@ -40,12 +37,12 @@ namespace flc
 
         int MethodGroup::getOverloadCount()
         {
-            return (int)_overloads->size();
+            return (int)_overloads.size();
         }
         MethodOverload* MethodGroup::getOverload(int idx)
         {
             //Let vector handle invalid indexes
-            return _overloads->at(idx);
+            return _overloads.at(idx);
         }
 
         MethodOverload* MethodGroup::findOverload(RuntimeType** parameters, int parameterCount)
@@ -85,6 +82,7 @@ namespace flc
 
         MethodOverload* MethodGroup::addOverload(RuntimeType* returnType, RuntimeType** parameters, int parameterCount)
         {
+            //TODO: GC?
             ParameterInfo** params = new ParameterInfo*[parameterCount];
             for (int q = 0; q < parameterCount; q++)
             {
@@ -98,7 +96,7 @@ namespace flc
             if (oldOverload != nullptr) throw std::string("You tried to add a duplicate method overload to a method group!");
 
             auto new_overload = new MethodOverload(returnType, parameters, parameterCount);
-            _overloads->push_back(new_overload);
+            _overloads.push_back(new_overload);
             return new_overload;
         }
     }

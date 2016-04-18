@@ -8,19 +8,16 @@ namespace flc
         RuntimeType::RuntimeType(std::string name)
             : _qualifiedName(name)
         {
-            _members = new vector<IMemberInfo*>();
         }
         RuntimeType::~RuntimeType()
         {
-            delete _members;
-            _members = nullptr;
         }
 
         IMemberInfo* RuntimeType::resolveName(std::string name, NameType nameType)
         {
-            for (size_t q = 0; q < _members->size(); q++)
+            for (size_t q = 0; q < _members.size(); q++)
             {
-                auto member = _members->at(q);
+                auto member = _members[q];
                 if (member->matchesSelector(name, nameType)) return member;
             }
             return nullptr;

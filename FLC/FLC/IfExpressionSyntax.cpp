@@ -15,6 +15,14 @@ namespace flc
         }
         IfExpressionSyntax::~IfExpressionSyntax()
         {
+            if (_cond != nullptr) delete _cond;
+            _cond = nullptr;
+
+            if (_expr != nullptr) delete _expr;
+            _expr = nullptr;
+
+            if (_elseExpr != nullptr) delete _elseExpr;
+            _elseExpr = nullptr;
         }
 
         ExpressionSyntax* IfExpressionSyntax::getCondition()

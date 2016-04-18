@@ -11,6 +11,14 @@ namespace flc
         }
         TernaryExpressionSyntax::~TernaryExpressionSyntax()
         {
+            if (_cond != nullptr) delete _cond;
+            _cond = nullptr;
+
+            if (_iftrue != nullptr) delete _iftrue;
+            _iftrue = nullptr;
+
+            if (_iffalse != nullptr) delete _iffalse;
+            _iffalse = nullptr;
         }
 
         ExpressionSyntax* TernaryExpressionSyntax::getCondition()

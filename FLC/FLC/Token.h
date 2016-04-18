@@ -14,7 +14,6 @@ namespace flc
             Token(string sourceFile, int startPos, int length);
             ~Token();
 
-            //integerLiteralToken, floatLiteralToken, symbolToken, stringLiteralToken, characterLiteralToken
             string getSourceFile();
             int getStartPosition();
             int getLength();
@@ -50,7 +49,7 @@ namespace flc
             void prependComment(Comment *cmt);
             const vector<const Comment*>* getComments();
 
-            virtual string toString();
+            virtual string toString() = 0;
 
         private:
             string _path;

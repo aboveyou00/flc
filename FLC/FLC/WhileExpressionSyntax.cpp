@@ -11,6 +11,11 @@ namespace flc
         }
         WhileExpressionSyntax::~WhileExpressionSyntax()
         {
+            if (_cond != nullptr) delete _cond;
+            _cond = nullptr;
+
+            if (_expr != nullptr) delete _expr;
+            _expr = nullptr;
         }
 
         ExpressionSyntax* WhileExpressionSyntax::getCondition()

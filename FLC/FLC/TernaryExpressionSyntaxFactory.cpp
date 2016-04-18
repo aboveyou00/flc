@@ -32,6 +32,8 @@ namespace flc
                     {
                         //TODO: provide more context
                         reportError("Invalid ternary expression: " + result->toString() + toks->at(pos)->toString());
+                        delete result; //Clean up partial expression
+                        if (iftrue != nullptr) delete iftrue;
                         return false;
                     }
                     result = new TernaryExpressionSyntax(result, iftrue, iffalse);

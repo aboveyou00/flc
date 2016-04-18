@@ -27,7 +27,7 @@ namespace flc
 
         private:
             std::string _qualifiedName;
-            std::vector<IMemberInfo*>* _members;
+            std::vector<IMemberInfo*> _members;
 
         public:
             //Placeholder types, until we have a system in place to actually load the types from the CLR

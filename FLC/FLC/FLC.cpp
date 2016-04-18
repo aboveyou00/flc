@@ -12,5 +12,8 @@ int main(int argn, char **argv)
         args[q] = string(argv[q]);
     }
 
-    return flc::parseCommandLineArguments(argn, args);
+    auto result = flc::parseCommandLineArguments(argn, args);
+
+    delete[] args;
+    return result;
 }

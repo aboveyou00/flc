@@ -28,7 +28,17 @@ namespace flc
                 while (exprFactory.tryParseSyntax(toks, p, expr))
                     exprs.push_back(expr);
 
-                if (!toks->at(p++)->isSymbol("}")) return false;
+                if (!toks->at(p++)->isSymbol("}"))
+                {
+                    //Have to clean up the expressions that we collected
+                    for (size_t q = 0; q < exprs.size(); q++)
+                    {
+                        expr = exprs[q];
+                        delete expr;
+                    }
+                    exprs.clear();
+                    return false;
+                }
 
                 result = new CompoundExpressionSyntax(&exprs);
                 pos = p;

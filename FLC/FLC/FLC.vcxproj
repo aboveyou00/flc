@@ -344,7 +344,6 @@
     <ClCompile Include="SingleLineComment.cpp" />
     <ClCompile Include="ExpressionSyntaxFactory.cpp" />
     <ClCompile Include="DivisionOperator.cpp" />
-    <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="String.cpp" />
     <ClCompile Include="StringLiteralSyntax.cpp" />
     <ClCompile Include="StringLiteralToken.cpp" />

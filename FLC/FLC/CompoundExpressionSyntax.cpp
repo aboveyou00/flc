@@ -16,6 +16,12 @@ namespace flc
         }
         CompoundExpressionSyntax::~CompoundExpressionSyntax()
         {
+            for (size_t q = 0; q < exprs.size(); q++)
+            {
+                auto expr = exprs[q];
+                delete expr;
+            }
+            exprs.clear();
         }
 
         void CompoundExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)

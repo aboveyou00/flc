@@ -23,6 +23,8 @@ namespace flc
         }
         UnaryExpressionSyntax::~UnaryExpressionSyntax()
         {
+            if (_expr != nullptr) delete _expr;
+            _expr = nullptr;
         }
 
         UnaryOperator UnaryExpressionSyntax::getOperator()

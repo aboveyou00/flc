@@ -14,6 +14,7 @@ namespace flc
         Token::~Token()
         {
             if (_comments != nullptr) delete _comments;
+            _comments = nullptr;
         }
 
         string Token::getSourceFile()
@@ -41,11 +42,6 @@ namespace flc
         const vector<const Comment*>* Token::getComments()
         {
             return _comments;
-        }
-
-        string Token::toString()
-        {
-            return "no impl for Subclass.toString";
         }
 
         std::ostream& operator<<(std::ostream& o, Token& tok)

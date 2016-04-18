@@ -30,10 +30,3 @@ namespace flc
         }
     }
 }
-
-/*
-
-float operator +(float x, float y);
-float operator -(float x, float y);
-
-*/

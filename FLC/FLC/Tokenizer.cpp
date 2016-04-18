@@ -38,23 +38,23 @@ namespace flc
             }
         }
 
-        bool Tokenizer::isWhiteSpace(char16_t c)
+        inline bool Tokenizer::isWhiteSpace(char16_t c)
         {
             return (c == ' ' || c == '\t' || c == '\n' || c == '\r');
         }
-        bool Tokenizer::isOctal(char16_t c)
+        inline bool Tokenizer::isOctal(char16_t c)
         {
             return (c >= '0' && c <= '7');
         }
-        bool Tokenizer::isDecimal(char16_t c)
+        inline bool Tokenizer::isDecimal(char16_t c)
         {
             return (c >= '0' && c <= '9');
         }
-        bool Tokenizer::isHexadecimal(char16_t c)
+        inline bool Tokenizer::isHexadecimal(char16_t c)
         {
             return (c >= '0' && c <= '9' || c >= 'A' && c <= 'F' || c >= 'a' && c <= 'f');
         }
-        bool Tokenizer::isAlphanumeric(char16_t c)
+        inline bool Tokenizer::isAlphanumeric(char16_t c)
         {
             return (c >= '0' && c <= '9' || c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z' || c == '_');
         }
@@ -425,6 +425,7 @@ namespace flc
             return new SymbolToken(path, index, stream.str());
         }
 
+        //TODO: Keep comments, add to tokens
         bool Tokenizer::parseComment(istream *source)
         {
             auto nextChar = source->peek();

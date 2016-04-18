@@ -63,7 +63,11 @@ namespace flc
                     int p = pos + 1;
                     ExpressionSyntaxFactory exprFactory;
                     if (!exprFactory.tryParseSyntax(toks, p, result)) return false;
-                    if (!toks->at(p)->isSymbol(")")) return false;
+                    if (!toks->at(p)->isSymbol(")"))
+                    {
+                        delete result; //Clean up partial expression
+                        return false;
+                    }
                     pos = p + 1;
                     return true;
                 }

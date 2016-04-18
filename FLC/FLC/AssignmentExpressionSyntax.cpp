@@ -27,6 +27,11 @@ namespace flc
         }
         AssignmentExpressionSyntax::~AssignmentExpressionSyntax()
         {
+            if (_left != nullptr) delete _left;
+            _left = nullptr;
+
+            if (_right != nullptr) delete _right;
+            _right = nullptr;
         }
 
         ExpressionSyntax* AssignmentExpressionSyntax::getLeftOperand()

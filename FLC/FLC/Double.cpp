@@ -30,10 +30,3 @@ namespace flc
         }
     }
 }
-
-/*
-
-double operator +(double x, double y);
-double operator -(double x, double y);
-
-*/

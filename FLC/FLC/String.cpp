@@ -30,11 +30,3 @@ namespace flc
         }
     }
 }
-
-/*
-
-string operator +(string x, string y);
-string operator +(string x, object y);
-string operator +(object x, string y);
-
-*/

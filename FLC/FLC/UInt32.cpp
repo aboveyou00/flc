@@ -30,10 +30,3 @@ namespace flc
         }
     }
 }
-
-/*
-
-uint operator +(uint x, uint y);
-uint operator -(uint x, uint y);
-
-*/

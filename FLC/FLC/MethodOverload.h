@@ -25,7 +25,7 @@ namespace flc
 
         private:
             RuntimeType* _returnType;
-            std::vector<ParameterInfo*>* _params;
+            std::vector<ParameterInfo*> _params;
         };
     }
 }

@@ -12,6 +12,11 @@ namespace flc
         }
         ExclusiveOrExpressionSyntax::~ExclusiveOrExpressionSyntax()
         {
+            if (_left != nullptr) delete _left;
+            _left = nullptr;
+
+            if (_right != nullptr) delete _right;
+            _right = nullptr;
         }
 
         ExpressionSyntax* ExclusiveOrExpressionSyntax::getLeftOperand()

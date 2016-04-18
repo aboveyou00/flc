@@ -30,6 +30,7 @@ namespace flc
                     {
                         //TODO: provide more context
                         reportError("Unexpected unary operator: " + result->toString() + toks->at(pos)->toString());
+                        delete result; //Clean up partial expression
                         return false;
                     }
                     result = new ShiftExpressionSyntax(result, toks->at(pos)->isSymbol("<<") ? "<<" : ">>", shift);

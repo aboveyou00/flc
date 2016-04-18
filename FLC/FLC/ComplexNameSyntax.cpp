@@ -12,6 +12,8 @@ namespace flc
         }
         ComplexNameSyntax::~ComplexNameSyntax()
         {
+            if (_lhs != nullptr) delete _lhs;
+            _lhs = nullptr;
         }
 
         string ComplexNameSyntax::getName()

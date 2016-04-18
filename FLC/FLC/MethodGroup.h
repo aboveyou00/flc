@@ -42,7 +42,7 @@ namespace flc
 
         private:
             std::string _name;
-            std::vector<MethodOverload*>* _overloads;
+            std::vector<MethodOverload*> _overloads;
         };
     }
 }

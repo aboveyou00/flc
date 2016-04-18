@@ -25,13 +25,15 @@ namespace flc
                 if (!toks->at(p++)->isSymbol("(")) return false;
 
                 ExpressionSyntaxFactory exprFactory;
-                ExpressionSyntax* cond;
+                ExpressionSyntax *cond, *whileExpr;
+
                 if (!exprFactory.tryParseSyntax(toks, p, cond)) return false;
 
-                if (!toks->at(p++)->isSymbol(")")) return false;
-
-                ExpressionSyntax* whileExpr;
-                if (!exprFactory.tryParseSyntax(toks, p, whileExpr)) return false;
+                if (!toks->at(p++)->isSymbol(")") || !exprFactory.tryParseSyntax(toks, p, whileExpr))
+                {
+                    delete cond; //Clean up partial expression
+                    return false;
+                }
 
                 pos = p;
                 result = new WhileExpressionSyntax(cond, whileExpr, isWhile);

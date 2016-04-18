@@ -30,10 +30,3 @@ namespace flc
         }
     }
 }
-
-/*
-
-ulong operator +(ulong x, ulong y);
-ulong operator -(ulong x, ulong y);
-
-*/

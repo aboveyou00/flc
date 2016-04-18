@@ -23,12 +23,16 @@ namespace flc
                 if (!toks->at(p++)->isSymbol("(")) return false;
 
                 ExpressionSyntaxFactory exprFactory;
-                ExpressionSyntax* cond;
+                ExpressionSyntax *cond, *ifExpr;
+
                 if (!exprFactory.tryParseSyntax(toks, p, cond)) return false;
 
-                if (!toks->at(p++)->isSymbol(")")) return false;
-                ExpressionSyntax* ifExpr;
-                if (!exprFactory.tryParseSyntax(toks, p, ifExpr)) return false;
+                if (!toks->at(p++)->isSymbol(")") || !exprFactory.tryParseSyntax(toks, p, ifExpr))
+                {
+                    //Clean up:
+                    delete cond;
+                    return false;
+                }
 
                 pos = p;
                 ExpressionSyntax* elseExpr = nullptr;

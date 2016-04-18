@@ -13,6 +13,8 @@ namespace flc
         }
         Operator::~Operator()
         {
+            if (_predefined != nullptr) delete _predefined;
+            _predefined = nullptr;
         }
 
         std::string Operator::getOperatorSymbol()

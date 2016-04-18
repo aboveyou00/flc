@@ -27,13 +27,13 @@ namespace flc
         else
         {
             //We only have one command line argument
-            auto *comp = new Compiler();
-            if (!comp->tryAddSourceFile(args[1]))
+            Compiler comp;
+            if (!comp.tryAddSourceFile(args[1]))
             {
                 reportError("Could not find source file: " + args[1]);
                 return 19;
             }
-            if (!comp->tryCompile())
+            if (!comp.tryCompile())
             {
                 reportError("Compilation aborted");
                 return 21;

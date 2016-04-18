@@ -15,7 +15,7 @@ namespace flc
 
         string MultiLineComment::toString()
         {
-            return "/* " + getContent() + " */";
+            return "/*" + getContent() + "*/";
         }
     }
 }

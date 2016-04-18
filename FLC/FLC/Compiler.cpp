@@ -1,10 +1,14 @@
 #include "stdafx.h"
-#include "Compiler.h"
-#include "Tokenizer.h"
-#include "ErrorToken.h"
-#include "ExpressionSyntaxFactory.h"
 #include <fstream>
 #include <sstream>
+
+#include "Compiler.h"
+
+#include "Tokenizer.h"
+#include "ErrorToken.h"
+#include "EndOfFileToken.h"
+
+#include "ExpressionSyntaxFactory.h"
 
 namespace flc
 {
@@ -13,6 +17,18 @@ namespace flc
     }
     Compiler::~Compiler()
     {
+        for (size_t q = 0; q < sourceFiles.size(); q++)
+        {
+            auto toks = sourceFiles[q];
+            for (size_t w = 0; w < toks->size(); w++)
+            {
+                auto tok = toks->at(w);
+                delete tok;
+            }
+            toks->clear();
+            delete toks;
+        }
+        sourceFiles.clear();
     }
 
     bool Compiler::tryAddSource(string source, string path)
@@ -25,6 +41,7 @@ namespace flc
         tokens::Tokenizer tokenizer;
         vector<tokens::Token*>* toks = tokenizer.tokenize(source);
         sourceFiles.push_back(toks);
+        //TODO: Keep path information stored with tokens, for better errors later
 
         bool hasError = false;
         for (auto tok : *toks)
@@ -44,7 +61,7 @@ namespace flc
     {
         ifstream stream(path); //ifstream::in
         if (!stream.is_open()) return false;
-        return Compiler::tryAddSource((istream*)&stream, path);
+        return tryAddSource((istream*)&stream, path);
     }
 
     bool Compiler::tryCompile()
@@ -65,42 +82,40 @@ namespace flc
 
         auto toks = sourceFiles.at(0);
         int pos = 0;
-        auto program = new vector<syntax::ExpressionSyntax*>();
-        while (pos < (int)toks->size() && toks->at(pos)->toString() != "EOF")
+        vector<syntax::ExpressionSyntax*> program;
+        while (pos < (int)toks->size() && dynamic_cast<tokens::EndOfFileToken*>(toks->at(pos)) == nullptr)
         {
             syntax::ExpressionSyntax *expr;
             if (!exprFactory.tryParseSyntax(toks, pos, expr))
             {
                 //TODO: provide context
                 reportError("Could not parse expression.");
-                return false;
+                break;
+                //return false;
             }
-            program->push_back(expr);
+            program.push_back(expr);
         }
 
+
+
         types::NameResolutionContextStack ctx;
-        for (auto expr : *program)
+        for (auto expr : program)
         {
             expr->registerNames(&ctx);
         }
-        for (auto expr : *program)
+        for (auto expr : program)
         {
             expr->resolveNames(&ctx);
         }
 
-        for (auto expr : *program)
+        for (auto expr : program)
         {
             expr->resolveTypes(&ctx);
         }
 
-        /*
-          - Register names
-          - Resolve names
-          - Choose method overloads
-          - Emit type-level errors
-        */
 
-        for (auto expr : *program)
+
+        for (auto expr : program)
         {
             auto exprType = expr->getExpressionType();
             cout << expr->toString() << " // ";
@@ -109,7 +124,9 @@ namespace flc
             cout << endl;
         }
 
-
+        for (auto expr : program)
+            delete expr;
+        program.clear();
 
         reportNotImplemented("Compiler::tryCompile");
         return false;
@@ -127,7 +144,12 @@ namespace flc
                     return false;
                 }
             }
-            //TODO: Check if last token is EOF token
+            auto eof = dynamic_cast<tokens::EndOfFileToken*>(toks->at(toks->size() - 1));
+            if (eof == nullptr)
+            {
+                reportError("Cannot compile when tokenizer fails to tokenize correctly. Missing EOF token.");
+                return false;
+            }
         }
         return true;
     }

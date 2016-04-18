@@ -12,16 +12,13 @@ namespace flc
         MethodOverload::MethodOverload(RuntimeType* returnType, ParameterInfo** params, int paramCount)
             : _returnType(returnType)
         {
-            _params = new vector<ParameterInfo*>();
             for (int q = 0; q < paramCount; q++)
             {
-                _params->push_back(params[q]);
+                _params.push_back(params[q]);
             }
         }
         MethodOverload::~MethodOverload()
         {
-            delete _params;
-            _params = nullptr;
         }
 
         RuntimeType* MethodOverload::getReturnType()
@@ -31,12 +28,12 @@ namespace flc
 
         int MethodOverload::getParameterCount()
         {
-            return (int)_params->size();
+            return (int)_params.size();
         }
         ParameterInfo* MethodOverload::getParameterInfo(int idx)
         {
             //Let vector handle invalid indexes
-            return _params->at(idx);
+            return _params.at(idx);
         }
 
         bool MethodOverload::isMatchForParameters(RuntimeType** paramTypes, int paramCount)

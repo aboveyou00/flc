@@ -8,16 +8,18 @@ namespace flc
     {
         MemberAccessExpressionSyntax::MemberAccessExpressionSyntax(ExpressionSyntax* term, string identifier)
         {
-            lhs = term;
+            _lhs = term;
             ident = identifier;
         }
         MemberAccessExpressionSyntax::~MemberAccessExpressionSyntax()
         {
+            if (_lhs != nullptr) delete _lhs;
+            _lhs = nullptr;
         }
 
         bool MemberAccessExpressionSyntax::isQualifiedName()
         {
-            return lhs->isQualifiedName();
+            return _lhs->isQualifiedName();
         }
 
         void MemberAccessExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
@@ -34,7 +36,7 @@ namespace flc
 
         void MemberAccessExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
-            lhs->stringify(stream, tabulation);
+            _lhs->stringify(stream, tabulation);
             *stream << ".";
             *stream << ident;
         }
