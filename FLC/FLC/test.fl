@@ -61,34 +61,26 @@ null
 1 << 2
 4 >> 2
 4 >> 2 << 3
+1.23
+2l
+2u
+"String literal value"
+'c'
+0xFFFFFFFFu
+0xFFFFFFFFFFFFFFFFul
 
 
 
 //Compiling incorrectly
 
 //Not implemented
-1.23
+//true && false
 
 //Not implemented
-2l
+//false || true
 
 //Not implemented
-2u
-
-//Not implemented
-"String literal value"
-
-//Not implemented
-'c'
-
-//Not implemented
-true && false
-
-//Not implemented
-false || true
-
-//Not implemented
-"Hello" == "World"
+//"Hello" == "World"
 
 //Should be three separate expressions
 3 % 2

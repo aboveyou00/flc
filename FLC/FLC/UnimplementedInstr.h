@@ -62,42 +62,6 @@
 
 
 
-//72 <T>   ldstr <string>
-
-
-
-//67   conv.i1
-//B3   conv.ovf.i1
-//82   conv.ovf.i1.un
-//68   conv.i2
-//B5   conv.ovf.i2
-//83   conv.ovf.i2.un
-//69   conv.i4
-//B7   conv.ovf.i4
-//84   conv.ovf.i4.un
-//6A   conv.i8
-//B9   conv.ovf.i8
-//85   conv.ovf.i8.un
-//6B   conv.r4
-//6C   conv.r8
-//D2   conv.u1
-//B4   conv.ovf.u1
-//86   conv.ovf.u1.un
-//D1   conv.u2
-//B6   conv.ovf.u2
-//87   conv.ovf.u2.un
-//6D   conv.u4
-//B8   conv.ovf.u4
-//88   conv.ovf.u4.un
-//6E   conv.u8
-//BA   conv.ovf.u8
-//89   conv.ovf.u8.un
-//D3   conv.i
-//D4   conv.ovf.i
-//8A   conv.ovf.i.un
-//E0   conv.u
-//D5   conv.ovf.u
-//8B   conv.ovf.u.un
 //76   conv.r.un
 
 
@@ -131,12 +95,6 @@
 //0B               stloc.1
 //0C               stloc.2
 //0D               stloc.3
-
-
-
-//21 <int64>     ldc.i8 <num>
-//22 <float32>   ldc.r4 <num>
-//23 <float64>   ldc.r8 <num>
 
 
 

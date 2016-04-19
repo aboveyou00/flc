@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CharacterLiteralSyntax.h"
 #include <sstream>
+#include "LdcI4Instr.h"
 
 namespace flc
 {
@@ -19,9 +20,9 @@ namespace flc
             return types::RuntimeType::char16();
         }
 
-        void CharacterLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        void CharacterLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *method)
         {
-            //TODO: emit character literal
+            method->emit(new emit::LdcI4Instr(getValue()));
         }
 
         void CharacterLiteralSyntax::stringify(stringstream* stream, int tabulation)

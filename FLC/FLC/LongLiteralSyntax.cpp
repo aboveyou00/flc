@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "LongLiteralSyntax.h"
 #include <sstream>
+#include "LdcI8Instr.h"
 
 namespace flc
 {
@@ -19,9 +20,9 @@ namespace flc
             return types::RuntimeType::int64();
         }
 
-        void LongLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        void LongLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *method)
         {
-            //TODO: emit long literal
+            method->emit(new emit::LdcI8Instr(getValue()));
         }
 
         void LongLiteralSyntax::stringify(stringstream* stream, int tabulation)

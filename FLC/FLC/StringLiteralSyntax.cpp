@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "StringLiteralSyntax.h"
 #include <sstream>
+#include "LdstrInstr.h"
 
 namespace flc
 {
@@ -19,9 +20,9 @@ namespace flc
             return types::RuntimeType::string();
         }
 
-        void StringLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        void StringLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *method)
         {
-            //TODO: emit string literal
+            method->emit(new emit::LdstrInstr(getValue()));
         }
 
         void StringLiteralSyntax::stringify(stringstream* stream, int tabulation)

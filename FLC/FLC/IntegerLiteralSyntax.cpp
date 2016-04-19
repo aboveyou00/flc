@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "IntegerLiteralSyntax.h"
 #include <sstream>
-#include "LdcInstr.h"
+#include "LdcI4Instr.h"
 
 namespace flc
 {
@@ -22,7 +22,7 @@ namespace flc
 
         void IntegerLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *method)
         {
-            method->emit(new emit::LdcInstr(getValue()));
+            method->emit(new emit::LdcI4Instr(getValue()));
         }
 
         void IntegerLiteralSyntax::stringify(stringstream* stream, int tabulation)

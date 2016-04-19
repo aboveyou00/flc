@@ -5,11 +5,11 @@ namespace flc
 {
     namespace emit
     {
-        class LdcInstr : public Instr
+        class LdcI4Instr : public Instr
         {
         public:
-            LdcInstr(int32_t constValue);
-            ~LdcInstr();
+            LdcI4Instr(int32_t constValue);
+            ~LdcI4Instr();
 
             int32_t getConstantValue();
 

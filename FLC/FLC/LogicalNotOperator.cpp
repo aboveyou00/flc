@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "UnaryOperator.h"
 #include "OperatorOverloadMacros.h"
-#include "LdcInstr.h"
+#include "LdcI4Instr.h"
 #include "CeqInstr.h"
 
 namespace flc
@@ -20,7 +20,7 @@ namespace flc
 
                 __addOverload1(bool8)->setEmitCallImplementation([](emit::MethodBody *method)
                 {
-                    method->emit(new emit::LdcInstr(0));
+                    method->emit(new emit::LdcI4Instr(0));
                     method->emit(new emit::CeqInstr());
                 });
             }

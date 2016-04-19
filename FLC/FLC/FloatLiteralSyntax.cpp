@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "FloatLiteralSyntax.h"
 #include <sstream>
+#include "LdcR4Instr.h"
 
 namespace flc
 {
@@ -19,9 +20,9 @@ namespace flc
             return types::RuntimeType::float32();
         }
 
-        void FloatLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        void FloatLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *method)
         {
-            //TODO: emit float literal
+            method->emit(new emit::LdcR4Instr(getValue()));
         }
 
         void FloatLiteralSyntax::stringify(stringstream* stream, int tabulation)

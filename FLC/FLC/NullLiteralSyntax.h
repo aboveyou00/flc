@@ -13,7 +13,6 @@ namespace flc
 
             int getPrecedence() override;
 
-            void resolveTypes(types::NameResolutionContextStack *ctx) override;
             types::RuntimeType* getExpressionType() override;
 
             void emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method) override;

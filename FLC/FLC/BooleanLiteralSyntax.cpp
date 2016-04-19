@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "BooleanLiteralSyntax.h"
 #include <sstream>
-#include "LdcInstr.h"
+#include "LdcI4Instr.h"
 
 namespace flc
 {
@@ -22,7 +22,7 @@ namespace flc
 
         void BooleanLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *method)
         {
-            method->emit(new emit::LdcInstr(getValue() ? 1 : 0));
+            method->emit(new emit::LdcI4Instr(getValue() ? 1 : 0));
         }
 
         void BooleanLiteralSyntax::stringify(stringstream* stream, int tabulation)

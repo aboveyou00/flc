@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "UIntegerLiteralSyntax.h"
 #include <sstream>
+#include "LdcI4Instr.h"
 
 namespace flc
 {
@@ -19,9 +20,9 @@ namespace flc
             return types::RuntimeType::uint32();
         }
 
-        void UIntegerLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        void UIntegerLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *method)
         {
-            //TODO: emit uint literal
+            method->emit(new emit::LdcI4Instr((int32_t)getValue()));
         }
 
         void UIntegerLiteralSyntax::stringify(stringstream* stream, int tabulation)

@@ -19,10 +19,6 @@ namespace flc
             return 0;
         }
 
-        void NullLiteralSyntax::resolveTypes(types::NameResolutionContextStack *)
-        {
-            //TODO: Implement
-        }
         types::RuntimeType* NullLiteralSyntax::getExpressionType()
         {
             if (suggestedType != nullptr && suggestedType->isReferenceType()) return suggestedType;

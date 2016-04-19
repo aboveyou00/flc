@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "DoubleLiteralSyntax.h"
 #include <sstream>
+#include "LdcR8Instr.h"
 
 namespace flc
 {
@@ -19,9 +20,9 @@ namespace flc
             return types::RuntimeType::float64();
         }
 
-        void DoubleLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        void DoubleLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *method)
         {
-            //TODO: emit double literal
+            method->emit(new emit::LdcR8Instr(getValue()));
         }
 
         void DoubleLiteralSyntax::stringify(stringstream* stream, int tabulation)

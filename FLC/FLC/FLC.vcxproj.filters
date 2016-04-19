@@ -405,9 +405,6 @@
     <ClInclude Include="DupInstr.h">
       <Filter>Header Files\flc\emit</Filter>
     </ClInclude>
-    <ClInclude Include="LdcInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
     <ClInclude Include="CltInstr.h">
       <Filter>Header Files\flc\emit</Filter>
     </ClInclude>
@@ -473,6 +470,42 @@
     </ClInclude>
     <ClInclude Include="LiteralSyntax.h">
       <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvI1Instr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvI2Instr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvI4Instr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvI8Instr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvIInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="LdcI8Instr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="LdcR4Instr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="LdcR8Instr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="LdcI4Instr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvR4Instr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvR8Instr.h">
+      <Filter>Header Files\flc\emit</Filter>
+    </ClInclude>
+    <ClInclude Include="LdstrInstr.h">
+      <Filter>Header Files\flc\emit</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -878,9 +911,6 @@
     <ClCompile Include="Instr.cpp">
       <Filter>Source Files\flc\emit</Filter>
     </ClCompile>
-    <ClCompile Include="LdcInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
     <ClCompile Include="MulInstr.cpp">
       <Filter>Source Files\flc\emit</Filter>
     </ClCompile>
@@ -925,6 +955,42 @@
     </ClCompile>
     <ClCompile Include="SpecialMethodOverload.cpp">
       <Filter>Source Files\flc\types</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvI1Instr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvI2Instr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvI4Instr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvI8Instr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvIInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="LdcI8Instr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="LdcR4Instr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="LdcR8Instr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="LdcI4Instr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvR4Instr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvR8Instr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="LdstrInstr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

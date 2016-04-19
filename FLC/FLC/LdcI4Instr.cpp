@@ -1,24 +1,24 @@
 #include "stdafx.h"
-#include "LdcInstr.h"
+#include "LdcI4Instr.h"
 
 namespace flc
 {
     namespace emit
     {
-        LdcInstr::LdcInstr(int32_t constValue)
+        LdcI4Instr::LdcI4Instr(int32_t constValue)
             : value(constValue)
         {
         }
-        LdcInstr::~LdcInstr()
+        LdcI4Instr::~LdcI4Instr()
         {
         }
 
-        int32_t LdcInstr::getConstantValue()
+        int32_t LdcI4Instr::getConstantValue()
         {
             return value;
         }
 
-        void LdcInstr::stringify(std::stringstream *stream)
+        void LdcI4Instr::stringify(std::stringstream *stream)
         {
             *stream << "ldc.i4";
             switch (value)
