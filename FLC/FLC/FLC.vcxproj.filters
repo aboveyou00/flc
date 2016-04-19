@@ -420,9 +420,6 @@
     <ClInclude Include="UnaryOperatorExpressionSyntax.h">
       <Filter>Header Files\flc\syntax\unary</Filter>
     </ClInclude>
-    <ClInclude Include="UnaryExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax\unary</Filter>
-    </ClInclude>
     <ClInclude Include="BooleanLiteralSyntax.h">
       <Filter>Header Files\flc\syntax\literal</Filter>
     </ClInclude>
@@ -581,6 +578,27 @@
     </ClInclude>
     <ClInclude Include="BreakInstr.h">
       <Filter>Header Files\flc\emit\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="UnaryPlusExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\unary</Filter>
+    </ClInclude>
+    <ClInclude Include="NegateExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\unary</Filter>
+    </ClInclude>
+    <ClInclude Include="OnesComplementExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\unary</Filter>
+    </ClInclude>
+    <ClInclude Include="LogicalNotExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\unary</Filter>
+    </ClInclude>
+    <ClInclude Include="PreIncrementExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\unary</Filter>
+    </ClInclude>
+    <ClInclude Include="PreDecrementExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\unary</Filter>
+    </ClInclude>
+    <ClInclude Include="CastOperator.h">
+      <Filter>Header Files\flc\op</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -944,9 +962,6 @@
     <ClCompile Include="UnaryOperatorExpressionSyntax.cpp">
       <Filter>Source Files\flc\syntax\unary</Filter>
     </ClCompile>
-    <ClCompile Include="UnaryExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax\unary</Filter>
-    </ClCompile>
     <ClCompile Include="ULongLiteralSyntax.cpp">
       <Filter>Source Files\flc\syntax\literal</Filter>
     </ClCompile>
@@ -1066,6 +1081,24 @@
     </ClCompile>
     <ClCompile Include="XorInstr.cpp">
       <Filter>Source Files\flc\emit\arithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="LogicalNotExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\unary</Filter>
+    </ClCompile>
+    <ClCompile Include="NegateExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\unary</Filter>
+    </ClCompile>
+    <ClCompile Include="OnesComplementExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\unary</Filter>
+    </ClCompile>
+    <ClCompile Include="PreDecrementExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\unary</Filter>
+    </ClCompile>
+    <ClCompile Include="PreIncrementExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\unary</Filter>
+    </ClCompile>
+    <ClCompile Include="UnaryPlusExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\unary</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

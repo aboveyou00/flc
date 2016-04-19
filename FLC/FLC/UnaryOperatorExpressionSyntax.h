@@ -14,6 +14,8 @@ namespace flc
 
             ExpressionSyntax* getOperand();
 
+            int getPrecedence() override;
+
             virtual op::UnaryOperator *getUnaryOperator() = 0;
             virtual std::string getOperatorSymbol() = 0;
 

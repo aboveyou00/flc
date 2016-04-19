@@ -15,6 +15,11 @@ namespace flc
             _expr = nullptr;
         }
 
+        int UnaryOperatorExpressionSyntax::getPrecedence()
+        {
+            return 100;
+        }
+
         ExpressionSyntax* UnaryOperatorExpressionSyntax::getOperand()
         {
             return _expr;
