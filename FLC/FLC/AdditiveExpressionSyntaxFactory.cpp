@@ -18,23 +18,24 @@ namespace flc
 
             bool AdditiveExpressionSyntaxFactory::tryParseSyntax(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result)
             {
-                MultiplicativeExpressionSyntaxFactory multiplicativeFactory;
-                if (!multiplicativeFactory.tryParseSyntax(toks, pos, result)) return false;
+                MultiplicativeExpressionSyntaxFactory factory;
+                if (!factory.tryParseSyntax(toks, pos, result)) return false;
+                while (tryParseRhs(toks, pos, result)) { }
+                return true;
+            }
+            bool AdditiveExpressionSyntaxFactory::tryParseRhs(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result)
+            {
                 if (toks->at(pos)->isSymbol("+") || toks->at(pos)->isSymbol("-"))
                 {
-                    int p2 = pos + 1;
-                    ExpressionSyntax *additive = nullptr;
-                    if (!tryParseSyntax(toks, p2, additive))
-                    {
-                        //TODO: provide more context
-                        reportError("Unexpected unary operator: " + result->toString() + toks->at(pos)->toString());
-                        delete result; //Clean up partial expression
-                        return false;
-                    }
-                    result = new AdditiveExpressionSyntax(result, toks->at(pos)->toString(), additive);
-                    pos = p2;
+                    MultiplicativeExpressionSyntaxFactory factory;
+                    ExpressionSyntax *rhs = nullptr;
+                    int p = pos + 1;
+                    if (!factory.tryParseSyntax(toks, p, rhs)) return false;
+                    result = new AdditiveExpressionSyntax(result, toks->at(pos)->toString(), rhs);
+                    pos = p;
+                    return true;
                 }
-                return true;
+                return false;
             }
         }
     }

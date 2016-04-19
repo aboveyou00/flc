@@ -16,6 +16,7 @@ namespace flc
                 ~MultiplicativeExpressionSyntaxFactory();
 
                 virtual bool tryParseSyntax(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result);
+                virtual bool tryParseRhs(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result);
             };
         }
     }

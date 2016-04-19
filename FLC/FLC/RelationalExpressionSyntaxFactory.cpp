@@ -18,21 +18,25 @@ namespace flc
 
             bool RelationalExpressionSyntaxFactory::tryParseSyntax(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result)
             {
-                ShiftExpressionSyntaxFactory shiftFactory;
-                if (!shiftFactory.tryParseSyntax(toks, pos, result)) return false;
+                ShiftExpressionSyntaxFactory factory;
+                if (!factory.tryParseSyntax(toks, pos, result)) return false;
+                while (tryParseRhs(toks, pos, result)) { }
+                return true;
+            }
+            bool RelationalExpressionSyntaxFactory::tryParseRhs(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result)
+            {
                 if (toks->at(pos)->isSymbol("<") || toks->at(pos)->isSymbol(">") ||
                     toks->at(pos)->isSymbol("<=") || toks->at(pos)->isSymbol(">="))
                 {
-                    int p2 = pos + 1;
-                    ExpressionSyntax *relational = nullptr;
-                    if (tryParseSyntax(toks, p2, relational))
-                    {
-                        result = new RelationalExpressionSyntax(result, toks->at(pos)->toString(), relational);
-                        pos = p2;
-                        return true;
-                    }
+                    ShiftExpressionSyntaxFactory factory;
+                    ExpressionSyntax *rhs = nullptr;
+                    int p = pos + 1;
+                    if (!factory.tryParseSyntax(toks, p, rhs)) return false;
+                    result = new RelationalExpressionSyntax(result, toks->at(pos)->toString(), rhs);
+                    pos = p;
+                    return true;
                 }
-                return true;
+                return false;
             }
         }
     }

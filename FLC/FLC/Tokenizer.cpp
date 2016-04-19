@@ -145,10 +145,14 @@ namespace flc
 
         Token* Tokenizer::parseNextToken(istream *source, int& index, string path)
         {
-            while (isWhiteSpace((char16_t)source->peek()) || parseComment(source))
+            while (true)
             {
-                index++;
-                source->ignore();
+                if (isWhiteSpace((char16_t)source->peek()))
+                {
+                    index++;
+                    source->ignore();
+                }
+                else if (!parseComment(source)) break;
             }
             if (source->eof())
             {

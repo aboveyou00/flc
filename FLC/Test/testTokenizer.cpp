@@ -43,6 +43,17 @@ namespace Test
             ExpectNoMore();
         }
 
+        TEST_METHOD(Test_tokenize_comment_expression)
+        {
+            UseString("//A comment!  \r\n1+2");
+
+            ExpectToken<IntegerLiteralToken>("1");
+            ExpectToken<SymbolToken>("+");
+            ExpectToken<IntegerLiteralToken>("2");
+
+            ExpectNoMore();
+        }
+
         TEST_METHOD(Test_tokenize_arithmetic)
         {
             UseString("  1 +      2 \r\n+  10 8 */-   ");

@@ -18,23 +18,24 @@ namespace flc
 
             bool ConditionalAndExpressionSyntaxFactory::tryParseSyntax(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result)
             {
-                InclusiveOrExpressionSyntaxFactory inclusiveOrFactory;
-                if (!inclusiveOrFactory.tryParseSyntax(toks, pos, result)) return false;
+                InclusiveOrExpressionSyntaxFactory factory;
+                if (!factory.tryParseSyntax(toks, pos, result)) return false;
+                while (tryParseRhs(toks, pos, result)) { }
+                return true;
+            }
+            bool ConditionalAndExpressionSyntaxFactory::tryParseRhs(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result)
+            {
                 if (toks->at(pos)->isSymbol("&&"))
                 {
-                    int p2 = pos + 1;
-                    ExpressionSyntax *conditionalAnd = nullptr;
-                    if (!tryParseSyntax(toks, p2, conditionalAnd))
-                    {
-                        //TODO: provide more context
-                        reportError("Unexpected unary operator: " + result->toString() + toks->at(pos)->toString());
-                        delete result; //Clean up partial expression
-                        return false;
-                    }
-                    result = new ConditionalAndExpressionSyntax(result, conditionalAnd);
-                    pos = p2;
+                    InclusiveOrExpressionSyntaxFactory factory;
+                    ExpressionSyntax *rhs = nullptr;
+                    int p = pos + 1;
+                    if (!factory.tryParseSyntax(toks, p, rhs)) return false;
+                    result = new ConditionalAndExpressionSyntax(result, rhs);
+                    pos = p;
+                    return true;
                 }
-                return true;
+                return false;
             }
         }
     }
