@@ -61,9 +61,17 @@ namespace flc
 
         void BinaryOperatorExpressionSyntax::stringify(stringstream* stream, int tabulation)
         {
-            _left->stringify(stream, tabulation);
+            tabulate(stream, tabulation);
+
+            if (_left->getPrecedence() > getPrecedence()) *stream << "(";
+            _left->stringify(stream, 0);
+            if (_left->getPrecedence() > getPrecedence()) *stream << ")";
+
             *stream << " " << getOperatorSymbol() << " ";
+
+            if (_right->getPrecedence() > getPrecedence()) *stream << "(";
             _right->stringify(stream, 0);
+            if (_right->getPrecedence() > getPrecedence()) *stream << ")";
         }
     }
 }

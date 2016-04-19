@@ -7,16 +7,11 @@ namespace flc
     namespace syntax
     {
         CharacterLiteralSyntax::CharacterLiteralSyntax(char16_t value)
+            : LiteralSyntax<char16_t>(value)
         {
-            val = value;
         }
         CharacterLiteralSyntax::~CharacterLiteralSyntax()
         {
-        }
-
-        char16_t CharacterLiteralSyntax::getValue()
-        {
-            return val;
         }
 
         types::RuntimeType* CharacterLiteralSyntax::getExpressionType()
@@ -33,7 +28,7 @@ namespace flc
         {
             tabulate(stream, tabulation);
             *stream << "'";
-            *stream << (char)val;
+            *stream << (char)getValue();
             *stream << "'";
         }
     }

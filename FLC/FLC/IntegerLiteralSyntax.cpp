@@ -8,16 +8,11 @@ namespace flc
     namespace syntax
     {
         IntegerLiteralSyntax::IntegerLiteralSyntax(uint32_t value)
+            : LiteralSyntax<uint32_t>(value)
         {
-            val = value;
         }
         IntegerLiteralSyntax::~IntegerLiteralSyntax()
         {
-        }
-
-        uint32_t IntegerLiteralSyntax::getValue()
-        {
-            return val;
         }
 
         types::RuntimeType* IntegerLiteralSyntax::getExpressionType()
@@ -27,13 +22,13 @@ namespace flc
 
         void IntegerLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *method)
         {
-            method->emit(new emit::LdcInstr(val));
+            method->emit(new emit::LdcInstr(getValue()));
         }
 
         void IntegerLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
             tabulate(stream, tabulation);
-            *stream << val;
+            *stream << getValue();
         }
     }
 }

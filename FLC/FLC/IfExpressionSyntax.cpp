@@ -38,6 +38,11 @@ namespace flc
             return _elseExpr;
         }
 
+        int IfExpressionSyntax::getPrecedence()
+        {
+            return 2000;
+        }
+
         void IfExpressionSyntax::resolveTypes(types::NameResolutionContextStack *)
         {
             //TODO: Implement

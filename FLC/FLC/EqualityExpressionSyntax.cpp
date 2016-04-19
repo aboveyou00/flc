@@ -21,6 +21,11 @@ namespace flc
         {
         }
 
+        int EqualityExpressionSyntax::getPrecedence()
+        {
+            return 600;
+        }
+
         op::BinaryOperator *EqualityExpressionSyntax::getBinaryOperator()
         {
             switch (_op)

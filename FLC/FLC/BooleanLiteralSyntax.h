@@ -1,17 +1,15 @@
 #pragma once
-#include "ExpressionSyntax.h"
+#include "LiteralSyntax.h"
 
 namespace flc
 {
     namespace syntax
     {
-        class BooleanLiteralSyntax : public ExpressionSyntax
+        class BooleanLiteralSyntax : public LiteralSyntax<bool>
         {
         public:
             BooleanLiteralSyntax(bool value);
             ~BooleanLiteralSyntax();
-
-            bool getValue();
 
             types::RuntimeType* getExpressionType() override;
 
@@ -19,9 +17,6 @@ namespace flc
 
             void stringify(stringstream* stream, int tabulation = 0) override;
             string toString() override;
-
-        private:
-            bool val;
         };
     }
 }

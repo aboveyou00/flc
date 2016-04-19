@@ -25,6 +25,11 @@ namespace flc
             exprs.clear();
         }
 
+        int CompoundExpressionSyntax::getPrecedence()
+        {
+            return 3000;
+        }
+
         void CompoundExpressionSyntax::resolveTypes(types::NameResolutionContextStack *)
         {
             //TODO: Implement

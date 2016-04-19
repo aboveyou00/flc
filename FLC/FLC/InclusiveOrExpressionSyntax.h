@@ -12,6 +12,8 @@ namespace flc
             InclusiveOrExpressionSyntax(ExpressionSyntax* left, ExpressionSyntax* right);
             ~InclusiveOrExpressionSyntax();
 
+            int getPrecedence() override;
+
             op::BinaryOperator *getBinaryOperator() override;
             std::string getOperatorSymbol() override;
         };

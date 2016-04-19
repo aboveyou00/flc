@@ -51,7 +51,10 @@ namespace flc
         {
             tabulate(stream, tabulation);
             *stream << getOperatorSymbol();
-            _expr->stringify(stream, tabulation);
+
+            if (_expr->getPrecedence() > getPrecedence()) *stream << "(";
+            _expr->stringify(stream, 0);
+            if (_expr->getPrecedence() > getPrecedence()) *stream << ")";
         }
     }
 }

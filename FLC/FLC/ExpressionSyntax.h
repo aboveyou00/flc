@@ -14,6 +14,8 @@ namespace flc
             ExpressionSyntax();
             ~ExpressionSyntax();
 
+            virtual int getPrecedence() = 0;
+
             virtual bool isQualifiedName();
             virtual bool isLeftHandSide();
 
@@ -30,3 +32,28 @@ namespace flc
         };
     }
 }
+
+/*
+
+Operator precedence:
+
+literals: 0
+unary: 100
+multiplicative: 200
+additive: 300
+shift: 400
+relational: 500
+equality: 600
+and: 700
+xor: 800
+or: 900
+conditional and: 1000
+conditional or: 1100
+ternary: 1200
+assignment: 1500
+
+if: 2000
+while: 2000
+compound: 3000
+
+*/

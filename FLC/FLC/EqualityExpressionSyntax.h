@@ -19,6 +19,8 @@ namespace flc
             EqualityExpressionSyntax(ExpressionSyntax* left, string op, ExpressionSyntax* right);
             ~EqualityExpressionSyntax();
 
+            int getPrecedence() override;
+
             op::BinaryOperator *getBinaryOperator() override;
             std::string getOperatorSymbol() override;
 

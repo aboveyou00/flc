@@ -7,16 +7,11 @@ namespace flc
     namespace syntax
     {
         UIntegerLiteralSyntax::UIntegerLiteralSyntax(uint32_t value)
+            : LiteralSyntax<uint32_t>(value)
         {
-            val = value;
         }
         UIntegerLiteralSyntax::~UIntegerLiteralSyntax()
         {
-        }
-
-        uint32_t UIntegerLiteralSyntax::getValue()
-        {
-            return val;
         }
 
         types::RuntimeType* UIntegerLiteralSyntax::getExpressionType()
@@ -32,7 +27,7 @@ namespace flc
         void UIntegerLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
             tabulate(stream, tabulation);
-            *stream << val << "u";
+            *stream << getValue() << "u";
         }
     }
 }

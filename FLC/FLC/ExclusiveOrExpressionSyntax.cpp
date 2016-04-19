@@ -14,6 +14,11 @@ namespace flc
         {
         }
 
+        int ExclusiveOrExpressionSyntax::getPrecedence()
+        {
+            return 800;
+        }
+
         op::BinaryOperator *ExclusiveOrExpressionSyntax::getBinaryOperator()
         {
             return op::Operator::exclusiveOr();

@@ -20,6 +20,8 @@ namespace flc
             MultiplicativeExpressionSyntax(ExpressionSyntax* left, string op, ExpressionSyntax* right);
             ~MultiplicativeExpressionSyntax();
 
+            int getPrecedence() override;
+
             op::BinaryOperator *getBinaryOperator() override;
             std::string getOperatorSymbol() override;
 

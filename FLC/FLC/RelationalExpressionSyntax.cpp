@@ -23,6 +23,11 @@ namespace flc
         {
         }
 
+        int RelationalExpressionSyntax::getPrecedence()
+        {
+            return 500;
+        }
+
         op::BinaryOperator *RelationalExpressionSyntax::getBinaryOperator()
         {
             switch (_op)

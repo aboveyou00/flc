@@ -27,6 +27,8 @@ namespace flc
             AssignmentExpressionSyntax(ExpressionSyntax* left, string op, ExpressionSyntax* right);
             ~AssignmentExpressionSyntax();
 
+            int getPrecedence() override;
+
             ExpressionSyntax* getLeftOperand();
             ExpressionSyntax* getRightOperand();
             AssignmentOperator getOperator();

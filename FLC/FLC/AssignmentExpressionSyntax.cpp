@@ -34,6 +34,11 @@ namespace flc
             _right = nullptr;
         }
 
+        int AssignmentExpressionSyntax::getPrecedence()
+        {
+            return 1500;
+        }
+
         ExpressionSyntax* AssignmentExpressionSyntax::getLeftOperand()
         {
             return _left;

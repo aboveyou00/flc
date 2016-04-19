@@ -17,6 +17,11 @@ namespace flc
             _lhs = nullptr;
         }
 
+        int MemberAccessExpressionSyntax::getPrecedence()
+        {
+            return 0;
+        }
+
         bool MemberAccessExpressionSyntax::isQualifiedName()
         {
             return _lhs->isQualifiedName();

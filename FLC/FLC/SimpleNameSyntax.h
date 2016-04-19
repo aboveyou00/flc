@@ -14,6 +14,8 @@ namespace flc
             string getName();
             bool isFullyQualified();
 
+            int getPrecedence() override;
+
             bool isQualifiedName() override;
 
             void resolveTypes(types::NameResolutionContextStack *ctx) override;

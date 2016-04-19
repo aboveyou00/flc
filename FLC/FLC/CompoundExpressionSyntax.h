@@ -12,6 +12,8 @@ namespace flc
             CompoundExpressionSyntax(vector<ExpressionSyntax*>* expressions);
             ~CompoundExpressionSyntax();
 
+            int getPrecedence() override;
+
             void resolveTypes(types::NameResolutionContextStack *ctx) override;
             types::RuntimeType* getExpressionType() override;
 

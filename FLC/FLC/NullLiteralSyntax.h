@@ -11,6 +11,8 @@ namespace flc
             NullLiteralSyntax();
             ~NullLiteralSyntax();
 
+            int getPrecedence() override;
+
             void resolveTypes(types::NameResolutionContextStack *ctx) override;
             types::RuntimeType* getExpressionType() override;
 

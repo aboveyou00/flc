@@ -21,6 +21,8 @@ namespace flc
             RelationalExpressionSyntax(ExpressionSyntax* left, string op, ExpressionSyntax* right);
             ~RelationalExpressionSyntax();
 
+            int getPrecedence() override;
+
             op::BinaryOperator *getBinaryOperator() override;
             std::string getOperatorSymbol() override;
 

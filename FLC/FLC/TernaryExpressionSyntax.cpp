@@ -34,6 +34,11 @@ namespace flc
             return _iffalse;
         }
 
+        int TernaryExpressionSyntax::getPrecedence()
+        {
+            return 1200;
+        }
+
         void TernaryExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
         {
             _cond->suggestExpressionType(types::RuntimeType::bool8());

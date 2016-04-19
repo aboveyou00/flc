@@ -7,16 +7,11 @@ namespace flc
     namespace syntax
     {
         FloatLiteralSyntax::FloatLiteralSyntax(float value)
+            : LiteralSyntax<float>(value)
         {
-            val = value;
         }
         FloatLiteralSyntax::~FloatLiteralSyntax()
         {
-        }
-
-        float FloatLiteralSyntax::getValue()
-        {
-            return val;
         }
 
         types::RuntimeType* FloatLiteralSyntax::getExpressionType()
@@ -32,7 +27,7 @@ namespace flc
         void FloatLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
             tabulate(stream, tabulation);
-            *stream << val << "f";
+            *stream << getValue() << "f";
         }
     }
 }

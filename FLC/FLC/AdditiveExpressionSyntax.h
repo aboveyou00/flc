@@ -19,6 +19,8 @@ namespace flc
             AdditiveExpressionSyntax(ExpressionSyntax* left, string op, ExpressionSyntax* right);
             ~AdditiveExpressionSyntax();
 
+            int getPrecedence() override;
+
             op::BinaryOperator *getBinaryOperator() override;
             std::string getOperatorSymbol() override;
 

@@ -14,6 +14,8 @@ namespace flc
             string getName();
             ExpressionSyntax* getBaseExpression();
 
+            int getPrecedence() override;
+
             bool isQualifiedName() override;
 
             void resolveTypes(types::NameResolutionContextStack *ctx) override;

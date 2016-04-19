@@ -21,6 +21,11 @@ namespace flc
         {
         }
 
+        int ShiftExpressionSyntax::getPrecedence()
+        {
+            return 400;
+        }
+
         op::BinaryOperator *ShiftExpressionSyntax::getBinaryOperator()
         {
             switch (_op)

@@ -13,6 +13,8 @@ namespace flc
 
             bool isQualifiedName() override;
 
+            int getPrecedence() override;
+
             void resolveTypes(types::NameResolutionContextStack *ctx) override;
             types::RuntimeType* getExpressionType() override;
 

@@ -27,6 +27,11 @@ namespace flc
             return _right;
         }
 
+        int ConditionalOrExpressionSyntax::getPrecedence()
+        {
+            return 1100;
+        }
+
         void ConditionalOrExpressionSyntax::resolveTypes(types::NameResolutionContextStack *)
         {
             //TODO: Implement

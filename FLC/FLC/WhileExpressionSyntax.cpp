@@ -36,6 +36,11 @@ namespace flc
             return !_isWhile;
         }
 
+        int WhileExpressionSyntax::getPrecedence()
+        {
+            return 2000;
+        }
+
         void WhileExpressionSyntax::resolveTypes(types::NameResolutionContextStack *)
         {
             //TODO: Implement

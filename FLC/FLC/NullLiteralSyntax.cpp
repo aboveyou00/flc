@@ -14,6 +14,11 @@ namespace flc
         {
         }
 
+        int NullLiteralSyntax::getPrecedence()
+        {
+            return 0;
+        }
+
         void NullLiteralSyntax::resolveTypes(types::NameResolutionContextStack *)
         {
             //TODO: Implement

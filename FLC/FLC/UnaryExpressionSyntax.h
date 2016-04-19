@@ -23,6 +23,8 @@ namespace flc
             UnaryExpressionSyntax(string op, ExpressionSyntax* expr);
             ~UnaryExpressionSyntax();
 
+            int getPrecedence() override;
+
             op::UnaryOperator *getUnaryOperator() override;
             std::string getOperatorSymbol() override;
 

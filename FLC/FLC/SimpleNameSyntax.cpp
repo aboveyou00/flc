@@ -24,6 +24,11 @@ namespace flc
             return qualified;
         }
 
+        int SimpleNameSyntax::getPrecedence()
+        {
+            return 0;
+        }
+
         bool SimpleNameSyntax::isQualifiedName()
         {
             return true;

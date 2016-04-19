@@ -25,6 +25,11 @@ namespace flc
             return _lhs;
         }
 
+        int ComplexNameSyntax::getPrecedence()
+        {
+            return 0;
+        }
+
         bool ComplexNameSyntax::isQualifiedName()
         {
             return true;

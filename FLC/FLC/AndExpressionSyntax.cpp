@@ -14,6 +14,11 @@ namespace flc
         {
         }
 
+        int AndExpressionSyntax::getPrecedence()
+        {
+            return 700;
+        }
+
         op::BinaryOperator *AndExpressionSyntax::getBinaryOperator()
         {
             return op::Operator::bitwiseAnd();

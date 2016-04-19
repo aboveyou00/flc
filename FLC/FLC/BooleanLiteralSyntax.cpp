@@ -8,16 +8,11 @@ namespace flc
     namespace syntax
     {
         BooleanLiteralSyntax::BooleanLiteralSyntax(bool value)
+            : LiteralSyntax<bool>(value)
         {
-            val = value;
         }
         BooleanLiteralSyntax::~BooleanLiteralSyntax()
         {
-        }
-
-        bool BooleanLiteralSyntax::getValue()
-        {
-            return val;
         }
 
         types::RuntimeType* BooleanLiteralSyntax::getExpressionType()
@@ -27,17 +22,17 @@ namespace flc
 
         void BooleanLiteralSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *method)
         {
-            method->emit(new emit::LdcInstr(val ? 1 : 0));
+            method->emit(new emit::LdcInstr(getValue() ? 1 : 0));
         }
 
         void BooleanLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
             tabulate(stream, tabulation);
-            *stream << (val ? "true" : "false");
+            *stream << (getValue() ? "true" : "false");
         }
         string BooleanLiteralSyntax::toString()
         {
-            return (val ? "true" : "false");
+            return (getValue() ? "true" : "false");
         }
     }
 }

@@ -22,6 +22,11 @@ namespace flc
         {
         }
 
+        int MultiplicativeExpressionSyntax::getPrecedence()
+        {
+            return 200;
+        }
+
         op::BinaryOperator *MultiplicativeExpressionSyntax::getBinaryOperator()
         {
             switch (_op)

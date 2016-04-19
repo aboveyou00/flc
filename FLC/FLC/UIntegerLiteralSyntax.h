@@ -1,26 +1,21 @@
 #pragma once
-#include "ExpressionSyntax.h"
+#include "LiteralSyntax.h"
 
 namespace flc
 {
     namespace syntax
     {
-        class UIntegerLiteralSyntax : public ExpressionSyntax
+        class UIntegerLiteralSyntax : public LiteralSyntax<uint32_t>
         {
         public:
             UIntegerLiteralSyntax(uint32_t value);
             ~UIntegerLiteralSyntax();
-
-            uint32_t getValue();
 
             types::RuntimeType* getExpressionType() override;
 
             void emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method) override;
 
             void stringify(stringstream* stream, int tabulation = 0) override;
-
-        private:
-            uint32_t val;
         };
     }
 }

@@ -17,6 +17,8 @@ namespace flc
             bool isWhileExpression();
             bool isUntilExpression();
 
+            int getPrecedence() override;
+
             void resolveTypes(types::NameResolutionContextStack *ctx) override;
             types::RuntimeType* getExpressionType() override;
 

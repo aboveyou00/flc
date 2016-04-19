@@ -25,6 +25,11 @@ namespace flc
         {
         }
 
+        int UnaryExpressionSyntax::getPrecedence()
+        {
+            return 100;
+        }
+
         op::UnaryOperator *UnaryExpressionSyntax::getUnaryOperator()
         {
             switch (_op)

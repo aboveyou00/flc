@@ -471,6 +471,9 @@
     <ClInclude Include="SpecialMethodOverload.h">
       <Filter>Header Files\flc\types</Filter>
     </ClInclude>
+    <ClInclude Include="LiteralSyntax.h">
+      <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommandLineParser.cpp">

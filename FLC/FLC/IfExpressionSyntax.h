@@ -16,6 +16,8 @@ namespace flc
             ExpressionSyntax* getExpression();
             ExpressionSyntax* getElseExpression();
 
+            int getPrecedence() override;
+
             void resolveTypes(types::NameResolutionContextStack *ctx) override;
             types::RuntimeType* getExpressionType() override;
 

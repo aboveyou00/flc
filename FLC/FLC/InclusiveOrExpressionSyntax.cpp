@@ -14,6 +14,11 @@ namespace flc
         {
         }
 
+        int InclusiveOrExpressionSyntax::getPrecedence()
+        {
+            return 900;
+        }
+
         op::BinaryOperator *InclusiveOrExpressionSyntax::getBinaryOperator()
         {
             return op::Operator::bitwiseOr();

@@ -11,6 +11,8 @@ namespace flc
             ConditionalAndExpressionSyntax(ExpressionSyntax* left, ExpressionSyntax* right);
             ~ConditionalAndExpressionSyntax();
 
+            int getPrecedence() override;
+
             ExpressionSyntax* getLeftOperand();
             ExpressionSyntax* getRightOperand();
 

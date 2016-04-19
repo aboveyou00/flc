@@ -12,6 +12,8 @@ namespace flc
             AndExpressionSyntax(ExpressionSyntax* left, ExpressionSyntax* right);
             ~AndExpressionSyntax();
 
+            int getPrecedence() override;
+
             op::BinaryOperator *getBinaryOperator() override;
             std::string getOperatorSymbol() override;
         };

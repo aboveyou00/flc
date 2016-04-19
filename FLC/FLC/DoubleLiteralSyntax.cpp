@@ -7,16 +7,11 @@ namespace flc
     namespace syntax
     {
         DoubleLiteralSyntax::DoubleLiteralSyntax(double value)
+            : LiteralSyntax<double>(value)
         {
-            val = value;
         }
         DoubleLiteralSyntax::~DoubleLiteralSyntax()
         {
-        }
-
-        double DoubleLiteralSyntax::getValue()
-        {
-            return val;
         }
 
         types::RuntimeType* DoubleLiteralSyntax::getExpressionType()
@@ -32,7 +27,7 @@ namespace flc
         void DoubleLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
             tabulate(stream, tabulation);
-            *stream << val << "d";
+            *stream << getValue() << "d";
         }
     }
 }

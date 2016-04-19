@@ -20,7 +20,12 @@ namespace flc
         AdditiveExpressionSyntax::~AdditiveExpressionSyntax()
         {
         }
-        
+
+        int AdditiveExpressionSyntax::getPrecedence()
+        {
+            return 300;
+        }
+
         op::BinaryOperator *AdditiveExpressionSyntax::getBinaryOperator()
         {
             switch (_op)

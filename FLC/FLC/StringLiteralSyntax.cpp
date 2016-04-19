@@ -6,19 +6,14 @@ namespace flc
 {
     namespace syntax
     {
-        StringLiteralSyntax::StringLiteralSyntax(string strval)
+        StringLiteralSyntax::StringLiteralSyntax(string value)
+            : LiteralSyntax<string>(value)
         {
-            str = strval;
         }
         StringLiteralSyntax::~StringLiteralSyntax()
         {
         }
         
-        string StringLiteralSyntax::getValue()
-        {
-            return str;
-        }
-
         types::RuntimeType* StringLiteralSyntax::getExpressionType()
         {
             return types::RuntimeType::string();
@@ -33,7 +28,7 @@ namespace flc
         {
             tabulate(stream, tabulation);
             *stream << "\"";
-            *stream << str;
+            *stream << getValue();
             *stream << "\"";
         }
     }

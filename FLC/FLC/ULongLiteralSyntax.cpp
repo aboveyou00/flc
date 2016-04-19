@@ -7,16 +7,11 @@ namespace flc
     namespace syntax
     {
         ULongLiteralSyntax::ULongLiteralSyntax(uint64_t value)
+            : LiteralSyntax<uint64_t>(value)
         {
-            val = value;
         }
         ULongLiteralSyntax::~ULongLiteralSyntax()
         {
-        }
-
-        uint64_t ULongLiteralSyntax::getValue()
-        {
-            return val;
         }
 
         types::RuntimeType* ULongLiteralSyntax::getExpressionType()
@@ -32,7 +27,7 @@ namespace flc
         void ULongLiteralSyntax::stringify(stringstream* stream, int tabulation)
         {
             tabulate(stream, tabulation);
-            *stream << val << "ul";
+            *stream << getValue() << "ul";
         }
     }
 }
