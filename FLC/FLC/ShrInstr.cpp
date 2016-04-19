@@ -20,7 +20,7 @@ namespace flc
 
         void ShrInstr::stringify(std::stringstream *stream)
         {
-            *stream << "rem";
+            *stream << "shr";
             if (!signedArithmetic) *stream << ".un";
         }
     }

@@ -51,6 +51,16 @@ null
 ~(5 * 5 * 5)
 ~5 * 5 * 5
 (1+2+3) < (5*2^4)
+(((1|2)^3)&4)==5
+(1|2^3&4)==5
+{
+	1+2
+	2*2*2*2*2*2*2*2
+	42
+}
+1 << 2
+4 >> 2
+4 >> 2 << 3
 
 
 
@@ -58,6 +68,27 @@ null
 
 //Not implemented
 1.23
+
+//Not implemented
+2l
+
+//Not implemented
+2u
+
+//Not implemented
+"String literal value"
+
+//Not implemented
+'c'
+
+//Not implemented
+true && false
+
+//Not implemented
+false || true
+
+//Not implemented
+"Hello" == "World"
 
 //Should be three separate expressions
 3 % 2

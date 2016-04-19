@@ -22,7 +22,7 @@ namespace Test
 
         TEST_METHOD(Test_parseTerm_compoundExpression_many)
         {
-            testFactory<TermSyntaxFactory>("{'1' 2.1 3}", "{\r\n    '1'\r\n    2.1f\r\n    3\r\n}");
+            testFactory<TermSyntaxFactory>("{'1' 2.1 3}", "{\r\n    '1'\r\n    2.1d\r\n    3\r\n}");
         }
 
         TEST_METHOD(Test_parseTerm_compoundExpression_formatted)

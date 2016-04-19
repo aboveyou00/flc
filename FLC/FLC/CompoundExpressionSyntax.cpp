@@ -30,9 +30,14 @@ namespace flc
             return 3000;
         }
 
-        void CompoundExpressionSyntax::resolveTypes(types::NameResolutionContextStack *)
+        void CompoundExpressionSyntax::resolveTypes(types::NameResolutionContextStack *ctx)
         {
-            //TODO: Implement
+            if (suggestedType != nullptr && exprs.size() != 0) exprs[exprs.size() - 1]->suggestExpressionType(suggestedType);
+            for (size_t q = 0; q < exprs.size(); q++)
+            {
+                auto expr = exprs[q];
+                expr->resolveTypes(ctx);
+            }
         }
         types::RuntimeType* CompoundExpressionSyntax::getExpressionType()
         {
