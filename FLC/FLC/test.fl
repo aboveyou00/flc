@@ -42,6 +42,10 @@ true && false
 95 ^ 58
 42 & 99
 10 / 5
+25 <= 93
+5 >= 5
+!true
+
 
 
 //Compiling incorrectly
@@ -65,14 +69,6 @@ true && false
 3 % 2
 -4
 +4
-
-
-
-//Not implemented
-
-25 <= 93
-5 >= 5
-!true
 
 
 

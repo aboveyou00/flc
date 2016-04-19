@@ -34,7 +34,10 @@ namespace flc
                     method->emit(new emit::XorInstr());
                 });
 
-                __addOverload2(bool8);
+                __addOverload2(bool8)->setEmitCallImplementation([](emit::MethodBody *method)
+                {
+                    method->emit(new emit::XorInstr());
+                });
             }
 
             return op;

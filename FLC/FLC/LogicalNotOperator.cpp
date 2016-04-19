@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "UnaryOperator.h"
 #include "OperatorOverloadMacros.h"
+#include "LdcInstr.h"
+#include "CeqInstr.h"
 
 namespace flc
 {
@@ -16,7 +18,11 @@ namespace flc
                 auto overloads = op->getPredefinedOverloads();
                 types::RuntimeType *arg[1];
 
-                __addOverload1(bool8);
+                __addOverload1(bool8)->setEmitCallImplementation([](emit::MethodBody *method)
+                {
+                    method->emit(new emit::LdcInstr(0));
+                    method->emit(new emit::CeqInstr());
+                });
             }
 
             return op;
