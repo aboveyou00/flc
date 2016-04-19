@@ -70,6 +70,84 @@
     <Filter Include="Header Files\flc\op\predefined">
       <UniqueIdentifier>{68899ab2-d2a4-4694-8e8b-45764b87d034}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\flc\syntax\binary">
+      <UniqueIdentifier>{76c194f4-096e-45ea-91c4-789cbaa07714}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\syntax\unary">
+      <UniqueIdentifier>{852337f4-2e7f-4070-8071-df1a22a854c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\syntax\literal">
+      <UniqueIdentifier>{cdf8fa05-ff93-4215-83ff-b55599a3228d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\syntax\ternary">
+      <UniqueIdentifier>{e866b7e7-4627-4f31-a935-2abf3b1259e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\syntax\expr">
+      <UniqueIdentifier>{68893ca8-75fc-450e-a020-974457ea4dd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\syntax\terminal">
+      <UniqueIdentifier>{7e7909f3-70ed-4948-a6ee-6b41939b4174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\binary">
+      <UniqueIdentifier>{73b4182d-b13d-4880-a44a-6d545ecdee73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\ternary">
+      <UniqueIdentifier>{7a45fc62-cf30-43da-b8c8-f4ee8392d93e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\unary">
+      <UniqueIdentifier>{5d69910c-065b-41e9-81fa-3b7d07cf17f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\terminal">
+      <UniqueIdentifier>{796a03a5-a11e-4ddf-9f9d-b229aba925b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\expr">
+      <UniqueIdentifier>{54bdd844-d49c-41a8-bd0e-646161688ed4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\literal">
+      <UniqueIdentifier>{c8fc3ce9-476f-4e71-b60f-d3fb0b1bed30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\emit\arithmetic">
+      <UniqueIdentifier>{b8831ffd-bc1f-4b39-aa1d-4e1c9b3d76a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\emit\branch">
+      <UniqueIdentifier>{5eb50917-19ef-41d1-b79e-1de718151cd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\emit\compare">
+      <UniqueIdentifier>{f2293f82-2553-49b4-970f-52c8cac6609d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\emit\convert">
+      <UniqueIdentifier>{dd012c1b-72b6-490f-9876-aded41d4a0a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\emit\stack">
+      <UniqueIdentifier>{94c52f22-5d35-40bf-9363-c47bf97ed4ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\emit\constant">
+      <UniqueIdentifier>{d2ca48a8-2e37-45cc-938e-e490ed1b0de3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\emit\misc">
+      <UniqueIdentifier>{0c024d5c-8cda-46a2-a306-2c65cbc1c383}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit\compare">
+      <UniqueIdentifier>{299415d9-f231-4b89-9a5c-9ab761f627e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit\arithmetic">
+      <UniqueIdentifier>{7dbcf60e-b9ad-435b-8bac-96b28e557f05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit\branch">
+      <UniqueIdentifier>{75351ba0-194b-415b-9627-2350dbd4e619}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit\constant">
+      <UniqueIdentifier>{b2ae8cb5-8526-4f99-a320-f4652014a62c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit\misc">
+      <UniqueIdentifier>{626df0d6-b3af-40f3-8f28-081303590209}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit\stack">
+      <UniqueIdentifier>{2ba2cb86-26d7-49ae-9f36-d8f680f0d4a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit\convert">
+      <UniqueIdentifier>{26c78d8d-1b9f-4324-9f64-29e5a5ec2a54}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -138,18 +216,6 @@
     <ClInclude Include="Syntax.h">
       <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
-    <ClInclude Include="ExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="MultiplicativeExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="AdditiveExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="UnaryExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
     <ClInclude Include="ExpressionSyntaxFactory.h">
       <Filter>Header Files\flc\syntax\factory</Filter>
     </ClInclude>
@@ -192,80 +258,14 @@
     <ClInclude Include="ShiftExpressionSyntaxFactory.h">
       <Filter>Header Files\flc\syntax\factory</Filter>
     </ClInclude>
-    <ClInclude Include="TernaryExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="ConditionalOrExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="ConditionalAndExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="InclusiveOrExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="ExclusiveOrExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="AndExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="EqualityExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="RelationalExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="ShiftExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
     <ClInclude Include="CompoundExpressionSyntaxFactory.h">
       <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="CompoundExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="NullLiteralSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="StringLiteralSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="BooleanLiteralSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="CharacterLiteralSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="IntegerLiteralSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="FloatLiteralSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="SimpleNameSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="ComplexNameSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="MemberAccessExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="AssignmentExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
     <ClInclude Include="IfExpressionSyntaxFactory.h">
       <Filter>Header Files\flc\syntax\factory</Filter>
     </ClInclude>
-    <ClInclude Include="IfExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
     <ClInclude Include="WhileExpressionSyntaxFactory.h">
       <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="WhileExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
     </ClInclude>
     <ClInclude Include="RuntimeType.h">
       <Filter>Header Files\flc\types</Filter>
@@ -369,143 +369,218 @@
     <ClInclude Include="DoubleLiteralToken.h">
       <Filter>Header Files\flc\tokens</Filter>
     </ClInclude>
-    <ClInclude Include="DoubleLiteralSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="UIntegerLiteralSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="LongLiteralSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="ULongLiteralSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
     <ClInclude Include="NameResolutionContextStack.h">
       <Filter>Header Files\flc\types</Filter>
     </ClInclude>
     <ClInclude Include="Instr.h">
       <Filter>Header Files\flc\emit</Filter>
     </ClInclude>
-    <ClInclude Include="AddInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="UnimplementedInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="AndInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="BreakInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="DivInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="DupInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="CltInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="CgtInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="CeqInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="CkfiniteInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="MulInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="NegInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="NopInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
     <ClInclude Include="AllInstrs.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="NotInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="OrInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="PopInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="RemInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="ShlInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="ShrInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="SubInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="XorInstr.h">
       <Filter>Header Files\flc\emit</Filter>
     </ClInclude>
     <ClInclude Include="MethodBody.h">
       <Filter>Header Files\flc\emit</Filter>
     </ClInclude>
-    <ClInclude Include="LdnullInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="BinaryOperatorExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="UnaryOperatorExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
     <ClInclude Include="SpecialMethodOverload.h">
       <Filter>Header Files\flc\types</Filter>
     </ClInclude>
+    <ClInclude Include="AdditiveExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="AndExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryOperatorExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="ConditionalAndExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="ConditionalOrExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="EqualityExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="ExclusiveOrExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="InclusiveOrExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiplicativeExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="RelationalExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="ShiftExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="UnaryOperatorExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\unary</Filter>
+    </ClInclude>
+    <ClInclude Include="UnaryExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\unary</Filter>
+    </ClInclude>
+    <ClInclude Include="BooleanLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax\literal</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax\literal</Filter>
+    </ClInclude>
+    <ClInclude Include="ULongLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax\literal</Filter>
+    </ClInclude>
+    <ClInclude Include="UIntegerLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax\literal</Filter>
+    </ClInclude>
+    <ClInclude Include="StringLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax\literal</Filter>
+    </ClInclude>
+    <ClInclude Include="NullLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax\literal</Filter>
+    </ClInclude>
+    <ClInclude Include="LongLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax\literal</Filter>
+    </ClInclude>
+    <ClInclude Include="IntegerLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax\literal</Filter>
+    </ClInclude>
+    <ClInclude Include="FloatLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax\literal</Filter>
+    </ClInclude>
+    <ClInclude Include="DoubleLiteralSyntax.h">
+      <Filter>Header Files\flc\syntax\literal</Filter>
+    </ClInclude>
+    <ClInclude Include="ComplexNameSyntax.h">
+      <Filter>Header Files\flc\syntax\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleNameSyntax.h">
+      <Filter>Header Files\flc\syntax\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="MemberAccessExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="TernaryExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\ternary</Filter>
+    </ClInclude>
+    <ClInclude Include="CompoundExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\expr</Filter>
+    </ClInclude>
+    <ClInclude Include="AssignmentExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\expr</Filter>
+    </ClInclude>
+    <ClInclude Include="IfExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\expr</Filter>
+    </ClInclude>
+    <ClInclude Include="WhileExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\expr</Filter>
+    </ClInclude>
     <ClInclude Include="LiteralSyntax.h">
-      <Filter>Header Files\flc\syntax</Filter>
+      <Filter>Header Files\flc\syntax\literal</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\expr</Filter>
+    </ClInclude>
+    <ClInclude Include="AddInstr.h">
+      <Filter>Header Files\flc\emit\arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="AndInstr.h">
+      <Filter>Header Files\flc\emit\arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="CkfiniteInstr.h">
+      <Filter>Header Files\flc\emit\compare</Filter>
+    </ClInclude>
+    <ClInclude Include="CeqInstr.h">
+      <Filter>Header Files\flc\emit\compare</Filter>
+    </ClInclude>
+    <ClInclude Include="CgtInstr.h">
+      <Filter>Header Files\flc\emit\compare</Filter>
+    </ClInclude>
+    <ClInclude Include="CltInstr.h">
+      <Filter>Header Files\flc\emit\compare</Filter>
     </ClInclude>
     <ClInclude Include="ConvI1Instr.h">
-      <Filter>Header Files\flc\emit</Filter>
+      <Filter>Header Files\flc\emit\convert</Filter>
     </ClInclude>
     <ClInclude Include="ConvI2Instr.h">
-      <Filter>Header Files\flc\emit</Filter>
+      <Filter>Header Files\flc\emit\convert</Filter>
     </ClInclude>
     <ClInclude Include="ConvI4Instr.h">
-      <Filter>Header Files\flc\emit</Filter>
+      <Filter>Header Files\flc\emit\convert</Filter>
     </ClInclude>
     <ClInclude Include="ConvI8Instr.h">
-      <Filter>Header Files\flc\emit</Filter>
+      <Filter>Header Files\flc\emit\convert</Filter>
     </ClInclude>
     <ClInclude Include="ConvIInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="LdcI8Instr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="LdcR4Instr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="LdcR8Instr.h">
-      <Filter>Header Files\flc\emit</Filter>
-    </ClInclude>
-    <ClInclude Include="LdcI4Instr.h">
-      <Filter>Header Files\flc\emit</Filter>
+      <Filter>Header Files\flc\emit\convert</Filter>
     </ClInclude>
     <ClInclude Include="ConvR4Instr.h">
-      <Filter>Header Files\flc\emit</Filter>
+      <Filter>Header Files\flc\emit\convert</Filter>
     </ClInclude>
     <ClInclude Include="ConvR8Instr.h">
-      <Filter>Header Files\flc\emit</Filter>
+      <Filter>Header Files\flc\emit\convert</Filter>
+    </ClInclude>
+    <ClInclude Include="DivInstr.h">
+      <Filter>Header Files\flc\emit\arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="DupInstr.h">
+      <Filter>Header Files\flc\emit\stack</Filter>
+    </ClInclude>
+    <ClInclude Include="LdcI8Instr.h">
+      <Filter>Header Files\flc\emit\constant</Filter>
+    </ClInclude>
+    <ClInclude Include="LdcI4Instr.h">
+      <Filter>Header Files\flc\emit\constant</Filter>
+    </ClInclude>
+    <ClInclude Include="LdcR4Instr.h">
+      <Filter>Header Files\flc\emit\constant</Filter>
+    </ClInclude>
+    <ClInclude Include="LdcR8Instr.h">
+      <Filter>Header Files\flc\emit\constant</Filter>
+    </ClInclude>
+    <ClInclude Include="LdnullInstr.h">
+      <Filter>Header Files\flc\emit\constant</Filter>
     </ClInclude>
     <ClInclude Include="LdstrInstr.h">
-      <Filter>Header Files\flc\emit</Filter>
+      <Filter>Header Files\flc\emit\constant</Filter>
+    </ClInclude>
+    <ClInclude Include="MulInstr.h">
+      <Filter>Header Files\flc\emit\arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="NegInstr.h">
+      <Filter>Header Files\flc\emit\arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="NotInstr.h">
+      <Filter>Header Files\flc\emit\arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="OrInstr.h">
+      <Filter>Header Files\flc\emit\arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="RemInstr.h">
+      <Filter>Header Files\flc\emit\arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="ShlInstr.h">
+      <Filter>Header Files\flc\emit\arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="ShrInstr.h">
+      <Filter>Header Files\flc\emit\arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="SubInstr.h">
+      <Filter>Header Files\flc\emit\arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="XorInstr.h">
+      <Filter>Header Files\flc\emit\arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="PopInstr.h">
+      <Filter>Header Files\flc\emit\stack</Filter>
+    </ClInclude>
+    <ClInclude Include="NopInstr.h">
+      <Filter>Header Files\flc\emit\misc</Filter>
+    </ClInclude>
+    <ClInclude Include="BreakInstr.h">
+      <Filter>Header Files\flc\emit\misc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -569,18 +644,6 @@
     <ClCompile Include="Syntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
-    <ClCompile Include="ExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="AdditiveExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="MultiplicativeExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="UnaryExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
     <ClCompile Include="ExpressionSyntaxFactory.cpp">
       <Filter>Source Files\flc\syntax\factory</Filter>
     </ClCompile>
@@ -623,80 +686,14 @@
     <ClCompile Include="ShiftExpressionSyntaxFactory.cpp">
       <Filter>Source Files\flc\syntax\factory</Filter>
     </ClCompile>
-    <ClCompile Include="TernaryExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="ConditionalOrExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="ConditionalAndExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="InclusiveOrExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="ExclusiveOrExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="AndExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="EqualityExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="RelationalExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="ShiftExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
     <ClCompile Include="CompoundExpressionSyntaxFactory.cpp">
       <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="CompoundExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="StringLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="CharacterLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="IntegerLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="FloatLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="BooleanLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="NullLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="SimpleNameSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="ComplexNameSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="MemberAccessExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="AssignmentExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
     <ClCompile Include="IfExpressionSyntaxFactory.cpp">
       <Filter>Source Files\flc\syntax\factory</Filter>
     </ClCompile>
-    <ClCompile Include="IfExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
     <ClCompile Include="WhileExpressionSyntaxFactory.cpp">
       <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="WhileExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
     <ClCompile Include="RuntimeType.cpp">
       <Filter>Source Files\flc\types</Filter>
@@ -857,18 +854,6 @@
     <ClCompile Include="DoubleLiteralToken.cpp">
       <Filter>Source Files\flc\tokens</Filter>
     </ClCompile>
-    <ClCompile Include="UIntegerLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="LongLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="ULongLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="DoubleLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
     <ClCompile Include="NameResolutionContextStack.cpp">
       <Filter>Source Files\flc\types</Filter>
     </ClCompile>
@@ -881,116 +866,206 @@
     <ClCompile Include="MethodBody.cpp">
       <Filter>Source Files\flc\emit</Filter>
     </ClCompile>
-    <ClCompile Include="AddInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="AndInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="BreakInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="CkfiniteInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="CeqInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="CgtInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="CltInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="DivInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="DupInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
     <ClCompile Include="Instr.cpp">
       <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="MulInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="NegInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="NopInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="NotInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="OrInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="PopInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="XorInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="ShlInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="SubInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="RemInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="ShrInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="LdnullInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="BinaryOperatorExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="UnaryOperatorExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
     <ClCompile Include="SpecialMethodOverload.cpp">
       <Filter>Source Files\flc\types</Filter>
     </ClCompile>
+    <ClCompile Include="AdditiveExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="AndExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="AssignmentExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\expr</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryOperatorExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="BooleanLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="ComplexNameSyntax.cpp">
+      <Filter>Source Files\flc\syntax\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="CompoundExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\expr</Filter>
+    </ClCompile>
+    <ClCompile Include="ConditionalAndExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="ConditionalOrExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="DoubleLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="EqualityExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="ExclusiveOrExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="ExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\expr</Filter>
+    </ClCompile>
+    <ClCompile Include="FloatLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="InclusiveOrExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="IfExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\expr</Filter>
+    </ClCompile>
+    <ClCompile Include="StringLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleNameSyntax.cpp">
+      <Filter>Source Files\flc\syntax\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="ShiftExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="RelationalExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="NullLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="WhileExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\expr</Filter>
+    </ClCompile>
+    <ClCompile Include="UnaryOperatorExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\unary</Filter>
+    </ClCompile>
+    <ClCompile Include="UnaryExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\unary</Filter>
+    </ClCompile>
+    <ClCompile Include="ULongLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="TernaryExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\ternary</Filter>
+    </ClCompile>
+    <ClCompile Include="UIntegerLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiplicativeExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="MemberAccessExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="LongLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="IntegerLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="AddInstr.cpp">
+      <Filter>Source Files\flc\emit\arithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="AndInstr.cpp">
+      <Filter>Source Files\flc\emit\arithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="CeqInstr.cpp">
+      <Filter>Source Files\flc\emit\compare</Filter>
+    </ClCompile>
+    <ClCompile Include="CgtInstr.cpp">
+      <Filter>Source Files\flc\emit\compare</Filter>
+    </ClCompile>
+    <ClCompile Include="CkfiniteInstr.cpp">
+      <Filter>Source Files\flc\emit\compare</Filter>
+    </ClCompile>
+    <ClCompile Include="CltInstr.cpp">
+      <Filter>Source Files\flc\emit\compare</Filter>
+    </ClCompile>
     <ClCompile Include="ConvI1Instr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+      <Filter>Source Files\flc\emit\convert</Filter>
     </ClCompile>
     <ClCompile Include="ConvI2Instr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+      <Filter>Source Files\flc\emit\convert</Filter>
     </ClCompile>
     <ClCompile Include="ConvI4Instr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+      <Filter>Source Files\flc\emit\convert</Filter>
     </ClCompile>
     <ClCompile Include="ConvI8Instr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+      <Filter>Source Files\flc\emit\convert</Filter>
     </ClCompile>
     <ClCompile Include="ConvIInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="LdcI8Instr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="LdcR4Instr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="LdcR8Instr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="LdcI4Instr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+      <Filter>Source Files\flc\emit\convert</Filter>
     </ClCompile>
     <ClCompile Include="ConvR4Instr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+      <Filter>Source Files\flc\emit\convert</Filter>
     </ClCompile>
     <ClCompile Include="ConvR8Instr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+      <Filter>Source Files\flc\emit\convert</Filter>
+    </ClCompile>
+    <ClCompile Include="BreakInstr.cpp">
+      <Filter>Source Files\flc\emit\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="DivInstr.cpp">
+      <Filter>Source Files\flc\emit\arithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="LdcI8Instr.cpp">
+      <Filter>Source Files\flc\emit\constant</Filter>
+    </ClCompile>
+    <ClCompile Include="LdcI4Instr.cpp">
+      <Filter>Source Files\flc\emit\constant</Filter>
+    </ClCompile>
+    <ClCompile Include="LdcR4Instr.cpp">
+      <Filter>Source Files\flc\emit\constant</Filter>
+    </ClCompile>
+    <ClCompile Include="LdcR8Instr.cpp">
+      <Filter>Source Files\flc\emit\constant</Filter>
+    </ClCompile>
+    <ClCompile Include="LdnullInstr.cpp">
+      <Filter>Source Files\flc\emit\constant</Filter>
     </ClCompile>
     <ClCompile Include="LdstrInstr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+      <Filter>Source Files\flc\emit\constant</Filter>
+    </ClCompile>
+    <ClCompile Include="DupInstr.cpp">
+      <Filter>Source Files\flc\emit\stack</Filter>
+    </ClCompile>
+    <ClCompile Include="NopInstr.cpp">
+      <Filter>Source Files\flc\emit\misc</Filter>
+    </ClCompile>
+    <ClCompile Include="OrInstr.cpp">
+      <Filter>Source Files\flc\emit\arithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="MulInstr.cpp">
+      <Filter>Source Files\flc\emit\arithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="NegInstr.cpp">
+      <Filter>Source Files\flc\emit\arithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="NotInstr.cpp">
+      <Filter>Source Files\flc\emit\arithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="PopInstr.cpp">
+      <Filter>Source Files\flc\emit\stack</Filter>
+    </ClCompile>
+    <ClCompile Include="RemInstr.cpp">
+      <Filter>Source Files\flc\emit\arithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="ShlInstr.cpp">
+      <Filter>Source Files\flc\emit\arithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="ShrInstr.cpp">
+      <Filter>Source Files\flc\emit\arithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="SubInstr.cpp">
+      <Filter>Source Files\flc\emit\arithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="XorInstr.cpp">
+      <Filter>Source Files\flc\emit\arithmetic</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

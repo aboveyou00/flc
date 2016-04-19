@@ -281,7 +281,6 @@
     <ClInclude Include="UnaryExpressionSyntaxFactory.h" />
     <ClInclude Include="UnaryOperator.h" />
     <ClInclude Include="UnaryOperatorExpressionSyntax.h" />
-    <ClInclude Include="UnimplementedInstr.h" />
     <ClInclude Include="Void.h" />
     <ClInclude Include="WhileExpressionSyntax.h" />
     <ClInclude Include="WhileExpressionSyntaxFactory.h" />
