@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "CastOperator.h"
+#include "ExplicitCastOperator.h"
 
 namespace flc
 {
@@ -7,15 +7,28 @@ namespace flc
     {
         CastOperator *Operator::explicitCast()
         {
-            static CastOperator *op = nullptr;
+            static ExplicitCastOperator *op = nullptr;
             if (op == nullptr)
             {
-                op = new CastOperator("op_Explicit");
+                op = new ExplicitCastOperator();
 
                 //auto overloads = op->getPredefinedOverloads();
             }
 
             return op;
+        }
+
+        ExplicitCastOperator::ExplicitCastOperator()
+            : CastOperator("op_Explicit")
+        {
+        }
+        ExplicitCastOperator::~ExplicitCastOperator()
+        {
+        }
+
+        types::MethodOverload *ExplicitCastOperator::findOverload(types::RuntimeType *operand, types::RuntimeType *returnType)
+        {
+            return CastOperator::findOverload(operand, returnType);
         }
     }
 }

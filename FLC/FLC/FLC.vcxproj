@@ -192,6 +192,7 @@
     <ClInclude Include="ErrorToken.h" />
     <ClInclude Include="ExclusiveOrExpressionSyntax.h" />
     <ClInclude Include="ExclusiveOrExpressionSyntaxFactory.h" />
+    <ClInclude Include="ExplicitCastOperator.h" />
     <ClInclude Include="ExpressionSyntax.h" />
     <ClInclude Include="ExpressionSyntaxFactory.h" />
     <ClInclude Include="Float.h" />
@@ -201,6 +202,7 @@
     <ClInclude Include="IfExpressionSyntax.h" />
     <ClInclude Include="IfExpressionSyntaxFactory.h" />
     <ClInclude Include="IMemberInfo.h" />
+    <ClInclude Include="ImplicitCastOperator.h" />
     <ClInclude Include="INameInfo.h" />
     <ClInclude Include="InclusiveOrExpressionSyntax.h" />
     <ClInclude Include="InclusiveOrExpressionSyntaxFactory.h" />

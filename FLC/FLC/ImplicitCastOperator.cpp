@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "CastOperator.h"
+#include "ImplicitCastOperator.h"
 #include "OperatorOverloadMacros.h"
 #include "ConvI1Instr.h"
 #include "ConvI2Instr.h"
@@ -14,15 +14,15 @@ namespace flc
     {
         CastOperator *Operator::implicitCast()
         {
-            static CastOperator *op = nullptr;
+            static ImplicitCastOperator *op = nullptr;
             if (op == nullptr)
             {
-                op = new CastOperator("op_Implicit");
+                op = new ImplicitCastOperator();
 
                 auto overloads = op->getPredefinedOverloads();
                 types::RuntimeType *args[1] = { nullptr };
 
-                __addCast(nullLiteral, object);
+                //__addCast(nullLiteral, object);
 
                 //From sbyte
                 __addCast(int8, int16)->setEmitCallImplementation([](emit::MethodBody *method)
@@ -214,6 +214,44 @@ namespace flc
             }
 
             return op;
+        }
+
+        ImplicitCastOperator::ImplicitCastOperator()
+            : CastOperator("op_Implicit"), cache(types::MethodGroup("op_Implicit"))
+        {
+        }
+        ImplicitCastOperator::~ImplicitCastOperator()
+        {
+        }
+
+        types::MethodOverload *ImplicitCastOperator::findOverload(types::RuntimeType *operand, types::RuntimeType *returnType)
+        {
+            if (operand == nullptr || returnType == nullptr) return nullptr;
+            if (operand->isNull())
+            {
+                if (returnType->isReferenceType()) return createMethodImpl(operand, returnType, [](emit::MethodBody *method) { });
+            }
+            else if (operand->isReferenceType())
+            {
+                if (returnType->isSameAs(types::RuntimeType::object())) return createMethodImpl(operand, returnType, [](emit::MethodBody *method) { });
+            }
+            return CastOperator::findOverload(operand, returnType);
+        }
+
+        types::MethodOverload *ImplicitCastOperator::createMethodImpl(types::RuntimeType *operand, types::RuntimeType *retType, void(*impl)(emit::MethodBody*))
+        {
+            //Allocate on the stack to check the cache
+            types::ParameterInfo operandInfo(operand);
+            auto operandInfoPtr = &operandInfo;
+
+            auto overload = cache.findOverload(retType, &operandInfoPtr, 1);
+            if (overload != nullptr) return overload;
+
+            //Move allocation to the heap when we have to create a new impl
+            operandInfoPtr = new types::ParameterInfo(operandInfo);
+            auto specialOverload = cache.addOverload(retType, &operandInfoPtr, 1);
+            specialOverload->setEmitCallImplementation(impl);
+            return specialOverload;
         }
     }
 }

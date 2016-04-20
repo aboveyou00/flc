@@ -603,6 +603,12 @@
     <ClInclude Include="OperatorOverloadMacros.h">
       <Filter>Header Files\flc\op</Filter>
     </ClInclude>
+    <ClInclude Include="ImplicitCastOperator.h">
+      <Filter>Header Files\flc\op</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplicitCastOperator.h">
+      <Filter>Header Files\flc\op</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommandLineParser.cpp">
