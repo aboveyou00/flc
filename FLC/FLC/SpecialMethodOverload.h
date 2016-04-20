@@ -1,4 +1,5 @@
 #pragma once
+#include <functional>
 #include "MethodOverload.h"
 
 namespace flc
@@ -13,10 +14,10 @@ namespace flc
             ~SpecialMethodOverload();
 
             void emitCall(emit::MethodBody *method) override;
-            void setEmitCallImplementation(void(*impl)(emit::MethodBody*));
+            void setEmitCallImplementation(std::function<void(emit::MethodBody*)> impl);
 
         private:
-            void(*_impl)(emit::MethodBody*) = nullptr;
+            std::function<void(emit::MethodBody*)> _impl = nullptr;
         };
     }
 }

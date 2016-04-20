@@ -22,7 +22,7 @@ namespace flc
             if (_impl != nullptr) _impl(method);
             else reportNotImplemented("SpecialMethodOverload.emitCall has no impl!");
         }
-        void SpecialMethodOverload::setEmitCallImplementation(void(*impl)(emit::MethodBody*))
+        void SpecialMethodOverload::setEmitCallImplementation(std::function<void(emit::MethodBody*)> impl)
         {
             _impl = impl;
         }

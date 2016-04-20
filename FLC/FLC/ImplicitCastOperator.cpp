@@ -7,6 +7,7 @@
 #include "ConvI8Instr.h"
 #include "ConvR4Instr.h"
 #include "ConvR8Instr.h"
+#include "BoxInstr.h"
 
 namespace flc
 {
@@ -229,16 +230,23 @@ namespace flc
             if (operand == nullptr || returnType == nullptr) return nullptr;
             if (operand->isNull())
             {
-                if (returnType->isReferenceType()) return createMethodImpl(operand, returnType, [](emit::MethodBody *method) { });
+                if (returnType->isReferenceType()) return createMethodImpl(operand, returnType, [](emit::MethodBody *) { });
             }
             else if (operand->isReferenceType())
             {
-                if (returnType->isSameAs(types::RuntimeType::object())) return createMethodImpl(operand, returnType, [](emit::MethodBody *method) { });
+                if (returnType->isSameAs(types::RuntimeType::object())) return createMethodImpl(operand, returnType, [](emit::MethodBody *) { });
+            }
+            else if (operand->isValueType())
+            {
+                if (returnType->isSameAs(types::RuntimeType::object())) return createMethodImpl(operand, returnType, [returnType](emit::MethodBody *method)
+                {
+                    method->emit(new emit::BoxInstr(returnType));
+                });
             }
             return CastOperator::findOverload(operand, returnType);
         }
 
-        types::MethodOverload *ImplicitCastOperator::createMethodImpl(types::RuntimeType *operand, types::RuntimeType *retType, void(*impl)(emit::MethodBody*))
+        types::MethodOverload *ImplicitCastOperator::createMethodImpl(types::RuntimeType *operand, types::RuntimeType *retType, std::function<void(emit::MethodBody*)> impl)
         {
             //Allocate on the stack to check the cache
             types::ParameterInfo operandInfo(operand);

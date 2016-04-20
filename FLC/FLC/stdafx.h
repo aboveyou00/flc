@@ -15,6 +15,7 @@
 #include <sstream>
 #include <vector>
 #include <stdexcept>
+#include <functional>
 
 #include "Errors.h"
 

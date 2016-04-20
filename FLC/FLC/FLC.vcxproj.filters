@@ -609,6 +609,9 @@
     <ClInclude Include="ExplicitCastOperator.h">
       <Filter>Header Files\flc\op</Filter>
     </ClInclude>
+    <ClInclude Include="BoxInstr.h">
+      <Filter>Header Files\flc\emit\convert</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommandLineParser.cpp">
@@ -1111,6 +1114,9 @@
     </ClCompile>
     <ClCompile Include="CastOperator.cpp">
       <Filter>Source Files\flc\op\cast</Filter>
+    </ClCompile>
+    <ClCompile Include="BoxInstr.cpp">
+      <Filter>Source Files\flc\emit\convert</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

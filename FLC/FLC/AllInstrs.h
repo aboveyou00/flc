@@ -130,7 +130,6 @@
 //73 <T>   newobj <ctor>
 //74 <T>   castclass <type>
 //75 <T>   isinst <type>
-//8C       box
 //79 <T>   unbox <valuetype>
 //A5 <T>   unbox.any <type>
 //7A       throw

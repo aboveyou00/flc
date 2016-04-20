@@ -73,5 +73,10 @@ namespace Test
         {
             testExpressionType("null + \"Two\"", RuntimeType::string());
         }
+
+        TEST_METHOD(Test_additive_exprType_addStringInt32)
+        {
+            testExpressionType("\"One\" + 2", RuntimeType::string());
+        }
     };
 }

@@ -14,7 +14,7 @@ namespace flc
             types::MethodOverload *findOverload(types::RuntimeType *operand, types::RuntimeType *retType) override;
 
         private:
-            types::MethodOverload *createMethodImpl(types::RuntimeType *operand, types::RuntimeType *retType, void(*impl)(emit::MethodBody*));
+            types::MethodOverload *createMethodImpl(types::RuntimeType *operand, types::RuntimeType *retType, std::function<void(emit::MethodBody*)> impl);
             types::MethodGroup cache;
         };
     }

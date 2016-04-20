@@ -154,6 +154,7 @@
     <ClInclude Include="Boolean.h" />
     <ClInclude Include="BooleanLiteralSyntax.h" />
     <ClInclude Include="BooleanLiteralToken.h" />
+    <ClInclude Include="BoxInstr.h" />
     <ClInclude Include="BreakInstr.h" />
     <ClInclude Include="CastOperator.h" />
     <ClInclude Include="Char.h" />
@@ -310,6 +311,7 @@
     <ClCompile Include="Boolean.cpp" />
     <ClCompile Include="BooleanLiteralSyntax.cpp" />
     <ClCompile Include="BooleanLiteralToken.cpp" />
+    <ClCompile Include="BoxInstr.cpp" />
     <ClCompile Include="BreakInstr.cpp" />
     <ClCompile Include="CastOperator.cpp" />
     <ClCompile Include="CeqInstr.cpp" />
