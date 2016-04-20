@@ -12,10 +12,7 @@ namespace flc
             UnaryOperator(std::string opSymbol, std::string opMethodName);
             ~UnaryOperator();
 
-            types::MethodOverload* findOverload(types::RuntimeType* operand);
-
-        private:
-            void(*initializeFn)(UnaryOperator*);
+            virtual types::MethodOverload* findOverload(types::RuntimeType* operand);
         };
     }
 }

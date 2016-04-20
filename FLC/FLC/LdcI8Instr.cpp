@@ -20,7 +20,7 @@ namespace flc
 
         void LdcI8Instr::stringify(std::stringstream *stream)
         {
-            *stream << "ldc.i8  " << value;
+            *stream << "ldc.i8 " << value;
         }
     }
 }

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "MethodOverload.h"
+#include "CastOperator.h"
 
 namespace flc
 {
@@ -42,7 +43,12 @@ namespace flc
             for (int q = 0; q < paramCount; q++)
             {
                 auto param = getParameterInfo(q);
-                if (!param->getType()->isSameAs(paramTypes[q])) return false;
+                if (!param->getType()->isSameAs(paramTypes[q]))
+                {
+                    auto cast = op::Operator::implicitCast()->findOverload(paramTypes[q], param->getType());
+                    if (cast == nullptr) return false;
+                    //return false;
+                }
             }
             return true;
         }

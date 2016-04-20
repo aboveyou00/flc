@@ -11,3 +11,7 @@
                              overloads->addOverload(types::RuntimeType::##type(), args, 2)
 #define __addOverload2_alt(rettype, type1, type2) args[0] = types::RuntimeType::##type1(); args[1] = types::RuntimeType::##type2(); \
                                                   overloads->addOverload(types::RuntimeType::##rettype(), args, 2)
+
+//Cast
+#define __addCast(type, rettype) args[0] = types::RuntimeType::##type(); \
+                                 overloads->addOverload(types::RuntimeType::##rettype(), args, 1)

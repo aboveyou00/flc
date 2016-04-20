@@ -12,10 +12,7 @@ namespace flc
             BinaryOperator(std::string opSymbol, std::string opMethodName);
             ~BinaryOperator();
 
-            types::MethodOverload* findOverload(types::RuntimeType* left, types::RuntimeType* right);
-
-        private:
-            void(*initializeFn)(BinaryOperator*);
+            virtual types::MethodOverload* findOverload(types::RuntimeType* left, types::RuntimeType* right);
         };
     }
 }

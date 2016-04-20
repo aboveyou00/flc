@@ -94,7 +94,7 @@ namespace flc
         SpecialMethodOverload* MethodGroup::addOverload(RuntimeType* returnType, ParameterInfo** parameters, int parameterCount)
         {
             auto oldOverload = findOverload(returnType, parameters, parameterCount);
-            if (oldOverload != nullptr) throw std::string("You tried to add a duplicate method overload to a method group!");
+            if (oldOverload != nullptr) throw std::invalid_argument("You tried to add a duplicate method overload to a method group!");
 
             auto new_overload = new SpecialMethodOverload(returnType, parameters, parameterCount);
             _overloads.push_back(new_overload);

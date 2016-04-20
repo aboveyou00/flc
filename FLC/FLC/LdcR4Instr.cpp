@@ -20,7 +20,7 @@ namespace flc
 
         void LdcR4Instr::stringify(std::stringstream *stream)
         {
-            *stream << "ldc.r4  " << value;
+            *stream << "ldc.r4 " << value;
         }
     }
 }

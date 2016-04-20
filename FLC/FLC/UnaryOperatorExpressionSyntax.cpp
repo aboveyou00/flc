@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "UnaryOperatorExpressionSyntax.h"
+#include "CastOperator.h"
 
 namespace flc
 {
@@ -48,7 +49,12 @@ namespace flc
         void UnaryOperatorExpressionSyntax::emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method)
         {
             _expr->emit(ctx, method);
-            //TODO: implicitly convert _expr->getExpressionType() to _overload->getParameterInfo(0)->getType()
+            if (_overload != nullptr)
+            {
+                auto cast = op::Operator::implicitCast()->findOverload(_expr->getExpressionType(), _overload->getParameterInfo(0)->getType());
+                if (cast != nullptr) cast->emitCall(method);
+            }
+
             if (_overload != nullptr) _overload->emitCall(method);
         }
 

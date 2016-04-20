@@ -28,8 +28,8 @@ namespace flc
 
         void ConvI2Instr::stringify(std::stringstream *stream)
         {
-            *stream << "conv";
-            if (checkOverflow) *stream << ".ovf";
+            *stream << "conv.";
+            if (checkOverflow) *stream << "ovf.";
             if (fromSigned) *stream << "i";
             else *stream << "u";
             *stream << "2";

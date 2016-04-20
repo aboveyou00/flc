@@ -10,13 +10,12 @@
 #include <cstdio>
 #include <tchar.h>
 
-// TODO: reference additional headers your program requires here
-
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <vector>
-
-using namespace std;
+#include <stdexcept>
 
 #include "Errors.h"
+
+using namespace std;

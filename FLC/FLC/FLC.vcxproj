@@ -309,6 +309,7 @@
     <ClCompile Include="BooleanLiteralSyntax.cpp" />
     <ClCompile Include="BooleanLiteralToken.cpp" />
     <ClCompile Include="BreakInstr.cpp" />
+    <ClCompile Include="CastOperator.cpp" />
     <ClCompile Include="CeqInstr.cpp" />
     <ClCompile Include="CgtInstr.cpp" />
     <ClCompile Include="Char.cpp" />

@@ -8,6 +8,7 @@ namespace flc
     {
         class BinaryOperator;
         class UnaryOperator;
+        class CastOperator;
 
         class Operator
         {
@@ -33,8 +34,8 @@ namespace flc
             static UnaryOperator *logicalNot();
             static UnaryOperator *onesComplement();
 
-            static UnaryOperator *implicitCast();
-            static UnaryOperator *explicitCast();
+            static CastOperator *implicitCast();
+            static CastOperator *explicitCast();
 
             static BinaryOperator *multiplication();
             static BinaryOperator *division();

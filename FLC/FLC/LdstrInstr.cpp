@@ -20,7 +20,7 @@ namespace flc
 
         void LdstrInstr::stringify(std::stringstream *stream)
         {
-            *stream << "ldstr  \"" << value << "\"";
+            *stream << "ldstr \"" << value << "\"";
         }
     }
 }

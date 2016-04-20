@@ -1,14 +1,4 @@
 /*
-"Hello,\r\n World!"
-'a'
-'\t'
-1 + 2 + 3
-2 * 3 - 1
-true
-!false
-null
-1.23
-
 true ? false : true
 true || false
 true && false
@@ -19,7 +9,6 @@ true && false
 ++"This makes no sense!"
 --"Neither does this!"
 
-(true)
 (true) || (true && false)
 */
 
@@ -91,4 +80,6 @@ null
 
 //Testing expressions:
 
+32 + 0xFFFFFFFFL
 
+2 + 5 * 9.4 - 3

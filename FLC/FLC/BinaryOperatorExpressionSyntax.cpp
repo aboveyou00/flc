@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "BinaryOperatorExpressionSyntax.h"
+#include "CastOperator.h"
 
 namespace flc
 {
@@ -53,9 +54,19 @@ namespace flc
         void BinaryOperatorExpressionSyntax::emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method)
         {
             _left->emit(ctx, method);
-            //TODO: implicitly convert _left->getExpressionType() to _overload->getParameterInfo(0)->getType()
+            if (_overload != nullptr)
+            {
+                auto cast = op::Operator::implicitCast()->findOverload(_left->getExpressionType(), _overload->getParameterInfo(0)->getType());
+                if (cast != nullptr) cast->emitCall(method);
+            }
+
             _right->emit(ctx, method);
-            //TODO: implicitly convert _right->getExpressionType() to _overload->getParameterInfo(1)->getType()
+            if (_overload != nullptr)
+            {
+                auto cast = op::Operator::implicitCast()->findOverload(_right->getExpressionType(), _overload->getParameterInfo(1)->getType());
+                if (cast != nullptr) cast->emitCall(method);
+            }
+
             if (_overload != nullptr) _overload->emitCall(method);
         }
 

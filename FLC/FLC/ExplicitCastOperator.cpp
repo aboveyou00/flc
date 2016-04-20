@@ -1,16 +1,16 @@
 #include "stdafx.h"
-#include "UnaryOperator.h"
+#include "CastOperator.h"
 
 namespace flc
 {
     namespace op
     {
-        UnaryOperator *Operator::explicitCast()
+        CastOperator *Operator::explicitCast()
         {
-            static UnaryOperator *op = nullptr;
+            static CastOperator *op = nullptr;
             if (op == nullptr)
             {
-                op = new UnaryOperator("", "op_Explicit");
+                op = new CastOperator("op_Explicit");
 
                 //auto overloads = op->getPredefinedOverloads();
             }
