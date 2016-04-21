@@ -13,6 +13,7 @@ namespace flc
 
             void emit(Instr *instr);
             void deleteInstructions();
+            const std::vector<Instr*> *getInstructions();
 
             std::string toString();
 

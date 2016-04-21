@@ -25,6 +25,10 @@ namespace flc
             }
             instructions.clear();
         }
+        const vector<Instr*> *MethodBody::getInstructions()
+        {
+            return &instructions;
+        }
 
         string MethodBody::toString()
         {

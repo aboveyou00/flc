@@ -43,6 +43,9 @@
     <Filter Include="Source Files\flc\emit">
       <UniqueIdentifier>{1308d285-e878-4fe7-b0c2-7120780880fd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\flc\emit">
+      <UniqueIdentifier>{1d2b666e-0ffe-4712-b101-6140da40af3d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -56,6 +59,9 @@
     </ClInclude>
     <ClInclude Include="testExpressionType.h">
       <Filter>Header Files\flc\syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="testEmitUnoptimized.h">
+      <Filter>Header Files\flc\emit</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -214,6 +220,51 @@
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitLiteral.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitUnoptomized.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitRelational.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitShift.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitAdditive.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitInclusiveOr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitExclusiveOr.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitAnd.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitUnary.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitImplicit.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitEquality.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitCompound.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitMultiplicative.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitTernary.cpp">
+      <Filter>Source Files\flc\emit</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitConditional.cpp">
+      <Filter>Source Files\flc\emit</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,27 +1,52 @@
 #pragma once
 
+//Arithmetic
 #include "AddInstr.h"
 #include "AndInstr.h"
-#include "BreakInstr.h"
-#include "CkfiniteInstr.h"
-#include "CeqInstr.h"
-#include "CgtInstr.h"
-#include "CltInstr.h"
 #include "DivInstr.h"
-#include "DupInstr.h"
-#include "LdcI4Instr.h"
-#include "LdnullInstr.h"
 #include "MulInstr.h"
 #include "NegInstr.h"
-#include "NopInstr.h"
 #include "NotInstr.h"
 #include "OrInstr.h"
-#include "PopInstr.h"
 #include "RemInstr.h"
 #include "ShlInstr.h"
 #include "ShrInstr.h"
 #include "SubInstr.h"
 #include "XorInstr.h"
+
+//Branch
+
+//Compare
+#include "CeqInstr.h"
+#include "CgtInstr.h"
+#include "CkfiniteInstr.h"
+#include "CltInstr.h"
+
+//Constant
+#include "LdcI4Instr.h"
+#include "LdcI8Instr.h"
+#include "LdcR4Instr.h"
+#include "LdcR8Instr.h"
+#include "LdnullInstr.h"
+#include "LdstrInstr.h"
+
+//Convert
+#include "BoxInstr.h"
+#include "ConvI1Instr.h"
+#include "ConvI2Instr.h"
+#include "ConvI4Instr.h"
+#include "ConvI8Instr.h"
+#include "ConvIInstr.h"
+#include "ConvR4Instr.h"
+#include "ConvR8Instr.h"
+
+//Misc
+#include "BreakInstr.h"
+#include "NopInstr.h"
+
+//Stack
+#include "DupInstr.h"
+#include "PopInstr.h"
 
 
 

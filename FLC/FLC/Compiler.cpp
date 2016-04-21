@@ -125,9 +125,15 @@ namespace flc
             else cout << "???";
             cout << endl;
 
+            if (exprType == nullptr)
+            {
+                cout << "Cannot emit instructions - expression type could not be resolved." << endl;
+                continue;
+            }
+
             emit::MethodBody method;
             expr->emit(&ctx, &method);
-            method.emit(new emit::PopInstr());
+            if (!exprType->isVoid()) method.emit(new emit::PopInstr());
             cout << method.toString();
             method.deleteInstructions();
 

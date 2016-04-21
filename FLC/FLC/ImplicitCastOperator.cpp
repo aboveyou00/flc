@@ -238,9 +238,9 @@ namespace flc
             }
             else if (operand->isValueType())
             {
-                if (returnType->isSameAs(types::RuntimeType::object())) return createMethodImpl(operand, returnType, [returnType](emit::MethodBody *method)
+                if (returnType->isSameAs(types::RuntimeType::object())) return createMethodImpl(operand, returnType, [operand](emit::MethodBody *method)
                 {
-                    method->emit(new emit::BoxInstr(returnType));
+                    method->emit(new emit::BoxInstr(operand));
                 });
             }
             return CastOperator::findOverload(operand, returnType);

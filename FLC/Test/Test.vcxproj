@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="testEmitUnoptimized.h" />
     <ClInclude Include="testExpressionType.h" />
     <ClInclude Include="testFactory.h" />
   </ItemGroup>
@@ -178,6 +179,21 @@
     <ClCompile Include="testConditionalOrExpressionSyntax.cpp" />
     <ClCompile Include="testConditionalOrExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testDoubleLiteralSyntax.cpp" />
+    <ClCompile Include="testEmitAdditive.cpp" />
+    <ClCompile Include="testEmitAnd.cpp" />
+    <ClCompile Include="testEmitCompound.cpp" />
+    <ClCompile Include="testEmitConditional.cpp" />
+    <ClCompile Include="testEmitEquality.cpp" />
+    <ClCompile Include="testEmitExclusiveOr.cpp" />
+    <ClCompile Include="testEmitImplicit.cpp" />
+    <ClCompile Include="testEmitInclusiveOr.cpp" />
+    <ClCompile Include="testEmitLiteral.cpp" />
+    <ClCompile Include="testEmitMultiplicative.cpp" />
+    <ClCompile Include="testEmitRelational.cpp" />
+    <ClCompile Include="testEmitShift.cpp" />
+    <ClCompile Include="testEmitTernary.cpp" />
+    <ClCompile Include="testEmitUnary.cpp" />
+    <ClCompile Include="testEmitUnoptomized.cpp" />
     <ClCompile Include="testEqualityExpressionSyntax.cpp" />
     <ClCompile Include="testEqualityExpressionSyntaxFactory.cpp" />
     <ClCompile Include="testErrors.cpp" />
