@@ -85,33 +85,6 @@
 
 
 
-//3B <int32>   beq <target>
-//2E <int8>    beq.s <target>
-//3C <int32>   bge <target>
-//2F <int8>    bge.s <target>
-//41 <int32>   bge.un <target>
-//34 <int8>    bge.un.s <target>
-//3D <int32>   bgt <target>
-//30 <int8>    bgt.s <target>
-//42 <int32>   bgt.un <target>
-//35 <int8>    bgt.un.s <target>
-//3E <int32>   ble <target>
-//31 <int8>    ble.s <target>
-//43 <int32>   ble.un <target>
-//36 <int8>    ble.un.s <target>
-//3F <int32>   blt <target>
-//32 <int8>    blt.s <target>
-//44 <int32>   blt.un <target>
-//37 <int8>    blt.un.s <target>
-//40 <int32>   bne <target>
-//33 <int8>    bne.s <target>
-//38 <int32>   br <target>
-//2B <int8>    br.s <target>
-//39 <int32>   brfalse <target>;     brnull <target>;     brzero <target>
-//2C <int8>    brfalse.s <target>;   brnull.s <target>;   brzero.s <target>
-//3A <int32>   brtrue <target>;     brinst <target>;
-//2D <int8>    brtrue.s <target>;   brinst.s <target>;
-
 //45 <uint32> <int32 ...>   switch <t1> <t2> <t3...> <tN>
 
 

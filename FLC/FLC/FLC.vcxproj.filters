@@ -612,6 +612,39 @@
     <ClInclude Include="BoxInstr.h">
       <Filter>Header Files\flc\emit\convert</Filter>
     </ClInclude>
+    <ClInclude Include="BranchInstr.h">
+      <Filter>Header Files\flc\emit\branch</Filter>
+    </ClInclude>
+    <ClInclude Include="BrInstr.h">
+      <Filter>Header Files\flc\emit\branch</Filter>
+    </ClInclude>
+    <ClInclude Include="BeqInstr.h">
+      <Filter>Header Files\flc\emit\branch</Filter>
+    </ClInclude>
+    <ClInclude Include="BgeInstr.h">
+      <Filter>Header Files\flc\emit\branch</Filter>
+    </ClInclude>
+    <ClInclude Include="BgtInstr.h">
+      <Filter>Header Files\flc\emit\branch</Filter>
+    </ClInclude>
+    <ClInclude Include="BleInstr.h">
+      <Filter>Header Files\flc\emit\branch</Filter>
+    </ClInclude>
+    <ClInclude Include="BltInstr.h">
+      <Filter>Header Files\flc\emit\branch</Filter>
+    </ClInclude>
+    <ClInclude Include="BneInstr.h">
+      <Filter>Header Files\flc\emit\branch</Filter>
+    </ClInclude>
+    <ClInclude Include="BrtrueInstr.h">
+      <Filter>Header Files\flc\emit\branch</Filter>
+    </ClInclude>
+    <ClInclude Include="BrfalseInstr.h">
+      <Filter>Header Files\flc\emit\branch</Filter>
+    </ClInclude>
+    <ClInclude Include="BranchTarget.h">
+      <Filter>Header Files\flc\emit\branch</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommandLineParser.cpp">
@@ -1117,6 +1150,15 @@
     </ClCompile>
     <ClCompile Include="BoxInstr.cpp">
       <Filter>Source Files\flc\emit\convert</Filter>
+    </ClCompile>
+    <ClCompile Include="BranchInstr.cpp">
+      <Filter>Source Files\flc\emit\branch</Filter>
+    </ClCompile>
+    <ClCompile Include="BrInstr.cpp">
+      <Filter>Source Files\flc\emit\branch</Filter>
+    </ClCompile>
+    <ClCompile Include="BranchTarget.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
