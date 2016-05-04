@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "ParameterInfo.h"
+#include "RuntimeType.h"
 
 namespace flc
 {

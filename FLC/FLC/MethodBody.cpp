@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "MethodBody.h"
+#include "Instr.h"
 
 namespace flc
 {

@@ -5,8 +5,6 @@ namespace flc
 {
     namespace types
     {
-        class RuntimeType;
-
         class IMemberInfo : public INameInfo
         {
         public:

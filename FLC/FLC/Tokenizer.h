@@ -1,28 +1,31 @@
 #pragma once
 #include <string>
+#include <vector>
 #include <istream>
-#include "Token.h"
+#include <sstream>
 
 namespace flc
 {
     namespace tokens
     {
+        class Token;
+
         class Tokenizer
         {
         public:
             Tokenizer();
             ~Tokenizer();
 
-			vector<Token*>* tokenize(istream *sourceFile, string path="");
+			std::vector<Token*> *tokenize(std::istream *sourceFile, std::string path="");
 		    
 		private:
-			Token* parseNextToken(istream *source, int& index, string path);
+			Token *parseNextToken(std::istream *source, int &index, std::string path);
 
-			Token* parseCharacterToken(istream *source, int& index, string path);
-			Token* parseNumericToken(istream *source, int& index, string path);
-			Token* parseStringToken(istream *source, int& index, string path);
-			Token* parseSymbolToken(istream *source, int& index, string path);
-			Token* parseIdentifierToken(istream *source, int& index, string path);
+			Token *parseCharacterToken(std::istream *source, int &index, std::string path);
+			Token *parseNumericToken(std::istream *source, int &index, std::string path);
+			Token *parseStringToken(std::istream *source, int &index, std::string path);
+			Token *parseSymbolToken(std::istream *source, int &index, std::string path);
+			Token *parseIdentifierToken(std::istream *source, int &index, std::string path);
 			
 			bool isOctal(char16_t c);
 			bool isDecimal(char16_t c);
@@ -30,13 +33,13 @@ namespace flc
 			bool isAlphanumeric(char16_t c);
 			bool isWhiteSpace(char16_t c);
 
-            char16_t escapeSequenceToChar(istream *source, int *length);
+            char16_t escapeSequenceToChar(std::istream *source, int *length);
 
-            bool parseComment(istream *source);
+            bool parseComment(std::istream *source);
             
-            bool parseBinaryIntegerLiteral(istream *source, stringstream *numberString);
-            bool parseOctalIntegerLiteral(istream *source, stringstream *numberString);
-            bool parseHexIntegerLiteral(istream *source, stringstream *numberString);
+            bool parseBinaryIntegerLiteral(std::istream *source, std::stringstream *numberString);
+            bool parseOctalIntegerLiteral(std::istream *source, std::stringstream *numberString);
+            bool parseHexIntegerLiteral(std::istream *source, std::stringstream *numberString);
         };
     }
 }

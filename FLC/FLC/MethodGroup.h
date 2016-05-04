@@ -1,12 +1,15 @@
 #pragma once
 #include <vector>
 #include "INameInfo.h"
-#include "SpecialMethodOverload.h"
 
 namespace flc
 {
     namespace types
     {
+        class SpecialMethodOverload;
+        class ParameterInfo;
+        class MethodOverload;
+
         class MethodGroup : INameInfo
         {
         public:

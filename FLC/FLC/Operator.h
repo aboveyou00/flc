@@ -1,9 +1,15 @@
 #pragma once
 #include <string>
-#include "MethodGroup.h"
 
 namespace flc
 {
+    namespace types
+    {
+        class MethodGroup;
+        class MethodOverload;
+        class RuntimeType;
+    }
+
     namespace op
     {
         class BinaryOperator;

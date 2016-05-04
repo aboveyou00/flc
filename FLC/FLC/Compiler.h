@@ -2,11 +2,13 @@
 #include <string>
 #include <istream>
 #include <vector>
-#include "Token.h"
 
 namespace flc
 {
-    using namespace std;
+    namespace tokens
+    {
+        class Token;
+    }
 
     class Compiler
     {
@@ -14,14 +16,14 @@ namespace flc
         Compiler();
         ~Compiler();
 
-        bool tryAddSource(string source, string path = "Unknown Code Source");
-        bool tryAddSource(istream *source, string path = "Unknown Code Source");
-        bool tryAddSourceFile(string path);
+        bool tryAddSource(std::string source, std::string path = "Unknown Code Source");
+        bool tryAddSource(std::istream *source, std::string path = "Unknown Code Source");
+        bool tryAddSourceFile(std::string path);
 
         bool tryCompile();
 
     private:
-        vector<vector<tokens::Token*>*> sourceFiles;
+        std::vector<std::vector<tokens::Token*>*> sourceFiles;
         bool assertValidTokens();
     };
 }

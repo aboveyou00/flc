@@ -8,7 +8,7 @@ namespace flc
         class NullLiteralToken : public KeywordToken
         {
         public:
-            NullLiteralToken(string sourceFile, int startPos);
+            NullLiteralToken(std::string sourceFile, int startPos);
             ~NullLiteralToken();
 
             bool isNullLiteral() override;

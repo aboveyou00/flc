@@ -5,20 +5,18 @@ namespace flc
 {
     namespace tokens
     {
-        using namespace std;
-
         class Comment
         {
         public:
-            Comment(int pos, int length, string content);
+            Comment(int pos, int length, std::string content);
             ~Comment();
 
-            string getContent();
+            std::string getContent();
 
-            virtual string toString();
+            virtual std::string toString();
 
         private:
-            string _content;
+            std::string _content;
             int _pos, _length;
         };
     }

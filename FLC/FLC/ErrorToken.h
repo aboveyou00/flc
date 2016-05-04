@@ -8,15 +8,15 @@ namespace flc
         class ErrorToken : public Token
         {
         public:
-            ErrorToken(string sourceFile, int startPos, int length, string error);
+            ErrorToken(std::string sourceFile, int startPos, int length, std::string error);
             ~ErrorToken();
 
-            string getError();
+            std::string getError();
 
-            string toString() override;
+            std::string toString() override;
 
         private:
-            string _err;
+            std::string _err;
         };
     }
 }

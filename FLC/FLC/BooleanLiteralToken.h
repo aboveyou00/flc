@@ -8,7 +8,7 @@ namespace flc
         class BooleanLiteralToken : public KeywordToken
         {
         public:
-            BooleanLiteralToken(string sourceFile, int startPos, bool value);
+            BooleanLiteralToken(std::string sourceFile, int startPos, bool value);
             ~BooleanLiteralToken();
 
             bool getValue();

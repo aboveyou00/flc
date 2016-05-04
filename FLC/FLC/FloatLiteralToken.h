@@ -8,7 +8,7 @@ namespace flc
         class FloatLiteralToken : public Token
         {
         public:
-            FloatLiteralToken(string sourceFile, int startPos, int length, float value);
+            FloatLiteralToken(std::string sourceFile, int startPos, int length, float value);
             ~FloatLiteralToken();
 
             float getValue();
@@ -16,7 +16,7 @@ namespace flc
             bool isFloatLiteral() override;
             bool isFloatLiteral(float val) override;
 
-            string toString() override;
+            std::string toString() override;
 
         private:
             float _val;

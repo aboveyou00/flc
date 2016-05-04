@@ -1,5 +1,10 @@
 #pragma once
 
+#include "RuntimeType.h"
+#include "MethodGroup.h"
+#include "SpecialMethodOverload.h"
+#include "MethodBody.h"
+
 //Unary
 #define __addOverload1(type) arg[0] = types::RuntimeType::##type(); \
                              overloads->addOverload(types::RuntimeType::##type(), arg, 1)

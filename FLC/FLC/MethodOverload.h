@@ -1,14 +1,17 @@
 #pragma once
 #include <vector>
-#include "RuntimeType.h"
-#include "ParameterInfo.h"
-#include "MethodBody.h"
 
 namespace flc
 {
+    namespace emit
+    {
+        class MethodBody;
+    }
+
     namespace types
     {
-        class MethodGroup;
+        class RuntimeType;
+        class ParameterInfo;
 
         class MethodOverload
         {

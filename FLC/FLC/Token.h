@@ -2,31 +2,32 @@
 #include <string>
 #include <vector>
 #include <ostream>
-#include "Comment.h"
 
 namespace flc
 {
     namespace tokens
     {
+        class Comment;
+
         class Token
         {
         public:
-            Token(string sourceFile, int startPos, int length);
+            Token(std::string sourceFile, int startPos, int length);
             ~Token();
 
-            string getSourceFile();
+            std::string getSourceFile();
             int getStartPosition();
             int getLength();
             int getEndPosition();
 
             virtual bool isSymbol() { return false; }
-            virtual bool isSymbol(string) { return false; }
+            virtual bool isSymbol(std::string) { return false; }
             virtual bool isKeyword() { return false; }
-            virtual bool isKeyword(string) { return false; }
+            virtual bool isKeyword(std::string) { return false; }
             virtual bool isIdentifier() { return false; }
-            virtual bool isIdentifier(string) { return false; }
+            virtual bool isIdentifier(std::string) { return false; }
             virtual bool isStringLiteral() { return false; }
-            virtual bool isStringLiteral(string) { return false; }
+            virtual bool isStringLiteral(std::string) { return false; }
             virtual bool isIntegerLiteral() { return false; }
             virtual bool isIntegerLiteral(uint32_t) { return false; }
             virtual bool isUIntegerLiteral() { return false; }
@@ -47,16 +48,16 @@ namespace flc
             virtual bool isEndOfFile() { return false; }
 
             void prependComment(Comment *cmt);
-            const vector<const Comment*>* getComments();
+            const std::vector<const Comment*> *getComments();
 
-            virtual string toString() = 0;
+            virtual std::string toString() = 0;
 
         private:
-            string _path;
+            std::string _path;
             int _start, _length;
-            vector<const Comment*>* _comments;
+            std::vector<const Comment*> *_comments;
         };
 
-        std::ostream& operator<<(std::ostream& o, Token& tok);
+        std::ostream& operator<<(std::ostream &o, Token &tok);
     }
 }

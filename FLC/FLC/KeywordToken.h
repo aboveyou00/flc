@@ -8,18 +8,18 @@ namespace flc
         class KeywordToken : public Token
         {
         public:
-            KeywordToken(string sourceFile, int startPos, string value);
+            KeywordToken(std::string sourceFile, int startPos, std::string value);
             ~KeywordToken();
 
-            string getValue();
+            std::string getValue();
 
             bool isKeyword() override;
-            bool isKeyword(string sym) override;
+            bool isKeyword(std::string sym) override;
 
-            string toString() override;
+            std::string toString() override;
 
         private:
-            string _val;
+            std::string _val;
         };
     }
 }

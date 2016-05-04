@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "ImplicitCastOperator.h"
 #include "OperatorOverloadMacros.h"
+#include "ParameterInfo.h"
 #include "ConvI1Instr.h"
 #include "ConvI2Instr.h"
 #include "ConvI4Instr.h"

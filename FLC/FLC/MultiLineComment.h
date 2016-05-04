@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 #include "Comment.h"
 
 namespace flc
@@ -9,10 +8,10 @@ namespace flc
         class MultiLineComment : public Comment
         {
         public:
-            MultiLineComment(int pos, int length, string content);
+            MultiLineComment(int pos, int length, std::string content);
             ~MultiLineComment();
 
-            string toString() override;
+            std::string toString() override;
         };
     }
 }

@@ -8,18 +8,18 @@ namespace flc
         class SymbolToken : public Token
         {
         public:
-            SymbolToken(string sourceFile, int startPos, string symbol);
+            SymbolToken(std::string sourceFile, int startPos, std::string symbol);
             ~SymbolToken();
 
-            string getSymbol();
+            std::string getSymbol();
 
             bool isSymbol() override;
-            bool isSymbol(string sym) override;
+            bool isSymbol(std::string sym) override;
 
-            string toString() override;
+            std::string toString() override;
 
         private:
-            string _sym;
+            std::string _sym;
         };
     }
 }

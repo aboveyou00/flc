@@ -1,8 +1,14 @@
 #pragma once
 #include "CastOperator.h"
+#include "MethodGroup.h"
 
 namespace flc
 {
+    namespace emit
+    {
+        class MethodBody;
+    }
+
     namespace op
     {
         class ImplicitCastOperator : public CastOperator

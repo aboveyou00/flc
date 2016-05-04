@@ -1,10 +1,12 @@
 #pragma once
-#include "Instr.h"
+#include <vector>
 
 namespace flc
 {
     namespace emit
     {
+        class Instr;
+
         class MethodBody
         {
         public:

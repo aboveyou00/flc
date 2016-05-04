@@ -176,7 +176,7 @@ namespace Test
         void UseString(std::string str)
         {
             Tokenizer tokenizer;
-            istringstream stream(str);
+            std::stringstream stream(str);
             toks = tokenizer.tokenize(&stream);
             idx = 0;
         }

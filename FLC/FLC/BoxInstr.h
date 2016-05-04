@@ -1,9 +1,13 @@
 #pragma once
 #include "Instr.h"
-#include "RuntimeType.h"
 
 namespace flc
 {
+    namespace types
+    {
+        class RuntimeType;
+    }
+
     namespace emit
     {
         class BoxInstr : public Instr

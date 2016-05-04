@@ -8,18 +8,18 @@ namespace flc
         class StringLiteralToken : public Token
         {
         public:
-            StringLiteralToken(string sourceFile, int startPos, int length, string value);
+            StringLiteralToken(std::string sourceFile, int startPos, int length, std::string value);
             ~StringLiteralToken();
 
-            string getValue();
+            std::string getValue();
 
             bool isStringLiteral() override;
-            bool isStringLiteral(string val) override;
+            bool isStringLiteral(std::string val) override;
 
-            string toString() override;
+            std::string toString() override;
 
         private:
-            string _val;
+            std::string _val;
         };
     }
 }

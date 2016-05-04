@@ -8,20 +8,20 @@ namespace flc
         class IdentifierToken : public Token
         {
         public:
-            IdentifierToken(string sourceFile, int startPos, int length, string value);
+            IdentifierToken(std::string sourceFile, int startPos, int length, std::string value);
             ~IdentifierToken();
 
-            string getValue();
+            std::string getValue();
 
             bool isIdentifier() override;
-            bool isIdentifier(string val) override;
+            bool isIdentifier(std::string val) override;
 
-            string toString() override;
+            std::string toString() override;
 
-            static Token* getToken(string sourceFile, int startPos, int length, string value);
+            static Token* getToken(std::string sourceFile, int startPos, int length, std::string value);
 
         private:
-            string _val;
+            std::string _val;
         };
     }
 }

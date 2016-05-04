@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "UnaryOperatorExpressionSyntax.h"
 #include "CastOperator.h"
+#include "MethodOverload.h"
+#include "ParameterInfo.h"
 
 namespace flc
 {

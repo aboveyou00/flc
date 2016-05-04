@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 #include "testEmitUnoptimized.h"
+#include "../FLC/RuntimeType.h"
 
 namespace Test
 {

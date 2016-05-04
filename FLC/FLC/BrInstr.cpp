@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "BrInstr.h"
+#include "BranchTarget.h"
 
 namespace flc
 {

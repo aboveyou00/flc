@@ -1,11 +1,12 @@
 #pragma once
 #include "Instr.h"
-#include "BranchTarget.h"
 
 namespace flc
 {
     namespace emit
     {
+        class BranchTarget;
+
         class BranchInstr : public Instr
         {
         public:

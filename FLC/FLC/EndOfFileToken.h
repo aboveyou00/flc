@@ -8,12 +8,12 @@ namespace flc
         class EndOfFileToken : public Token
         {
         public:
-            EndOfFileToken(string sourceFile, int pos);
+            EndOfFileToken(std::string sourceFile, int pos);
             ~EndOfFileToken();
 
             bool isEndOfFile() override;
 
-            string toString() override;
+            std::string toString() override;
         };
     }
 }

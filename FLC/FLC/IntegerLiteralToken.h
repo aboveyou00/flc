@@ -9,7 +9,7 @@ namespace flc
         class IntegerLiteralToken : public Token
         {
         public:
-            IntegerLiteralToken(string sourceFile, int startPos, int length, uint32_t value);
+            IntegerLiteralToken(std::string sourceFile, int startPos, int length, uint32_t value);
             ~IntegerLiteralToken();
 
             uint32_t getValue();
@@ -17,7 +17,7 @@ namespace flc
             bool isIntegerLiteral() override;
             bool isIntegerLiteral(uint32_t val) override;
 
-            string toString() override;
+            std::string toString() override;
 
         private:
             uint32_t _val;

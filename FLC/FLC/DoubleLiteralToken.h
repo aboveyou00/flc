@@ -8,7 +8,7 @@ namespace flc
         class DoubleLiteralToken : public Token
         {
         public:
-            DoubleLiteralToken(string sourceFile, int startPos, int length, double value);
+            DoubleLiteralToken(std::string sourceFile, int startPos, int length, double value);
             ~DoubleLiteralToken();
 
             double getValue();
@@ -16,7 +16,7 @@ namespace flc
             bool isDoubleLiteral() override;
             bool isDoubleLiteral(double val) override;
 
-            string toString() override;
+            std::string toString() override;
 
         private:
             double _val;

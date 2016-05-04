@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "MethodOverload.h"
 #include "CastOperator.h"
+#include "ParameterInfo.h"
+#include "RuntimeType.h"
 
 namespace flc
 {

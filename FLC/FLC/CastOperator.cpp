@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "CastOperator.h"
+#include "MethodGroup.h"
 
 namespace flc
 {

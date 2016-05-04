@@ -1,11 +1,13 @@
 #pragma once
 #include <string>
-#include "RuntimeType.h"
 
 namespace flc
 {
     namespace types
     {
+        class RuntimeType;
+        class ParameterInfo;
+
         class ParameterInfo
         {
         public:

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "BinaryOperator.h"
+#include "MethodGroup.h"
 
 namespace flc
 {
