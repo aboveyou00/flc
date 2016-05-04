@@ -1160,6 +1160,30 @@
     <ClCompile Include="BranchTarget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BeqInstr.cpp">
+      <Filter>Source Files\flc\emit\branch</Filter>
+    </ClCompile>
+    <ClCompile Include="BgeInstr.cpp">
+      <Filter>Source Files\flc\emit\branch</Filter>
+    </ClCompile>
+    <ClCompile Include="BgtInstr.cpp">
+      <Filter>Source Files\flc\emit\branch</Filter>
+    </ClCompile>
+    <ClCompile Include="BleInstr.cpp">
+      <Filter>Source Files\flc\emit\branch</Filter>
+    </ClCompile>
+    <ClCompile Include="BltInstr.cpp">
+      <Filter>Source Files\flc\emit\branch</Filter>
+    </ClCompile>
+    <ClCompile Include="BneInstr.cpp">
+      <Filter>Source Files\flc\emit\branch</Filter>
+    </ClCompile>
+    <ClCompile Include="BrfalseInstr.cpp">
+      <Filter>Source Files\flc\emit\branch</Filter>
+    </ClCompile>
+    <ClCompile Include="BrtrueInstr.cpp">
+      <Filter>Source Files\flc\emit\branch</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="test.fl">

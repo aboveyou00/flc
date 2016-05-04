@@ -315,10 +315,16 @@
     <ClCompile Include="AndExpressionSyntaxFactory.cpp" />
     <ClCompile Include="AndInstr.cpp" />
     <ClCompile Include="AssignmentExpressionSyntax.cpp" />
+    <ClCompile Include="BeqInstr.cpp" />
+    <ClCompile Include="BgeInstr.cpp" />
+    <ClCompile Include="BgtInstr.cpp" />
     <ClCompile Include="BinaryOperator.cpp" />
     <ClCompile Include="BinaryOperatorExpressionSyntax.cpp" />
     <ClCompile Include="BitwiseAndOperator.cpp" />
     <ClCompile Include="BitwiseOrOperator.cpp" />
+    <ClCompile Include="BleInstr.cpp" />
+    <ClCompile Include="BltInstr.cpp" />
+    <ClCompile Include="BneInstr.cpp" />
     <ClCompile Include="Boolean.cpp" />
     <ClCompile Include="BooleanLiteralSyntax.cpp" />
     <ClCompile Include="BooleanLiteralToken.cpp" />
@@ -326,7 +332,9 @@
     <ClCompile Include="BranchInstr.cpp" />
     <ClCompile Include="BranchTarget.cpp" />
     <ClCompile Include="BreakInstr.cpp" />
+    <ClCompile Include="BrfalseInstr.cpp" />
     <ClCompile Include="BrInstr.cpp" />
+    <ClCompile Include="BrtrueInstr.cpp" />
     <ClCompile Include="CastOperator.cpp" />
     <ClCompile Include="CeqInstr.cpp" />
     <ClCompile Include="CgtInstr.cpp" />

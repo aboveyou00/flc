@@ -5,7 +5,7 @@ namespace flc
 {
     namespace emit
     {
-        class BgtInstr : public Instr
+        class BgtInstr : public BranchInstr
         {
         public:
             BgtInstr(BranchTarget *target, bool useSigned = true);
