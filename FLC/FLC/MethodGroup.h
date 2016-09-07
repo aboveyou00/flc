@@ -34,6 +34,8 @@ namespace flc
         private:
             std::string _name;
             std::vector<MethodOverload*> _overloads;
+
+            MethodOverload *findBetterOverload(RuntimeType* returnType, RuntimeType** parameters, int parameterCount, MethodOverload *one, MethodOverload *two);
         };
     }
 }

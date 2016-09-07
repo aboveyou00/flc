@@ -48,20 +48,43 @@ namespace flc
             return _overloads.at(idx);
         }
 
+        /// Note: This method uses overload resolution to find the best MethodOverload that can fit the parameter types
+        /// The selected overload may be subjected to implicit conversions.
         MethodOverload* MethodGroup::findOverload(RuntimeType** parameters, int parameterCount)
         {
             return findOverload(nullptr, parameters, parameterCount);
         }
+        /// Note: This method uses overload resolution to find the best MethodOverload that can fit the parameter types
+        /// The selected overload may be subjected to implicit conversions.
         MethodOverload* MethodGroup::findOverload(RuntimeType* returnType, RuntimeType** parameters, int parameterCount)
         {
+            std::vector<MethodOverload*> candidates;
+            candidates.clear();
             for (int q = 0; q < getOverloadCount(); q++)
             {
                 auto overload = getOverload(q);
                 if (returnType != nullptr && !overload->getReturnType()->isSameAs(returnType)) continue;
-                if (overload->isMatchForParameters(parameters, parameterCount)) return overload;
+                if (overload->isMatchForParameters(parameters, parameterCount)) candidates.push_back(overload);
             }
-            return nullptr;
+            if (candidates.size() == 0) return nullptr;
+            if (candidates.size() == 1) return candidates[0];
+            
+            MethodOverload *better = candidates[0];
+            for (size_t q = 1; q < candidates.size(); q++)
+            {
+                better = findBetterOverload(returnType, parameters, parameterCount, better, candidates[q]);
+                if (better == nullptr)
+                {
+                    return nullptr;
+                    //Ambiguous - no one overload is clearly "better"
+                    //TODO: Log a useful error message
+                }
+            }
+            return better;
         }
+
+        /// Note: This method does not use overload resolution. It finds the only MethodOverload with exactly the same parameter types.
+        /// If such a MethodOverload does not exist, nullptr is returned instead.
         MethodOverload* MethodGroup::findOverload(RuntimeType* returnType, ParameterInfo** parameters, int parameterCount)
         {
             for (int q = 0; q < getOverloadCount(); q++)
@@ -101,6 +124,13 @@ namespace flc
             auto new_overload = new SpecialMethodOverload(returnType, parameters, parameterCount);
             _overloads.push_back(new_overload);
             return new_overload;
+        }
+
+        MethodOverload *MethodGroup::findBetterOverload(RuntimeType *returnType, RuntimeType **parameters, int parameterCount, MethodOverload *one, MethodOverload *two)
+        {
+            if (one->isBetterMatch(parameters, parameterCount, two)) return one;
+            else if (two->isBetterMatch(parameters, parameterCount, one)) return two;
+            else return nullptr;
         }
     }
 }

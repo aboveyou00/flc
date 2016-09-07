@@ -26,6 +26,7 @@ namespace flc
             ParameterInfo* getParameterInfo(int idx);
 
             bool isMatchForParameters(RuntimeType** paramTypes, int paramCount);
+            bool isBetterMatch(RuntimeType **parameters, int parameterCount, MethodOverload *other);
 
             virtual void emitCall(emit::MethodBody *method) = 0;
 

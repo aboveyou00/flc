@@ -49,10 +49,27 @@ namespace flc
                 {
                     auto cast = op::Operator::implicitCast()->findOverload(paramTypes[q], param->getType());
                     if (cast == nullptr) return false;
-                    //return false;
                 }
             }
             return true;
+        }
+        bool MethodOverload::isBetterMatch(RuntimeType **paramTypes, int paramCount, MethodOverload *other)
+        {
+            //This method assumes that this and other both have already been checked and are matches for the given parameters.
+
+            bool one_param_better = false;
+            for (int q = 0; q < paramCount; q++)
+            {
+                auto my_param = getParameterInfo(q);
+                auto other_param = other->getParameterInfo(q);
+                auto is_mine_same = my_param->getType()->isSameAs(paramTypes[q]);
+                auto is_other_same = other_param->getType()->isSameAs(paramTypes[q]);
+                if (!is_mine_same && is_other_same) return false;
+                if (is_mine_same && !is_other_same) one_param_better = true;
+            }
+            if (one_param_better) return true;
+
+            return false;
         }
     }
 }
