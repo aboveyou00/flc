@@ -57,6 +57,7 @@ namespace flc
         {
             //This method assumes that this and other both have already been checked and are matches for the given parameters.
 
+            //If all implicit casts are not worse (and at least one is better) then this overload is better
             bool one_param_better = false;
             for (int q = 0; q < paramCount; q++)
             {
@@ -64,8 +65,31 @@ namespace flc
                 auto other_param = other->getParameterInfo(q);
                 auto is_mine_same = my_param->getType()->isSameAs(paramTypes[q]);
                 auto is_other_same = other_param->getType()->isSameAs(paramTypes[q]);
-                if (!is_mine_same && is_other_same) return false;
                 if (is_mine_same && !is_other_same) one_param_better = true;
+                if (!is_mine_same && is_other_same)
+                {
+                    one_param_better = false;
+                    break;
+                }
+            }
+            if (one_param_better) return true;
+
+            //If there are no parameters for which there is an implicit cast from this[q] to other[q] but there is none from other[q] to this[q]
+            //And there is at least one for which there is an implicit cast from other[q] to this[q] but there is none from this[q] to other[q]
+            //Then this overload is better
+            for (int q = 0; q < paramCount; q++)
+            {
+                auto my_param = getParameterInfo(q);
+                auto other_param = other->getParameterInfo(q);
+                if (my_param->isSameAs(other_param)) continue;
+                auto cast_mine = op::Operator::implicitCast()->findOverload(my_param->getType(), other_param->getType());
+                auto cast_other = op::Operator::implicitCast()->findOverload(other_param->getType(), my_param->getType());
+                if (cast_other == nullptr && cast_mine != nullptr) one_param_better = true;
+                else if (cast_mine == nullptr && cast_other != nullptr)
+                {
+                    one_param_better = false;
+                    break;
+                }
             }
             if (one_param_better) return true;
 
