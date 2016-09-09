@@ -8,12 +8,13 @@ namespace flc
         class BrInstr : public BranchInstr
         {
         public:
-            BrInstr(BranchTarget *target);
+            BrInstr(BranchTarget *target = nullptr);
             ~BrInstr();
 
             bool isConditional() override;
 
-            void stringify(std::stringstream *stream) override;
+        protected:
+            std::string base_opcode() override;
         };
     }
 }

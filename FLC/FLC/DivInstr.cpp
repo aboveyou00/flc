@@ -18,10 +18,10 @@ namespace flc
             return signedArithmetic;
         }
 
-        void DivInstr::stringify(std::stringstream *stream)
+        std::string DivInstr::opcode()
         {
-            *stream << "div";
-            if (!signedArithmetic) *stream << ".un";
+            if (signedArithmetic) return "div"s;
+            else return "div.un"s;
         }
     }
 }

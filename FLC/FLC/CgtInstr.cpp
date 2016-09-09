@@ -18,10 +18,10 @@ namespace flc
             return signedArithmetic;
         }
 
-        void CgtInstr::stringify(std::stringstream *stream)
+        std::string CgtInstr::opcode()
         {
-            *stream << "cgt";
-            if (!signedArithmetic) *stream << ".un";
+            if (signedArithmetic) return "cgt"s;
+            else return "cgt.s"s;
         }
     }
 }

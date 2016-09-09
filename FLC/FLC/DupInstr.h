@@ -11,7 +11,7 @@ namespace flc
             DupInstr();
             ~DupInstr();
 
-            void stringify(std::stringstream *stream) override;
+            std::string opcode() override;
         };
     }
 }

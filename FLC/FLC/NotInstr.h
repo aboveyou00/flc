@@ -11,7 +11,7 @@ namespace flc
             NotInstr();
             ~NotInstr();
 
-            void stringify(std::stringstream *stream) override;
+            std::string opcode() override;
         };
     }
 }

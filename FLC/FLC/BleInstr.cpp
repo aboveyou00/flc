@@ -19,12 +19,10 @@ namespace flc
             return signedArithmetic;
         }
 
-        void BleInstr::stringify(std::stringstream *stream)
+        std::string BleInstr::base_opcode()
         {
-            *stream << "ble";
-            if (!usesSignedArithmetic()) *stream << ".un";
-            *stream << " ";
-            getBranchTarget()->stringify(stream);
+            if (signedArithmetic) return "ble"s;
+            else return "ble.un"s;
         }
     }
 }

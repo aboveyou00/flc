@@ -18,10 +18,10 @@ namespace flc
             return signedArithmetic;
         }
 
-        void RemInstr::stringify(std::stringstream *stream)
+        std::string RemInstr::opcode()
         {
-            *stream << "rem";
-            if (!signedArithmetic) *stream << ".un";
+            if (signedArithmetic) return "rem"s;
+            else return "rem.un"s;
         }
     }
 }

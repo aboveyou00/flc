@@ -18,9 +18,14 @@ namespace flc
             return value;
         }
 
+        std::string LdstrInstr::opcode()
+        {
+            return "ldstr"s;
+        }
         void LdstrInstr::stringify(std::stringstream *stream)
         {
-            *stream << "ldstr \"" << value << "\"";
+            Instr::stringify(stream);
+            *stream << " \"" << value << "\"";
         }
     }
 }

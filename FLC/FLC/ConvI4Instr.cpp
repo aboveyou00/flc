@@ -26,14 +26,26 @@ namespace flc
             return toSigned;
         }
 
-        void ConvI4Instr::stringify(std::stringstream *stream)
+        std::string ConvI4Instr::opcode()
         {
-            *stream << "conv.";
-            if (checkOverflow) *stream << "ovf.";
-            if (fromSigned) *stream << "i";
-            else *stream << "u";
-            *stream << "4";
-            if (checkOverflow && !fromSigned) *stream << ".un";
+            if (checkOverflow)
+            {
+                if (fromSigned)
+                {
+                    if (toSigned) return "conv.ovf.i4"s;
+                    else return "conv.ovf.u4"s;
+                }
+                else
+                {
+                    if (toSigned) return "conv.ovf.i4.un"s;
+                    else return "conv.ovf.u4.un"s;
+                }
+            }
+            else
+            {
+                if (toSigned) return "conv.i4"s;
+                else return "conv.u4"s;
+            }
         }
     }
 }

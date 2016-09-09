@@ -12,9 +12,9 @@ namespace flc
         {
         }
 
-        void CeqInstr::stringify(std::stringstream *stream)
+        std::string CeqInstr::opcode()
         {
-            *stream << "ceq";
+            return "ceq";
         }
     }
 }

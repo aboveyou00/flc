@@ -15,7 +15,7 @@ namespace flc
             bool fromTypeSigned();
             bool toTypeSigned();
 
-            void stringify(std::stringstream *stream) override;
+            std::string opcode() override;
 
         private:
             bool checkOverflow;

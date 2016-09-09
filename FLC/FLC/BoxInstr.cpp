@@ -19,9 +19,14 @@ namespace flc
             return boxType;
         }
 
+        std::string BoxInstr::opcode()
+        {
+            return "box";
+        }
         void BoxInstr::stringify(stringstream *stream)
         {
-            *stream << "box " << boxType->getQualifiedName();
+            Instr::stringify(stream);
+            *stream << " " << boxType->getQualifiedName();
         }
     }
 }

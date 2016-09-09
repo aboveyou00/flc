@@ -14,10 +14,9 @@ namespace flc
         {
         }
 
-        void BrfalseInstr::stringify(std::stringstream *stream)
+        std::string BrfalseInstr::base_opcode()
         {
-            *stream << "brfalse ";
-            getBranchTarget()->stringify(stream);
+            return "brfalse"s; //Or brnull, or brzero
         }
     }
 }

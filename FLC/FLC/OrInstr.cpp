@@ -12,9 +12,9 @@ namespace flc
         {
         }
 
-        void OrInstr::stringify(std::stringstream *stream)
+        std::string OrInstr::opcode()
         {
-            *stream << "or";
+            return "or"s;
         }
     }
 }

@@ -18,9 +18,14 @@ namespace flc
             return value;
         }
 
+        std::string LdcR8Instr::opcode()
+        {
+            return "ldc.r8"s;
+        }
         void LdcR8Instr::stringify(std::stringstream *stream)
         {
-            *stream << "ldc.r8 " << value;
+            Instr::stringify(stream);
+            *stream << " " << value;
         }
     }
 }

@@ -12,9 +12,9 @@ namespace flc
         {
         }
 
-        void PopInstr::stringify(std::stringstream *stream)
+        std::string PopInstr::opcode()
         {
-            *stream << "pop";
+            return "pop"s;
         }
     }
 }

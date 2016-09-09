@@ -11,7 +11,7 @@ namespace flc
             BreakInstr();
             ~BreakInstr();
 
-            void stringify(std::stringstream *stream) override;
+            std::string opcode() override;
         };
     }
 }

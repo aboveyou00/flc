@@ -8,10 +8,11 @@ namespace flc
         class BeqInstr : public BranchInstr
         {
         public:
-            BeqInstr(BranchTarget *target);
+            BeqInstr(BranchTarget *target = nullptr);
             ~BeqInstr();
 
-            void stringify(std::stringstream *stream) override;
+        protected:
+            std::string base_opcode() override;
         };
     }
 }

@@ -1,31 +1,22 @@
 #pragma once
-#include "ExpressionSyntax.h"
+#include "ConditionalExpressionSyntax.h"
 
 namespace flc
 {
     namespace syntax
     {
-        class ConditionalOrExpressionSyntax : public ExpressionSyntax
+        class ConditionalOrExpressionSyntax : public ConditionalExpressionSyntax
         {
         public:
-            ConditionalOrExpressionSyntax(ExpressionSyntax* left, ExpressionSyntax* right);
+            ConditionalOrExpressionSyntax(ExpressionSyntax *left, ExpressionSyntax *right);
             ~ConditionalOrExpressionSyntax();
 
             int getPrecedence() override;
 
-            ExpressionSyntax* getLeftOperand();
-            ExpressionSyntax* getRightOperand();
+            std::string getOperatorSymbol() override;
 
-            void resolveTypes(types::NameResolutionContextStack *ctx) override;
-            types::RuntimeType* getExpressionType() override;
-
-            void emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method) override;
-
-            void stringify(stringstream* stream, int tabulation = 0) override;
-
-        private:
-            ExpressionSyntax *_left = nullptr,
-                             *_right = nullptr;
+        protected:
+            emit::BranchInstr *createBranchInstr() override;
         };
     }
 }

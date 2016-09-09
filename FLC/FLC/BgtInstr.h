@@ -8,12 +8,13 @@ namespace flc
         class BgtInstr : public BranchInstr
         {
         public:
-            BgtInstr(BranchTarget *target, bool useSigned = true);
+            BgtInstr(BranchTarget *target = nullptr, bool useSigned = true);
             ~BgtInstr();
 
             bool usesSignedArithmetic();
 
-            void stringify(std::stringstream *stream) override;
+        protected:
+            std::string base_opcode() override;
 
         private:
             bool signedArithmetic;

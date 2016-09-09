@@ -18,10 +18,10 @@ namespace flc
         {
             return false;
         }
-        void BrInstr::stringify(std::stringstream *stream)
+
+        std::string BrInstr::base_opcode()
         {
-            *stream << "br ";
-            *stream << getBranchTarget()->getName();
+            return "br"s;
         }
     }
 }

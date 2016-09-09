@@ -126,7 +126,7 @@ namespace flc
             return new_overload;
         }
 
-        MethodOverload *MethodGroup::findBetterOverload(RuntimeType *returnType, RuntimeType **parameters, int parameterCount, MethodOverload *one, MethodOverload *two)
+        MethodOverload *MethodGroup::findBetterOverload(RuntimeType*, RuntimeType **parameters, int parameterCount, MethodOverload *one, MethodOverload *two)
         {
             if (one->isBetterMatch(parameters, parameterCount, two)) return one;
             else if (two->isBetterMatch(parameters, parameterCount, one)) return two;

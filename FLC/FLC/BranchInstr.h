@@ -10,14 +10,21 @@ namespace flc
         class BranchInstr : public Instr
         {
         public:
-            BranchInstr(BranchTarget *target);
+            BranchInstr(BranchTarget *target = nullptr);
             ~BranchInstr();
 
             BranchTarget *getBranchTarget();
-            virtual bool isConditional() = 0;
+            virtual bool isConditional();
+
+            std::string opcode() override;
+            void stringify(std::stringstream *stream) override;
+
+        protected:
+            virtual std::string base_opcode() = 0;
 
         private:
             BranchTarget *_target;
+            bool isShort = false;
         };
     }
 }

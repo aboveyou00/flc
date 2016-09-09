@@ -14,10 +14,9 @@ namespace flc
         {
         }
 
-        void BneInstr::stringify(std::stringstream *stream)
+        std::string BneInstr::base_opcode()
         {
-            *stream << "bne ";
-            getBranchTarget()->stringify(stream);
+            return "bne";
         }
     }
 }

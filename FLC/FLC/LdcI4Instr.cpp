@@ -18,25 +18,29 @@ namespace flc
             return value;
         }
 
-        void LdcI4Instr::stringify(std::stringstream *stream)
+        std::string LdcI4Instr::opcode()
         {
-            *stream << "ldc.i4";
             switch (value)
             {
-            case -1: *stream << ".m1"; break;
-            case 0: *stream << ".0"; break;
-            case 1: *stream << ".1"; break;
-            case 2: *stream << ".2"; break;
-            case 3: *stream << ".3"; break;
-            case 4: *stream << ".4"; break;
-            case 5: *stream << ".5"; break;
-            case 6: *stream << ".6"; break;
-            case 7: *stream << ".7"; break;
-            case 8: *stream << ".8"; break;
+            case -1: return "ldc.i4.m1"s;
+            case 0: return "ldc.i4.0"s;
+            case 1: return "ldc.i4.1"s;
+            case 2: return "ldc.i4.2"s;
+            case 3: return "ldc.i4.3"s;
+            case 4: return "ldc.i4.4"s;
+            case 5: return "ldc.i4.5"s;
+            case 6: return "ldc.i4.6"s;
+            case 7: return "ldc.i4.7"s;
+            case 8: return "ldc.i4.8"s;
             default:
-                if (value <= 255) *stream << ".s";
-                *stream << " " << value;
+                if (value <= 255) return "ldc.i4.s"s;
+                return "ldc.i4"s;
             }
+        }
+        void LdcI4Instr::stringify(std::stringstream *stream)
+        {
+            Instr::stringify(stream);
+            if (value < -1 || value > 8) *stream << " " << value;
         }
     }
 }

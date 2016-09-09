@@ -11,7 +11,7 @@ namespace flc
             ConvR4Instr();
             ~ConvR4Instr();
 
-            void stringify(std::stringstream *stream) override;
+            std::string opcode() override;
         };
     }
 }

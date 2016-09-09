@@ -11,7 +11,7 @@ namespace flc
             CeqInstr();
             ~CeqInstr();
 
-            void stringify(std::stringstream *stream) override;
+            std::string opcode() override;
         };
     }
 }

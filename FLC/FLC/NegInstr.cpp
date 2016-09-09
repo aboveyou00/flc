@@ -12,9 +12,9 @@ namespace flc
         {
         }
 
-        void NegInstr::stringify(std::stringstream *stream)
+        std::string NegInstr::opcode()
         {
-            *stream << "neg";
+            return "neg"s;
         }
     }
 }

@@ -6,9 +6,10 @@ namespace flc
 {
     namespace types
     {
-        class SpecialMethodOverload;
+        class RuntimeType;
         class ParameterInfo;
         class MethodOverload;
+        class SpecialMethodOverload;
 
         class MethodGroup : INameInfo
         {

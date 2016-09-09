@@ -1,57 +1,32 @@
 #include "stdafx.h"
 #include "ConditionalAndExpressionSyntax.h"
+#include "BrfalseInstr.h"
 
 namespace flc
 {
     namespace syntax
     {
         ConditionalAndExpressionSyntax::ConditionalAndExpressionSyntax(ExpressionSyntax* left, ExpressionSyntax* right)
-            : _left(left), _right(right)
+            : ConditionalExpressionSyntax(left, right)
         {
         }
         ConditionalAndExpressionSyntax::~ConditionalAndExpressionSyntax()
         {
-            if (_left != nullptr) delete _left;
-            _left = nullptr;
-
-            if (_right != nullptr) delete _right;
-            _right = nullptr;
         }
-
-        ExpressionSyntax* ConditionalAndExpressionSyntax::getLeftOperand()
-        {
-            return _left;
-        }
-        ExpressionSyntax* ConditionalAndExpressionSyntax::getRightOperand()
-        {
-            return _right;
-        }
-
+        
         int ConditionalAndExpressionSyntax::getPrecedence()
         {
             return 1000;
         }
 
-        void ConditionalAndExpressionSyntax::resolveTypes(types::NameResolutionContextStack *)
+        std::string ConditionalAndExpressionSyntax::getOperatorSymbol()
         {
-            //TODO: Implement
-        }
-        types::RuntimeType* ConditionalAndExpressionSyntax::getExpressionType()
-        {
-            //TODO: Implement
-            return nullptr;
+            return "&&"s;
         }
 
-        void ConditionalAndExpressionSyntax::emit(types::NameResolutionContextStack *, emit::MethodBody *)
+        emit::BranchInstr *ConditionalAndExpressionSyntax::createBranchInstr()
         {
-            //TODO: Implement
-        }
-
-        void ConditionalAndExpressionSyntax::stringify(stringstream* stream, int tabulation)
-        {
-            _left->stringify(stream, tabulation);
-            *stream << " && ";
-            _right->stringify(stream, 0);
+            return new emit::BrfalseInstr();
         }
     }
 }

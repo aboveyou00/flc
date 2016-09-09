@@ -12,9 +12,9 @@ namespace flc
         {
         }
 
-        void DupInstr::stringify(std::stringstream *stream)
+        std::string DupInstr::opcode()
         {
-            *stream << "dup";
+            return "dup"s;
         }
     }
 }

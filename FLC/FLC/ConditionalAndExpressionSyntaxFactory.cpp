@@ -25,7 +25,7 @@ namespace flc
             }
             bool ConditionalAndExpressionSyntaxFactory::tryParseRhs(vector<flc::tokens::Token*>* toks, int& pos, ExpressionSyntax*& result)
             {
-                if (toks->at(pos)->isSymbol("&&"))
+                if (toks->at(pos)->isSymbol("&&"s))
                 {
                     InclusiveOrExpressionSyntaxFactory factory;
                     ExpressionSyntax *rhs = nullptr;

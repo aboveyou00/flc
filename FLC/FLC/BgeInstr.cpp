@@ -19,12 +19,10 @@ namespace flc
             return signedArithmetic;
         }
 
-        void BgeInstr::stringify(std::stringstream *stream)
+        std::string BgeInstr::base_opcode()
         {
-            *stream << "bge";
-            if (!usesSignedArithmetic()) *stream << ".un";
-            *stream << " ";
-            getBranchTarget()->stringify(stream);
+            if (signedArithmetic) return "bge"s;
+            else return "bge.un"s;
         }
     }
 }

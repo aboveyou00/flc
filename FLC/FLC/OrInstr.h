@@ -11,7 +11,7 @@ namespace flc
             OrInstr();
             ~OrInstr();
 
-            void stringify(std::stringstream *stream) override;
+            std::string opcode() override;
         };
     }
 }

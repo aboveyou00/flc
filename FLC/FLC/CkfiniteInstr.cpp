@@ -12,9 +12,9 @@ namespace flc
         {
         }
 
-        void CkfiniteInstr::stringify(std::stringstream *stream)
+        std::string CkfiniteInstr::opcode()
         {
-            *stream << "ckfinite";
+            return "ckfinite";
         }
     }
 }

@@ -15,6 +15,16 @@
 #include "XorInstr.h"
 
 //Branch
+#include "BeqInstr.h"
+#include "BgeInstr.h"
+#include "BgtInstr.h"
+#include "BleInstr.h"
+#include "BltInstr.h"
+#include "BneInstr.h"
+#include "BranchInstr.h"
+#include "BrfalseInstr.h"
+#include "BrInstr.h"
+#include "BrtrueInstr.h"
 
 //Compare
 #include "CeqInstr.h"
@@ -47,6 +57,9 @@
 //Stack
 #include "DupInstr.h"
 #include "PopInstr.h"
+
+//Decorators
+#include "BranchTarget.h"
 
 
 

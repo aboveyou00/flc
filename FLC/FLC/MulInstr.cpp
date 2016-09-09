@@ -22,14 +22,14 @@ namespace flc
             return signedArithmetic;
         }
 
-        void MulInstr::stringify(std::stringstream *stream)
+        std::string MulInstr::opcode()
         {
-            *stream << "mul";
             if (checkOverflow)
             {
-                *stream << ".ovf";
-                if (!signedArithmetic) *stream << ".un";
+                if (signedArithmetic) return "mul.ovf"s;
+                else return "mul.ovf.un"s;
             }
+            else return "mul"s;
         }
     }
 }

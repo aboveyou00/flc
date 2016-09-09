@@ -12,9 +12,9 @@ namespace flc
         {
         }
 
-        void NopInstr::stringify(std::stringstream *stream)
+        std::string NopInstr::opcode()
         {
-            *stream << "nop";
+            return "nop"s;
         }
     }
 }

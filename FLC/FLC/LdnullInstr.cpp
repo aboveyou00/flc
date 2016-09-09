@@ -12,9 +12,9 @@ namespace flc
         {
         }
 
-        void LdnullInstr::stringify(std::stringstream *stream)
+        std::string LdnullInstr::opcode()
         {
-            *stream << "ldnull";
+            return "ldnull";
         }
     }
 }

@@ -26,5 +26,51 @@ T *ExpectInstr()
 {
     return ExpectInstr<T>("");
 }
+template <typename T>
+void ExpectInstr(T *instr)
+{
+    using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+    Assert::IsNotNull(instr);
+    Assert::AreSame(__expectInstr(), instr);
+}
+
+template <typename TInstr, typename TDecorator>
+TDecorator *ExpectDecorator(TInstr *instr, std::string str)
+{
+    using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+    Assert::IsNotNull(instr);
+
+    auto &decorators = instr->getDecorators();
+    for (size_t q = 0; q < decorators.size(); q++)
+    {
+        auto tdecor = dynamic_cast<TDecorator*>(decorators[q]);
+        if (tdecor != nullptr && (str.empty() || str.compare(tdecor->toString()) == 0)) return tdecor;
+    }
+
+    Assert::IsTrue(false);
+}
+template <typename TInstr, typename TDecorator>
+TDecorator *ExpectDecorator(TInstr *instr)
+{
+    return ExpectDecorator(instr, "");
+}
+template <typename TInstr, typename TDecorator>
+void ExpectDecorator(TInstr *instr, TDecorator *decorator)
+{
+    using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+    Assert::IsNotNull(instr);
+    Assert::IsNotNull(decorator);
+
+    auto &decorators = instr->getDecorators();
+    for (size_t q = 0; q < decorators.size(); q++)
+    {
+        if (decorators[q] == decorator) return;
+    }
+
+    Assert::IsTrue(false);
+}
 
 void ExpectNoMore();

@@ -12,9 +12,9 @@ namespace flc
         {
         }
 
-        void NotInstr::stringify(std::stringstream *stream)
+        std::string NotInstr::opcode()
         {
-            *stream << "not";
+            return "not"s;
         }
     }
 }

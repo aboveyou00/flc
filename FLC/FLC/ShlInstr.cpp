@@ -12,9 +12,9 @@ namespace flc
         {
         }
 
-        void ShlInstr::stringify(std::stringstream *stream)
+        std::string ShlInstr::opcode()
         {
-            *stream << "shl";
+            return "shl"s;
         }
     }
 }

@@ -18,10 +18,10 @@ namespace flc
             return signedArithmetic;
         }
 
-        void ShrInstr::stringify(std::stringstream *stream)
+        std::string ShrInstr::opcode()
         {
-            *stream << "shr";
-            if (!signedArithmetic) *stream << ".un";
+            if (signedArithmetic) return "shr"s;
+            else return "shr.un"s;
         }
     }
 }

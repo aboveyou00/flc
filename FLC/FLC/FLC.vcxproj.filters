@@ -151,6 +151,12 @@
     <Filter Include="Source Files\flc\op\cast">
       <UniqueIdentifier>{b5c00f7e-eafa-449b-a222-cb4a67646d22}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\flc\emit\decorators">
+      <UniqueIdentifier>{2b5e8d20-ebe9-4501-a3a7-d11fcb881d4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\emit\decorators">
+      <UniqueIdentifier>{8a1bc806-5353-4fca-b4de-7b2a0ebd349a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -642,8 +648,14 @@
     <ClInclude Include="BrfalseInstr.h">
       <Filter>Header Files\flc\emit\branch</Filter>
     </ClInclude>
+    <ClInclude Include="InstrDecorator.h">
+      <Filter>Header Files\flc\emit\decorators</Filter>
+    </ClInclude>
     <ClInclude Include="BranchTarget.h">
-      <Filter>Header Files\flc\emit\branch</Filter>
+      <Filter>Header Files\flc\emit\decorators</Filter>
+    </ClInclude>
+    <ClInclude Include="ConditionalExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\binary</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1183,6 +1195,12 @@
     </ClCompile>
     <ClCompile Include="BrtrueInstr.cpp">
       <Filter>Source Files\flc\emit\branch</Filter>
+    </ClCompile>
+    <ClCompile Include="InstrDecorator.cpp">
+      <Filter>Source Files\flc\emit\decorators</Filter>
+    </ClCompile>
+    <ClCompile Include="ConditionalExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -18,13 +18,11 @@ namespace flc
         {
             return signedArithmetic;
         }
-
-        void BgtInstr::stringify(std::stringstream *stream)
+        
+        std::string BgtInstr::base_opcode()
         {
-            *stream << "bgt";
-            if (!usesSignedArithmetic()) *stream << ".un";
-            *stream << " ";
-            getBranchTarget()->stringify(stream);
+            if (signedArithmetic) return "bgt"s;
+            else return "bgt.un"s;
         }
     }
 }

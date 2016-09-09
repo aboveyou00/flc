@@ -183,6 +183,7 @@
     <ClInclude Include="CompoundExpressionSyntaxFactory.h" />
     <ClInclude Include="ConditionalAndExpressionSyntax.h" />
     <ClInclude Include="ConditionalAndExpressionSyntaxFactory.h" />
+    <ClInclude Include="ConditionalExpressionSyntax.h" />
     <ClInclude Include="ConditionalOrExpressionSyntax.h" />
     <ClInclude Include="ConditionalOrExpressionSyntaxFactory.h" />
     <ClInclude Include="ConvI1Instr.h" />
@@ -219,6 +220,7 @@
     <ClInclude Include="InclusiveOrExpressionSyntax.h" />
     <ClInclude Include="InclusiveOrExpressionSyntaxFactory.h" />
     <ClInclude Include="Instr.h" />
+    <ClInclude Include="InstrDecorator.h" />
     <ClInclude Include="Int16.h" />
     <ClInclude Include="Int32.h" />
     <ClInclude Include="Int64.h" />
@@ -351,6 +353,7 @@
     <ClCompile Include="CompoundExpressionSyntaxFactory.cpp" />
     <ClCompile Include="ConditionalAndExpressionSyntax.cpp" />
     <ClCompile Include="ConditionalAndExpressionSyntaxFactory.cpp" />
+    <ClCompile Include="ConditionalExpressionSyntax.cpp" />
     <ClCompile Include="ConditionalOrExpressionSyntax.cpp" />
     <ClCompile Include="ConditionalOrExpressionSyntaxFactory.cpp" />
     <ClCompile Include="ConvI1Instr.cpp" />
@@ -378,6 +381,7 @@
     <ClCompile Include="ExplicitCastOperator.cpp" />
     <ClCompile Include="ExpressionSyntax.cpp" />
     <ClCompile Include="Instr.cpp" />
+    <ClCompile Include="InstrDecorator.cpp" />
     <ClCompile Include="LdcI8Instr.cpp" />
     <ClCompile Include="LdcI4Instr.cpp" />
     <ClCompile Include="LdcR4Instr.cpp" />

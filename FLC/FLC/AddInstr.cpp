@@ -22,14 +22,14 @@ namespace flc
             return signedArithmetic;
         }
 
-        void AddInstr::stringify(std::stringstream *stream)
+        std::string AddInstr::opcode()
         {
-            *stream << "add";
             if (checkOverflow)
             {
-                *stream << ".ovf";
-                if (!signedArithmetic) *stream << ".un";
+                if (signedArithmetic) return "add.ovf"s;
+                else return "add.ovf.un"s;
             }
+            else return "add"s;
         }
     }
 }

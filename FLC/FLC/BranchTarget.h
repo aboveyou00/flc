@@ -1,24 +1,15 @@
 #pragma once
-#include <string>
-#include <sstream>
+#include "InstrDecorator.h"
 
 namespace flc
 {
     namespace emit
     {
-        class BranchTarget
+        class BranchTarget : public InstrDecorator
         {
         public:
-            BranchTarget(std::string name = "");
+            BranchTarget(std::string name = ""s);
             ~BranchTarget();
-
-            std::string getName();
-
-            void stringify(std::stringstream *stream);
-            std::string toString();
-
-        private:
-            std::string _name;
         };
     }
 }

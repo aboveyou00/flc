@@ -13,6 +13,7 @@ namespace flc
 
             int32_t getConstantValue();
 
+            std::string opcode() override;
             void stringify(std::stringstream *stream) override;
 
         private:

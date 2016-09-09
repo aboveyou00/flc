@@ -11,15 +11,13 @@ namespace Test
         {
             UseString("false || true");
 
-            Assert::IsTrue(false);
-
             Assert::AreEqual(ExpectInstr<LdcI4Instr>()->getConstantValue(), 0);
-            //auto endTarget = ExpectInstr<BrtrueInstr>().getTarget();
+            auto endTarget = ExpectInstr<BrtrueInstr>()->getBranchTarget();
 
             Assert::AreEqual(ExpectInstr<LdcI4Instr>()->getConstantValue(), 1);
 
-            //ExpectTarget(ExpectInstr<NopInstr>(), endTarget);
-            ExpectInstr<PopInstr>();
+            auto pop = ExpectInstr<PopInstr>();
+            ExpectDecorator(pop, endTarget);
 
             ExpectNoMore();
         }
@@ -28,15 +26,13 @@ namespace Test
         {
             UseString("true && false");
 
-            Assert::IsTrue(false);
-
             Assert::AreEqual(ExpectInstr<LdcI4Instr>()->getConstantValue(), 1);
-            //auto endTarget = ExpectInstr<BrfalseInstr>().getTarget();
+            auto endTarget = ExpectInstr<BrfalseInstr>()->getBranchTarget();
 
             Assert::AreEqual(ExpectInstr<LdcI4Instr>()->getConstantValue(), 0);
 
-            //ExpectTarget(ExpectInstr<NopInstr>(), endTarget);
-            ExpectInstr<PopInstr>();
+            auto pop = ExpectInstr<PopInstr>();
+            ExpectDecorator(pop, endTarget);
 
             ExpectNoMore();
         }
@@ -45,20 +41,17 @@ namespace Test
         {
             UseString("false || (true && false)");
 
-            Assert::IsTrue(false);
-
             Assert::AreEqual(ExpectInstr<LdcI4Instr>()->getConstantValue(), 0);
-            //auto endTarget = ExpectInstr<BrtrueInstr>().getTarget();
+            auto endTarget = ExpectInstr<BrtrueInstr>()->getBranchTarget();
 
             Assert::AreEqual(ExpectInstr<LdcI4Instr>()->getConstantValue(), 1);
-            //auto endTarget2 = ExpectInstr<BrfalseInstr>().getTarget();
+            auto endTarget2 = ExpectInstr<BrfalseInstr>()->getBranchTarget();
 
             Assert::AreEqual(ExpectInstr<LdcI4Instr>()->getConstantValue(), 0);
 
-            //ExpectTarget(ExpectInstr<NopInstr>(), endTarget2);
-
-            //ExpectTarget(ExpectInstr<NopInstr>(), endTarget);
-            ExpectInstr<PopInstr>();
+            auto pop = ExpectInstr<PopInstr>();
+            ExpectDecorator(pop, endTarget2);
+            ExpectDecorator(pop, endTarget);
 
             ExpectNoMore();
         }

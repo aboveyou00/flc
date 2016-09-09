@@ -14,10 +14,9 @@ namespace flc
         {
         }
 
-        void BrtrueInstr::stringify(std::stringstream *stream)
+        std::string BrtrueInstr::base_opcode()
         {
-            *stream << "brtrue ";
-            getBranchTarget()->stringify(stream);
+            return "brtrue"s; 
         }
     }
 }

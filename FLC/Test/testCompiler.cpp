@@ -22,7 +22,7 @@ namespace Test
         {
             flc::Compiler compiler;
 
-            Assert::IsTrue(compiler.tryAddSource("60*60*24*365 + \" seconds in a year.\""));
+            Assert::IsTrue(compiler.tryAddSource(R"raw(60*60*24*365 + " seconds in a year.")raw"));
             Assert::IsTrue(compiler.tryCompile());
         }
 

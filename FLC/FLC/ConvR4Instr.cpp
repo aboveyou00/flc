@@ -12,9 +12,9 @@ namespace flc
         {
         }
 
-        void ConvR4Instr::stringify(std::stringstream *stream)
+        std::string ConvR4Instr::opcode()
         {
-            *stream << "conv.r4";
+            return "conv.r4";
         }
     }
 }

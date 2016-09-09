@@ -12,9 +12,9 @@ namespace flc
         {
         }
 
-        void AndInstr::stringify(std::stringstream *stream)
+        std::string AndInstr::opcode()
         {
-            *stream << "and";
+            return "and"s;
         }
     }
 }

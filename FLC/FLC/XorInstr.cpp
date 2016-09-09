@@ -12,9 +12,9 @@ namespace flc
         {
         }
 
-        void XorInstr::stringify(std::stringstream *stream)
+        std::string XorInstr::opcode()
         {
-            *stream << "xor";
+            return "xor"s;
         }
     }
 }

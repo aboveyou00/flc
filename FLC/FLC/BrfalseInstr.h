@@ -8,10 +8,11 @@ namespace flc
         class BrfalseInstr : public BranchInstr
         {
         public:
-            BrfalseInstr(BranchTarget *target);
+            BrfalseInstr(BranchTarget *target = nullptr);
             ~BrfalseInstr();
 
-            void stringify(std::stringstream *stream) override;
+        protected:
+            std::string base_opcode() override;
         };
     }
 }

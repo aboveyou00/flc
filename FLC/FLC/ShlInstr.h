@@ -11,7 +11,7 @@ namespace flc
             ShlInstr();
             ~ShlInstr();
 
-            void stringify(std::stringstream *stream) override;
+            std::string opcode() override;
         };
     }
 }

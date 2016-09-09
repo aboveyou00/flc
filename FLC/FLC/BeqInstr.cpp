@@ -14,10 +14,9 @@ namespace flc
         {
         }
 
-        void BeqInstr::stringify(std::stringstream *stream)
+        std::string BeqInstr::base_opcode()
         {
-            *stream << "beq ";
-            getBranchTarget()->stringify(stream);
+            return "beq"s;
         }
     }
 }

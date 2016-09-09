@@ -12,9 +12,9 @@ namespace flc
         {
         }
 
-        void BreakInstr::stringify(std::stringstream *stream)
+        std::string BreakInstr::opcode()
         {
-            *stream << "break";
+            return "break"s;
         }
     }
 }
