@@ -22,17 +22,11 @@
     <Filter Include="Source Files\flc\syntax">
       <UniqueIdentifier>{273418c7-9614-48fd-907d-511ff28af688}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\flc\syntax\factory">
-      <UniqueIdentifier>{da24f6f8-f90d-4b3c-8d3f-72942a13670c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\flc">
       <UniqueIdentifier>{f869378c-44c8-4bd5-8c17-de756d8afe70}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\flc\syntax">
       <UniqueIdentifier>{eee6f3c3-06e8-4701-b115-67e087c84656}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\flc\syntax\factory">
-      <UniqueIdentifier>{45df8462-eaef-4e9e-a1ac-bca5a50af045}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\flc\types">
       <UniqueIdentifier>{8a0a9c1f-be32-42eb-848a-b635b8d501c9}</UniqueIdentifier>
@@ -46,22 +40,88 @@
     <Filter Include="Header Files\flc\emit">
       <UniqueIdentifier>{1d2b666e-0ffe-4712-b101-6140da40af3d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\flc\emit\binary">
+      <UniqueIdentifier>{a92e644c-cf04-4d0c-a167-3e6c291ce2f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit\unary">
+      <UniqueIdentifier>{c1b4757f-4545-4aca-a219-98a4c7358a69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit\ternary">
+      <UniqueIdentifier>{8efe1048-f123-4a76-8384-7bbc692d7f57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit\helper">
+      <UniqueIdentifier>{a06a0a39-5084-4641-9bbd-5bc69d0c7bfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit\literal">
+      <UniqueIdentifier>{b91f6761-e2e4-4f98-ab45-d860697babca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit\expr">
+      <UniqueIdentifier>{689c9001-058c-49e9-ba72-b13d8f9f9663}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\emit\terminal">
+      <UniqueIdentifier>{e9bea12f-33b6-45f4-8216-e6e0073c956f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\emit\helper">
+      <UniqueIdentifier>{d31c9543-f158-4634-8bde-0900600f8e44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\factory">
+      <UniqueIdentifier>{45df8462-eaef-4e9e-a1ac-bca5a50af045}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\factory">
+      <UniqueIdentifier>{da24f6f8-f90d-4b3c-8d3f-72942a13670c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\factory\binary">
+      <UniqueIdentifier>{5f43bd57-1d8e-48cb-9827-762a4845c0ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\factory\unary">
+      <UniqueIdentifier>{704bc40a-ed3e-4ad7-bf08-4b42185a149d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\factory\ternary">
+      <UniqueIdentifier>{5dc313f3-619b-47bc-a71d-ed550fe49603}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\factory\terminal">
+      <UniqueIdentifier>{1c27b55d-5638-4452-bc7d-51cb0ed4d14c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\factory\expr">
+      <UniqueIdentifier>{1937cf69-cec0-4fd7-86e2-d135136ef9fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\unary">
+      <UniqueIdentifier>{461bb39b-f349-4a33-91ac-a9a108cbda36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\binary">
+      <UniqueIdentifier>{7f1464ba-7ae9-4d8e-ac73-e302b3894196}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\ternary">
+      <UniqueIdentifier>{dfe9eb93-fea7-43c1-ae8c-a46d95256ebe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\terminal">
+      <UniqueIdentifier>{34d1cfc0-4490-4006-a0d7-52f0970a6a33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\literal">
+      <UniqueIdentifier>{72ec10f6-8770-444b-a546-6f66b45b741b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\expr">
+      <UniqueIdentifier>{1c4cb9d0-bcf1-4df0-b26f-4e597e488b20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\syntax\helper">
+      <UniqueIdentifier>{91d01ebe-ee54-4c2d-822b-738bac6de94f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\syntax\helper">
+      <UniqueIdentifier>{1f2cde84-ef5f-4484-8e15-5e7bd9d3de0a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="testFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="testExpressionType.h">
-      <Filter>Header Files\flc\syntax</Filter>
+      <Filter>Header Files\flc\factory</Filter>
     </ClInclude>
     <ClInclude Include="testEmitUnoptimized.h">
-      <Filter>Header Files\flc\emit</Filter>
+      <Filter>Header Files\flc\emit\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="testExpressionType.h">
+      <Filter>Header Files\flc\syntax\helper</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -77,194 +137,197 @@
     <ClCompile Include="testTokenizer.cpp">
       <Filter>Source Files\flc\tokens</Filter>
     </ClCompile>
-    <ClCompile Include="testTernaryExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testConditionalOrExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testConditionalAndExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testInclusiveOrExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testExclusiveOrExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testAndExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testEqualityExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testRelationalExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testShiftExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testAdditiveExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testMultiplicativeExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testUnaryExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testTermSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testIfExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="testWhileExpressionFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
     <ClCompile Include="testRuntimeType.cpp">
       <Filter>Source Files\flc\types</Filter>
-    </ClCompile>
-    <ClCompile Include="testIntegerLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testCharacterLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testExpressionType.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testBooleanLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testFloatLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testStringLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testNullLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testCompoundExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testAdditiveExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testAndExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testAssignmentExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testComplexNameSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testConditionalAndExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testConditionalOrExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testEqualityExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testRelationalExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testShiftExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testExclusiveOrExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testIfExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testInclusiveOrExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testMemberAccessExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testMultiplicativeExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testSimpleNameSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testTernaryExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testUnaryExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testWhileExpressionSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testDoubleLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testUIntegerLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testLongLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="testULongLiteralSyntax.cpp">
-      <Filter>Source Files\flc\syntax</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="testEmitLiteral.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="testEmitUnoptomized.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="testEmitRelational.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="testEmitShift.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
     <ClCompile Include="testEmitAdditive.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="testEmitInclusiveOr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="testEmitExclusiveOr.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+      <Filter>Source Files\flc\emit\binary</Filter>
     </ClCompile>
     <ClCompile Include="testEmitAnd.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="testEmitUnary.cpp">
-      <Filter>Source Files\flc\emit</Filter>
-    </ClCompile>
-    <ClCompile Include="testEmitImplicit.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+      <Filter>Source Files\flc\emit\binary</Filter>
     </ClCompile>
     <ClCompile Include="testEmitEquality.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+      <Filter>Source Files\flc\emit\binary</Filter>
     </ClCompile>
-    <ClCompile Include="testEmitCompound.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+    <ClCompile Include="testEmitExclusiveOr.cpp">
+      <Filter>Source Files\flc\emit\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitInclusiveOr.cpp">
+      <Filter>Source Files\flc\emit\binary</Filter>
     </ClCompile>
     <ClCompile Include="testEmitMultiplicative.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+      <Filter>Source Files\flc\emit\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitRelational.cpp">
+      <Filter>Source Files\flc\emit\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitShift.cpp">
+      <Filter>Source Files\flc\emit\binary</Filter>
     </ClCompile>
     <ClCompile Include="testEmitTernary.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+      <Filter>Source Files\flc\emit\ternary</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitUnary.cpp">
+      <Filter>Source Files\flc\emit\unary</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitUnoptomized.cpp">
+      <Filter>Source Files\flc\emit\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitLiteral.cpp">
+      <Filter>Source Files\flc\emit\literal</Filter>
     </ClCompile>
     <ClCompile Include="testEmitConditional.cpp">
-      <Filter>Source Files\flc\emit</Filter>
+      <Filter>Source Files\flc\emit\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitImplicit.cpp">
+      <Filter>Source Files\flc\emit\unary</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitIf.cpp">
+      <Filter>Source Files\flc\emit\expr</Filter>
+    </ClCompile>
+    <ClCompile Include="testEmitCompound.cpp">
+      <Filter>Source Files\flc\emit\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="testAdditiveExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testAndExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testConditionalAndExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testConditionalOrExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testEqualityExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testExclusiveOrExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testInclusiveOrExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testMultiplicativeExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testRelationalExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testShiftExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testUnaryExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\unary</Filter>
+    </ClCompile>
+    <ClCompile Include="testTernaryExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\ternary</Filter>
+    </ClCompile>
+    <ClCompile Include="testTermSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="testExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\expr</Filter>
+    </ClCompile>
+    <ClCompile Include="testIfExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\expr</Filter>
+    </ClCompile>
+    <ClCompile Include="testWhileExpressionFactory.cpp">
+      <Filter>Source Files\flc\factory\expr</Filter>
+    </ClCompile>
+    <ClCompile Include="testAdditiveExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testAndExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testBooleanLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="testCharacterLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="testDoubleLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="testFloatLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="testIntegerLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="testLongLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="testNullLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="testStringLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="testUIntegerLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="testULongLiteralSyntax.cpp">
+      <Filter>Source Files\flc\syntax\literal</Filter>
+    </ClCompile>
+    <ClCompile Include="testEqualityExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testExclusiveOrExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testInclusiveOrExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testMultiplicativeExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testRelationalExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testShiftExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testWhileExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\expr</Filter>
+    </ClCompile>
+    <ClCompile Include="testIfExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\expr</Filter>
+    </ClCompile>
+    <ClCompile Include="testUnaryExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\unary</Filter>
+    </ClCompile>
+    <ClCompile Include="testTernaryExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\ternary</Filter>
+    </ClCompile>
+    <ClCompile Include="testSimpleNameSyntax.cpp">
+      <Filter>Source Files\flc\syntax\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="testMemberAccessExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="testComplexNameSyntax.cpp">
+      <Filter>Source Files\flc\syntax\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="testAssignmentExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\expr</Filter>
+    </ClCompile>
+    <ClCompile Include="testCompoundExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="testConditionalAndExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testConditionalOrExpressionSyntax.cpp">
+      <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="testExpressionType.cpp">
+      <Filter>Source Files\flc\syntax\helper</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

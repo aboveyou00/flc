@@ -3,6 +3,13 @@
 
 namespace flc
 {
+    namespace types
+    {
+        class MethodOverload;
+        class NameResolutionContextStack;
+        class RuntimeType;
+    }
+
     namespace syntax
     {
         class IfExpressionSyntax : public ExpressionSyntax
@@ -29,6 +36,10 @@ namespace flc
             ExpressionSyntax *_cond = nullptr,
                              *_expr = nullptr,
                              *_elseExpr = nullptr;
+            types::RuntimeType *_exprType = nullptr;
+            types::MethodOverload *_castCondition = nullptr,
+                                  *_castTrue = nullptr,
+                                  *_castFalse = nullptr;
         };
     }
 }

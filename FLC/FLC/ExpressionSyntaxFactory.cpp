@@ -6,6 +6,8 @@
 
 #include "ExpressionSyntaxFactory.h"
 #include "TernaryExpressionSyntaxFactory.h"
+#include "IfExpressionSyntaxFactory.h"
+#include "WhileExpressionSyntaxFactory.h"
 
 namespace flc
 {
@@ -29,6 +31,10 @@ namespace flc
 
             bool ExpressionSyntaxFactory::tryParseFirstSyntax(vector<flc::tokens::Token*>* toks, int & pos, ExpressionSyntax*& result)
             {
+                IfExpressionSyntaxFactory ifFactory;
+                if (ifFactory.tryParseSyntax(toks, pos, result)) return true;
+                WhileExpressionSyntaxFactory whileFactory;
+                if (whileFactory.tryParseSyntax(toks, pos, result)) return true;
                 TernaryExpressionSyntaxFactory ternaryFactory;
                 if (ternaryFactory.tryParseSyntax(toks, pos, result)) return true;
                 return false;

@@ -34,12 +34,6 @@
     <Filter Include="Header Files\flc\syntax">
       <UniqueIdentifier>{5188ef81-35fd-413e-b195-9f02a5ef5156}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\flc\syntax\factory">
-      <UniqueIdentifier>{ed952475-9249-4873-b648-6a8f6f59098a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\flc\syntax\factory">
-      <UniqueIdentifier>{aa5e4e23-dfdd-4436-ae87-4a4064191bb7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\flc\types">
       <UniqueIdentifier>{d5f31722-014f-4538-ae54-64fd978ae7d4}</UniqueIdentifier>
     </Filter>
@@ -157,6 +151,42 @@
     <Filter Include="Header Files\flc\emit\decorators">
       <UniqueIdentifier>{8a1bc806-5353-4fca-b4de-7b2a0ebd349a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\flc\factory">
+      <UniqueIdentifier>{ed952475-9249-4873-b648-6a8f6f59098a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\factory\binary">
+      <UniqueIdentifier>{f82acd94-638d-4836-96be-07bd841ebd62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\factory\expr">
+      <UniqueIdentifier>{5409816b-ed5c-4862-a27a-5429f74a3357}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\factory\ternary">
+      <UniqueIdentifier>{a9d90c57-6eb4-4613-8ad6-48b30fda62a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\factory\unary">
+      <UniqueIdentifier>{94000089-3932-431e-bd46-899dc67ced2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\flc\factory\terminal">
+      <UniqueIdentifier>{12360184-74ee-47af-9998-e2460f229c2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\factory">
+      <UniqueIdentifier>{aa5e4e23-dfdd-4436-ae87-4a4064191bb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\factory\binary">
+      <UniqueIdentifier>{d1ce94f5-d897-4c5c-81c5-306e82ca380c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\factory\expr">
+      <UniqueIdentifier>{04827c0a-f931-45e2-b0ef-3a7725c36a2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\factory\terminal">
+      <UniqueIdentifier>{2b84c868-2b9e-49b1-b67b-a75c1100825a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\factory\ternary">
+      <UniqueIdentifier>{3cbc190f-aa8e-49cc-99d5-b396f6212d4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\flc\factory\unary">
+      <UniqueIdentifier>{c126f161-1425-46d2-8044-0c6976551d0a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -224,57 +254,6 @@
     </ClInclude>
     <ClInclude Include="Syntax.h">
       <Filter>Header Files\flc\syntax</Filter>
-    </ClInclude>
-    <ClInclude Include="ExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="AdditiveExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="MultiplicativeExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="UnaryExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="TermSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="TernaryExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="ConditionalOrExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="ConditionalAndExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="InclusiveOrExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="ExclusiveOrExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="AndExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="EqualityExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="RelationalExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="ShiftExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="CompoundExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="IfExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
-    </ClInclude>
-    <ClInclude Include="WhileExpressionSyntaxFactory.h">
-      <Filter>Header Files\flc\syntax\factory</Filter>
     </ClInclude>
     <ClInclude Include="RuntimeType.h">
       <Filter>Header Files\flc\types</Filter>
@@ -468,9 +447,6 @@
     <ClInclude Include="TernaryExpressionSyntax.h">
       <Filter>Header Files\flc\syntax\ternary</Filter>
     </ClInclude>
-    <ClInclude Include="CompoundExpressionSyntax.h">
-      <Filter>Header Files\flc\syntax\expr</Filter>
-    </ClInclude>
     <ClInclude Include="AssignmentExpressionSyntax.h">
       <Filter>Header Files\flc\syntax\expr</Filter>
     </ClInclude>
@@ -657,6 +633,60 @@
     <ClInclude Include="ConditionalExpressionSyntax.h">
       <Filter>Header Files\flc\syntax\binary</Filter>
     </ClInclude>
+    <ClInclude Include="CompoundExpressionSyntax.h">
+      <Filter>Header Files\flc\syntax\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="AdditiveExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="AndExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="ConditionalAndExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="ConditionalOrExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="EqualityExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="ExclusiveOrExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="InclusiveOrExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiplicativeExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="RelationalExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="ShiftExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\binary</Filter>
+    </ClInclude>
+    <ClInclude Include="IfExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\expr</Filter>
+    </ClInclude>
+    <ClInclude Include="WhileExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\expr</Filter>
+    </ClInclude>
+    <ClInclude Include="CompoundExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="TermSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\terminal</Filter>
+    </ClInclude>
+    <ClInclude Include="TernaryExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\ternary</Filter>
+    </ClInclude>
+    <ClInclude Include="UnaryExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\unary</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionSyntaxFactory.h">
+      <Filter>Header Files\flc\factory\expr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommandLineParser.cpp">
@@ -718,57 +748,6 @@
     </ClCompile>
     <ClCompile Include="Syntax.cpp">
       <Filter>Source Files\flc\syntax</Filter>
-    </ClCompile>
-    <ClCompile Include="ExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="AdditiveExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="MultiplicativeExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="UnaryExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="TermSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="TernaryExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="ConditionalOrExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="ConditionalAndExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="InclusiveOrExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="ExclusiveOrExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="AndExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="EqualityExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="RelationalExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="ShiftExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="CompoundExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="IfExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
-    </ClCompile>
-    <ClCompile Include="WhileExpressionSyntaxFactory.cpp">
-      <Filter>Source Files\flc\syntax\factory</Filter>
     </ClCompile>
     <ClCompile Include="RuntimeType.cpp">
       <Filter>Source Files\flc\types</Filter>
@@ -1201,6 +1180,57 @@
     </ClCompile>
     <ClCompile Include="ConditionalExpressionSyntax.cpp">
       <Filter>Source Files\flc\syntax\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="AdditiveExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="AndExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="ConditionalAndExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="ConditionalOrExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="WhileExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\expr</Filter>
+    </ClCompile>
+    <ClCompile Include="UnaryExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\unary</Filter>
+    </ClCompile>
+    <ClCompile Include="TernaryExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\ternary</Filter>
+    </ClCompile>
+    <ClCompile Include="TermSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="MultiplicativeExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="EqualityExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="ExclusiveOrExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="IfExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\expr</Filter>
+    </ClCompile>
+    <ClCompile Include="InclusiveOrExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="RelationalExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="ShiftExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\binary</Filter>
+    </ClCompile>
+    <ClCompile Include="CompoundExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="ExpressionSyntaxFactory.cpp">
+      <Filter>Source Files\flc\factory\expr</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
