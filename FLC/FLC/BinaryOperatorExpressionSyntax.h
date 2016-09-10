@@ -28,8 +28,9 @@ namespace flc
         private:
             ExpressionSyntax *_left = nullptr,
                              *_right = nullptr;
-
-            types::MethodOverload *_overload = nullptr;
+            types::MethodOverload *_overload = nullptr,
+                                  *_castLeft = nullptr,
+                                  *_castRight = nullptr;
         };
     }
 }

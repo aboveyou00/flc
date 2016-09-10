@@ -29,7 +29,8 @@ namespace flc
         private:
             ExpressionSyntax *_expr = nullptr;
 
-            types::MethodOverload *_overload = nullptr;
+            types::MethodOverload *_overload = nullptr,
+                                  *_castExpr = nullptr;
         };
     }
 }

@@ -36,10 +36,18 @@ namespace flc
             if (un_op == nullptr) return;
             _overload = un_op->findOverload(_expr->getExpressionType());
 
-            if (_overload != nullptr)
+            if (_overload == nullptr)
             {
-                _expr->suggestExpressionType(_overload->getParameterInfo(0)->getType());
-                _expr->resolveTypes(ctx);
+                this->reportError("Cannot find unary operator overload for operator %s", getOperatorSymbol().c_str());
+                return;
+            }
+
+            _expr->suggestExpressionType(_overload->getParameterInfo(0)->getType());
+            _expr->resolveTypes(ctx);
+
+            if (!_expr->getExpressionType()->isSameAs(_overload->getParameterInfo(0)->getType()))
+            {
+                _castExpr = op::Operator::implicitCast()->findOverload(_expr->getExpressionType(), _overload->getParameterInfo(0)->getType());
             }
         }
         types::RuntimeType* UnaryOperatorExpressionSyntax::getExpressionType()
@@ -51,12 +59,7 @@ namespace flc
         void UnaryOperatorExpressionSyntax::emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method)
         {
             _expr->emit(ctx, method);
-            if (_overload != nullptr)
-            {
-                auto cast = op::Operator::implicitCast()->findOverload(_expr->getExpressionType(), _overload->getParameterInfo(0)->getType());
-                if (cast != nullptr) cast->emitCall(method);
-            }
-
+            if (_castExpr != nullptr) _castExpr->emitCall(method);
             if (_overload != nullptr) _overload->emitCall(method);
         }
 

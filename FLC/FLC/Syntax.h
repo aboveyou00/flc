@@ -18,7 +18,7 @@ namespace flc
             {
                 static const unsigned MAX_BUFFER_SIZE = 2048;
                 static thread_local char buff[MAX_BUFFER_SIZE];
-                sprintf_s(buff, format, args...);
+                sprintf_s(buff, format.c_str(), args...);
                 reportError(std::string(buff));
             }
 

@@ -39,12 +39,24 @@ namespace flc
             if (bin_op == nullptr) return;
             _overload = bin_op->findOverload(_left->getExpressionType(), _right->getExpressionType());
 
-            if (_overload != nullptr)
+            if (_overload == nullptr)
             {
-                _left->suggestExpressionType(_overload->getParameterInfo(0)->getType());
-                _right->suggestExpressionType(_overload->getParameterInfo(1)->getType());
-                _left->resolveTypes(ctx);
-                _right->resolveTypes(ctx);
+                this->reportError("Cannot find binary operator overload for operator %s", getOperatorSymbol());
+                return;
+            }
+
+            _left->suggestExpressionType(_overload->getParameterInfo(0)->getType());
+            _right->suggestExpressionType(_overload->getParameterInfo(1)->getType());
+            _left->resolveTypes(ctx);
+            _right->resolveTypes(ctx);
+
+            if (!_left->getExpressionType()->isSameAs(_overload->getParameterInfo(0)->getType()))
+            {
+                _castLeft = op::Operator::implicitCast()->findOverload(_left->getExpressionType(), _overload->getParameterInfo(0)->getType());
+            }
+            if (!_right->getExpressionType()->isSameAs(_overload->getParameterInfo(1)->getType()))
+            {
+                _castRight = op::Operator::implicitCast()->findOverload(_right->getExpressionType(), _overload->getParameterInfo(1)->getType());
             }
         }
         types::RuntimeType* BinaryOperatorExpressionSyntax::getExpressionType()
@@ -56,18 +68,10 @@ namespace flc
         void BinaryOperatorExpressionSyntax::emit(types::NameResolutionContextStack *ctx, emit::MethodBody *method)
         {
             _left->emit(ctx, method);
-            if (_overload != nullptr)
-            {
-                auto cast = op::Operator::implicitCast()->findOverload(_left->getExpressionType(), _overload->getParameterInfo(0)->getType());
-                if (cast != nullptr) cast->emitCall(method);
-            }
+            if (_castLeft != nullptr) _castLeft->emitCall(method);
 
             _right->emit(ctx, method);
-            if (_overload != nullptr)
-            {
-                auto cast = op::Operator::implicitCast()->findOverload(_right->getExpressionType(), _overload->getParameterInfo(1)->getType());
-                if (cast != nullptr) cast->emitCall(method);
-            }
+            if (_castRight != nullptr) _castRight->emitCall(method);
 
             if (_overload != nullptr) _overload->emitCall(method);
         }
