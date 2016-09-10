@@ -11,20 +11,18 @@ namespace Test
         {
             UseString("true ? false : true");
 
-            Assert::IsTrue(false);
-
             Assert::AreEqual(ExpectInstr<LdcI4Instr>()->getConstantValue(), 1);
-            //auto falseTarget = ExpectInstr<BrfalseInstr>().getTarget();
+            auto falseTarget = ExpectInstr<BrfalseInstr>()->getBranchTarget();
 
             Assert::AreEqual(ExpectInstr<LdcI4Instr>()->getConstantValue(), 0);
-            //auto endTarget = ExpectInstr<BrInstr>().getTarget();
+            auto endTarget = ExpectInstr<BrInstr>()->getBranchTarget();
 
             auto falseInstr = ExpectInstr<LdcI4Instr>();
+            ExpectDecorator(falseInstr, falseTarget);
             Assert::AreEqual(falseInstr->getConstantValue(), 1);
-            //ExpectTarget(falseInstr, falseTarge);
 
-            //ExpectTarget(ExpectInstr<NopInstr>(), endTarget);
-            ExpectInstr<PopInstr>();
+            auto popInstr = ExpectInstr<PopInstr>();
+            ExpectDecorator(popInstr, endTarget);
 
             ExpectNoMore();
         }

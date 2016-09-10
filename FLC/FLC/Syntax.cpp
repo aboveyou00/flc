@@ -12,6 +12,11 @@ namespace flc
         {
         }
 
+        void Syntax::reportError(std::string errorMessage)
+        {
+            flc::reportError(errorMessage, "!!!");
+        }
+
         string Syntax::toString()
         {
             stringstream stream;
